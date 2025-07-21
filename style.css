@@ -1,10 +1,12 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
     background-color: #fdf0d5;
+    line-height: 1.6;
 }
 
 .header {
@@ -14,6 +16,7 @@ body{
     background-position: center;
     background-size: cover;
     position: relative;
+    padding: 20px 0;
 }
 
 nav {
@@ -22,8 +25,10 @@ nav {
     margin-right: 6px;
     justify-content: space-between;
     align-items: center;
+    padding: 0 5%;
 
 }
+
 
 
 
@@ -50,10 +55,11 @@ nav {
     font-size: 14px
     
 }
-      
 .nav-links {
     flex: 1;
     text-align: right;
+    position: relative;
+    z-index: 10;
 }
 
 .nav-links ul li {
@@ -61,6 +67,7 @@ nav {
     display: inline-block;
     padding: 8px 12px;
     position: relative;
+
 }
 
 .nav-links ul li a{
@@ -117,6 +124,7 @@ nav .fa {
         margin: 10px;
         font-size: 22px;
         cursor: pointer;
+        z-index: 10;
     }
     .nav-links ul{
         padding: 30px;
@@ -145,6 +153,7 @@ nav .fa {
     padding: 10px;
     font-style: italic;
     font-family: 'Times New Roman', Times, serif;
+    /* max-width: 75ch; */
 }
 
 #issue1-btn {
@@ -167,15 +176,37 @@ nav .fa {
     transition: 1s;
 }
 
-.duotrope {
+
+
+/* Main container for the section */
+.listings {
+    width: 80%;
+    margin: 4rem auto; /* Adds space above and below the section */
     text-align: center;
-    margin-top: 50px;
 }
 
-.chillsubs {
-    text-align: center;
-    margin-top: 50px;
 
+.listings h3 {
+    font-family: serif;
+    font-style: italic;
+    font-size: 24px;
+    color: #780000;
+    margin-bottom: 2rem; 
+}
+
+
+.listing-images {
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+    gap: 3rem;             
+    flex-wrap: wrap;       
+}
+
+
+.listing-images img {
+    max-width: 250px; 
+    height: auto;     
 }
 
 .footer {
@@ -191,7 +222,7 @@ nav .fa {
 .footer h4 {
     color: #fdf0d5;
     margin-bottom: 25px;
-    margin-top: 20px;
+    margin-top: 5rem;
     font-weight: 600;
     font-family: 'Times New Roman', Times, serif;
 
@@ -221,3 +252,7 @@ nav .fa {
 }
 
 
+a:focus, button:focus {
+  outline: 3px dashed #780000;
+  outline-offset: 3px;
+}
