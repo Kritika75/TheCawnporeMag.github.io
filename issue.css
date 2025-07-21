@@ -25,8 +25,9 @@
     }
 
     .header1 {
-    min-height: 26vh;
+    
     width: 100%;
+    padding:20px 0;
     background-color: #fdf0d5;
     background-position: center;
     background-size: cover;
@@ -46,14 +47,14 @@
     }
     
     .text-box1 h1 {
-        margin-top: 15px;
+        margin-top: 0px;
         font-weight: 700;
         font-style: italic;
-        font-size: 62px;
+        font-size: 42px;
         }
         .text-box1 p {
-        margin: 10px 0 40px;
-        font-size: 20px   
+        margin: 5px 0 20px;
+        font-size: 16px   
         }
         .nav-links {
     flex: 1;
