@@ -111,6 +111,32 @@ nav .fa {
         padding: 30px;
     }
     }
+     /* clickable cards */
+    .landmarkCard{
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #780000;
+    border-radius: 10px;
+    width: 300px;
+    transition: transform 0.2s ease;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.landmarkCard:hover {
+  transform: scale(1.05);
+}
+.landmarkCard img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.landmarkButton{
+    background-color: #fdf0d5;
+    color: #780000;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 
 
 
@@ -183,13 +209,13 @@ transition: 0.5s;
 padding-top: 20px;
 }
 
-h3 {
+h2 {
 text-align: center;
 color: #fdf0d5;
 font-weight: 700;
 font-style: italic;
 font-size: 15px;
-padding-top: 20px;
+padding-top: 1rem;
 } 
 .h32 {
 text-align: center;
