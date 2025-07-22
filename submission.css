@@ -85,10 +85,12 @@ nav {
 }
 
 .nav-links ul li a {
-  color: #780000;
+  color: #fdf0d5;
   text-decoration: none;
   font-family: serif;
   font-size: 13px;
+  padding: 12px 16px;
+  display: block;
 }
 .nav-links ul li::after {
   content: "";
@@ -119,7 +121,7 @@ nav .fa {
   }
   .nav-links {
     position: fixed;
-    background: #8bbad3;
+    background: #780000fc;
     height: 100vh;
     width: 200px;
     top: 0;
@@ -131,7 +133,7 @@ nav .fa {
 
   nav .fa {
     display: block;
-    color: #780000;
+    color: #922d2d;
     margin: 10px;
     font-size: 22px;
     cursor: pointer;
