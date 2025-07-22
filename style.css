@@ -220,17 +220,15 @@ nav .fa {
 .footer {
     background-color: #780000;
     color: #fdf0d5;
-    margin-top: 45vh ;
+    margin-top: 40vh;
     width: 100%;
     text-align: center;
-    padding: 30px 0;
-
+    padding: 70px 0;  
 }
 
 .footer h4 {
     color: #fdf0d5;
-    margin-bottom: 25px;
-    margin-top: 5rem;
+    margin-bottom: 10px;
     font-weight: 600;
     font-family: 'Times New Roman', Times, serif;
 
@@ -242,12 +240,20 @@ nav .fa {
     font-size: 15px;
 }
 .icons {
+    display: flex;
+    justify-content: center;
     color: #fdf0d5;
     margin: 0 13px;
     cursor: pointer;
     padding: 18px 0;
+    gap: 12px;
     
 }
+
+.icons a:hover{
+    background-color: #c88a78; 
+    
+  }
 
 .icons a {
     color: #fdf0d5;
