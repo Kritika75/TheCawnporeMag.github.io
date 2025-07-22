@@ -2,10 +2,12 @@
 *{
 margin: 0;
 padding: 0;
+box-sizing: border-box;
 }
 
 body{
 background-color: #fdf0d5;
+line-height: 1.6;
 }
 .header{
     background-color: #fde74c40;
@@ -17,6 +19,8 @@ background-color: #fdf0d5;
 background-position: center;
 background-size: cover;
 position: relative;
+padding: 20px 0;
+margin-top: 40px;
 }
 
 nav {
@@ -25,7 +29,19 @@ nav {
     margin-right: 6px;
     justify-content: space-between;
     align-items: center;
-
+    padding: 0 5%;
+    padding: 0.75rem 5%;
+    margin-right: 6px;
+    background: rgba(163, 163, 163, 0.16);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(179, 177, 177, 0.2);
+    position: fixed;
+    top: 0;
+    height: 6%;
+    width: 100%;
+    z-index: 999;
 }
 
 .text-box1 {
@@ -173,6 +189,7 @@ font-family: 'Times New Roman', Times, serif;
     margin : 10px;
 }
 
+
 .landmarks{
     display: flex;
     justify-content: center;
@@ -201,49 +218,76 @@ font-family: 'Times New Roman', Times, serif;
 .landmarkInfo{
     height: 35%;
 }
-
-h2 {
-text-align: center;
-color: #780000;
-margin-top: 15px;
-font-weight: 700;
-font-style: italic;
-font-size: 25px;
+.landmarks {
+    background-color: #fdf0d5;
+    padding: 50px 20px;
+    text-align: center;
 }
 
+.landmarks h2 {
+    font-size: 2.5em;
+    color: #780000;
+    margin-bottom: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 .layer {
-background: transparent;
-text-align: center;
-height: 100%;
-width: 100%;
-position: absolute;
-top: 0;
-left: 0px;
-transition: 0.5s;
-padding-top: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(120, 0, 0, 0.8);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    transition: background 0.3s ease;
+}
+
+.layer h3 {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h2 {
-text-align: center;
-color: #fdf0d5;
-font-weight: 700;
-font-style: italic;
-font-size: 15px;
-padding-top: 1rem;
+    text-align: center;
+    color: #fdf0d5;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 15px;
+    padding-top: 1rem;
 } 
+
 .h32 {
-text-align: center;
-color: #780000;
-}
-.layer:hover {
-background: rgba(226,0,0,0.4);
+    text-align: center;
+    color: #780000;
 }
 
-@media(max-width: 700px) {
-    .landmarks {
-        width: 95%;
-    } 
+.layer:hover {
+    background: rgba(226,0,0,0.4);
+}
+
+.h32 {
+    text-align: center;
+    color: #780000;
+}
+
+.layer:hover {
+    background: rgba(226,0,0,0.4);
+}
+
+
+@media (max-width: 600px) {
+    .landmarks h2 {
+        font-size: 2em;
+    }
+    .landmark-col img {
+        height: 180px;
+    }
+    .layer {
+        font-size: 1em;
+        padding: 10px;
+    }
 }
 
 .footer {
@@ -291,6 +335,10 @@ background: rgba(226,0,0,0.4);
     margin: 0 13px;
     cursor: pointer;
     padding: 18px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .fa-heart {
