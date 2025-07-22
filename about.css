@@ -202,6 +202,25 @@ font-family: 'Times New Roman', Times, serif;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+h2 {
+    text-align: center;
+    color: #fdf0d5;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 15px;
+    padding-top: 1rem;
+} 
+
+.h32 {
+    text-align: center;
+    color: #780000;
+}
+
+.layer:hover {
+    background: rgba(226,0,0,0.4);
+}
+
+
 @media (max-width: 600px) {
     .landmarks h2 {
         font-size: 2em;
