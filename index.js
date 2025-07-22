@@ -1,18 +1,13 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var navLinks = document.getElementById("navLinks");
+var navLinks = document.getElementById("navLinks");
 
-    window.showMenu = function() {
-        console.log("showMenu called");
-        navLinks.style.right = "0";
-        document.body.style.overflow = "hidden"; 
-    }
+function showMenu() {
+    navLinks.style.right = "0";
 
-    window.hideMenu = function() {
-        console.log("hideMenu called");
-        navLinks.style.right = "-200px";
-        document.body.style.overflow = "auto";
-    }
-});
+}
+
+function hideMenu() {
+    navLinks.style.right = "-200px";
+}
 
 const container = document.getElementById('container');
 const registerBtn = document.getElementById('register');
@@ -25,3 +20,5 @@ registerBtn.addEventListener('click', () =>  {
 loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
+
+

@@ -2,12 +2,10 @@
 *{
 margin: 0;
 padding: 0;
-box-sizing: border-box;
 }
 
 body{
 background-color: #fdf0d5;
-line-height: 1.6;
 }
 
 .header1 {
@@ -17,7 +15,6 @@ background-color: #fdf0d5;
 background-position: center;
 background-size: cover;
 position: relative;
-padding: 20px 0;
 }
 
 nav {
@@ -26,7 +23,6 @@ nav {
     margin-right: 6px;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5%;
 
 }
 
@@ -170,103 +166,69 @@ font-style: italic;
 font-family: 'Times New Roman', Times, serif;
 }
 
-.landmarks {
-    background-color: #fdf0d5;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.landmarks h2 {
-    font-size: 2.5em;
-    color: #780000;
-    margin-bottom: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.landmarks-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    justify-content: center;
-    align-items: stretch;
-}
-
-.landmark-col {
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.landmark-col:hover {
-    transform: translateY(-10px);
-}
-
-.landmark-col img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
-.layer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(120, 0, 0, 0.8);
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-    font-size: 1.2em;
-    transition: background 0.3s ease;
-}
-
-.layer h3 {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.landmarks{
+width: 50%;
+margin: auto;
+text-align: center;
+padding-top: 50px;
 }
 
 h2 {
-    text-align: center;
-    color: #fdf0d5;
-    font-weight: 700;
-    font-style: italic;
-    font-size: 15px;
-    padding-top: 1rem;
+text-align: center;
+color: #780000;
+margin-top: 15px;
+font-weight: 700;
+font-style: italic;
+font-size: 25px;
+}
+
+.landmark-col{
+flex-basis: 32%;
+border-radius: 10px;
+margin-bottom: 30px;
+position: relative;
+overflow: hidden;
+padding-top: 40px;
+}
+
+.landmark-col img {
+width: 100%;
+display: block;
+border-radius: 10px;
+}
+
+.layer {
+background: transparent;
+text-align: center;
+height: 100%;
+width: 100%;
+position: absolute;
+top: 0;
+left: 0px;
+transition: 0.5s;
+padding-top: 20px;
+}
+
+h2 {
+text-align: center;
+color: #fdf0d5;
+font-weight: 700;
+font-style: italic;
+font-size: 15px;
+padding-top: 1rem;
 } 
-
 .h32 {
-    text-align: center;
-    color: #780000;
+text-align: center;
+color: #780000;
 }
-
 .layer:hover {
-    background: rgba(226,0,0,0.4);
+background: rgba(226,0,0,0.4);
 }
 
-.h32 {
-    text-align: center;
-    color: #780000;
-}
-
-.layer:hover {
-    background: rgba(226,0,0,0.4);
-}
-
-
-@media (max-width: 600px) {
-    .landmarks h2 {
-        font-size: 2em;
-    }
-    .landmark-col img {
-        height: 180px;
-    }
-    .layer {
-        font-size: 1em;
-        padding: 10px;
-    }
+@media(max-width: 700px) {
+    .landmarks {
+        width: 95%;
+    } 
 }
 
 .footer {
@@ -298,10 +260,6 @@ h2 {
     margin: 0 13px;
     cursor: pointer;
     padding: 18px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
 }
 
 .fa-heart {
