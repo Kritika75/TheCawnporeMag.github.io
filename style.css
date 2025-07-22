@@ -18,6 +18,7 @@ body{
     top:0;
     box-shadow: #780000 0px 0px 10px;
     z-index: 1000;
+     padding: 20px 0;
 }
 
 nav {
