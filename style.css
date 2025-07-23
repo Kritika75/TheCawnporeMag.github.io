@@ -14,11 +14,11 @@ body{
     background-position: center;
     background-size: cover;
     position: relative;
-    position:sticky;
-    top:0;
-    box-shadow: #780000 0px 0px 10px;
+    padding: 20px 0;
+    position: sticky;
     z-index: 1000;
-     padding: 20px 0;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 nav {
