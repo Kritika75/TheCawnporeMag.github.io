@@ -5,6 +5,7 @@
     
 body{
     background-color: #fdf0d5;
+
 }
     
 .header {
@@ -15,6 +16,34 @@ body{
     position: relative;
     padding-top: 20px;
 }
+
+    }
+     
+
+    .progress-container {
+        width: 100%;
+        height: 4px; 
+        background: #EAE0D5; 
+        position: fixed; 
+        top: 0;
+        left: 0;
+        z-index: 1000; 
+        }
+
+    .progress-bar {
+        height: 100%;
+        width: 0%; 
+        background: #8B0000; 
+        }
+    .header {
+        min-height: 0vh;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        padding-top: 20px;
+    }
+
 
 nav {
     display: flex;
@@ -35,18 +64,28 @@ nav {
     z-index: 999;
 }
 
+
 .header1 {
     min-height: 26vh;
+
+    .header1 {
+    min-height:34vh;  
+
     width: 100%;
-    background-color: #fdf0d5;
+    background-color:#780000 ;
     background-position: center;
     background-size: cover;
     position: relative;
 }
     
     
+
 .text-box1 {
     color: #780000;
+
+    .text-box1 {
+    color: #fdf0d5;
+
     font-family:"Crimson Text", serif;
     width: 90%;
     position: absolute;
@@ -54,6 +93,7 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+
 }
     
 .text-box1 h1 {
@@ -67,6 +107,27 @@ nav {
     font-size: 20px;
 }
 .nav-links {
+
+
+    border-bottom: 5px solid #060000;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    width:100%
+    }
+    
+    .text-box1 h1 {
+        margin-top: 45px;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 62px;
+        }
+
+        .text-box1 p {
+        margin: 10px 0 40px;
+        font-size: 20px   
+        }
+        .nav-links {
+
     flex: 1;
     text-align: right;
 }
@@ -79,10 +140,14 @@ nav {
 }
 
 .nav-links ul li a{
-    color: #780000;
+    color: #fdf0d5;
     text-decoration: none;
     font-family: serif;
     font-size: 13px;
+
+    padding: 12px 16px;
+    display: block;
+
 }
 .nav-links ul li::after {
     content: '';
@@ -108,6 +173,7 @@ nav .fa {
         font-weight: 700;
         font-style: italic;
         font-size: 40px;
+
     }
     .nav-links ul li {
         display: block;
@@ -123,6 +189,42 @@ nav .fa {
         z-index: 2;
         transition: 1s;
     }
+
+        }
+        .nav-links ul li {
+            display: block;
+        }
+        .nav-links {
+            position: fixed;
+            background: #780000fc;
+            height: 100vh;
+            width: 200px;
+            top: 0;
+            right: -200px;
+            text-align: left;
+            z-index: 2;
+            transition: 1s;
+        }
+    
+        nav .fa-times {
+    display: block;
+    color: #fdf0d5;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  nav .fa-bars {
+    display: block;
+    color: #780000fc; 
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+        .nav-links ul{
+            padding: 30px;
+        }
+        }
+
 
     nav .fa{
         display: block;
@@ -256,6 +358,7 @@ nav .fa {
     .footer-top {
         grid-template-columns: 1fr;
         text-align: center;
+
     }
     .social-icons {
         justify-content: center;
@@ -294,6 +397,19 @@ nav .fa {
   margin-bottom: 20px;
   text-align: left; /* fix heading position */
 }
+
+        padding-top: 50px;
+
+
+
+        /*changed*/
+   border-bottom: 4px solid #060000;
+    padding-bottom: 100px;
+   
+    
+
+        }
+
 
 .issuecover{
     flex-basis: 32%;

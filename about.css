@@ -9,6 +9,23 @@ body{
 background-color: #fdf0d5;
 line-height: 1.6;
 }
+
+.progress-container {
+  width: 100%;
+  height: 4px; 
+  background: #EAE0D5; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000; 
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%; 
+  background: #8B0000; 
+}
+
 .header{
     background-color: #fde74c40;
 }
@@ -78,10 +95,12 @@ font-size: 20px
 }
 
 .nav-links ul li a{
-    color: #780000;
+    color: #fdf0d5;
     text-decoration: none;
     font-family: serif;
     font-size: 13px;
+    padding: 12px 16px;
+    display: block;
 
 }
 .nav-links ul li::after {
@@ -108,7 +127,7 @@ nav .fa {
     }
     .nav-links {
         position: fixed;
-        background: #fde74c40;
+        background: #780000fc;
         height: 100vh;
         width: 200px;
         top: 0;
@@ -118,13 +137,20 @@ nav .fa {
         transition: 1s;
     }
 
-    nav .fa{
-        display: block;
-        color: #780000;
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
-    }
+    nav .fa-times {
+    display: block;
+    color: #fdf0d5;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  nav .fa-bars {
+    display: block;
+    color: #780000fc; 
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
     .nav-links ul{
         padding: 30px;
     }
@@ -215,9 +241,6 @@ font-family: 'Times New Roman', Times, serif;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-.landmarkInfo{
-    height: 35%;
-}
 .landmarks {
     background-color: #fdf0d5;
     padding: 50px 20px;
@@ -225,9 +248,9 @@ font-family: 'Times New Roman', Times, serif;
 }
 
 .landmarks h2 {
-    font-size: 2.5em;
-    color: #780000;
-    margin-bottom: 30px;
+    font-size: 20px;
+    color: #fdf0d5;
+    margin-bottom: 5px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -290,6 +313,7 @@ h2 {
     }
 }
 
+
 .site-footer {
   background: #7a0000;
   color: #f9f9e6;
@@ -333,6 +357,31 @@ h2 {
 }
 .site-footer a:hover::after {
   width: 100%;
+
+.footer {
+    background-color: #780000;
+    color: #fdf0d5;
+    margin-top: 5vh ;
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footerContents{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.footerLeft{
+    width: 65%;
+    margin : 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.footer .footerLeft p{
+    text-align: left;
+    margin-left : 8%;
+
 }
 .site-footer a:hover {
   color: #ffd9b3;
@@ -414,6 +463,7 @@ h2 {
   }
   .social-icons {
     justify-content: center;
+
   }
   .footer-newsletter form {
     flex-direction: column;
@@ -422,3 +472,52 @@ h2 {
     width: 100%;
   }
 }
+
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.fa-heart {
+    color: #fdf0d5;
+    font-size: 15px;
+}
+
+.icons {
+    color: #fdf0d5;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+    width: 35%;
+}
+
+.icons a {
+    color: #fdf0d5;
+    font-size: 25px;
+    padding : 10px;
+} 
+#insta:hover {
+    color: #ff04c0;
+    text-shadow: 0px 0px 3px#fdf0d5;
+    font-size: 25px;
+    padding : 10px;
+} 
+#linkedin:hover {
+    color: #215a8f;
+    text-shadow: 1px 1px 5px#fdf0d5;
+    font-size: 25px;
+    padding : 10px;
+} 
+#twitter:hover {
+    color: #141414;
+    text-shadow: 1px 1px 5px#fdf0d5;
+    font-size: 25px;
+    padding : 10px;
+} 
+#tumblr:hover {
+    color: #3c487c;
+    text-shadow: 1px 1px 5px#fdf0d5;
+    font-size: 25px;
+    padding : 10px;
+} 
+
