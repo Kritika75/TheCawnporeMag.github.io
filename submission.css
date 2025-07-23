@@ -146,9 +146,16 @@ nav .fa {
     transition: 1s;
   }
 
-  nav .fa {
+  nav .fa-times {
     display: block;
-    color: #922d2d;
+    color: #fdf0d5;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  nav .fa-bars {
+    display: block;
+    color: #780000fc;
     margin: 10px;
     font-size: 22px;
     cursor: pointer;

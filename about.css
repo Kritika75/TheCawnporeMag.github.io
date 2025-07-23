@@ -137,13 +137,20 @@ nav .fa {
         transition: 1s;
     }
 
-    nav .fa{
-        display: block;
-        color: #922d2d;
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
-    }
+    nav .fa-times {
+    display: block;
+    color: #fdf0d5;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  nav .fa-bars {
+    display: block;
+    color: #780000fc; 
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
     .nav-links ul{
         padding: 30px;
     }
