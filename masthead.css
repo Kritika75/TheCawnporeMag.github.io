@@ -57,6 +57,7 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  overflow: hidden;
 }
 
 .text-box1 h1 {
@@ -66,9 +67,23 @@ nav {
   font-size: 62px;
 }
 .text-box1 p {
+  width: 100%;
   margin: 10px 0 40px;
-  font-size: 20px;
+  font-size: 30px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: erase 5s steps(85) infinite;
 }
+@keyframes erase {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -248,11 +263,20 @@ nav .fa {
 
 .founder-card {
     display: flex;
-    background-color: #fef9ff;
-    border: 2px solid #6a0dad;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #fffefe, #fbfafa, #d3cdcd, #fffefe);
     border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 4px 12px rgba(106, 13, 173, 0.1);
+    transition: transform 0.6s ease-in-out 0.3s,
+                box-shadow 0.6s ease-in-out 0.3s;
+}
+
+
+.founder-card:hover{
+
+   transform: translateY(-5px);
+   box-shadow: 0 6px 12px rgba(0,0,0,0.6);
 }
 
 .founder-content {
@@ -305,7 +329,7 @@ nav .fa {
 }
 
 .team-card {
-  background-color: #fdf0d5;
+  background: linear-gradient(to right, #cdb2ad,#fdf0d5, #bcaf87);
   border: 2px solid #780000;
   border-radius: 15px;
   padding: 1.5rem;
@@ -316,8 +340,9 @@ nav .fa {
 }
 
 .team-card:hover {
+  background: linear-gradient(to bottom, #bcaf87,#fdf0d5, #cdb2ad);
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.6);
 }
 
 .team-card h3 {
