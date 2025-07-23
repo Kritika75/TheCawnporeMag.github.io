@@ -215,9 +215,6 @@ font-family: 'Times New Roman', Times, serif;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-.landmarkInfo{
-    height: 35%;
-}
 .landmarks {
     background-color: #fdf0d5;
     padding: 50px 20px;
