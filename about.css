@@ -9,6 +9,23 @@ body{
 background-color: #fdf0d5;
 line-height: 1.6;
 }
+
+.progress-container {
+  width: 100%;
+  height: 4px; 
+  background: #EAE0D5; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000; 
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%; 
+  background: #8B0000; 
+}
+
 .header{
     background-color: #fde74c40;
 }
