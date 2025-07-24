@@ -53,27 +53,15 @@
     }
 
     .header1 {
+        background-color: #780000;
     min-height:34vh;  
     width: 100%;
-    background: linear-gradient(45deg, #780000,#4676b1,#aa6767,#ab4e8c) ;
     background-position: center;
     background-size: cover;
     position: relative;
     background-size:300% 300% ;
     animation: color 12s ease-in-out infinite;
     }
-
-    @keyframes color {
-  0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0 50%;
-  }
-}
     
     
     .text-box1 {
@@ -236,47 +224,54 @@ nav .fa {
 
 
         /*changed*/
-   border-bottom: 4px solid #060000;
-    padding-bottom: 100px;
+        border-bottom: 4px solid #060000;
+        padding-bottom: 100px;
    
     
 
         }
 
-.issuecover{
-            flex-basis: 32%;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            position: relative;
-            overflow: hidden;
-            padding-top: 40px;
-            }
-            
+       .issuecover {
+        background: linear-gradient(45deg, #e25050, #32858b, #541832, #ffffff);
+        border-radius: 50%;
+        animation:shrinkPulse 4s ease-in-out infinite alternate, color 5s ease-in-out infinite;
+        background-size:400% 400% ;
+        flex-basis: 32%;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+        padding-top: 20px;
+        padding-bottom: 40px;
+        box-shadow: 0 0 20px #000000;
+        }
+        @keyframes color {
+                       0% {
+                           background-position: 0 50%;
+                           }
+                         50% {
+                           background-position: 100% 50%;
+                         }
+                        100% {
+                           background-position: 0 50%;
+                         }
+                        }
+    
+        @keyframes shrinkPulse {
+        0% {
+            transform: scale(1);
+           }
+      100% {
+            transform: scale(0.85);
+           }
+}        
             .issuecover img {
-            width: 50%;
+            width: 40%;
             display: block;
             margin-top: 25px;
             margin-left: auto;
             margin-right: auto;
             border-radius: 10px;
             }
-             .row {
-  background: linear-gradient(45deg, #0b0b0b, #c3c3d0, #292727, #c3c3d0);
-  border-radius: 50%;
-  animation: spin 20s ease-in-out 1s infinite forwards;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 
             .layer {
@@ -293,7 +288,7 @@ nav .fa {
             
             h3 {
                 text-align: center;
-                color: #780000;
+                color: #ffffff;
                 font-weight: 700;
                 font-style: italic;
                 font-size: 35px;
@@ -305,20 +300,22 @@ nav .fa {
                     display: inline-block;
                     text-decoration: none;
                     color: #780000;
-                    border: 1px solid #780000;
                     border-radius: 20px;
                     padding: 12px 34px;
                     font-size: 13px;
-                    background: transparent;
+                    background:#7ccc9b;
                     position: relative;
                     cursor: pointer;
                     font-weight: 600;
+                     transition: box-shadow 0.3s ease, transform 0.3s ease;
+                     box-shadow: 0 0 10px #00ffff44;
                 }
                 
                 #pdf:hover {
-                    border: 1px solid #780000;
-                    background: #d9ed92;
-                    transition: 1s;
+                   box-shadow: 0 0 20px #00ffffaa, 0 0 40px #00ffffaa;
+                   background: transparent;
+                   transform: scale(1.05);
+                   outline: none;
                 }
                 
                 
@@ -331,16 +328,19 @@ nav .fa {
                     padding: 12px 34px;
                     font-size: 13px;
                     margin-left: 10px;
-                    background: transparent;
+                    background:#7ccc9b;
                     position: relative;
                     cursor: pointer;
                     font-weight: 600;
+                    transition: box-shadow 0.3s ease, transform 0.3s ease;
+                     box-shadow: 0 0 10px #00ffff44;
                 }
                 
                 #flipbook:hover {
-                    border: 1px solid #780000;
-                    background: #d9ed92;
-                    transition: 1s;
+                   box-shadow: 0 0 20px #00ffffaa, 0 0 40px #00ffffaa;
+                   background: transparent;
+                   transform: scale(1.05);
+                   outline: none;
                 }
                 
                 @media(max-width: 700px) {
