@@ -1,267 +1,227 @@
-*{
-    margin: 0;
-    padding: 0;
-    }
-    
-    body{
-    background-color: #fdf0d5;
-    }
-    
-    .header {
-        min-height: 0vh;
-        width: 100%;
-        background-position: center;
-        background-size: cover;
-        position: relative;
-    }
+/* imported font "Libre Caslon Text" from google fonts */ 
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap'); 
 
-    nav {
-        display: flex;
-        /* margin-top: 6px; */
-        margin-right: 6px;
-        justify-content: space-between;
-        align-items: center;
-    
-    }
-
-    .header1 {
-    min-height: 26vh;
-    width: 100%;
-    background-color: #fdf0d5;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    }
-    
-    
-    .text-box1 {
-    color: #780000;
-    font-family:"Crimson Text", serif;
-    width: 90%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    }
-    
-    .text-box1 h1 {
-        margin-top: 15px;
-        font-weight: 700;
-        font-style: italic;
-        font-size: 62px;
-        }
-        .text-box1 p {
-        margin: 10px 0 40px;
-        font-size: 20px   
-        }
-        .nav-links {
-    flex: 1;
-    text-align: right;
+html {
+  scroll-behavior: smooth;
 }
 
-.nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Times New Roman', serif;
+  background-color: #2a2a2a;
+  color: #333;
 }
 
-.nav-links ul li a{
-    color: #780000;
-    text-decoration: none;
-    font-family: serif;
-    font-size: 13px;
 
-}
-.nav-links ul li::after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: #780000;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-}
-
-.nav-links ul li:hover::after {
-    width: 100%;
-}
-
-nav .fa {
-    display: none;
-}
-        @media(max-width: 700px) {
-        .text-box h1 {
-        margin-top: 15px;
-        font-weight: 700;
-        font-style: italic;
-        font-size: 40px;
-        }
-        .nav-links ul li {
-            display: block;
-        }
-        .nav-links {
-            position: fixed;
-            background: #8bbad3;
-            height: 100vh;
-            width: 200px;
-            top: 0;
-            right: -200px;
-            text-align: left;
-            z-index: 2;
-            transition: 1s;
-        }
-    
-        nav .fa{
-            display: block;
-            color: #780000;
-            margin: 10px;
-            font-size: 22px;
-            cursor: pointer;
-        }
-        .nav-links ul{
-            padding: 30px;
-        }
-            .people {
-            width: 80%;
-            margin: auto;
-            text-align: center;
-            padding-top: 20px;
-            
-       }
-        .h1k {
-            text-align: center;
-            padding-left: 40px;
-            font-style: italic;
-            color: #780000;
-            font-size: 25px;
-        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), 
+                        url('./download.jpeg') no-repeat center center;
+            background-size: cover;
+            height: 130px;
+            position: relative;
         }
 
-        .footer {
-            background-color: #780000;
-            color: #fdf0d5;
-            margin-top: 55vh ;
-            width: 100%;
-            text-align: center;
-            padding: 30px 0;
-        
-        }
-        
-        .footer h4 {
-            color: #fdf0d5;
-            margin-bottom: 25px;
-            margin-top: 20px;
-            font-weight: 600;
-            font-family: 'Times New Roman', Times, serif;
-        
-        }
-        .footer p {
-            font-style: italic;
-            font-family: 'Times New Roman', Times, serif;
-            text-align: center;
-            font-size: 15px;
-        }
-        .icons {
-            color: #fdf0d5;
-            margin: 0 13px;
-            cursor: pointer;
-            padding: 18px 0;
-        }
-        
-        .fa-heart {
-            color: #fdf0d5;
-            font-size: 15px;
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px 40px;
+            height: 100%;
         }
 
-       .people {
-            width: 80%;
-            margin: auto;
-            text-align: center;
-            padding-top: 20px;
-            
-       }
-        .h1k {
-            text-align: center;
-            padding-left: 40px;
-            font-style: italic;
-            color: #780000;
-            font-size: 25px;
+        .nav-left {
+            color: white;
+            font-family: 'Libre Caslon Text', serif;
         }
-    
- 
-/* .mh10{
-    width: 50%;
-    margin: auto;
-    text-align: center;
-    padding-top: 10px;
-    }       
-.mh10 img {
-    padding-top: 0px;
-    width: 30%;
-    border-radius: 10px;
-    
-}
-@media(max-width: 700px) {
-   
-    .mh10 img {
-        width: 60%;
-        border-radius: 10px;
-    }
-    .mh10 {
-        width: 100%;
-    }  */
-/* } */
-.intro {
-    color: #111717;
-    font-size: 19px;
-    font-weight: 300;
-    line-height: 22px;
-    padding: 10px;
-    font-style: italic;
-    font-family: 'Times New Roman', Times, serif;
-}
-        
-.social {
-    color: #780000;
-    font-size: 19px;
-    font-weight: 300;
-    line-height: 22px;
-    padding: 10px;
-    font-style: italic;
-    font-family: 'Times New Roman', Times, serif;
+
+        .logo {
+            font-size: 48px;
+            font-weight: normal;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .est-text {
+            font-size: 16px;
+            opacity: 0.9;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin-top: 10px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: 'Libre Caslon Text', serif;
+            transition: opacity 0.3s;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        .nav-link.submissions {
+            background-color: transparent;
+            padding: 5px 15px;
+            border-radius: 4px;
+        }
+
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background-color: #FDF0D5; /* Optional neutral backdrop */
+  color: #f5f5dc; /* Beige font for contrast */
 }
 
-#join-btn {
-    display: inline-block;
-    text-decoration: none;
-    color: #780000;
-    border: 1px solid #780000;
-    border-radius: 20px;
-    padding: 12px 34px;
-    font-size: 13px;
-    background: transparent;
-    position: relative;
-    cursor: pointer;
-    font-weight: 600;
-    margin-top: 60px;
+.masthead-heading {
+  text-align: center;
+  margin: 4rem 0 2rem;
 }
 
-#join-btn:hover {
-    border: 1px solid #780000;
-    background: #d9ed92;
-    transition: 1s;
+.masthead-heading h1 {
+  font-size: 48px;
+  font-family: 'Libre Caslon Text', serif;
+  color: #2c2c2c;
 }
 
-.icons {
-    color: #fdf0d5;
-    margin: 0 13px;
-    cursor: pointer;
-    padding: 18px 0;
+.masthead-heading .subheading {
+  font-size: 20px;
+  font-family: 'Libre Caslon Text', serif;
+  color: #2c2c2c;
+  margin-top: 10px;
 }
 
-.icons a {
-    color: #fdf0d5;
-    font-size: 25px;
-} 
+.card-grid {
+ display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px; /* Optional: helps center and narrow the column */
+  margin: 0 auto;
+
+}
+
+.member-card {
+  background-color: #8b0000; /* Deep red */
+  color: #f5f5dc;            /* Beige text */
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.card-content h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-content .role {
+  font-size: 1.45rem;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+.card-content .bio {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.card-content .insta-link a {
+  font-size: 1rem;
+  text-decoration: underline;
+  color: #f5f5dc;
+  font-weight: bold;
+}
+.card-content p, .card-content h3 {
+  margin: 0;
+  line-height: 1.6; /* Sufficient spacing */
+}
+
+.card-content a {
+  margin-top: 1rem;
+  color: #f5f5dc;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.footer {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), 
+                        url('./download.jpeg') no-repeat center center;
+  background-size: cover;
+  color: #ffffff;
+  padding: 30px 20px;  
+  
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-content h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.footer-content p {
+  margin: 8px 0;
+  font-family: 'Libre Caslon Text', serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.footer-content a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-content .social-links {
+  margin: 12px 0;
+}
+
+.footer-content .social-links a {
+  margin: 0 8px;
+  display: inline-block;
+}
+
+.footer-content .social-links img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1); /* keep icons visible on dark background */
+  transition: transform 0.3s;
+}
+
+.footer-content .social-links img:hover {
+  transform: scale(1.1);
+}
+
+.footer-content .heart {
+  color: #ff6b6b;
+}
+
+.credits,
+.copyright {
+  font-size: 13px;
+  font-family: 'Libre Caslon Text', serif;
+  opacity: 0.85;
+}
