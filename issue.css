@@ -55,11 +55,25 @@
     .header1 {
     min-height:34vh;  
     width: 100%;
-    background-color:#780000 ;
+    background: linear-gradient(45deg, #780000,#4676b1,#aa6767,#ab4e8c) ;
     background-position: center;
     background-size: cover;
     position: relative;
+    background-size:300% 300% ;
+    animation: color 12s ease-in-out infinite;
     }
+
+    @keyframes color {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
     
     
     .text-box1 {
@@ -231,7 +245,7 @@ nav .fa {
 
 .issuecover{
             flex-basis: 32%;
-            border-radius: 10px;
+            border-radius: 15px;
             margin-bottom: 30px;
             position: relative;
             overflow: hidden;
@@ -246,7 +260,25 @@ nav .fa {
             margin-right: auto;
             border-radius: 10px;
             }
-            
+             .row {
+  background: linear-gradient(45deg, #0b0b0b, #c3c3d0, #292727, #c3c3d0);
+  border-radius: 50%;
+  animation: spin 20s ease-in-out 1s infinite forwards;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
             .layer {
             background: transparent;
             text-align: center;
