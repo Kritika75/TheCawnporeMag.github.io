@@ -24,13 +24,16 @@ body {
     background: #8B0000;
 }
 
+
 /* Navbar */
 .header {
     min-height: 0vh;
+
     width: 100%;
     background-position: center;
     background-size: cover;
     position: relative;
+
     padding-top: 20px;
 }
 
@@ -62,11 +65,13 @@ nav {
     padding: 8px 12px;
 }
 
+
 .nav-links ul li a {
     color: #780000;
     text-decoration: none;
     font-family: serif;
     font-size: 13px;
+
 }
 
 .nav-links ul li::after {
@@ -86,6 +91,7 @@ nav {
 nav .fa {
     display: none;
 }
+
 
 @media(max-width: 700px) {
     .nav-links ul li {

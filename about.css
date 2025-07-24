@@ -180,6 +180,9 @@ nav .fa {
     padding: 0.5rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 13px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -245,8 +248,15 @@ font-family: 'Times New Roman', Times, serif;
     background-color: #fdf0d5;
     padding: 50px 20px;
     text-align: center;
+    word-spacing: 3px;
 }
 
+.Tag-line {
+    color:whitesmoke;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-style:italic;
+}
 .landmarks h2 {
     font-size: 20px;
     color: #fdf0d5;
