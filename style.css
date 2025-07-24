@@ -9,6 +9,22 @@ body{
     line-height: 1.6;
 }
 
+.progress-container {
+  width: 100%;
+  height: 4px; 
+  background: #EAE0D5; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000; 
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%; 
+  background: #8B0000; 
+}
+
 .header {
     min-height: 26vh;
     width: 100%;
@@ -83,7 +99,14 @@ nav {
     text-decoration: none;
     font-family: serif;
     font-size: 13px;
+    padding: 12px 16px;
+    display: block;
 
+}
+
+.nav-links ul li a:hover{
+    text-decoration: underline;
+    transition: 0.3s ease;
 }
 
 .nav-links ul li::after {
@@ -116,7 +139,7 @@ nav .fa {
     }
     .nav-links {
         position: fixed;
-        background: #003049;
+        background: #780000fc;
         height: 100vh;
         width: 200px;
         top: 0;
@@ -216,51 +239,176 @@ nav .fa {
     max-width: 250px; 
     height: auto;     
 }
+.site-footer {
+  background: #7a0000;
+  color: #f9f9e6;
+  font-family: 'Georgia', serif;
+  padding: 35px 20px 15px;
+}
+
+
+/* Top section */
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.site-footer h3 {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #fff8e7;
+}
+
+/* Links with underline grow */
+.site-footer a {
+  font-size: 14px;
+  color: #f5f5dc;
+  line-height: 1.5;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.site-footer a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background: #ffd9b3;
+  transition: width 0.3s ease;
+}
+.site-footer a:hover::after {
+  width: 100%;
+}
+.site-footer a:hover {
+  color: #ffd9b3;
+}
 
 .footer {
     background-color: #780000;
     color: #fdf0d5;
-    margin-top: 45vh ;
+    margin-top: 40vh;
     width: 100%;
     text-align: center;
-    padding: 30px 0;
-
+    padding: 70px 0;  
 }
 
 .footer h4 {
     color: #fdf0d5;
-    margin-bottom: 25px;
-    margin-top: 5rem;
+    margin-bottom: 10px;
     font-weight: 600;
     font-family: 'Times New Roman', Times, serif;
 
+
+/* Social Icons with bounce */
+.social-icons a {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #f5f5dc;
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.3s ease;
 }
-.footer p {
-    font-style: italic;
-    font-family: 'Times New Roman', Times, serif;
-    text-align: center;
-    font-size: 15px;
+.social-icons a:hover {
+  color: #ffd9b3;
+  transform: translateY(-3px) scale(1.15);
 }
+
+/* Footer Newsletter Section */
+.subscription-box {
+  text-align: center;
+  margin-top: 20px;
+}
+.subscription-box h2 {
+  font-size: 18px;
+  color: #fff8e7;
+  margin-bottom: 10px;
+  font-family: 'Georgia', serif;
+}
+.subscription-box input {
+  padding: 8px;
+  width: 70%;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.subscription-box button {
+  background: #ffcc66;
+  color: #7a0000;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.subscription-box button:hover {
+  background: #e6b85c;
+}
+
+
 .icons {
+    display: flex;
+    justify-content: center;
     color: #fdf0d5;
     margin: 0 13px;
     cursor: pointer;
     padding: 18px 0;
+    gap: 12px;
     
 }
+
+.icons a:hover{
+    background-color: #c88a78; 
+    
+  }
 
 .icons a {
     color: #fdf0d5;
     font-size: 25px;
 } 
 
-.fa-heart {
-    color: #fdf0d5;
-    font-size: 15px;
+
+/* Bottom bar */
+.footer-bottom {
+  text-align: center;
+  font-size: 12px;
+  border-top: 1px solid rgba(245, 245, 220, 0.3);
+  padding-top: 10px;
 }
 
+/* Compact Footer for short pages */
+.compact-footer .footer-top {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+.compact-footer .footer-newsletter,
+.compact-footer .footer-links,
+.compact-footer .footer-contact {
+  display: none;
+}
 
-a:focus, button:focus {
-  outline: 3px dashed #780000;
-  outline-offset: 3px;
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .footer-newsletter form {
+    flex-direction: column;
+  }
+  .ripple-btn {
+    width: 100%;
+  }
 }

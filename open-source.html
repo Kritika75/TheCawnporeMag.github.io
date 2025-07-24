@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Source | The Cawnpore</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- Navbar -->
+  <section class="header">
+    <nav>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="submission.html">SUBMIT</a></li>
+          <li><a href="issue.html">ISSUE</a></li>
+          <li><a href="masthead.html">MASTHEAD</a></li>
+          <li><a href="open-source.html">OPEN SOURCE</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="text-box">
+      <h1>The Cawnpore</h1>
+      <p>EST. 2024</p>
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section class="Welcome" style="text-align: center; padding: 40px 20px;">
+    <h2 id="namaste">Namaste Contributors 👋</h2>
+    <p id="intro" style="max-width: 700px; margin: auto;">
+      This project is proudly part of <strong>GirlScript Summer of Code (GSSoC) 2025</strong>!<br><br>
+      We believe in the power of open-source collaboration, where ideas grow, and developers like you bring them to life.
+      Whether you're a beginner or an experienced dev, your contributions matter. ❤️
+    </p>
+    <br>
+    <a href="https://gssoc.girlscript.tech" target="_blank" id="issue1-btn"
+      style="padding: 12px 25px; background: #780000; color: white; border-radius: 4px; text-decoration: none;">Know
+      More about GSSoC</a>
+  </section>
+
+  <!-- Logos -->
+  <section class="listings" style="text-align: center; margin-bottom: 40px;">
+    <h3>Open Source Proudly Powered By:</h3>
+    <div class="listing-images" style="margin-top: 20px;">
+      <img src="assets/gssoc-logo.png" alt="GSSoC 2025 Logo" style="max-width: 220px;" />
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section class="footer">
+    <h4>CONTACT US</h4>
+    <p>
+      Any questions? Drop us an email at thecawnporemagofficial@gmail.com, we're here to help!
+    </p>
+    <br />
+    <p>
+      Want to be in loop about our latest news and updates regarding our issues and submissions dates?
+      Join our social media family and stay connected with us!
+    </p>
+    <br />
+    <div class="icons">
+      <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D"><i
+          class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/the-cawnpore-magazine/"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://x.com/TheCawnporeMag?s=09"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.tumblr.com/thecawnporemagazine?source=share"><i class="fa-brands fa-tumblr"></i></a>
+    </div>
+    <p>Made with <i class="fa-solid fa-heart"></i> by Kritika Singh</p>
+    <p>COPYRIGHT © 2024 THE CAWNPORE - ALL RIGHTS RESERVED</p>
+  </section>
+
+  <!-- JS for Scroll Progress & Menu -->
+  <script>
+    window.onscroll = function () {
+      scrollProgressBar();
+    };
+
+    function scrollProgressBar() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    }
+
+    const navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+      document.body.style.overflow = "hidden";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+      document.body.style.overflow = "auto";
+    }
+  </script>
+</body>
+
+</html>
