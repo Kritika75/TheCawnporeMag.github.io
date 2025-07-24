@@ -247,6 +247,12 @@ font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
 
+.Tag-line {
+    color:whitesmoke;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-style:italic;
+}
 .landmarks h2 {
     font-size: 20px;
     color: #fdf0d5;
