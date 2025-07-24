@@ -220,11 +220,19 @@ nav .fa {
 
     .team-grid {
         grid-template-columns: 1fr;
+        padding: 0;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 500px;
     }
-
-
-
-
+    .team-card {
+        width: 100%;
+        margin: 0 auto 1.5rem auto;
+        box-sizing: border-box;
+        padding: 1.2rem;
+        border-radius: 15px;
+    }
 
 }
 
@@ -576,4 +584,25 @@ nav .fa {
 .icons a {
   color: #fdf0d5;
   font-size: 25px;
+}
+
+@media (max-width: 700px) {
+    .team-container {
+        align-items: center;
+    }
+    .team-grid {
+        grid-template-columns: 1fr;
+        padding: 0;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 500px;
+    }
+    .team-card {
+        width: 100%;
+        margin: 0 auto 1.5rem auto;
+        box-sizing: border-box;
+        padding: 1.2rem;
+        border-radius: 15px;
+    }
 }
