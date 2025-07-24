@@ -10,34 +10,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  </head>
-  <body>
-      <div class="progress-container">
-        <div class="progress-bar" id="progressBar"></div>
-      </div>
-      <section class="header">
-          <nav>
-            <div class = "nav-links" id="navLinks">
-              <i class="fa fa-times" onclick="hideMenu()"></i>
-              <ul>
-                  <li><a href="index.html" target="_blank">HOME</a></li>
-                  <li><a href="about.html" target="_blank">ABOUT</a></li>
-                  <li><a href="submission.html" target="_blank">SUBMIT</a></li>
-                  <li><a href="issue.html" target="_blank">ISSUE</a></li>
-                  <li><a href="masthead.html" target="_blank">MASTHEAD</a></li>
-              </ul>
-            </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i>
-          </nav>
-      </section>
 
-      <section class="header1">
+</head>
+<body>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <section class="header">
+        <nav>
+          <div class = "nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="submission.html">SUBMIT</a></li>
+                <li><a href="issue.html">ISSUE</a></li>
+                <li><a href="masthead.html">MASTHEAD</a></li>
+                <li><a href="open-source.html">OPEN SOURCE</a></li>
+            </ul>
 
-          <div class="text-box1">
-              <h1>Issue</h1>
-              <p>The Cawnpore</p>
-              
           </div>
       </section>
 
@@ -46,19 +37,13 @@
         <h2 class="h2k">Meanwhile, you can consider yourself to submit to our issue - 01.</h2> -->
     </section>
 
-    <section class="issues">
-        <div class="row">
-          <!-- Issue-01 -->
-          <div class="issuecover">
-            <h3>Issue-01</h3>
-            <img src="THE CAWNPORE MAGAZINE front c.png" alt="Issue 01 Cover" />
-            <a href="https://cawnporemag.gumroad.com/l/thvqc"
-              ><button class="pdf">PDF Format</button></a
-            >
-            <a href="https://cawnporemag.gumroad.com/l/etkzr"
-              ><button class="flipbook">FlipBook Format</button></a
-            >
-          </div>
+    <div class="text-box1">
+        <h1>Issue</h1>
+        <p>The Cawnpore...</p>
+        
+    </div>
+</section>
+
 
           <!-- Issue-02 -->
           <div class="issuecover">
@@ -72,24 +57,43 @@
             >
           </div>
 
-          <!-- Issue-03 -->
-          <div class="issuecover">
-            <h3>Issue-03</h3>
-            <img
-              src="CawnporeMagazine Issue03 WithText v3.png"
-              alt="Issue 03 Cover"
-            />
-            <a href="https://cawnporemag.gumroad.com/l/zfswap"
-              ><button class="pdf">PDF Format</button></a
-            >
-            <a href="https://cawnporemag.gumroad.com/l/kaywy"
-              ><button class="flipbook">FlipBook Format</button></a
-            >
-          </div>
+<section class="issues">
+    <div class="row">
+        <div class="issuecover">
+            <h3>Issue-01</h3>
+            <img src="THE CAWNPORE MAGAZINE front c.png">
+            <div class="layer">
+            </div>
         </div>
-     </section>
-  
-    <!-- Footer -->
+        <a href="https://cawnporemag.gumroad.com/l/thvqc"><button id="pdf">PDF Format</button></a>
+        <a href="https://cawnporemag.gumroad.com/l/etkzr"><button id="flipbook">FlipBook Format</button></a>
+</section>
+
+    <section class="issues">
+    <div class="row">
+        <div class="issuecover">
+            <h3>Issue-02</h3>
+            <img src="The Cawnpore cover page issue02.jpg">
+            <div class="layer">
+            </div>
+        </div>
+        <a href="https://cawnporemag.gumroad.com/l/wzomk"><button id="pdf">PDF Format</button></a>
+        <a href="https://cawnporemag.gumroad.com/l/kerfqyy"><button id="flipbook">FlipBook Format</button></a>
+</section>
+
+    <section class="issues">
+    <div class="row">
+        <div class="issuecover">
+            <h3>Issue-03</h3>
+            <img src="CawnporeMagazine Issue03 WithText v3.png">
+            <div class="layer">
+            </div>
+        </div>
+        <a href="https://cawnporemag.gumroad.com/l/zfswap"><button id="pdf">PDF Format</button></a>
+        <a href="https://cawnporemag.gumroad.com/l/kaywy"><button id="flipbook">FlipBook Format</button></a>
+</section>
+    
+ <!-- Footer -->
     <footer class="site-footer">
       <a class="back-to-top" href="#">
           <i class="fa-solid fa-chevron-up"></i>
@@ -143,10 +147,7 @@
         <p>Made with &#x2665; by Kritika Singh</p>
         <p>&copy; 2024 THE CAWNPORE — ALL RIGHTS RESERVED</p>
       </div>
-    </footer>
-
-
-      <script src="index.js"></script>
-
-  </body>
+    </footer>    
+    <script src="index.js"></script>
+</body>
 </html>
