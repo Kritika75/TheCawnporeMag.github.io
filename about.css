@@ -183,6 +183,16 @@ nav .fa {
     font-weight: 600;
     font-size: 13px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position:relative;
+}
+@media(max-width: 700px){
+  .landmarkButton {
+    font-size: 13px;
+    padding: 10px 16px;
+    line-height: 1.2;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
 }
 
 
@@ -257,6 +267,17 @@ font-family: 'Times New Roman', Times, serif;
     font-family:'Times New Roman', Times, serif;
     font-style:italic;
 }
+@media(max-width: 700px) {
+.Tag-line {
+margin-top: 15px;
+padding: 8px;
+font-weight: 700;
+font-style: italic;
+font-size: 15px;
+line-height: 1.3;
+word-wrap: break-word;
+}
+}
 .landmarks h2 {
     font-size: 20px;
     color: #fdf0d5;
@@ -312,7 +333,7 @@ h2 {
 
 @media (max-width: 600px) {
     .landmarks h2 {
-        font-size: 2em;
+        font-size: 1.2em;
     }
     .landmark-col img {
         height: 180px;
