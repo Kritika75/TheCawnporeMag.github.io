@@ -751,3 +751,155 @@ h3 {
     color: #fdf0d5;
     font-size: 15px;
 }
+
+
+    .issues {
+      padding: 60px 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 60px; /* Increased gap between cards */
+      max-width: 1400px;
+      width: 100%;
+    }
+
+    .issuecover {
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .issuecover:hover {
+      transform: translateY(-5px);
+    }
+
+    .issuecover img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .issuecover h3 {
+      margin: 20px 0 10px;
+      font-size: 1.8rem;
+    }
+
+button.pdf,
+button.flipbook {
+  margin-top: 15px;
+  margin-inline: 5px;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  background-color: transparent;
+  color: #780000;
+  border: 2px solid #780000;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.pdf:hover,
+button.flipbook:hover {
+  background-color: #780000;
+  color: #fff;
+}
+
+    @media (max-width: 992px) {
+      .row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+.issues {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  gap: 80px;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+    .issuecover {
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .issuecover:hover {
+      transform: translateY(-5px);
+    }
+
+.issuecover img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+    .issuecover h3 {
+      margin: 20px 0 10px;
+      font-size: 1.8rem;
+    }
+
+     button.pdf,
+    button.flipbook {
+      margin-top: 15px;
+      margin-inline: 5px;
+      padding: 10px 18px;
+      font-size: 0.95rem;
+      background-color: transparent;
+      color: #780000;
+      border: 2px solid #780000;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button.pdf:hover,
+    button.flipbook:hover {
+      background-color: #780000;
+      color: #fff;
+    }
+
+@media (max-width: 992px) {
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+    column-gap: 0px;
+  }
+
+  .issuecover{
+    padding-top: 0px;
+  }
+}
+
