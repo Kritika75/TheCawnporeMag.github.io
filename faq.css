@@ -14,6 +14,8 @@
   --color-navbar-bg: rgba(45, 44, 44, 0.261);
   --color-navbar-border: rgba(179, 177, 177, 0.2);
   --color-footer-border: rgba(245, 245, 220, 0.3);
+  --color-faq-bg: #fff;
+  --color-faq-border: #780000;
 }
 
 /* Global Resets and Base Styles */
@@ -134,8 +136,8 @@ body {
   z-index: 10;
 }
 
-/* Header for Open Source Page */
-.header-open-source {
+/* Header for FAQ Page */
+.header-faq {
   background-color: var(--color-dark-red);
   min-height: 34vh;
   width: 100%;
@@ -146,7 +148,7 @@ body {
   padding-top: 60px; /* Space for fixed navbar */
 }
 
-.text-box-open-source {
+.text-box-faq {
   color: var(--color-background-light);
   font-family: "Crimson Text", serif;
   width: 90%;
@@ -156,7 +158,7 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.text-box-open-source h1 {
+.text-box-faq h1 {
   margin-top: 15px;
   font-weight: 700;
   font-style: italic;
@@ -165,96 +167,33 @@ body {
   line-height: 1.1;
 }
 
-.text-box-open-source p {
+.text-box-faq p {
   margin: 15px 0 0;
   font-size: 1.2rem;
   font-weight: 300;
   opacity: 0.9;
 }
 
-/* Open Source Welcome Section */
-.open-source-welcome {
+/* FAQ Section */
+.faq-section {
   width: 90%;
   max-width: 900px;
   margin: 4rem auto;
-  text-align: center;
   padding: 2rem;
-  background-color: #ffffff30; 
-  backdrop:blur(8px);
-  opacity: 1;/* White background for content */
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  
-}
-
-.open-source-welcome h2 {
-  font-size: 2.5rem; /* Adjusted font size */
-  font-weight: 600;
-  font-family: "Crimson Text", serif; /* Consistent with header */
-  font-style: italic;
-  color: var(--color-dark-red);
-  margin-bottom: 1.5rem;
-}
-
-.open-source-welcome p {
-  color: var(--color-text-dark);
-  font-size: 1.1rem; /* Adjusted font size */
-  line-height: 1.8;
-  padding: 0 10px;
-  font-style: italic;
-  font-family: "Times New Roman", Times, serif;
-  margin-bottom: 2rem;
-}
-
-.open-source-welcome p strong {
-  color: var(--color-dark-red); /* Highlight strong text */
-}
-
-/* Button Styling */
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  color: var(--color-dark-red);
-  border: 2px solid var(--color-dark-red);
-  border-radius: 30px; /* More rounded */
-  padding: 14px 40px; /* Increased padding */
-  font-size: 1rem; /* Larger font size */
-  background: transparent;
-  position: relative;
-  cursor: pointer;
-  font-weight: 600;
-  overflow: hidden; /* For ripple effect */
-  transition: all 0.4s ease;
-}
-
-.btn:hover {
-  background: var(--color-button-hover);
-  color: var(--color-dark-red);
-  border-color: var(--color-button-hover);
-  transform: translateY(-2px); /* Slight lift effect */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Open Source Listings Section */
-.open-source-listings {
-  width: 90%;
-  max-width: 1000px;
-  margin: 6rem auto;
   text-align: center;
-  padding: 2rem;
 }
 
-.open-source-listings h3 {
+.faq-section h1 {
   font-family: "Crimson Text", serif;
   font-style: italic;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   color: var(--color-dark-red);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   position: relative;
   display: inline-block;
 }
 
-.open-source-listings h3::after {
+.faq-section h1::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -266,26 +205,45 @@ body {
   border-radius: 2px;
 }
 
-.open-source-listings .listing-images {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-}
-
-.open-source-listings .listing-images img {
-  max-width: 250px;
-  height: auto;
-  display: block; /* Remove extra space below image */
-  border-radius: 10px; /* Rounded corners for images */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.faq-item {
+  margin: 1.5em 0;
+  padding: 1.5em;
+  border-left: 4px solid var(--color-faq-border);
+  background: var(--color-faq-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.open-source-listings .listing-images img:hover {
+.faq-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.faq-item strong {
+  display: block;
+  font-size: 1.15rem;
+  color: var(--color-dark-red);
+  margin-bottom: 0.5em;
+  font-family: "Crimson Text", serif;
+  font-style: italic;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-dark);
+}
+
+.faq-item a {
+  color: var(--color-dark-red);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.faq-item a:hover {
+  color: var(--color-footer-link-hover);
 }
 
 /* Footer */
@@ -526,48 +484,38 @@ body {
     display: block;
   }
 
-  .header-open-source {
+  .header-faq {
     min-height: 25vh;
   }
 
-  .text-box-open-source h1 {
+  .text-box-faq h1 {
     font-size: 3rem;
   }
 
-  .text-box-open-source p {
+  .text-box-faq p {
     font-size: 1rem;
   }
 
-  .open-source-welcome {
+  .faq-section {
     margin: 3rem auto;
     padding: 1.5rem;
   }
 
-  .open-source-welcome h2 {
+  .faq-section h1 {
     font-size: 2rem;
+    margin-bottom: 1.5rem;
   }
 
-  .open-source-welcome p {
+  .faq-item {
+    padding: 1.2em;
+  }
+
+  .faq-item strong {
     font-size: 1rem;
   }
 
-  .btn {
-    padding: 12px 30px;
+  .faq-item p {
     font-size: 0.9rem;
-  }
-
-  .open-source-listings {
-    margin: 4rem auto;
-    padding: 1.5rem;
-  }
-
-  .open-source-listings h3 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-  }
-
-  .open-source-listings .listing-images img {
-    max-width: 200px;
   }
 
   .site-footer {
@@ -613,31 +561,15 @@ body {
 }
 
 @media (max-width: 480px) {
-  .header-open-source {
+  .header-faq {
     min-height: 20vh;
   }
 
-  .text-box-open-source h1 {
+  .text-box-faq h1 {
     font-size: 2.5rem;
   }
 
-  .text-box-open-source p {
+  .text-box-faq p {
     font-size: 0.9rem;
-  }
-
-  .open-source-welcome h2 {
-    font-size: 1.8rem;
-  }
-
-  .open-source-welcome p {
-    font-size: 0.9rem;
-  }
-
-  .open-source-listings h3 {
-    font-size: 1.5rem;
-  }
-
-  .open-source-listings .listing-images img {
-    max-width: 150px;
   }
 }

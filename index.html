@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TheCawnpore</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <title>The Cawnpore</title>
+    <link
+      rel="icon"
+      href="assets/favicon.ico"
+      type="image/x-icon"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
+    <!-- Font Awesome for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -23,144 +23,187 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
     </div>
-    <section class="header">
-      <nav role="navigation" aria-label="Main Menu">
+    <header class="header">
+      <nav class="navbar" role="navigation" aria-label="Main Menu">
+        <a href="index.html" class="logo">The Cawnpore</a>
         <div class="nav-links" id="navLinks">
-          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <i
+            class="fa fa-times"
+            onclick="hideMenu()"
+            aria-label="Close Menu"
+          ></i>
           <ul>
-
-            <li><a href="index.html" target="_blank">HOME</a></li>
-            <li><a href="about.html" target="_blank">ABOUT</a></li>
-            <li><a href="submission.html" target="_blank">SUBMIT</a></li>
-            <li><a href="issue.html" target="_blank">ISSUE</a></li>
-            <li><a href="masthead.html" target="_blank">MASTHEAD</a></li>
-            <li><a href="faq.html" target="_blank">FAQ</a></li>
-            <li><a href="open-source.html" target="_blank">OPEN SOURCE</a></li>
-
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="submission.html">SUBMIT</a></li>
+            <li><a href="issue.html">ISSUE</a></li>
+            <li><a href="masthead.html">MASTHEAD</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="open-source.html">OPEN SOURCE</a></li>
           </ul>
         </div>
-
-        <i class="fa fa-bars" onclick="showMenu()"></i>
+        <i class="fa fa-bars" onclick="showMenu()" aria-label="Open Menu"></i>
       </nav>
-
       <div class="text-box">
-        <h1>The Cawnpore</h1>
-        <p>EST. 2024</p>
-      </div>
-    </section>
-
-    <!--Welcoming page-->
-
-    <section class="Welcome">
-      <h1 id="namaste">Namaste!</h1>
-      <p id="intro">
-        The Cawnpore Magazine's motive is to delve into the profound influence
-        and impact of various cultures worldwide through the art of literature.
-        Our mission is to celebrate the richness of each culture, beautifully
-        showcased through the lenses of literature and art. By providing a safe
-        and inclusive platform, we aim to foster a community that encourages
-        readers to explore, learn, and appreciate diverse perspectives. We
-        firmly believe that the exchange of ideas and experiences is the key to
-        a more tolerant and compassionate world, and we strive to achieve this
-        through The Cawnpore Magazine.
-        <br />
-        <br />
-        So, step right up and get ready for The Cawnpore Magazine your one stop
-        destination to explore the best in fiction, non-fiction, poetry,
-        artwork, interviews, breathtaking photos and so much more!
-        <!--             Are you a budding writer or artist? Then you're in luck because submissions for issue 1 are now open! Head over to our submission page and let your creativity run wild!
-            <br> -->
-        <br />
-        We understand that submitting your work can be a daunting task, but we
-        assure you that we will treat each submission with the utmost respect
-        and care. We are excited to read your submissions and grateful for your
-        contribution to The Cawnpore. Thank you for considering us as a platform
-        to showcase your talent.
-        <br />
-        <br />
-        <!--             Our publication schedule consists of six issues per year, which are released in January, March, May, July, September, and November. We invite you to stay up-to-date with our latest issues by marking your calendar for the release dates. Thank you for your continued support. -->
-      </p>
-
-      <a
-        href="issue.html" target="_blank"
-        aria-label="View Issue 2 of The Cawnpore"
-        id="issue1-btn"
-        >ISSUE 2</a
-      >
-    </section>
-
-    <section class="listings">
-      <h3>Proudly Listed On</h3>
-      <div class="listing-images">
-        <a href="https://duotrope.com/magazine/the-cawnpore-magazine-37420" target="_blank">
-          <img
-            src="listed-on-duotrope.png"
-            alt="The Cawnpore Magazine is listed on Duotrope"
-          />
-        </a>
-        <a href="https://www.chillsubs.com/magazine/the-cawnpore-magazine" target="_blank">
-          <img
-            src="professional-1.png"
-            alt="The Cawnpore Magazine is a professional member of Chill Subs"
-          />
-        </a>
-      </div>
-    </section>
-
+            <h1>The Cawnpore</h1>
+            <p>EST. 2024</p>
+        </div>
+    </header>
+    <main>
+      <!-- Welcoming page -->
+      <section class="Welcome">
+        <h1 id="namaste">Namaste!</h1>
+        <p id="intro">
+          <strong>The Cawnpore Magazine's</strong> motive is to delve into the
+          <strong>profound influence and impact</strong> of various cultures
+          worldwide through the <strong>art of literature</strong>. Our mission
+          is to <strong>celebrate the richness of each culture</strong>,
+          beautifully showcased through the lenses of <em>literature</em> and
+          <em>art</em>. By providing a
+          <strong>safe and inclusive platform</strong>, we aim to foster a
+          community that encourages readers to <strong>explore</strong>,
+          <strong>learn</strong>, and
+          <strong>appreciate diverse perspectives</strong>. We firmly believe
+          that the <em>exchange of ideas and experiences</em> is the key to a
+          <strong>more tolerant and compassionate world</strong>, and we strive
+          to achieve this through <strong>The Cawnpore Magazine</strong>.
+          <br /><br />
+          So, <em>step right up</em> and get ready for
+          <strong>The Cawnpore Magazine</strong> — your
+          <strong>one-stop destination</strong> to explore the best in
+          <strong>fiction</strong>, <strong>non-fiction</strong>,
+          <strong>poetry</strong>, <strong>artwork</strong>,
+          <strong>interviews</strong>, <em>breathtaking photos</em>, and
+          <em>so much more</em>! <br /><br />
+          We understand that submitting your work can be a
+          <strong>daunting task</strong>, but we assure you that we will treat
+          each submission with the <strong>utmost respect and care</strong>. We
+          are <strong>excited</strong> to read your submissions and
+          <strong>grateful</strong> for your contribution to
+          <strong>The Cawnpore</strong>.
+          <em>Thank you</em> for considering us as a platform to
+          <strong>showcase your talent</strong>.
+        </p>
+        <a
+          href="issue.html"
+          aria-label="View Issue 2 of The Cawnpore"
+          class="btn"
+          >ISSUE 2</a
+        >
+      </section>
+      <section class="listings">
+        <h3>Proudly Listed On</h3>
+        <div class="listing-images">
+          <a
+            href="https://duotrope.com/magazine/the-cawnpore-magazine-37420"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="listed-on-duotrope.png"
+              alt="The Cawnpore Magazine is listed on Duotrope"
+            />
+          </a>
+          <a
+            href="https://www.chillsubs.com/magazine/the-cawnpore-magazine"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="professional-1.png"
+              alt="The Cawnpore Magazine is a professional member of Chill Subs"
+            />
+          </a>
+        </div>
+      </section>
+    </main>
     <!-- Footer -->
     <footer class="site-footer">
-      <a class="back-to-top" href="#">
-          <i class="fa-solid fa-chevron-up"></i>
+      <a class="back-to-top" href="#top" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up"></i>
       </a>
       <div class="footer-top">
         <div class="footer-about">
           <h3>The Cawnpore</h3>
-          <p>An independent magazine celebrating literary voices and untold stories.</p>
+          <p>
+            An independent magazine celebrating literary voices and untold
+            stories.
+          </p>
         </div>
         <div class="footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html" >Home</a></li>
-            <li><a href="about.html" target="_blank">About</a></li>
-            <li><a href="submission.html" target="_blank">Submit</a></li>
-            <li><a href="issue.html" target="_blank">Issue</a></li>
-            <li><a href="masthead.html" target="_blank">Masthead</a></li>
-            <li><a href="faq.html" target="_blank">FAQ</a></li>
-            <li><a href="open-source.html" target="_blank">Open Source</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="submission.html">SUBMIT</a></li>
+            <li><a href="issue.html">ISSUE</a></li>
+            <li><a href="masthead.html">MASTHEAD</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="open-source.html">OPEN SOURCE</a></li>
           </ul>
         </div>
         <div class="footer-contact">
           <h3>Contact Us</h3>
           <div class="social-icons">
-            <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
+            <a
+              href="mailto:thecawnporemagofficial@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email The Cawnpore Magazine"
+            >
               <i class="fa-solid fa-envelope"></i>
             </a>
-            <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank">
+            <a
+              href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow The Cawnpore Magazine on Instagram"
+            >
               <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
+            <a
+              href="https://www.linkedin.com/company/the-cawnpore-magazine/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow The Cawnpore Magazine on LinkedIn"
+            >
               <i class="fa-brands fa-linkedin"></i>
             </a>
-            <a href="https://x.com/TheCawnporeMag?s=09" target="_blank">
+            <a
+              href="https://x.com/TheCawnporeMag?s=09"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow The Cawnpore Magazine on X (formerly Twitter)"
+            >
               <i class="fa-brands fa-x-twitter"></i>
             </a>
-            <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank">
+            <a
+              href="https://www.tumblr.com/thecawnporemagazine?source=share"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow The Cawnpore Magazine on Tumblr"
+            >
               <i class="fa-brands fa-tumblr"></i>
             </a>
           </div>
         </div>
         <div class="subscription-box">
           <h3>Subscribe to our Newsletter</h3>
+          <!-- IMPORTANT: Replace 'your-form-id' with your actual Formspree form ID -->
           <form action="/subscribe" method="post">
-            <input type="email" name="email" placeholder="Enter your email" required>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+              aria-label="Enter your email for newsletter subscription"
+            />
             <button type="submit">Subscribe</button>
           </form>
         </div>
@@ -170,7 +213,6 @@
         <p>&copy; 2024 THE CAWNPORE — ALL RIGHTS RESERVED</p>
       </div>
     </footer>
-
     <script src="index.js"></script>
   </body>
 </html>

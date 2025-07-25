@@ -1,161 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <link rel = "stylesheet" href="about.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - The Cawnpore</title>
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap"
+      rel="stylesheet"
     />
-</head>
-<body>
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="about.css" />
+  </head>
+  <body>
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
     </div>
-    <section class="header">
-        <nav>
-          <div class = "nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()"></i>
-            <ul>
 
-                <li><a href="index.html" target="_blank">HOME</a></li>
-                <li><a href="about.html" target="_blank">ABOUT</a></li>
-                <li><a href="submission.html" target="_blank">SUBMIT</a></li>
-                <li><a href="issue.html" target="_blank"></a>ISSUE</a></li>
-                <li><a href="masthead.html" target="_blank">MASTHEAD</a></li>
-            </ul>
-          </div>
-          <i class="fa fa-bars" onclick="showMenu()"></i>
-        </nav>
-    
-    </section>
-    <section class="header1">
-
-        <div class="text-box1">
-            <h1>About</h1>
-            <p>The Cawnpore</p>
+    <header class="header-about">
+      <nav class="navbar" role="navigation" aria-label="Main Menu">
+        <a href="index.html" class="logo">The Cawnpore</a>
+        <div class="nav-links" id="navLinks">
+          <i
+            class="fa fa-times"
+            onclick="hideMenu()"
+            aria-label="Close Menu"
+          ></i>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="submission.html">SUBMIT</a></li>
+            <li><a href="issue.html">ISSUE</a></li>
+            <li><a href="masthead.html">MASTHEAD</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="open-source.html">OPEN SOURCE</a></li>
+          </ul>
         </div>
+        <i class="fa fa-bars" onclick="showMenu()" aria-label="Open Menu"></i>
+      </nav>
+      <div class="text-box-about">
+        <h1>About</h1>
+        <p>The Cawnpore</p>
+      </div>
+    </header>
 
-    </section>
-    <section class="Introductory">
-        <p id="intro1">
-            The city of Kanpur, formerly known as Cawnpore, has a rich and complex history that has shaped its identity. Originally established by a Hindu king named Chandel, the city was named "Kahnapur" in honor of his devotion to Lord Krishna. However, during the British colonial era, the name was anglicized to "Cawnpore" due to difficulties in pronunciation. This change was significant as Cawnpore, known as the "Manchester of India," emerged as the commercial capital of Uttar Pradesh.
-
-            Kanpur's history is deeply intertwined with the Indian struggle for independence. The city played a pivotal role in the revolt of 1857, witnessing tragic events such as the "wheeler’s entrenchment episode," the "massacre at Sati Chaura Ghat," and the "Bibighar massacre." These events left a lasting impact on the city and its people.
-            
-            Following India's independence in 1947, the city was renamed Kanpur, symbolizing a new era and a fresh start. Despite its tumultuous past, Kanpur has emerged as a beacon of happiness and positivity. In 2023, it was recognized as the 11th happiest city in the world, a testament to the resilience and friendliness of its people.
-            
-            This vibrant city continues to honor its history while embracing progress and prosperity, making it a truly remarkable place with a captivating story to tell. 
+    <main>
+      <section class="introductory-section">
+        <p>
+          The city of <strong>Kanpur</strong>, formerly known as
+          <strong>Cawnpore</strong>, has a rich and complex history that has
+          shaped its identity. Originally established by a
+          <strong>Hindu king named Chandel</strong>, the city was named
+          <em>"Kahnapur"</em> in honor of his devotion to
+          <strong>Lord Krishna</strong>. However, during the
+          <strong>British colonial era</strong>, the name was anglicized to
+          <em>"Cawnpore"</em> due to difficulties in pronunciation. This change
+          was significant as Cawnpore, known as the
+          <strong>“Manchester of India”</strong>, emerged as the
+          <strong>commercial capital of Uttar Pradesh</strong>. <br /><br />
+          Kanpur's history is deeply intertwined with the
+          <strong>Indian struggle for independence</strong>. The city played a
+          <strong>pivotal role in the Revolt of 1857</strong>, witnessing tragic
+          events such as the <em>“Wheeler’s Entrenchment Episode”</em>, the
+          <em>“Massacre at Sati Chaura Ghat”</em>, and the
+          <em>“Bibighar Massacre”</em>. These events left a
+          <strong>lasting impact</strong> on the city and its people.
+          <br /><br />
+          Following India’s independence in <strong>1947</strong>, the city was
+          renamed <strong>Kanpur</strong>, symbolizing a
+          <strong>new era</strong> and a <strong>fresh start</strong>. Despite
+          its tumultuous past, Kanpur has emerged as a
+          <strong>beacon of happiness and positivity</strong>. In
+          <strong>2023</strong>, it was recognized as the
+          <strong>11th happiest city in the world</strong> — a testament to the
+          <strong>resilience</strong> and <strong>friendliness</strong> of its
+          people. <br /><br />
+          This vibrant city continues to
+          <strong>honor its history</strong> while
+          <strong>embracing progress and prosperity</strong>, making it a truly
+          <strong>remarkable place</strong> with a
+          <em>captivating story to tell</em>.
         </p>
-    
-            
-    </section>
-    <h2 id="CardsHeading">Cawnpore's Prominent Landmarks</h2>
-    <section class="landmarks">
-        
-        <!-- landmark cards -->
-        <!-- lal imli -->
-        <div class="landmarkCard">
+      </section>
+
+      <section class="landmarks-section">
+        <h2>Cawnpore's Prominent Landmarks</h2>
+        <div class="landmark-grid">
+          <!-- Lal Imli -->
+          <div class="landmark-card">
             <img src="lal imli.jpg" alt="Lal Imli" />
-            <div class="landmarkInfo">
-              <p class="Tag-line" style="color: #FDF0D5;">
-  A Forgotten woollen Empire of India's Colonial era.
-</p>
-                <h2>Lal Imli</h2>
-                <a href="https://heritagehackathon.weebly.com/lal-imli-mills.html" target="_blank" rel="noopener noreferrer">
-                    <button class="landmarkButton">Learn More</button>
-                </a>
+            <div class="landmark-info">
+              <p class="tag-line">
+                A Forgotten woollen Empire of India's Colonial era.
+              </p>
+              <h3>Lal Imli</h3>
+              <a
+                href="https://heritagehackathon.weebly.com/lal-imli-mills.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button class="landmark-button">Learn More</button>
+              </a>
             </div>
-        </div>
-        <!-- kanpur memorial church -->
-        <div class="landmarkCard">
-            <img src="Kanpur_Memorial_Church.jpg" alt="Kanpur Memorial Church" />
-            <div class="landmarkInfo">
-              <p class="Tag-line" style="color: #FDF0D5;">
-  A Solemn echo of 1857 — where history and memory unite in silence.
-</p>
-
-                <h2>Kanpur Memorial Church</h2>
-                <a href="https://en.wikipedia.org/wiki/Kanpur_Memorial_Church" target="_blank" rel="noopener noreferrer">
-                    <button class="landmarkButton">Learn More</button>
-                </a>
+          </div>
+          <!-- Kanpur Memorial Church -->
+          <div class="landmark-card">
+            <img
+              src="Kanpur_Memorial_Church.jpg"
+              alt="Kanpur Memorial Church"
+            />
+            <div class="landmark-info">
+              <p class="tag-line">
+                A Solemn echo of 1857-where history and memory unite in silence.
+              </p>
+              <h3>Kanpur Memorial Church</h3>
+              <a
+                href="https://en.wikipedia.org/wiki/Kanpur_Memorial_Church"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button class="landmark-button">Learn More</button>
+              </a>
             </div>
-        </div>
-        <!-- Kanpur Central Station -->
-        <div class="landmarkCard">
+          </div>
+          <!-- Kanpur Central Station -->
+          <div class="landmark-card">
             <img src="Kanpur_Central_Station.jpg" alt="Kanpur Central" />
-            <div class="landmarkInfo">
-              <p class="Tag-line" style="color: #FDF0D5;">
-  From colonial rails to digital tracks — Kanpur's timeless junction.
-</p>
-
-                <h2>Kanpur Central</h2>
-                <a href="https://en.wikipedia.org/wiki/Kanpur_Central_railway_station" target="_blank" rel="noopener noreferrer">
-                    <button class="landmarkButton">Learn More</button>
-                </a>
+            <div class="landmark-info">
+              <p class="tag-line">
+                From colonial rails to digital tracks-Kanpur's timeless
+                junction.
+              </p>
+              <h3>Kanpur Central</h3>
+              <a
+                href="https://en.wikipedia.org/wiki/Kanpur_Central_railway_station"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button class="landmark-button">Learn More</button>
+              </a>
             </div>
-        </div>
-
-        <!-- JK Temple -->
-        <div class="landmarkCard">
-            <img src="1920px-JK_Temple(Juggilal_Kamlapati_temple)_is_a_temple_in_the_Indian_city_of_Kanpur.It_is_considered_to_be_a_unique_blend_of_ancient_and_modern_architecture.jpg" alt="J.K. Temple" />
-            <div class="landmarkInfo">
-             <p class="Tag-line" style="color: #FDF0D5;">
-  A divine fusion of modernity and tradition in marble and serenity.
-</p>
-
-                <h2>J.K. Temple</h2>
-                <a href="https://en.wikipedia.org/wiki/JK_Temple" target="_blank" rel="noopener noreferrer">
-                    <button class="landmarkButton">Learn More</button>
-                </a>
+          </div>
+          <!-- JK Temple -->
+          <div class="landmark-card">
+            <img
+              src="1920px-JK_Temple(Juggilal_Kamlapati_temple)_is_a_temple_in_the_Indian_city_of_Kanpur.It_is_considered_to_be_a_unique_blend_of_ancient_and_modern_architecture.jpg"
+              alt="J.K. Temple"
+              alt="J.K. Temple"
+            />
+            <div class="landmark-info">
+              <p class="tag-line">
+                A divine fusion of modernity and tradition in marble and
+                serenity.
+              </p>
+              <h3>J.K. Temple</h3>
+              <a
+                href="https://en.wikipedia.org/wiki/JK_Temple"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button class="landmark-button">Learn More</button>
+              </a>
             </div>
+          </div>
         </div>
-
-    </section>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer class="site-footer">
-      <a class="back-to-top" href="#">
-          <i class="fa-solid fa-chevron-up"></i>
+      <a class="back-to-top" href="#top" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up"></i>
       </a>
       <div class="footer-top">
         <div class="footer-about">
           <h3>The Cawnpore</h3>
-          <p>An independent magazine celebrating literary voices and untold stories.</p>
+          <p>
+            An independent magazine celebrating literary voices and untold
+            stories.
+          </p>
         </div>
         <div class="footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html" >Home</a></li>
-            <li><a href="about.html" target="_blank">About</a></li>
-            <li><a href="submission.html" target="_blank">Submit</a></li>
-            <li><a href="issue.html" target="_blank">Issue</a></li>
-            <li><a href="masthead.html" target="_blank">Masthead</a></li>
-            <li><a href="faq.html" target="_blank">FAQ</a></li>
-            <li><a href="open-source.html" target="_blank">Open Source</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="submission.html">Submit</a></li>
+            <li><a href="issue.html">Issue</a></li>
+            <li><a href="masthead.html">Masthead</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="open-source.html">Open Source</a></li>
           </ul>
         </div>
         <div class="footer-contact">
           <h3>Contact Us</h3>
           <div class="social-icons">
-            <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
+            <a
+              href="mailto:thecawnporemagofficial@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email The Cawnpore Magazine"
+            >
               <i class="fa-solid fa-envelope"></i>
             </a>
-            <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank">
+            <a
+              href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow The Cawnpore Magazine on Instagram"
+            >
               <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
+            <a
+              href="https://www.linkedin.com/company/the-cawnpore-magazine/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow The Cawnpore Magazine on LinkedIn"
+            >
               <i class="fa-brands fa-linkedin"></i>
             </a>
-            <a href="https://x.com/TheCawnporeMag?s=09" target="_blank">
+            <a
+              href="https://x.com/TheCawnporeMag?s=09"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow The Cawnpore Magazine on X (formerly Twitter)"
+            >
               <i class="fa-brands fa-x-twitter"></i>
             </a>
-            <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank">
+            <a
+              href="https://www.tumblr.com/thecawnporemagazine?source=share"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow The Cawnpore Magazine on Tumblr"
+            >
               <i class="fa-brands fa-tumblr"></i>
             </a>
           </div>
@@ -163,7 +249,13 @@
         <div class="subscription-box">
           <h3>Subscribe to our Newsletter</h3>
           <form action="/subscribe" method="post">
-            <input type="email" name="email" placeholder="Enter your email" required>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+              aria-label="Enter your email for newsletter subscription"
+            />
             <button type="submit">Subscribe</button>
           </form>
         </div>
@@ -173,10 +265,7 @@
         <p>&copy; 2024 THE CAWNPORE — ALL RIGHTS RESERVED</p>
       </div>
     </footer>
-   
 
-<script src="index.js"></script>
-
-
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>

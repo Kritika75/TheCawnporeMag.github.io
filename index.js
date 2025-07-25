@@ -1,73 +1,43 @@
-window.onscroll = function() {
-  scrollProgressBar();
-};
+// Mobile Navigation Menu Toggle
+const navLinks = document.getElementById("navLinks")
 
-function scrollProgressBar() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  document.getElementById("progressBar").style.width = scrolled + "%";
+function showMenu() {
+  navLinks.classList.add("active")
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    var navLinks = document.getElementById("navLinks");
-
-   function toggleMenu(show) {
-  navLinks.style.right = show ? "0" : "-200px";
-  document.body.style.overflow = show ? "hidden" : "auto";
+function hideMenu() {
+  navLinks.classList.remove("active")
 }
 
-// Call like this:
-window.showMenu = () => toggleMenu(true);
-window.hideMenu = () => toggleMenu(false);
+// Scroll Progress Bar
+window.onscroll = () => {
+  scrollProgress()
+  toggleBackToTopButton()
+}
 
+function scrollProgress() {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+  const scrolled = (winScroll / height) * 100
+  document.getElementById("progressBar").style.width = scrolled + "%"
+}
 
-    // === Newsletter Form Validation ===
-    var form = document.querySelector('form[action="/subscribe"]');
-        if(form) {
-            var emailInput = form.querySelector('input[name="email"]');
-            var errorMsg = document.createElement("p");
-            errorMsg.style.color = "red";
-            errorMsg.style.marginTop = "5px";
-            errorMsg.style.display = "none";
-            form.appendChild(errorMsg);
+// Back-to-top button visibility
+const backToTopButton = document.querySelector(".back-to-top")
 
-            form.addEventListener("submit", function (e) {
-                e.preventDefault();
-                var email = emailInput.value.trim();
-                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function toggleBackToTopButton() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    backToTopButton.classList.add("active")
+  } else {
+    backToTopButton.classList.remove("active")
+  }
+}
 
-                if(!emailRegex.test(email)) {
-                    errorMsg.textContent = "Please enter a valid email address.";
-                    errorMsg.style.color = "red";
-                    errorMsg.style.display = "block";
-                } else {
-                    errorMsg.textContent = "Subscribed successfully!";
-                    errorMsg.style.color = "green";
-                    errorMsg.style.display = "block";
-                }
-            });
-        }
-});
-
-const container = document.getElementById('container');
-const registerBtn = document.getElementById('register');
-const loginBtn = document.getElementById('login');
-const backToTop = document.querySelector('.back-to-top');
-
-/*registerBtn.addEventListener('click', () =>  {
-    container.classList.add("active");
-});
-
-loginBtn.addEventListener('click', () => {
-    container.classList.remove("active");
-});*/
-
-// to show and hide the back-to-top button
-window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 300) { console.log(window.pageYOffset);
-        backToTop.classList.add("active");
-    } else {
-        backToTop.classList.remove("active");
-    }
+// Smooth scroll for back-to-top button (if href is #top)
+backToTopButton.addEventListener("click", (e) => {
+  e.preventDefault()
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
 })
