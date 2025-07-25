@@ -69,32 +69,28 @@
     
     
     .text-box1 {
-    color: #fdf0d5;
-    font-family:"Crimson Text", serif;
-    width: 90%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+color: #fdf0d5;
+font-family:"Crimson Text", serif;
+width: 90%;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-align: center;
+}
 
-    border-bottom: 5px solid #060000;
-    padding-bottom: 20px;
-    margin-bottom: 40px;
-    width:100%
-    }
-    
-    .text-box1 h1 {
-        margin-top: 45px;
-        font-weight: 700;
-        font-style: italic;
-        font-size: 62px;
-        }
+.text-box1 h1 {
+margin-top: 15px;
+font-weight: 700;
+font-style: italic;
+font-size: 62px;
+}
+.text-box1 p {
+margin: 10px 0 40px;
+font-size: 20px   
+}
 
-        .text-box1 p {
-        margin: 10px 0 40px;
-        font-size: 20px   
-        }
+
         .nav-links {
     flex: 1;
     text-align: right;
