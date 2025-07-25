@@ -38,8 +38,6 @@ nav {
 }
 
 
-
-
 .text-box{
     color: #fdf0d5;
     font-family:"Crimson Text", serif;
@@ -185,7 +183,6 @@ nav .fa {
 }
 
 
-
 /* Main container for the section */
 .listings {
     width: 80%;
@@ -204,19 +201,25 @@ nav .fa {
 
 
 .listing-images {
-    display: flex;
-    justify-content: center; 
-    align-items: center;  
-    gap: 3rem;             
-    flex-wrap: wrap;       
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    justify-content: center;   
+    gap: 3rem;                   
 }
 
 
 .listing-images img {
-    max-width: 250px; 
-    height: auto;     
+    max-width: 100%; 
+    height: auto; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;    
 }
 
+.listing-images img:hover,
+.listing-images img:focus{
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    outline: none;
+}
 .footer {
     background-color: #780000;
     color: #fdf0d5;
@@ -263,4 +266,26 @@ nav .fa {
 a:focus, button:focus {
   outline: 3px dashed #780000;
   outline-offset: 3px;
+}   
+
+/* Consistent button styles */
+button,
+.button,
+#issue1-btn,
+.insta-link {
+  border-radius:20px;
+  font-weight:600;
+  transition:0.3s ease-in-out;
+}
+
+button:hover, .button:hover, .insta-link:hover {
+  opacity: 0.85;
+}
+
+/* Footer spacing on mobile */
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 10vh;
+    padding: 20px;
+  }
 }

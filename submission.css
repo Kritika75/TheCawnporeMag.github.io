@@ -214,3 +214,12 @@ nav .fa {
   font-style: italic;
   font-family: "Times New Roman", Times, serif;
 }
+
+img:hover,
+img:focus {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  outline: 3px dashed #780000;
+  outline-offset: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}

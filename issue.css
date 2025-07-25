@@ -207,6 +207,16 @@ nav .fa {
             margin-right: auto;
             border-radius: 10px;
             }
+
+            .issues .row {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    gap: 2rem;
+                    justify-items: center;
+                    align-items: start;
+                    margin: 2rem 1rem;
+                    }
+
             
             .layer {
             background: transparent;
@@ -334,3 +344,14 @@ nav .fa {
             color: #fdf0d5;
             font-size: 15px;
         }
+.issuecover img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.issuecover img:hover,
+.issuecover img:focus {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  outline: 3px dashed #780000;
+  outline-offset: 4px;
+}
