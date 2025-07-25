@@ -232,17 +232,19 @@ nav .fa {
         }
 
        .issuecover {
-        background: linear-gradient(45deg, #e25050, #32858b, #541832, #ffffff);
-        border-radius: 50%;
-        animation:shrinkPulse 4s ease-in-out infinite alternate, color 5s ease-in-out infinite;
-        background-size:400% 400% ;
-        flex-basis: 32%;
-        margin-bottom: 30px;
+        background: linear-gradient(135deg, #fce8e4, #ffe9d1, #e1f2ec, #e3d6f7);
+        border-radius: 20px;
+        animation: shrinkPulse 4s ease-in-out infinite alternate, color 5s ease-in-out infinite;
+        background-size: 400% 400%;
+        width: 48%;           /* Shrink the cover width */
+        margin: 0 auto 30px auto; /* Center and add bottom margin */
         position: relative;
         overflow: hidden;
-        padding-top: 20px;
-        padding-bottom: 40px;
+        padding: 25px 0 45px 0; /* Top and bottom padding for spacing */
         box-shadow: 0 0 20px #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         }
         @keyframes color {
                        0% {
@@ -265,9 +267,9 @@ nav .fa {
            }
 }        
             .issuecover img {
-            width: 40%;
+            width: 85%;
             display: block;
-            margin-top: 25px;
+            margin-top: 10px;
             margin-left: auto;
             margin-right: auto;
             border-radius: 10px;
@@ -289,22 +291,23 @@ nav .fa {
 
 .issuecover h3 {
     text-align: center;
-    color: #ffffff;
+    color: #6b4b3e;
     font-weight: 700;
     font-style: italic;
     font-size: 35px;
     padding-top: 20px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 } 
 
 
                 #pdf {
                     display: inline-block;
                     text-decoration: none;
-                    color: #780000;
+                    color:#365144;
                     border-radius: 20px;
                     padding: 12px 34px;
                     font-size: 13px;
-                    background:#7ccc9b;
+                    background: #d5f5e3;
                     position: relative;
                     cursor: pointer;
                     font-weight: 600;
@@ -313,7 +316,7 @@ nav .fa {
                 }
                 
                 #pdf:hover {
-                   box-shadow: 0 0 20px #00ffffaa, 0 0 40px #00ffffaa;
+                     box-shadow: 0 0 20px #f69cc4aa, 0 0 40px #f69cc4aa;
                    background: transparent;
                    transform: scale(1.05);
                    outline: none;
@@ -323,13 +326,12 @@ nav .fa {
                 #flipbook {
                     display: inline-block;
                     text-decoration: none;
-                    color: #780000;
-                    border: 1px solid #780000;
+                    color: #365144;
                     border-radius: 20px;
                     padding: 12px 34px;
                     font-size: 13px;
                     margin-left: 10px;
-                    background:#7ccc9b;
+                    background:#d5f5e3;
                     position: relative;
                     cursor: pointer;
                     font-weight: 600;
@@ -338,7 +340,7 @@ nav .fa {
                 }
                 
                 #flipbook:hover {
-                   box-shadow: 0 0 20px #00ffffaa, 0 0 40px #00ffffaa;
+                   box-shadow: 0 0 20px #f69cc4aa, 0 0 40px #f69cc4aa;
                    background: transparent;
                    transform: scale(1.05);
                    outline: none;
