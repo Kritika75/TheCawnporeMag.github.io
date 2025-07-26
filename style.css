@@ -191,23 +191,62 @@ body {
   font-family: 'Times New Roman', Times, serif;
 }
 
-#issue1-btn {
+.issue-button {
   display: inline-block;
-  text-decoration: none;
-  color: #780000;
-  border: 1px solid #780000;
-  border-radius: 20px;
-  padding: 12px 34px;
-  font-size: 13px;
-  background: transparent;
-  cursor: pointer;
+  background: rgba(120, 0, 0, 0.8); /* true maroon with transparency */
+  color: #fff8e7;
+  padding: 14px 36px;
+  font-size: 1.1rem;
   font-weight: 600;
-  transition: 1s;
+  border: 2px solid #780000;
+  border-radius: 50px; /* pill */
+  text-decoration: none;
+  letter-spacing: 1px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 15px rgba(120, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-#issue1-btn:hover {
-  background: #d9ed92;
+.issue-button i {
+  margin-right: 10px;
 }
+
+.issue-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translate(-50%, -50%) rotate(45deg);
+  opacity: 0;
+  transition: 0.4s ease;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.issue-button:hover::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.issue-button:hover {
+  background: #fff;
+  color: #780000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(120, 0, 0, 0.6);
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+
 
 /* LISTINGS */
 .listings {
