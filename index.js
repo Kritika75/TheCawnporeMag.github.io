@@ -43,9 +43,13 @@ window.hideMenu = () => toggleMenu(false);
                     errorMsg.style.display = "block";
                 } else {
                     errorMsg.textContent = "Subscribed successfully!";
-                    errorMsg.style.color = "green";
+                    errorMsg.style.color = "#a0ed79";
                     errorMsg.style.display = "block";
                 }
+                setTimeout(() => {
+                    errorMsg.style.display = "none";
+                }, 3000);
+                emailInput.value = "";
             });
         }
 });

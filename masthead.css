@@ -575,11 +575,14 @@ nav .fa {
   font-weight: bold;
   font-size: 16px;
   text-align: center;
+  transition: all 0.3s;
 }
 .subscription-box button:hover {
   background: #e6b85c;
 }
-
+button:active{
+  scale: 0.95;
+}
 /* Bottom bar */
 .footer-bottom {
   text-align: center;
