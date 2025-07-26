@@ -347,26 +347,65 @@ h2 {
   background: #7a0000;
   color: #f9f9e6;
   font-family: 'Georgia', serif;
-  padding: 35px 20px 15px;
+  padding: 50px 20px 15px;
+}
+
+/* Back-to-top button */
+.back-to-top {
+    position: fixed;
+    height: 45px;
+    width: 45px;
+    bottom: 16px;
+    right: 30px;
+    font-size: 26px;
+    background-color: #780000;
+    color: #fdf0d5;
+    border-radius: 50%;;
+    text-decoration: none;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px #fdf0d5;
+    transition: all .4s;
+}
+
+.back-to-top.active {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.back-to-top:focus {
+    outline:none;
+}
+
+.back-to-top:hover {
+    background-color: #fdf0d5;
+    color: #780000;
+    box-shadow: 0px 0px 10px #780000;
+    font-size: 28px;
 }
 
 /* Top section */
 .footer-top {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  margin-bottom: 20px;
+  justify-content:center ;
+  grid-template-columns: 28% 10% 13% 30%;
+  gap: 40px;
+  margin-bottom: 100px;
 }
 
-.site-footer h3 {
-  font-size: 16px;
+.footer-top h3 {
+  font-size: 13px;
   text-transform: uppercase;
   margin-bottom: 10px;
   color: #fff8e7;
 }
 
 /* Links with underline grow */
-.site-footer a {
+.footer-top a {
   font-size: 14px;
   color: #f5f5dc;
   line-height: 1.5;
@@ -374,7 +413,7 @@ h2 {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.site-footer a::after {
+.footer-top a::after {
   content: "";
   position: absolute;
   width: 0%;
@@ -384,39 +423,25 @@ h2 {
   background: #ffd9b3;
   transition: width 0.3s ease;
 }
-.site-footer a:hover::after {
+.footer-top a:hover::after {
   width: 100%;
-
-.footer {
-    background-color: #780000;
-    color: #fdf0d5;
-    margin-top: 5vh ;
-    width: 100%;
-    text-align: center;
-    padding: 30px 0;
 }
-.footerContents{
-    display: flex;
-    align-items: center;
-    padding: 10px;
-}
-.footerLeft{
-    width: 65%;
-    margin : 20px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-.footer .footerLeft p{
-    text-align: left;
-    margin-left : 8%;
-
-}
-.site-footer a:hover {
+.footer-top a:hover {
   color: #ffd9b3;
 }
 
+.footer-links ul {
+  font-size: 6px;
+  padding: 0px 2px;
+  list-style-type: none;
+}
+
 /* Social Icons with bounce */
+
+.social-icons {
+  margin-top: 10px;
+}
+
 .social-icons a {
   font-size: 18px;
   margin-right: 10px;
@@ -428,7 +453,7 @@ h2 {
   color: #ffd9b3;
   transform: translateY(-3px) scale(1.15);
 }
-/* Footer Newsletter Section */
+
 /* Footer Newsletter Section */
 
 .subscription-box h2 {
@@ -466,98 +491,7 @@ h2 {
   background: #e6b85c;
 }
 
-
 /* Bottom bar */
-.footer-bottom {
-  text-align: center;
-  font-size: 12px;
-  border-top: 1px solid rgba(245, 245, 220, 0.3);
-  padding-top: 10px;
-}
-
-/* Compact Footer for short pages */
-.compact-footer .footer-top {
-  grid-template-columns: 1fr;
-  text-align: center;
-}
-.compact-footer .footer-newsletter,
-.compact-footer .footer-links,
-.compact-footer .footer-contact {
-  display: none;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .footer-top {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-}
-@media (max-width: 500px) {
-  .footer-top {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .social-icons {
-    justify-content: center;
-
-  }
-  .footer-newsletter form {
-    flex-direction: column;
-  }
-  .ripple-btn {
-    width: 100%;
-  }
-}
-
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.fa-heart {
-    color: #fdf0d5;
-    font-size: 15px;
-}
-
-.icons {
-    color: #fdf0d5;
-    margin: 0 13px;
-    cursor: pointer;
-    padding: 18px 0;
-    width: 35%;
-}
-
-.icons a {
-    color: #fdf0d5;
-    font-size: 25px;
-    padding : 10px;
-} 
-#insta:hover {
-    color: #ff04c0;
-    text-shadow: 0px 0px 3px#fdf0d5;
-    font-size: 25px;
-    padding : 10px;
-} 
-#linkedin:hover {
-    color: #215a8f;
-    text-shadow: 1px 1px 5px#fdf0d5;
-    font-size: 25px;
-    padding : 10px;
-} 
-#twitter:hover {
-    color: #141414;
-    text-shadow: 1px 1px 5px#fdf0d5;
-    font-size: 25px;
-    padding : 10px;
-} 
-#tumblr:hover {
-    color: #3c487c;
-    text-shadow: 1px 1px 5px#fdf0d5;
-    font-size: 25px;
-    padding : 10px;
-} 
-
 .footer-bottom {
   text-align: center;
   font-size: 12px;
@@ -589,39 +523,4 @@ h2 {
     width: 100%;
   }
 }
-/* Footer Newsletter Section */
 
-.subscription-box h2 {
-  font-size: 18px;
-  color: #fff8e7;
-  margin-bottom: 10px;
-  font-family: 'Georgia', serif;
-}
-
-.subscription-box form {
-  width: 100%;
-}
-
-.subscription-box input {
-  padding: 15px;
-  width: 65%;
-  border: none;
-  border-radius: 15px;
-  margin-bottom: 10px;
-}
-  
-.subscription-box button {
-  background: #ffcc66;
-  color: #7a0000;
-  border: none;
-  padding: 14px 10px;
-  width: 100px;
-  border-radius: 15px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 16px;
-  text-align: center;
-}
-.subscription-box button:hover {
-  background: #e6b85c;
-}
