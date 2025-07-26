@@ -95,7 +95,7 @@ font-size: 20px
 }
 
 .nav-links ul li a{
-    color: #fdf0d5;
+    color: #8B0000;
     text-decoration: none;
     font-family: serif;
     font-size: 13px;
@@ -184,6 +184,7 @@ nav .fa {
     font-size: 13px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position:relative;
+    cursor: pointer;
 }
 @media(max-width: 700px){
   .landmarkButton {
