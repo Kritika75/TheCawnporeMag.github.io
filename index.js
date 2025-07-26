@@ -17,25 +17,65 @@ document.addEventListener("DOMContentLoaded", function () {
   const registerBtn = document.getElementById('register');
   const loginBtn = document.getElementById('login');
 
-  // Menu toggle
-  window.showMenu = function () {
-    navLinks.classList.add("active");
-    document.body.style.overflow = "hidden";
-  };
+// Menu toggle
+function toggleMenu(show) {
+  const navLinks = document.getElementById("navLinks");
+  navLinks.classList.toggle("active", show);
+  document.body.style.overflow = show ? "hidden" : "auto";
+}
 
-  window.hideMenu = function () {
-    navLinks.classList.remove("active");
-    document.body.style.overflow = "auto";
-  };
+window.showMenu = () => toggleMenu(true);
+window.hideMenu = () => toggleMenu(false);
 
-  // Register / login toggle
-  if (registerBtn && loginBtn && container) {
-    registerBtn.addEventListener('click', () => {
-      container.classList.add("active");
-    });
+// Register / Login toggle
+const container = document.getElementById('container');
+const registerBtn = document.getElementById('register');
+const loginBtn = document.getElementById('login');
 
-    loginBtn.addEventListener('click', () => {
-      container.classList.remove("active");
-    });
+if (registerBtn && loginBtn && container) {
+  registerBtn.addEventListener('click', () => {
+    container.classList.add("active");
+  });
+
+  loginBtn.addEventListener('click', () => {
+    container.classList.remove("active");
+  });
+}
+
+// Newsletter Form Validation
+const form = document.querySelector('form[action="/subscribe"]');
+if (form) {
+  const emailInput = form.querySelector('input[name="email"]');
+  const errorMsg = document.createElement("p");
+  errorMsg.style.marginTop = "5px";
+  errorMsg.style.display = "none";
+  form.appendChild(errorMsg);
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      errorMsg.textContent = "Please enter a valid email address.";
+      errorMsg.style.color = "red";
+      errorMsg.style.display = "block";
+    } else {
+      errorMsg.textContent = "Subscribed successfully!";
+      errorMsg.style.color = "green";
+      errorMsg.style.display = "block";
+    }
+  });
+}
+
+// Back to Top Button Toggle
+const backToTop = document.querySelector('.back-to-top');
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 300) {
+    backToTop.classList.add("active");
+  } else {
+    backToTop.classList.remove("active");
   }
 });
+
