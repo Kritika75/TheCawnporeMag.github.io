@@ -11,8 +11,11 @@ html {
 body {
   background-color: #fdf0d5;
   line-height: 1.6;
-  padding-top: 100px;
 }
+
+
+
+
 
 /* Scroll Progress Bar */
 .progress-container {
@@ -46,6 +49,36 @@ body {
   min-height: 60px;
 }
 
+/* HEADER SECTION */
+.header {
+  min-height: 60vh;
+  width: 100%;
+  background-color: #780000; /* Maroon background */
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding-top: 80px;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 5%;
+  margin-right: 6px;
+  background: rgba(45, 44, 44, 0.261);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(179, 177, 177, 0.2);
+  position: fixed;
+  top: 0;
+  height: 5%;
+  width: 100%;
+  z-index: 999;
+}
+
 .navbar-left .site-name {
   font-family: 'Georgia', serif;
   font-size: 1.6rem;
@@ -68,6 +101,23 @@ body {
   font-size: 15px;
   padding: 6px 10px;
   transition: color 0.3s ease;
+}
+
+/* HERO TEXT */
+.text-box {
+  color: #fdf0d5;
+  font-family: "Crimson Text", serif;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.text-box h1 {
+  margin-top: 15px;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 62px;
+
 }
 
 .navbar-center a:hover {
@@ -249,14 +299,55 @@ body {
   height: auto;
 }
 
+
 /* Footer */
+
+
 .site-footer {
   background: #7a0000;
   color: #f9f9e6;
   font-family: 'Georgia', serif;
   padding: 50px 20px 15px;
+
+/* Back-to-top button */
+.back-to-top {
+  position: fixed;
+  height: 45px;
+  width: 45px;
+  bottom: 16px;
+  right: 30px;
+  font-size: 26px;
+  background-color: #780000;
+  color: #fdf0d5;
+  border-radius: 50%;
+  text-decoration: none;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px #fdf0d5;
+  transition: all 0.4s;
 }
 
+.back-to-top.active {
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top:focus {
+  outline: none;
+}
+
+.back-to-top:hover {
+  background-color: #fdf0d5;
+  color: #780000;
+  box-shadow: 0px 0px 10px #780000;
+  font-size: 28px;
+}
+
+/* Footer Top Section */
 .footer-top {
   display: grid;
   justify-content: center;
@@ -272,14 +363,6 @@ body {
   color: #fff8e7;
 }
 
-.footer-top a {
-  font-size: 14px;
-  color: #f5f5dc;
-  line-height: 1.5;
-  position: relative;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
 
 .footer-top a::after {
   content: "";
@@ -291,13 +374,23 @@ body {
   background: #ffd9b3;
   transition: width 0.3s ease;
 }
-
 .footer-top a:hover::after {
   width: 100%;
 }
 
 .footer-top a:hover {
   color: #ffd9b3;
+}
+
+.footer-links ul {
+  font-size: 6px;
+  padding: 0px 2px;
+  list-style-type: none;
+}
+
+/* Social Icons with bounce */
+.social-icons {
+  margin-top: 10px;
 }
 
 .social-icons a {
@@ -313,15 +406,21 @@ body {
   transform: translateY(-3px) scale(1.15);
 }
 
+/* Footer Newsletter Section */
 .subscription-box {
   text-align: center;
   margin-top: 20px;
 }
 
+
 .subscription-box h2 {
   font-size: 18px;
   color: #fff8e7;
   margin-bottom: 10px;
+}
+
+.subscription-box form {
+  width: 100%;
 }
 
 .subscription-box input {
@@ -344,6 +443,7 @@ body {
   font-size: 16px;
 }
 
+
 .subscription-box button:hover {
   background: #e6b85c;
 }
@@ -357,6 +457,7 @@ body {
   padding-bottom: 20px;
   line-height: 1.8;
 }
+
 
 /* Back to Top Button */
 .back-to-top {
@@ -392,6 +493,7 @@ body {
 }
 
 /* Responsive Footer */
+
 @media (max-width: 768px) {
   .footer-top {
     grid-template-columns: 1fr 1fr;
