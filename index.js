@@ -9,6 +9,7 @@ function scrollProgressBar() {
   document.getElementById("progressBar").style.width = scrolled + "%";
 }
 
+
 // Mobile menu functionality
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
@@ -28,6 +29,46 @@ menuToggle.addEventListener('click', () => {
         bars[1].style.opacity = '';
         bars[2].style.transform = '';
     }
+document.addEventListener("DOMContentLoaded", function() {
+    var navLinks = document.getElementById("navLinks");
+
+   function toggleMenu(show) {
+  navLinks.style.right = show ? "0" : "-200px";
+  document.body.style.overflow = show ? "hidden" : "auto";
+}
+
+// Call like this:
+window.showMenu = () => toggleMenu(true);
+window.hideMenu = () => toggleMenu(false);
+
+
+    // === Newsletter Form Validation ===
+    var form = document.querySelector('form[action="/subscribe"]');
+        if(form) {
+            var emailInput = form.querySelector('input[name="email"]');
+            var errorMsg = document.createElement("p");
+            errorMsg.style.color = "red";
+            errorMsg.style.marginTop = "5px";
+            errorMsg.style.display = "none";
+            form.appendChild(errorMsg);
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                var email = emailInput.value.trim();
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if(!emailRegex.test(email)) {
+                    errorMsg.textContent = "Please enter a valid email address.";
+                    errorMsg.style.color = "red";
+                    errorMsg.style.display = "block";
+                } else {
+                    errorMsg.textContent = "Subscribed successfully!";
+                    errorMsg.style.color = "green";
+                    errorMsg.style.display = "block";
+                }
+            });
+        }
+
 });
         
 // Close menu when link is clicked (for mobile)
