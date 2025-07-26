@@ -25,7 +25,7 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
+<link rel="stylesheet" href="styles/theme.css">
   </head>
   <body>
     <div class="progress-container">
@@ -33,6 +33,7 @@
     </div>
     <section class="header">
       <nav role="navigation" aria-label="Main Menu">
+        <button id="theme-toggle" style="margin-left: auto;">🌙</button>
         <div class="nav-links" id="navLinks">
           <i class="fa fa-times" onclick="hideMenu()"></i>
           <ul>
@@ -172,5 +173,23 @@
     </footer>
 
     <script src="index.js"></script>
+    <script>
+  const toggle = document.getElementById('theme-toggle');
+  const storedTheme = localStorage.getItem('theme');
+
+  if (storedTheme) {
+    document.documentElement.setAttribute('data-theme', storedTheme);
+    toggle.textContent = storedTheme === 'dark' ? '☀️' : '🌙';
+  }
+
+  toggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    toggle.textContent = next === 'dark' ? '☀️' : '🌙';
+  });
+</script>
+
   </body>
 </html>
