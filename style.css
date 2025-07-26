@@ -45,7 +45,7 @@ nav {
     align-items: center;
     padding: 0.75rem 5%;
     margin-right: 6px;
-    background: rgba(45, 44, 44, 0.261);
+    background: rgba(139, 58, 58, 0.261);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
