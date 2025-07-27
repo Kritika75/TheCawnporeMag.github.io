@@ -31,7 +31,54 @@ body {
   transition: background-color 0.3s, color 0.3s;
   line-height: 1.6;
 }
+.text-box {
+  color: #fdf0d5;
+  background-color: #780000;
+  font-family: "Crimson Text", serif;
+  width: 100%;
+  text-align: center;
+  justify-items: center;
+  padding: auto;
+  padding: auto;
+  padding: 100px;
+  padding: 100px;
+}
+.masthead-text {
+  background-color: transparent; /* remove the dark red */
+  padding: 0; /* remove extra padding */
+}
 
+.masthead-text h1 {
+  color: #fdf0d5;
+  background-color: #780000;
+  font-family: "Crimson Text", serif;
+  width: 100%;
+  text-align: center;
+  padding: 100px;
+}
+
+.masthead-text {
+  position: relative;
+  z-index: 1;
+}
+
+.team-container {
+  position: relative;
+  z-index: 10; /* must be higher than .masthead-text */
+}
+
+.text-box1 {
+  color: #fdf0d5;
+  background-color: #780000;
+  font-family: "Crimson Text", serif;
+  width: 100%;
+  text-align: center;
+  justify-items: center;
+  padding: auto;
+  padding: auto;
+  padding: 100px;
+  padding: 100px;
+}
 /* Navbar */
 nav {
   display: flex;
@@ -85,9 +132,11 @@ nav {
 .header1 {
   background-color: var(--header-bg);
 }
+
 h1 {
-  color: #7b1113 !important;
+  color: #fdf0d5; /* Cream color */
 }
+
 /* Hero Text */
 .text-box1 {
   color: var(--accent-color);
@@ -148,4 +197,46 @@ a {
 [data-theme="dark"] body:not(.no-dark-text) h6 {
   color: #fdf0d5 !important;
 }
+[data-theme="dark"] .masthead-text h1 {
+  color: #fdf0d5 !important; /* Cream */
+}
 
+
+/* ===== Theme Toggle Button - Common Style ===== */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background-color: #fdf0d5;
+  color: #7b1113;
+  border: 2px solid #7b1113;
+  border-radius: 50%;
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.theme-toggle:hover {
+  background-color: #7b1113;
+  color: #fdf0d5;
+}
+
+/* ===== Adjust for dark mode ===== */
+[data-theme="dark"] .theme-toggle {
+  background-color: #7b1113;
+  color: #fdf0d5;
+  border-color: #fdf0d5;
+}
+
+/* ===== Mobile specific adjustments ===== */
+@media (max-width: 700px) {
+  .theme-toggle {
+    top: 12px;
+    right: 12px;
+    padding: 8px;
+    font-size: 16px;
+  }
+}
