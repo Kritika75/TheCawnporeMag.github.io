@@ -2,21 +2,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
- bug-fixing
 html {
   scroll-behavior: smooth;
+
 }
 
 body {
   background-color: #fdf0d5;
   line-height: 1.6;
 
+
 body{
 background-color: #fdf0d5;
 line-height: 1.6;
- main
+
 }
 
 .progress-container {
@@ -41,7 +43,11 @@ line-height: 1.6;
 .header1 {
   min-height: 26vh;
   width: 100%;
+
   background-color: #fdf0d5;
+
+  background-color: #780000;
+
   background-position: center;
   background-size: cover;
   position: relative;
@@ -51,6 +57,7 @@ line-height: 1.6;
 
 nav {
   display: flex;
+
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 5%;
@@ -58,10 +65,19 @@ nav {
   background: #780000; /* Solid maroon background */
   backdrop-filter: none; /* Optional: disable the blur if no longer needed */
   -webkit-backdrop-filter: none; /* Optional: same for Safari */
+
+  margin-top: 6px;
+  margin-right: 6px;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 6px;
+  background: #780000;
+
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(179, 177, 177, 0.2);
   position: fixed;
   top: 0;
+
   height: 9%;
   width: 100%;
   z-index: 999;
@@ -91,6 +107,19 @@ nav {
 .nav-links {
   flex: 1;
   text-align: right;
+
+  width: 100%;
+  z-index: 999;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+  position: relative;
+  z-index: 10;
+
 }
 
 .nav-links ul li {
@@ -113,6 +142,7 @@ nav {
   text-decoration: underline;
   transition: 0.3s ease;
 }
+
 .nav-links ul li::after {
   content: "";
   width: 0%;
@@ -130,6 +160,7 @@ nav {
 nav .fa {
   display: none;
 }
+
 
 @media (max-width: 700px) {
   .text-box h1 {
@@ -192,6 +223,33 @@ nav .fa {
     cursor: pointer;
     z-index: 10;
   }
+
+.text-box {
+  color: #fdf0d5;
+  background-color: #780000;
+  font-family: "Crimson Text", serif;
+  width: 100%;
+  text-align: center;
+  justify-items: center;
+  padding: auto;
+  padding: auto;
+  padding: 100px;
+  padding: 100px;
+}
+
+.text-box h1 {
+  font-weight: 700;
+  font-style: italic;
+  font-size: 62px;
+}
+
+.text-box p {
+  margin: 10px 0 40px;
+  font-size: 14px;
+}
+
+@media (max-width: 700px) {
+
   .nav-links ul li {
     display: block;
   }
@@ -216,7 +274,11 @@ nav .fa {
   }
   nav .fa-bars {
     display: block;
+
     color: #780000fc;
+
+    color: #fdf0d5;
+
     margin: 10px;
     font-size: 22px;
     cursor: pointer;
@@ -243,17 +305,23 @@ nav .fa {
   height: auto;
   border-radius: 10px;
 }
- bug-fixing
+
+
 .landmarkButton {
   background-color: #fdf0d5;
   color: #780000;
   border-radius: 10px;
   padding: 0.5rem;
+
   margin-top: 1rem;
+
+  margin-top: -1rem;
+
   margin-bottom: 1rem;
   font-weight: 600;
   font-size: 13px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
 
 .landmarkButton{
     background-color: #fdf0d5;
@@ -266,8 +334,11 @@ nav .fa {
     font-size: 13px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position:relative;
+
+  position: relative;
+
 }
-@media(max-width: 700px){
+@media (max-width: 700px) {
   .landmarkButton {
     font-size: 13px;
     padding: 10px 16px;
@@ -335,7 +406,7 @@ nav .fa {
   border-top-right-radius: 10px;
 }
 .landmarks {
- bug-fixing
+
   background-color: #fdf0d5;
   padding: 50px 20px;
   text-align: center;
@@ -344,7 +415,18 @@ nav .fa {
     background-color: #fdf0d5;
     padding: 50px 20px;
     text-align: center;
- main
+
+}
+.Tag-line {
+  color: whitesmoke;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+
+  background-color: #fdf0d5;
+  padding: 50px 20px;
+  text-align: center;
+
 }
 .Tag-line {
   color: whitesmoke;
@@ -352,16 +434,16 @@ nav .fa {
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
 }
-@media(max-width: 700px) {
-.Tag-line {
-margin-top: 15px;
-padding: 8px;
-font-weight: 700;
-font-style: italic;
-font-size: 15px;
-line-height: 1.3;
-word-wrap: break-word;
-}
+@media (max-width: 700px) {
+  .Tag-line {
+    margin-top: 15px;
+    padding: 8px;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.3;
+    word-wrap: break-word;
+  }
 }
 .landmarks h2 {
   font-size: 20px;
@@ -416,9 +498,14 @@ h2 {
 }
 
 @media (max-width: 600px) {
- bug-fixing
+
+
   .landmarks h2 {
     font-size: 2em;
+
+  .landmarks h2 {
+    font-size: 1.2em;
+
   }
   .landmark-col img {
     height: 180px;
@@ -427,6 +514,7 @@ h2 {
     font-size: 1em;
     padding: 10px;
   }
+
 }
 
 /** FOOTER **/
@@ -443,7 +531,9 @@ h2 {
     }
 }
 
- main
+
+}
+
 
 .site-footer {
   background: #7a0000;
@@ -588,9 +678,13 @@ h2 {
   font-weight: bold;
   font-size: 16px;
   text-align: center;
+  transition: all 0.3s;
 }
 .subscription-box button:hover {
   background: #e6b85c;
+}
+button:active {
+  scale: 0.95;
 }
 
 /* Bottom bar */
@@ -625,4 +719,3 @@ h2 {
     width: 100%;
   }
 }
-
