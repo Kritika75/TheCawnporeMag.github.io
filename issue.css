@@ -316,6 +316,7 @@ nav .fa {
                 }
                 
                 #pdf:hover {
+                   box-shadow: 0 0 20px #00ffffaa, 0 0 40px #00ffffaa;
                      box-shadow: 0 0 20px #f69cc4aa, 0 0 40px #f69cc4aa;
                    background: transparent;
                    transform: scale(1.05);
@@ -331,6 +332,7 @@ nav .fa {
                     padding: 12px 34px;
                     font-size: 13px;
                     margin-left: 10px;
+                    background:#7ccc9b;
                     background:#d5f5e3;
                     position: relative;
                     cursor: pointer;
