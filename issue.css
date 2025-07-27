@@ -173,14 +173,14 @@ nav .fa {
             font-size: 15px;
         }
 
-/*        .issue01 {
+     .issue01 {
 
             width: 80%;
             margin: auto;
             text-align: center;
             padding-top: 20px;
             
-       } */
+       } 
 
 .issues{
         width: 50%;
@@ -191,32 +191,59 @@ nav .fa {
         }
 
 .issuecover{
+    margin-bottom: 20px;
+            position: relative;
+            text-align: center;
             flex-basis: 32%;
             border-radius: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             position: relative;
             overflow: hidden;
             padding-top: 40px;
             }
-            
-            .issuecover img {
-            width: 50%;
-            display: block;
-            margin-top: 25px;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 10px;
-            }
+    .cover-img {
+  width: 300px;
+  height: auto;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
 
-            .issues .row {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                    gap: 2rem;
-                    justify-items: center;
-                    align-items: start;
-                    margin: 2rem 1rem;
-                    }
+.cover-img:hover,
+.cover-img:focus {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  outline: 3px dashed #780000;
+  outline-offset: 4px;
+}
 
+        
+                .button-group {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 20px;
+                flex-wrap: wrap;
+                }
+
+                .format-btn {
+                text-decoration: none;
+                color: #780000;
+                border: 1px solid #780000;
+                border-radius: 20px;
+                padding: 12px 34px;
+                font-size: 13px;
+                background: transparent;
+                cursor: pointer;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                font-family: 'Crimson Text', serif;
+                }
+
+                .format-btn:hover {
+                background: #d9ed92;
+                }
             
             .layer {
             background: transparent;
@@ -344,14 +371,14 @@ nav .fa {
             color: #fdf0d5;
             font-size: 15px;
         }
-.issuecover img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.issuecover img:hover,
-.issuecover img:focus {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-  outline: 3px dashed #780000;
-  outline-offset: 4px;
-}
+        .issuecover img {
+            max-width: 250px;
+            width: 50%;
+            display: block;
+            margin-top: 25px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
