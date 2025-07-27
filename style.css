@@ -30,7 +30,11 @@ body{
 }
 
 .header {
+ bug-fixing
+    min-height: 40vh;
+
     min-height: 60vh;
+
     width: 100%;
     background-color: #780000;
     background-position: center;
@@ -45,14 +49,14 @@ nav {
     align-items: center;
     padding: 0.75rem 5%;
     margin-right: 6px;
-    background: rgba(45, 44, 44, 0.261);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: #780000; /* Solid maroon background */
+    backdrop-filter: none; /* Optional: disable the blur if no longer needed */
+    -webkit-backdrop-filter: none; /* Optional: same for Safari */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(179, 177, 177, 0.2);
     position: fixed;
     top: 0;
-    height: 5%;
+    height: 9%;
     width: 100%;
     z-index: 999;
 }
@@ -221,38 +225,67 @@ nav .fa {
 }
 
 
-@media(max-width: 700px) {
+/* Responsive Design Enhancements */
+@media (max-width: 700px) {
     .text-box h1 {
         margin-top: 15px;
         font-weight: 700;
         font-style: italic;
-        font-size: 40px;
+        font-size: clamp(32px, 6vw, 40px);
     }
+
+    nav{
+      height: 7%;
+    }
+
+    .text-box p {
+        font-size: clamp(12px, 2vw, 14px);
+    }
+
+    .nav-links ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 40px 20px;
+    }
+
     .nav-links ul li {
         display: block;
+        opacity: 0;
+        transform: translateX(30px);
+        animation: slideIn 0.4s forwards;
     }
+
+    @keyframes slideIn {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
     .nav-links {
         position: fixed;
         background: #780000fc;
         height: 100vh;
         width: 200px;
         top: 0;
-        right: -200px;
+        right: -100%;
         text-align: left;
         z-index: 2;
-        transition: 1s;
+        transition: right 0.4s ease-in-out;
     }
 
-    nav .fa{
+    .nav-links.nav-active {
+        right: 0;
+    }
+
+    nav .fa {
         display: block;
         color: #fdf0d5;
         margin: 10px;
         font-size: 22px;
         cursor: pointer;
         z-index: 10;
-    }
-    .nav-links ul{
-        padding: 30px;
     }
 }
 
@@ -540,4 +573,76 @@ button:active{
   .ripple-btn {
     width: 100%;
   }
+}
+
+/*Loading page*/
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fdf0d5;
+    color: #780000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader {
+    text-align: center;
+}
+
+.loader i {
+    font-size: 4.5rem;
+    animation: spin 2s linear infinite;
+}
+
+.loader h2 {
+    margin-top: 1.5rem;
+    font-size: 2.1rem;
+}
+
+.dots::after {
+    content: "";
+    display: inline-block;
+    animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+    0% {
+        content: "";
+    }
+    20% {
+        content: ".";
+    }
+    40% {
+        content: "..";
+    }
+    60% {
+        content: "...";
+    }
+    80%{
+        content: "....";
+    }
+    100% {
+        content: "";
+    }
+}
+
+/* Spin Animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
