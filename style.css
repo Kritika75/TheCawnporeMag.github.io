@@ -28,6 +28,21 @@ body{
   width: 0%; 
   background: #8B0000; 
 }
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: rgba(45, 44, 44, 0.261);
+  /* backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(179, 177, 177, 0.2);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 
 .header {
  bug-fixing
@@ -41,7 +56,7 @@ body{
     background-size: cover;
     position: relative;
     padding-top: 80px;
-}
+
 
 nav {
     display: flex;
@@ -59,10 +74,50 @@ nav {
     height: 9%;
     width: 100%;
     z-index: 999;
+
+}
+.logo {
+  color: #fdf0d5;
+  font-family: "Crimson Text", serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 1001;
+}       
+
+        
+.nav-links ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+        
+.nav-links a {
+  color: #fdf0d5;
+  text-decoration: none;
+  font-family: serif;
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-
-
+        
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #a12222;
+  transition: width 0.3s ease;
+}
+        
+.nav-links a:hover::after {
+  width: 100%;
+ }
+  
 .text-box {
   color: #fdf0d5;
   font-family: "Crimson Text", serif;
@@ -77,56 +132,108 @@ nav {
     font-weight: 700;
     font-style: italic;
     font-size: 62px;
-}
 
+}
+        
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+        
+.bar {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #fdf0d5;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+        
+/* Header Section */
+.header {
+  min-height: 20vh;
+  width: 100%;
+  background-color: #780000;
+  /* position: relative; */
+  padding-top: 25px; /* Adjusted for navbar height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px; /* Push content below fixed navbar */
+}
+        
+.text-box {
+  color: #fdf0d5;
+  font-family: "Crimson Text", serif;
+  text-align: center;
+  padding: 2rem;
+}
+        
+.text-box h1 {
+  font-weight: 700;
+  font-style: italic;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 0.5rem;
+}
+        
 .text-box p {
-    margin: 10px 0 40px;
-    font-size: 14px
-    
+  font-size: 1rem;
 }
+
+  /* Mobile Styles */
+@media (max-width: 768px) {
+.navbar {
+  padding: 0.8rem 5%;
+}
+            
 .nav-links {
-    flex: 1;
-    text-align: right;
-    position: relative;
-    z-index: 10;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background: #780000;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: right 0.5s ease;
+  z-index: 1000;
+}
+            
+.nav-links.active {
+  right: 0;
+}
+            
+.nav-links ul {
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+            
+.nav-links li {
+  width: 100%;
+  text-align: center;
+}
+            
+.menu-toggle {
+  display: block;
 }
 
-.nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-
+            
+.header {
+  padding-top: 60px;
+  min-height: 25vh;
 }
-
-.nav-links ul li a{
-    color: #fdf0d5;
-    text-decoration: none;
-    font-family: serif;
-    font-size: 13px;
-    padding: 12px 16px;
-    display: block;
-
-}
-
-.nav-links ul li a:hover{
-    text-decoration: underline;
-    transition: 0.3s ease;
-}
-
-.nav-links ul li::after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: #fdf0d5;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-}
-
-.nav-links ul li:hover::after {
-    width: 100%;
-}
+            
+.text-box {
+  padding: 1.5rem;
+  }
+=======
 
 nav .fa {
     display: none;
@@ -287,6 +394,7 @@ nav .fa {
         cursor: pointer;
         z-index: 10;
     }
+
 }
 
 .Welcome {

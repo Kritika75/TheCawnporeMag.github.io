@@ -38,9 +38,29 @@
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
     </div>
-    <section class="header">
-      <nav role="navigation" aria-label="Main Menu">
+    
+  <!-- Responsive Navbar -->
+ <nav class="navbar" role="navigation" aria-label="Main Menu">
+        <div class="logo">The Cawnpore</div>
+        
+        <button class="menu-toggle" aria-expanded="false" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        
         <div class="nav-links" id="navLinks">
+
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="submission.html">SUBMIT</a></li>
+                <li><a href="issue.html">ISSUE</a></li>
+                <li><a href="masthead.html">MASTHEAD</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="open-source.html">OPEN SOURCE</a></li>
+            </ul>
+
           <i class="fa fa-times" onclick="hideMenu()"></i>
           <ul>
 
@@ -53,15 +73,15 @@
             <li><a href="open-source.html">OPEN SOURCE</a></li>
 
           </ul>
+
         </div>
+    </nav>
 
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-      </nav>
-
-      <div class="text-box">
-        <h1>The Cawnpore</h1>
-        <p>EST. 2024</p>
-      </div>
+    <section class="header">
+        <div class="text-box">
+          <h1>The Cawnpore</h1>
+          <p>EST. 2024</p>
+        </div>
     </section>
 
     <!--Welcoming page-->
