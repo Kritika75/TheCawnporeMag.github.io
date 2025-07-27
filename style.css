@@ -182,7 +182,7 @@ nav .fa {
     font-size: 19px;
     font-weight: 300;
     line-height: 22px;
-    padding: 10px;
+    padding: 2rem;
     font-style: italic;
     font-family: 'Times New Roman', Times, serif;
     /* max-width: 75ch; */
@@ -208,7 +208,27 @@ nav .fa {
     transition: 1s;
 }
 
+#cta1-btn {
+    display: inline-block;
+    text-decoration: none;
+    color:#f9f9e6;
+    border: 1px solid #780000;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 12px 46px;
+    font-size: 13px;
+    background-color: #780000;
+    position: relative;
+    cursor: pointer;
+    font-weight: 600;
+}
 
+#cta1-btn:hover {
+    border: 1px solid #780000;
+    background: #d9ed92;
+    color:#780000;
+    transition: 1s;
+}
 
 /* Main container for the section */
 .listings {
