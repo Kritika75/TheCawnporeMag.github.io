@@ -92,37 +92,133 @@ nav {
 nav .fa {
   display: none;
 }
-
-.header {
-  height: 50px;
-  width: 100%;
-  background-color: #780000;
-  background-position: center;
-  background-size: cover;
-  position: relative;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; 
+  justify-content: center; 
+  align-items: flex-start;
 }
-
-.text-box {
-  color: #fdf0d5;
-  background-color: #780000;
-  font-family: "Crimson Text", serif;
-  text-align: center;
-  justify-items: center;
-  padding-right: auto;
-  padding-left: auto;
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-
-.text-box h1 {
+.card-title {
+  color: #262626;
+  font-size: 1.5em;
+  line-height: normal;
   font-weight: 700;
-  font-style: italic;
-  font-size: 62px;
+  margin-bottom: 0.5em;
 }
 
-.text-box p {
-  margin: 10px 0 40px;
-  font-size: 14px;
+.small-desc {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #452c2c;
+}
+
+.small-desc {
+  font-size: 1em;
+}
+
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, #6293c8, #384c6c);
+  border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
+}
+
+.card {
+  display: block;
+  position: relative;
+  max-width: 300px;
+  max-height: 400px;
+  background-color: rgba(234, 171, 214,0.4);
+  border-radius: 10px;
+  padding: 2em 1.2em;
+  margin: 12px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(to bottom,#cdb2ad,#fdf0d5, #bcaf87);
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 10px 10px 20px #c6bcc5;
+}
+
+.card:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -16px;
+  right: -16px;
+  background: linear-gradient(135deg, #364a60, #384c6c);
+  height: 40px;
+  width: 40px;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.35s ease-out;
+}
+
+.card:hover:before {
+  transform: scale(28);
+}
+
+.card:hover .small-desc {
+  transition: all 0.5s ease-out;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card:hover .card-title {
+  transition: all 0.5s ease-out;
+  color: #ffffff;
+}
+
+
+@media(max-width: 700px) {
+    .text-box h1 {
+        margin-top: 15px;
+        font-weight: 700;
+        font-style: italic;
+        font-size: 40px;
+    }
+    .nav-links ul li {
+        display: block;
+    }
+    .nav-links {
+        position: fixed;
+        background: #780000fc;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+
+    nav .fa{
+        display: block;
+        color: #fdf0d5;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
 }
 
 .Welcome {
@@ -133,41 +229,65 @@ nav .fa {
 }
 
 #namaste {
-  font-size: 36px;
-  font-weight: 600;
-  font-family: serif;
-  font-style: italic;
+    font-size: 36px;
+    font-weight: 600;
+    font-family: serif;
+    font-style: italic;
+    color: #652e4d;
+    font-size: 2.5rem;
+    text-shadow: 0 0 5px #cea8bc, 0 0 10px #ffa7f2;
 }
 
 #intro {
-  color: #111717;
-  font-size: 19px;
-  font-weight: 300;
-  line-height: 22px;
-  padding: 10px;
-  font-style: italic;
-  font-family: "Times New Roman", Times, serif;
-  /* max-width: 75ch; */
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 2rem;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    /* max-width: 75ch; */
 }
 
 #issue1-btn {
-  display: inline-block;
-  text-decoration: none;
-  color: #780000;
-  border: 1px solid #780000;
-  border-radius: 20px;
-  padding: 12px 34px;
-  font-size: 13px;
-  background: transparent;
-  position: relative;
-  cursor: pointer;
-  font-weight: 600;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border:none;
+    border-radius: 95px 8px;
+    padding: 12px 34px;
+    font-size: 13px;
+    margin-top: 15px;
+    background: linear-gradient(45deg, #37163a, pink);
+    position: relative;
+    cursor: pointer;
+    font-weight: 600;
 }
 
 #issue1-btn:hover {
-  border: 1px solid #780000;
-  background: #d9ed92;
-  transition: 1s;
+    border: 1px solid #780000;
+     background: linear-gradient(45deg, pink,  #37163a);
+    transition: 1s;
+}
+
+#cta1-btn {
+    display: inline-block;
+    text-decoration: none;
+    color:#f9f9e6;
+    border: none;
+    border-radius: 8px 95px;
+    margin-top: 10px;
+    padding: 12px 46px;
+    font-size: 13px;
+     background: linear-gradient(45deg, pink,  #37163a);
+    position: relative;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#cta1-btn:hover {
+    border: 1px solid #780000;
+     background: linear-gradient(45deg, #37163a, pink);
+    transition: 1s;
 }
 
 /* Main container for the section */
@@ -343,11 +463,15 @@ nav .fa {
   font-weight: bold;
   font-size: 16px;
   text-align: center;
+  transition: all 0.3s;
 }
 .subscription-box button:hover {
   background: #e6b85c;
 }
 
+button:active{
+  scale: 0.95;
+}
 /* Bottom bar */
 .footer-bottom {
   text-align: center;
