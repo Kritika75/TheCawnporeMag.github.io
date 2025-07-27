@@ -42,20 +42,18 @@ nav {
   margin-right: 6px;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
   padding: 0.75rem 5%;
   margin-right: 6px;
-  background: rgba(163, 163, 163, 0.16);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: #780000;
+  /* backdrop-filter: blur(12px); */
+  /* -webkit-backdrop-filter: blur(12px); */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(179, 177, 177, 0.2);
   position: fixed;
   top: 0;
-  height: 3%;
+  height: 9%;
   width: 90%;
-  z-index: 999
-
+  z-index: 999;
 }
 
 .header1 {
@@ -77,7 +75,7 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-
+  margin-top: 30px;
 }
 
 .text-box1 h1 {
@@ -112,14 +110,18 @@ nav {
   padding: 12px 16px;
   display: block;
 }
+.nav-links ul li a:hover{
+    text-decoration: underline;
+    transition: 0.3s ease;
+}
 .nav-links ul li::after {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background: #780000;
-  display: block;
-  margin: auto;
-  transition: 0.5s;
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #fdf0d5;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
 }
 
 .nav-links ul li:hover::after {
