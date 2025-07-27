@@ -61,3 +61,22 @@
 nav .fa {
   display: none;
 } */
+.btn-gssoc {
+  display: inline-block;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #b30000, #780000);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(120, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.btn-gssoc:hover {
+  background: linear-gradient(135deg, #d40000, #990000);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 15px rgba(120, 0, 0, 0.5);
+}
