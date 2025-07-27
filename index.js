@@ -69,7 +69,7 @@ loginBtn.addEventListener('click', () => {
 
 // to show and hide the back-to-top button
 window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 300) {
+    if (window.scrollY > 300) {
         backToTop.classList.add("active");
     } else {
         backToTop.classList.remove("active");
