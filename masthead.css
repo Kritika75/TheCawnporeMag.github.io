@@ -141,7 +141,10 @@ nav{
   margin: auto;
   transition: 0.5s;
 }
-
+.nav-links ul li a:hover {
+  text-decoration: underline;
+  transition: 0.3s ease;
+}
 .nav-links ul li:hover::after {
   width: 100%;
 }
