@@ -210,13 +210,36 @@ nav .fa {
   }
 }
 
+#intro {
+  color: #111717;
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 20px;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+}
+
 .Introductory {
-  width: 80%;
+  width: 67%;
   margin: auto;
   text-align: center;
   padding-top: 20px;
 }
 
+.Introductoryabt {
+  width: 100%;
+  margin: auto;
+  background: linear-gradient(to bottom, #780000 0%, #fdf0d5 25%);
+  text-align: center;
+  padding-top: 30px;
+  padding-left: 14rem;
+  padding-right: 14rem;
+}
+
+#about1{
+  font-weight: bold;
+}
 #intro1 {
   color: #111717;
   font-size: 19px;
@@ -231,7 +254,12 @@ nav .fa {
   font-size: 25px;
   margin: 10px;
 }
-
+#aboutwhy{
+  color: #780000;
+  font-size: 25px;
+  margin: 10px;
+  font-family: "Times New Roman", Times, serif;
+}
 .landmarks {
   display: flex;
   justify-content: center;
@@ -526,5 +554,20 @@ button:active {
   }
   .ripple-btn {
     width: 100%;
+  }
+}
+
+#word {
+  font-size: 4rem;
+  font-family:'Times New Roman', Times, serif;
+  white-space: nowrap; 
+  width: max-content;
+  padding-right: 5px;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
   }
 }
