@@ -43,9 +43,13 @@ window.hideMenu = () => toggleMenu(false);
                     errorMsg.style.display = "block";
                 } else {
                     errorMsg.textContent = "Subscribed successfully!";
-                    errorMsg.style.color = "green";
+                    errorMsg.style.color = "#a0ed79";
                     errorMsg.style.display = "block";
                 }
+                setTimeout(() => {
+                    errorMsg.style.display = "none";
+                }, 3000);
+                emailInput.value = "";
             });
         }
 });
@@ -65,7 +69,7 @@ loginBtn.addEventListener('click', () => {
 
 // to show and hide the back-to-top button
 window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 300) { console.log(window.pageYOffset);
+    if (window.pageYOffset > 300) { 
         backToTop.classList.add("active");
     } else {
         backToTop.classList.remove("active");
