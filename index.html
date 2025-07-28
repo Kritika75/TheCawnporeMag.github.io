@@ -3,153 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TheCawnpore</title>
+    <title>The Cawnpore</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <!-- Consolidated Font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <!-- Loading Screen -->
-    <div id="loading-screen">
-        <div class="loader">
-            <i class="fa-solid fa-spinner"></i>
-            <h2>Loading<span class="dots"></span></h2>
-        </div>
+    <div id="loading-screen" role="alert">
+      <div class="loader">
+        <i class="fa-solid fa-spinner" aria-hidden="true"></i>
+        <h2>Loading<span class="dots"></span></h2>
+      </div>
     </div>
     <div class="progress-container">
-      <div class="progress-bar" id="progressBar"></div>
+      <div class="progress-bar" id="progressBar" aria-live="polite"></div>
     </div>
-    <section class="header">
+    <header class="header">
       <nav role="navigation" aria-label="Main Menu">
         <div class="nav-links" id="navLinks">
-          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <i class="fa fa-times" onclick="hideMenu()" aria-label="Close menu"></i>
           <ul>
-
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="submission.html">SUBMIT</a></li>
-            <li><a href="issue.html">ISSUE</a></li>
-            <li><a href="masthead.html">MASTHEAD</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="open-source.html">OPEN SOURCE</a></li>
-
+            <li><a href="index.html" aria-label="Home">HOME</a></li>
+            <li><a href="about.html" aria-label="About Us">ABOUT</a></li>
+            <li><a href="submission.html" aria-label="Submit your work">SUBMIT</a></li>
+            <li><a href="issue.html" aria-label="View Issues">ISSUE</a></li>
+            <li><a href="masthead.html" aria-label="Masthead">MASTHEAD</a></li>
+            <li><a href="faq.html" aria-label="Frequently Asked Questions">FAQ</a></li>
+            <li><a href="open-source.html" aria-label="Open Source Information">OPEN SOURCE</a></li>
           </ul>
         </div>
-
-        <i class="fa fa-bars" onclick="showMenu()"></i>
+        <i class="fa fa-bars" onclick="showMenu()" aria-label="Open menu"></i>
       </nav>
-
       <div class="text-box">
         <h1>The Cawnpore</h1>
         <p>EST. 2024</p>
       </div>
-    </section>
+    </header>
 
-    <!--Welcoming page-->
-
-    <section class="Welcome">
+    <!-- Welcoming Page -->
+    <section class="welcome">
       <h1 id="namaste">Namaste!</h1>
       <div class="container">
- <div class="card">
-      <p class="card-title">Introduction</p>
-      <p class="small-desc">
-        The Cawnpore Magazine's motive is to delve into the profound influence
-        and impact of various cultures worldwide through the art of literature.
-        Our mission is to celebrate the richness of each culture, beautifully
-        showcased through the lenses of literature and art. By providing a safe
-        and inclusive platform, we aim to foster a community that encourages
-        readers to explore, learn, and appreciate diverse perspectives.
-      </p>
-      <div class="go-corner">
-        <div class="go-arrow">→</div>
+        <div class="card" aria-labelledby="introduction">
+          <p class="card-title" id="introduction">Introduction</p>
+          <p class="small-desc">
+            The Cawnpore Magazine's motive is to delve into the profound influence and impact of various cultures worldwide through the art of literature.
+            Our mission is to celebrate the richness of each culture, beautifully showcased through the lenses of literature and art. By providing a safe
+            and inclusive platform, we aim to foster a community that encourages readers to explore, learn, and appreciate diverse perspectives.
+          </p>
+          <div class="go-corner">
+            <div class="go-arrow">→</div>
+          </div>
+        </div>
+        <div class="card" aria-labelledby="what-we-do">
+          <p class="card-title" id="what-we-do">What we do</p>
+          <p class="small-desc">
+            We firmly believe that the exchange of ideas and experiences is the key to a more tolerant and compassionate world, and we strive to achieve this
+            through The Cawnpore Magazine. Step right up and get ready for a one-stop destination to explore the best in fiction, non-fiction, poetry,
+            artwork, interviews, breathtaking photos, and more!
+          </p>
+          <div class="go-corner">
+            <div class="go-arrow">→</div>
+          </div>
+        </div>
+        <div class="card" aria-labelledby="subscribe">
+          <p class="card-title" id="subscribe">Don't Wait, Subscribe</p>
+          <p class="small-desc">
+            We understand that submitting your work can be a daunting task, but we assure you that we will treat each submission with the utmost respect
+            and care. We are excited to read your submissions and grateful for your contribution to The Cawnpore.
+          </p>
+          <div class="go-corner">
+            <div class="go-arrow">→</div>
+          </div>
+        </div>
       </div>
-      </div>
-      <div class="card">
-      <p class="card-title">What we do !!</p>
-      <p class="small-desc">
-         We
-        firmly believe that the exchange of ideas and experiences is the key to
-        a more tolerant and compassionate world, and we strive to achieve this
-        through The Cawnpore Magazine.
-        So, step right up and get ready for The Cawnpore Magazine your one stop
-        destination to explore the best in fiction, non-fiction, poetry,
-        artwork, interviews, breathtaking photos and so much more!
-      </p>
-      <div class="go-corner">
-        <div class="go-arrow">→</div>
-      </div>
-      </div>
-      <div class="card">
-      <p class="card-title">Don't Wait, Subscribe</p>
-      <p class="small-desc">
-        We understand that submitting your work can be a daunting task, but we
-        assure you that we will treat each submission with the utmost respect
-        and care. We are excited to read your submissions and grateful for your
-        contribution to The Cawnpore. Thank you for considering us as a platform
-        to showcase your talent.
-      </p>
-      <div class="go-corner">
-        <div class="go-arrow">→</div>
-      </div>
-      </div>
-      
-    </div>
-      <a
-        href="issue.html"
-        aria-label="View the latest Issue of The Cawnpore"
-        id="issue1-btn"
-        >READ THE LATEST ISSUE</a
-      >
-    </br>
-      <a
-        href="submission.html" 
-        aria-label="Submit your work on The Cawnpore"
-        id="cta1-btn"
-        >SUBMIT YOUR WORK</a
-      >
+      <a href="issue.html" aria-label="View the latest Issue of The Cawnpore" id="issue1-btn">READ THE LATEST ISSUE</a><br>
+      <a href="submission.html" aria-label="Submit your work on The Cawnpore" id="cta1-btn">SUBMIT YOUR WORK</a>
     </section>
 
     <section class="listings">
       <h3>Proudly Listed On... &#128640;</h3>
       <div class="listing-images">
-        <a href="https://duotrope.com/magazine/the-cawnpore-magazine-37420" target="_blank">
-          <img
-            src="listed-on-duotrope.png"
-            alt="The Cawnpore Magazine is listed on Duotrope"
-          />
+        <a href="https://duotrope.com/magazine/the-cawnpore-magazine-37420" target="_blank" aria-label="The Cawnpore Magazine on Duotrope">
+          <img src="listed-on-duotrope.png" alt="The Cawnpore Magazine is listed on Duotrope" />
         </a>
-        <a href="https://www.chillsubs.com/magazine/the-cawnpore-magazine" target="_blank">
-          <img
-            src="professional-1.png"
-            alt="The Cawnpore Magazine is a professional member of Chill Subs"
-          />
+        <a href="https://www.chillsubs.com/magazine/the-cawnpore-magazine" target="_blank" aria-label="The Cawnpore Magazine on Chill Subs">
+          <img src="professional-1.png" alt="The Cawnpore Magazine is a professional member of Chill Subs" />
         </a>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
-      <a class="back-to-top" href="#">
-          <i class="fa-solid fa-chevron-up"></i>
+      <a class="back-to-top" href="#" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
       </a>
       <div class="footer-top">
         <div class="footer-about">
@@ -171,28 +123,28 @@
         <div class="footer-contact" id="footerContact">
           <h3>Contact Us</h3>
           <div class="social-icons">
-            <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
+            <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank" aria-label="Email The Cawnpore Magazine">
               <i class="fa-solid fa-envelope"></i>
             </a>
-            <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank">
+            <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank" aria-label="Instagram">
               <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
+            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank" aria-label="LinkedIn">
               <i class="fa-brands fa-linkedin"></i>
             </a>
-            <a href="https://x.com/TheCawnporeMag?s=09" target="_blank">
+            <a href="https://x.com/TheCawnporeMag?s=09" target="_blank" aria-label="X (formerly Twitter)">
               <i class="fa-brands fa-x-twitter"></i>
             </a>
-            <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank">
+            <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank" aria-label="Tumblr">
               <i class="fa-brands fa-tumblr"></i>
             </a>
           </div>
         </div>
         <div class="subscription-box">
           <h3>Subscribe to our Newsletter</h3>
-          <form action="/subscribe" method="post">
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
+          <form action="/subscribe" method="post" aria-labelledby="subscribe">
+            <input type="email" name="email" placeholder="Enter your email" required aria-label="Enter your email" />
+            <button type="submit" aria-label="Subscribe">Subscribe</button>
           </form>
         </div>
       </div>
@@ -214,7 +166,6 @@
                 loadingScreen.classList.add("hidden");
             }, 6000); // 6000ms = 6 seconds (adjust as needed)
         });
-        
     </script>
   </body>
 </html>
