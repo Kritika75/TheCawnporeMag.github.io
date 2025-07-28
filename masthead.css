@@ -1,3 +1,4 @@
+
 /* imported font "Libre Caslon Text" from google fonts */ 
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap'); 
 
@@ -5,12 +6,14 @@ html {
   scroll-behavior: smooth;
 }
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
+
   font-family: 'Times New Roman', serif;
   background-color: #2a2a2a;
   color: #333;
@@ -82,6 +85,7 @@ body {
   font-family: 'Georgia', serif;
   background-color: #FDF0D5; /* Optional neutral backdrop */
   color: #f5f5dc; /* Beige font for contrast */
+
 }
 
 .masthead-heading {
@@ -170,6 +174,7 @@ body {
   
 }
 
+
 .footer-content {
   max-width: 600px;
   margin: 0 auto;
@@ -215,6 +220,7 @@ body {
   transform: scale(1.1);
 }
 
+
 .footer-content .heart {
   color: #ff6b6b;
 }
@@ -225,3 +231,5 @@ body {
   font-family: 'Libre Caslon Text', serif;
   opacity: 0.85;
 }
+
+

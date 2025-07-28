@@ -130,6 +130,7 @@ body {
 
 .button-link{
     display: inline-block;
+
     padding: 6px 16px;
     margin-top: 10px;
     font-family: 'Libre Caslon Text', serif;
@@ -142,7 +143,6 @@ body {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 
 }
-
 .button-link:hover {
   opacity: 0.8;
 }
@@ -179,6 +179,7 @@ body {
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
+
     gap: 40px;
   }
   .image-box {
@@ -205,7 +206,12 @@ body {
   font-size: 22px;
   font-weight: normal;
   letter-spacing: 1px;
+
 }
+button:active {
+  scale: 0.95;
+}
+
 
 .footer-content p {
   margin: 8px 0;
@@ -242,6 +248,7 @@ body {
 .footer-content .heart {
   color: #ff6b6b;
 }
+
 
 .credits,
 .copyright {

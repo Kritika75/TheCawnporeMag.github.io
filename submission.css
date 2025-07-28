@@ -1,3 +1,4 @@
+
 /* imported font "Libre Caslon Text" from google fonts */ 
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');   
 html {
@@ -133,6 +134,7 @@ html {
 }
 
 
+
 .footer {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), 
                         url('./download.jpeg') no-repeat center center;
@@ -149,11 +151,13 @@ html {
 }
 
 .footer-content h3 {
+
   margin-bottom: 10px;
   font-size: 22px;
   font-weight: normal;
   letter-spacing: 1px;
 }
+
 
 .footer-content p {
   margin: 8px 0;
@@ -185,6 +189,7 @@ html {
 
 .footer-content .social-links img:hover {
   transform: scale(1.1);
+
 }
 
 .footer-content .heart {
