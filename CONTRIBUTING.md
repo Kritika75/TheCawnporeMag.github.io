@@ -14,7 +14,7 @@ Please read the following guidelines carefully to make the contribution process 
 2. **Clone Your Fork**
    ```bash
    git clone https://github.com/your-username/project-name.git
-   cd project-namec
+   cd project-name
 
 3. **Create a New Branch**
    ```bash
