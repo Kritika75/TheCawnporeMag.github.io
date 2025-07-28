@@ -1,28 +1,21 @@
-
 /* imported font "Libre Caslon Text" from google fonts */ 
-@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');   
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap'); 
+
 html {
   scroll-behavior: smooth;
 }
 
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Times New Roman', serif;
+  background-color: #2a2a2a;
+  color: #333;
+}
 
-        body {
-            font-family: 'Times New Roman', serif;
-            background-color: #2a2a2a;
-            color: #333;
-        }
-
-        body {
-            font-family: 'Times New Roman', serif;
-            background-color: #2a2a2a;
-            color: #333;
-        }
 
         .hero-section {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), 
@@ -84,70 +77,50 @@ html {
             border-radius: 4px;
         }
 
+/* main body */ 
 
 body {
   margin: 0;
   font-family: 'Georgia', serif;
   background-color: #FDF0D5;
-  color: #f5f5dc;
+  color: #8b0000;
 }
 
-.faq-heading {
+.opensource-hero {
   text-align: center;
-  margin: 4rem 0 2rem;
-}
-
-.faq-heading h1 {
-  font-size: 48px;
-  font-family: 'Libre Caslon Text', serif;
-  color: #2c2c2c;
-  margin: 0;
-}
-
-.faq-heading .subheading {
-  font-size: 20px;
-  font-family: 'Libre Caslon Text', serif;
-  color: #2c2c2c;
-  margin-top: 10px;
-    
-}
-
-.faq-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 2rem;
+  padding: 4rem 2rem;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.faq-card {
+.opensource-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+
+.opensource-hero p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #4b1c1c;
+}
+
+.contribute-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
   background-color: #8b0000;
-  color: #FDF0D5;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  color: #f5f5dc;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.faq-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-}
-
-.card-content p {
-  margin: 0 0 1rem 0;
-  line-height: 1.6;
-}
-
-.card-content .question {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.card-content .answer {
-  font-size: 1.1rem;
-  font-style: normal;
+.contribute-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .footer {
