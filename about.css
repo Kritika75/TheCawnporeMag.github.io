@@ -648,3 +648,58 @@ button:active {
   background: #e6b85c;
 }
 
+
+.Introductory {
+
+width: 80%;
+margin: auto;
+text-align: center;
+padding-top: 20px;
+background-color: #fdf8f3;               
+  border: 1px solid #e3d5ca;
+  border-radius: 15px;                     
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 90%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-style: italic;
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.Introductory:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+@media (max-width: 768px) {
+  .Introductory {
+    padding: 15px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .Introductory {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+=======
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 20px;
+>>>>>>> 2e84e81 (Navbar and Hero section fix of all the pages (#171))
+}
+
+#intro1 {
+  color: #111717;
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+}
