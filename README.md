@@ -29,7 +29,7 @@ We’re open to collaboration! You can:
 - 🛠️ Fix bugs and improve performance
 - ✨ Suggest features via Issues
 
-We welcome beginners! Feel free to fork, explore, and learn.
+We welcome beginners! Feel free to fork, explore, and learn. For detailed contribution steps, see [CONTRIBUTING.md](CONTRIBUTING.md) and [LEARN.md](LEARN.md).
 
 ---
 
