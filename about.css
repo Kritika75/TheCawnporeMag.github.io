@@ -139,6 +139,7 @@ nav .fa {
     }
     .nav-links {
         position: fixed;
+        color: #fdf0d5;
         background: #780000fc;
         height: 100vh;
         width: 200px;
@@ -148,7 +149,9 @@ nav .fa {
         z-index: 2;
         transition: 1s;
     }
-
+    .nav-links ul li a{
+      color:#fdf0d5;
+    }
     nav .fa-times {
     display: block;
     color: #fdf0d5;
@@ -158,7 +161,7 @@ nav .fa {
   }
   nav .fa-bars {
     display: block;
-    color: #780000fc; 
+    color: #fdf0d5; 
     margin: 10px;
     font-size: 22px;
     cursor: pointer;
@@ -245,10 +248,16 @@ font-size: 40px;
 color: #111717;
 font-size: 19px;
 font-weight: 300;
-line-height: 22px;
+line-height: 30px;
 padding: 10px;
 font-style: italic;
 font-family: 'Times New Roman', Times, serif;
+}
+.bold-words{
+   font-weight: bold;
+}
+.underline-words{
+  text-decoration: underline;
 }
 #CardsHeading{
     color : #780000;

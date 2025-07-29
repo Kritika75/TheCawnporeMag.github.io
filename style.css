@@ -30,11 +30,8 @@ body{
 }
 
 .header {
- bug-fixing
     min-height: 40vh;
-
     min-height: 60vh;
-
     width: 100%;
     background-color: #780000;
     background-position: center;
