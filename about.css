@@ -220,10 +220,16 @@ padding-top: 20px;
 color: #111717;
 font-size: 19px;
 font-weight: 300;
-line-height: 22px;
+line-height: 30px;
 padding: 10px;
 font-style: italic;
 font-family: 'Times New Roman', Times, serif;
+}
+.bold-words{
+   font-weight: bold;
+}
+.underline-words{
+  text-decoration: underline;
 }
 #CardsHeading{
     color : #780000;
@@ -529,12 +535,6 @@ button:active {
   .ripple-btn {
     width: 100%;
   }
-}
-
-
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
 }
 
 .fa-heart {
