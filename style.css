@@ -167,7 +167,7 @@ nav .fa {
   overflow: hidden;
   top: 0;
   right: 0;
-  background: linear-gradient(135deg, #6293c8, #384c6c);
+  background: linear-gradient(135deg, #d24848, #5a0000);
   border-radius: 0 4px 0 32px;
 }
 
@@ -201,7 +201,7 @@ nav .fa {
   z-index: -1;
   top: -16px;
   right: -16px;
-  background: linear-gradient(135deg, #364a60, #384c6c);
+  background: linear-gradient(135deg, #8B0000, #5a0000); 
   height: 40px;
   width: 40px;
   border-radius: 32px;
