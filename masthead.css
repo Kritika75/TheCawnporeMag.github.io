@@ -328,11 +328,14 @@ nav .fa {
 }
 
 .team-card {
+  display: flex;
   background: linear-gradient(to right, #cdb2ad,#fdf0d5, #bcaf87);
   border: 2px solid #780000;
   border-radius: 15px;
   padding: 1.5rem;
   color: #780000;
+  height: 100%;
+  flex-direction: column;
   /* font-family: 'Crimson Text', serif; */
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -358,6 +361,13 @@ nav .fa {
 .team-card .intro {
   font-size: 15px;
   line-height: 1.6;
+}
+
+.team-card-social-link-wrapper {
+    margin-top: auto;
+    text-align: center; 
+    padding-top: 15px;  
+    margin-bottom: 0;  
 }
 
 .insta-link {
