@@ -112,8 +112,9 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 0px 5%;
-
 }
+
+
 .nav-links {
   flex: 1;
   text-align: right;
@@ -162,18 +163,20 @@ nav .fa {
     font-size: 40px;
   }
   .nav-links ul li {
+    
+    background-color: #780000;
     display: block;
   }
   .nav-links {
     position: fixed;
-    background: #780000fc;
     height: 100vh;
     width: 200px;
     top: 0;
     right: -200px;
     text-align: left;
-    z-index: 2;
+    background: #780000;
     transition: 1s;
+    z-index: 2;
   }
 
   nav .fa-times {
