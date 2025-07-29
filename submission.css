@@ -332,7 +332,16 @@ button:active{
   padding-bottom: 20px;
   line-height: 1.8;
 }
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
 
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* Responsive */
 @media (max-width: 768px) {
   .footer-top {

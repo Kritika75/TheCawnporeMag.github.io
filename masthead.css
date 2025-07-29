@@ -94,6 +94,16 @@ nav {
   overflow: hidden;
   animation: erase 5s steps(85) infinite;
 }
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 @keyframes erase {
   from {
     width: 100%;
