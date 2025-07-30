@@ -31,6 +31,7 @@ body{
 
 .header {
     min-height: 40vh;
+    min-height: 40vh;
     min-height: 60vh;
     width: 100%;
     background-color: #780000;
@@ -38,6 +39,7 @@ body{
     background-size: cover;
     position: relative;
     padding-top: 80px;
+    
 }
 
 nav {
@@ -56,6 +58,7 @@ nav {
     height: 9%;
     width: 100%;
     z-index: 999;
+    
 }
 
 
