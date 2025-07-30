@@ -42,21 +42,18 @@ margin-top: 40px;
 
 nav {
     display: flex;
-    /* margin-top: 6px; */
-    margin-right: 6px;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5%;
     padding: 0.75rem 5%;
     margin-right: 6px;
-    background: rgba(163, 163, 163, 0.16);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: #780000; /* Solid maroon background */
+    backdrop-filter: none; /* Optional: disable the blur if no longer needed */
+    -webkit-backdrop-filter: none; /* Optional: same for Safari */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(179, 177, 177, 0.2);
     position: fixed;
     top: 0;
-    height: 6%;
+    height: 9%;
     width: 100%;
     z-index: 999;
 }
@@ -95,7 +92,7 @@ font-size: 20px
 }
 
 .nav-links ul li a{
-    color: #1a1a1a;
+    color: #fdf0d5;
     text-decoration: none;
     font-family: serif;
     font-size: 13px;
@@ -103,14 +100,15 @@ font-size: 20px
     display: block;
 }
 .nav-links ul li a:hover {
-    color: #780000;
+    text-decoration: underline;
+    transition: 0.3s ease;
 }
 
 .nav-links ul li::after {
     content: '';
     width: 0%;
     height: 2px;
-    background: #780000;
+    background: #fdf0d5;
     display: block;
     margin: auto;
     transition: 0.5s;
