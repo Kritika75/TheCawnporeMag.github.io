@@ -11,10 +11,37 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <!--  -->
     <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <title>FAQ - The Cawnpore Magazine</title>
   </head>
-  <body>
+  <body class="faq-page">
+    <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+    <section class="header">
+    <nav role="navigation" aria-label="Main Menu">
+      <!-- Hamburger Icon -->
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+
+      <!-- Sidebar Menu -->
+      <div class="nav-links" id="navLinks">
+        <!-- Close Icon -->
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="submission.html">SUBMIT</a></li>
+          <li><a href="issue.html">ISSUE</a></li>
+          <li><a href="masthead.html">MASTHEAD</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="open-source.html">OPEN SOURCE</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
     <main>
       <div class="heading">
         <h1>Frequently Asked Questions</h1>
@@ -118,6 +145,7 @@
         <p>&copy; 2024 THE CAWNPORE — ALL RIGHTS RESERVED</p>
       </div>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>
 <!-- synced after conflict -->

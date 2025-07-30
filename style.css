@@ -572,6 +572,31 @@ button:active{
   }
 }
 
+
+/* Your Quote Widget */
+#quote-widget {
+  margin-top: 15px;
+  font-family: 'Georgia', serif;
+  color: #fdf0d5;
+  font-style: italic;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #fdf0d5;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#quote-text {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+#quote-author {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffcc66;
+}
 /*Loading page*/
 #loading-screen {
     position: fixed;
@@ -625,7 +650,7 @@ button:active{
     }
     60% {
         content: "...";
-    }
+  }
     80%{
         content: "....";
     }
@@ -643,3 +668,5 @@ button:active{
         transform: rotate(360deg);
     }
 }
+
+
