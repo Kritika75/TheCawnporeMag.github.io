@@ -75,6 +75,7 @@ window.addEventListener("scroll", () => {
         backToTop.classList.remove("active");
     }
 })
+
 // Intersection Observer for fade-in effect
 document.addEventListener("DOMContentLoaded", function () {
     const observer = new IntersectionObserver((entries) => {
@@ -96,5 +97,27 @@ window.history.scrollRestoration = "manual";
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 };
+
+// === Quote of the Day Widget ===
+document.addEventListener("DOMContentLoaded", () => {
+    const quotes = [
+        { text: "Poetry is not a luxury. It is a vital necessity of our existence.", author: "Audre Lorde" },
+        { text: "Fill your paper with the breathings of your heart.", author: "William Wordsworth" },
+        { text: "Poetry is when an emotion has found its thought and the thought has found words.", author: "Robert Frost" },
+        { text: "There is no greater agony than bearing an untold story inside you.", author: "Maya Angelou" },
+        { text: "A word after a word after a word is power.", author: "Margaret Atwood" },
+        { text: "There is no greater agony than bearing an untold story inside you.", author: "Maya Angelou" },
+        { text: "Creativity is intelligence having fun.", author: "Albert Einstein" }
+    ];
+
+    const quoteTextEl = document.getElementById("quote-text");
+    const quoteAuthorEl = document.getElementById("quote-author");
+
+    if (quoteTextEl && quoteAuthorEl) {
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        quoteTextEl.textContent = `"${randomQuote.text}"`;
+        quoteAuthorEl.textContent = `– ${randomQuote.author}`;
+    }
+});
 
 
