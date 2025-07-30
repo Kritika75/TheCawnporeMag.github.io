@@ -188,6 +188,15 @@ nav .fa {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position:relative;
 }
+.landmarkButton:hover {
+    background: linear-gradient(135deg, #fddf9b, #fcbf49);
+    color: #5a0000;
+    transform: scale(1.08) translateY(-2px);
+    text-shadow: 0 0 3px #fff0d0, 0 0 6px #ffc300;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
 @media(max-width: 700px){
   .landmarkButton {
     font-size: 13px;
