@@ -30,8 +30,8 @@ body{
 }
 
 .header {
-      min-height: 40vh;
-
+    min-height: 40vh;
+    min-height: 40vh;
     min-height: 60vh;
     width: 100%;
     background-color: #780000;
@@ -167,7 +167,7 @@ nav .fa {
   overflow: hidden;
   top: 0;
   right: 0;
-  background: linear-gradient(135deg, #6293c8, #384c6c);
+  background: linear-gradient(135deg, #d24848, #5a0000);
   border-radius: 0 4px 0 32px;
 }
 
@@ -201,7 +201,7 @@ nav .fa {
   z-index: -1;
   top: -16px;
   right: -16px;
-  background: linear-gradient(135deg, #364a60, #384c6c);
+  background: linear-gradient(135deg, #8B0000, #5a0000); 
   height: 40px;
   width: 40px;
   border-radius: 32px;
@@ -575,6 +575,31 @@ button:active{
   }
 }
 
+
+/* Your Quote Widget */
+#quote-widget {
+  margin-top: 15px;
+  font-family: 'Georgia', serif;
+  color: #fdf0d5;
+  font-style: italic;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #fdf0d5;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#quote-text {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+#quote-author {
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffcc66;
+}
 /*Loading page*/
 #loading-screen {
     position: fixed;
@@ -628,7 +653,7 @@ button:active{
     }
     60% {
         content: "...";
-    }
+  }
     80%{
         content: "....";
     }
@@ -646,3 +671,5 @@ button:active{
         transform: rotate(360deg);
     }
 }
+
+

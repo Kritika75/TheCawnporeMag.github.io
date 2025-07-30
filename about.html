@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <link rel = "stylesheet" href="about.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet">
@@ -18,16 +19,16 @@
       <div class="progress-bar" id="progressBar"></div>
     </div>
     <section class="header">
-        <nav>
+        <nav role="navigation" aria-label="Main Menu">
           <div class = "nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
             <ul>
-
-                <li><a href="index.html">HOME</a></li>
+               <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="submission.html">SUBMIT</a></li>
                 <li><a href="issue.html">ISSUE</a></li>
                 <li><a href="masthead.html">MASTHEAD</a></li>
+                <li><a href="faq.html">FAQ</a></li>
                 <li><a href="open-source.html">OPEN SOURCE</a></li>
             </ul>
           </div>
@@ -45,13 +46,16 @@
     </section>
     <section class="Introductory">
         <p id="intro1">
-            The city of Kanpur, formerly known as Cawnpore, has a rich and complex history that has shaped its identity. Originally established by a Hindu king named Chandel, the city was named "Kahnapur" in honor of his devotion to Lord Krishna. However, during the British colonial era, the name was anglicized to "Cawnpore" due to difficulties in pronunciation. This change was significant as Cawnpore, known as the "Manchester of India," emerged as the commercial capital of Uttar Pradesh.
+            The city of <span class="bold-words">"Kanpur"</span>, formerly known as <span class="bold-words">Cawnpore</span> , has a rich and complex history that has shaped its identity. <br> Originally established by a Hindu King named <span class="bold-words">Chandel</span>, the city was named <span class="bold-words">"Kahnapur"</span> in honor of his devotion to <span class="bold-words">Lord Krishna</span>.  <br> 
+            However, during the <span class="underline-words">British colonial era</span>, the name was anglicized to <span class="bold-words">"Cawnpore"</span> due to difficulties in pronunciation. This change was significant as Cawnpore, known as the <span class="bold-words">"Manchester of India"</span> ,emerged as the commercial capital of <span class="underline-words">Uttar Pradesh</span>.
 
-            Kanpur's history is deeply intertwined with the Indian struggle for independence. The city played a pivotal role in the revolt of 1857, witnessing tragic events such as the "wheeler’s entrenchment episode," the "massacre at Sati Chaura Ghat," and the "Bibighar massacre." These events left a lasting impact on the city and its people.
+            Kanpur's history is deeply intertwined with the Indian struggle for independence. The city played a pivotal role in the revolt of <span class="bold-words">1857</span>, witnessing tragic events such as the "wheeler’s entrenchment episode," the "massacre at <span class="bold-words">Sati Chaura Ghat</span>," and the <span class="bold-words">"Bibighar massacre"</span> . <br> 
+            These events left a lasting impact on the city and its people.
             
-            Following India's independence in 1947, the city was renamed Kanpur, symbolizing a new era and a fresh start. Despite its tumultuous past, Kanpur has emerged as a beacon of happiness and positivity. In 2023, it was recognized as the 11th happiest city in the world, a testament to the resilience and friendliness of its people.
+            Following India's independence in <span class="bold-words"> 1947</span>, the city was renamed <span class="bold-words">Kanpur</span>, <span class="underline-words">symbolizing a new era and a fresh start</span>. Despite its tumultuous past, Kanpur has emerged as a beacon of happiness and positivity. <br>
+             In <span class="bold-words">2023</span>, it was recognized as the <span class="underline-words">11th happiest city in the world</span>, a testament to the resilience and friendliness of its people.<br>
             
-            This vibrant city continues to honor its history while embracing progress and prosperity, making it a truly remarkable place with a captivating story to tell. 
+          This vibrant city continues to honor its history while embracing progress and prosperity, making it a truly remarkable place with a captivating story to tell.
         </p>
     
             
@@ -114,6 +118,75 @@
                 <a href="https://en.wikipedia.org/wiki/JK_Temple" target="_blank" rel="noopener noreferrer">
                     <button class="landmarkButton">Learn More</button>
                 </a>
+            </div>
+        </div>
+
+        <!-- Kanpur Zoological Park -->
+
+         <div class="landmarkCard">
+            <img src="Kanpur.jpg" alt="Kanpur Zoological Park" />
+            <div class="landmarkInfo">
+              <p class="Tag-line" style="color: #FDF0D5;">
+  Also known as Allen Zoo, established in 1974. It's one of the oldest zoo in India.
+</p>
+
+                <h2>Kanpur Zoological Park</h2>
+                <a href="https://en.wikipedia.org/wiki/Kanpur_Zoological_Park" target="_blank" rel="noopener noreferrer">
+                    <button class="landmarkButton">Learn More</button>
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+<!-- Food Section Starts from here -->
+    
+     <h2 id="CardsHeading">Cawnpore's Famous Food </h2>
+    <section class="landmarks">
+        
+        <!-- food cards -->
+        <!-- Imarti -->
+        <div class="landmarkCard">
+            <img src="Imarti.jpeg" alt="Lal Imli" />
+            <div class="landmarkInfo">
+              <p class="Tag-line" style="color: #FDF0D5;">
+  Famous golden dessert of Kanpur known for it's crispiness and sweetness.
+</p>
+                <h2>Imarti</h2>
+            </div>
+        </div>
+        <!-- Sultani Dal -->
+        <div class="landmarkCard">
+            <img src="Sultani Dal.jpeg" alt="Sultani Dal" />
+            <div class="landmarkInfo">
+              <p class="Tag-line" style="color: #FDF0D5;">
+  A royal Dal made with tur dal cooked with milk,cream and yogurt with some tadka on top.
+</p>
+
+                <h2>Sultani Dal</h2>
+            </div>
+        </div>
+        <!-- Luchi Sabji -->
+        <div class="landmarkCard">
+            <img src="Luchi Sabji.jpeg" alt="Luchi Sabji" />
+            <div class="landmarkInfo">
+              <p class="Tag-line" style="color: #FDF0D5;">
+  It's a breakfast dish made by deep frying the bread and bolied potato.
+</p>
+
+                <h2>Luchi Sabji</h2>
+            </div>
+        </div>
+
+        <!-- Makhan Malai -->
+        <div class="landmarkCard">
+            <img src="Makhan Malai.jpeg" alt="Makhan-Malai" />
+            <div class="landmarkInfo">
+             <p class="Tag-line" style="color: #FDF0D5;">
+  This food is quite famous in Kanpur during winter seasons..
+</p>
+
+                <h2>Makhan Malai</h2>
             </div>
         </div>
 
