@@ -207,6 +207,98 @@ nav .fa {
             font-size: 15px;
         }
 
+
+/* Elegant Issues Grid */
+.issues-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 3rem auto 4rem auto;
+  padding: 0 1rem;
+}
+
+.issue-card {
+  background: linear-gradient(100deg, #fff7ed 80%, #fdf0d5 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(120,0,0,0.08);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  min-height: 480px;
+}
+
+.issue-card:hover {
+  box-shadow: 0 8px 32px rgba(120,0,0,0.16);
+  transform: translateY(-6px) scale(1.025);
+}
+
+.issue-card h3 {
+  color: #780000;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  font-family: 'Crimson Text', serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.issue-card img {
+  width: 100%;
+  max-width: 260px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px rgba(120,0,0,0.07);
+  background: #fdf0d5;
+}
+
+.issue-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.issue-actions button {
+  background: #780000;
+  color: #fdf0d5;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.08rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(120,0,0,0.08);
+}
+
+.issue-actions button:hover {
+  background: #a5381d;
+  transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 700px) {
+  .issues-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 0.2rem;
+  }
+  .issue-card {
+    min-height: 400px;
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+  .issue-card img {
+    max-width: 90vw;
+    height: 220px;
+  }
+  .issue-card h3 {
+    font-size: 1.3rem;
+  }
+}
+
 /*        .issue01 {
 
             width: 80%;
@@ -216,7 +308,7 @@ nav .fa {
             
        } */
 
-.issues{
+/** .issues{
         width: 50%;
         margin: auto;
         margin-top: 0;
@@ -225,7 +317,6 @@ nav .fa {
 
 
 
-        /*changed*/
         border-bottom: 4px solid #060000;
         padding-bottom: 100px;
    
@@ -239,10 +330,10 @@ nav .fa {
         animation: shrinkPulse 4s ease-in-out infinite alternate, color 5s ease-in-out infinite;
         background-size: 400% 400%;
         width: 48%;           /* Shrink the cover width */
-        margin: 0 auto 30px auto; /* Center and add bottom margin */
-        position: relative;
+        /* margin: 0 auto 30px auto; /* Center and add bottom margin */
+       /* position: relative;
         overflow: hidden;
-        padding: 25px 0 45px 0; /* Top and bottom padding for spacing */
+        padding: 25px 0 45px 0; /* Top and bottom padding for spacing 
         box-shadow: 0 0 20px #000000;
         display: flex;
         flex-direction: column;
@@ -411,7 +502,7 @@ nav .fa {
         .fa-heart {
             color: #fdf0d5;
             font-size: 15px;
-        }
+        } 
 
 /** FOOTER **/
 
