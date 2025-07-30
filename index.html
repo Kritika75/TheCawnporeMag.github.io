@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
+    <link rel="stylesheet" href="report.css">
+
   </head>
   <body>
     <!-- Loading Screen -->
@@ -195,6 +197,30 @@
             <button type="submit">Subscribe</button>
           </form>
         </div>
+
+
+        
+<!-- Report a Problem Button -->
+<div class="report-wrapper">
+  <button class="report-btn" onclick="openReportModal()">Report a Problem</button>
+</div>
+
+<!-- Report Modal -->
+<div id="reportModal" class="modal-overlay" onclick="outsideClick(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="close-btn" onclick="closeReportModal()">×</button>
+    <h2 class="modal-title">Report a Problem</h2>
+    <textarea id="reportText" class="report-text" placeholder="Please describe the issue..."></textarea>
+    <div class="modal-actions">
+      <button onclick="submitReport()" class="submit-btn">Submit</button>
+      <button onclick="closeReportModal()" class="cancel-btn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
+
+
       </div>
       <div class="footer-bottom">
         <p>Made with &#x2665; by Kritika Singh</p>
@@ -203,6 +229,8 @@
     </footer>
 
     <script src="index.js"></script>
+    <script src="script.js"></script>
+
 
     <!-- Visibility change  -->
     <script>
