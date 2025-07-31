@@ -216,22 +216,34 @@ nav .fa {
             
        } */
 
-.issues{
-        width: 50%;
-        margin: auto;
-        margin-top: 0;
-        text-align: center;
-        padding-top: 50px;
+.issues {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  border-bottom: 4px solid #060000;
+  padding-bottom: 100px;
+}
+
+
+.issue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 50px;
+  margin-top: 40px;
+}
 
 
 
-        /*changed*/
-        border-bottom: 4px solid #060000;
-        padding-bottom: 100px;
-   
-    
+.issue-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
 
-        }
+
+
 
        .issuecover {
         background: linear-gradient(135deg, #fce8e4, #ffe9d1, #e1f2ec, #e3d6f7);
