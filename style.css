@@ -181,8 +181,8 @@ nav .fa {
 .card {
   display: block;
   position: relative;
-  max-width: 300px;
-  max-height: 400px;
+  width: 300px;
+  height: 400px;
   background-color: rgba(234, 171, 214,0.4);
   border-radius: 10px;
   padding: 2em 1.2em;
