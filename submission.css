@@ -389,9 +389,200 @@ button:active{
   line-height: 22px;
   padding: 10px;
   font-style: italic;
+  font-family: "Times New Roman", Times, serif
+}
+.card {
+  color: #111717;
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+  font-style: italic;
   font-family: "Times New Roman", Times, serif;
+  background-color: #78000010;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 80%;
+  box-shadow: 1px 7px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  cursor: pointer;
+  
+}
+.card:hover {
+      animation: link-hover 0.3s ease forwards;
+      transform: translateY(-5px);
+      color: #780000;
+      box-shadow: 0 10px  20px (0,0,0,0.15);
+    }
+   @keyframes link-hover {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .text-box1 h1 {
+  margin :0px;
+  font-weight: 700;
+  font-style: italic;
+  background-color: #780000;;
+  color: white;
+  font-size: 62px;
+  padding: 0px;
+        }    
+
+    #THEME{
+      color:#f8f3f3;
+      padding: 20px 30px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 2.5rem;
+      text-shadow:#f7f0f0 0px 0px 7px;
+      background-color: #780000b2;
+      margin-bottom: 80px;
+      overflow: hidden;
+      max-width: 90%;
+      line-height: 1.4;
+      z-index:1;
+
+    }
+    @media (max-width: 768px) {
+  #THEME {
+    font-size: 1.8rem;
+    padding: 15px 20px;
+  }
 }
 
+.status-card{
+  margin-top: 10rem;
+}
+    #sub-guide {
+      padding: 20px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 30px;
+      margin: 20px;
+      display: block;
+      }
+
+      #head-titles{
+        background-color: #780000;
+      }
+
+      .header1 p{
+        color: white;
+      }
+
+      .mail-link{
+        color:#780000;
+      }
+      
+header {
+  padding: 25px;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+
+.container {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.submission-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submission-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.card-header .icon {
+  font-size: 1.8rem;
+  color: #b22222;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  flex: 1;
+  margin-left: 10px;
+  color: #800000;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.status-tag {
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  border-radius: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.status-tag.closed {
+  background-color: #ffeaea;
+  color: #b30000;
+}
+
+.status-tag.open {
+  background-color: #e9fbee;
+  color: #207a3e;
+}
+
+.status-tag.reviewed {
+  background-color: #f3f3ff;
+  color: #4c4cb2;
+}
+
+a {
+  color: #aa0000;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .status-tag {
+    margin-top: 10px;
+  }
+}
 .social {
   color: #780000;
   font-size: 19px;
