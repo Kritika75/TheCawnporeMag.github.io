@@ -139,15 +139,19 @@ main{
     flex-direction: column;
 }
 .heading{
-    display: flex;
+    display:flex;
     align-items: center;
     justify-content: center;
     height: 5rem;
     background-color: #780000;
     color: #fdf0d5;
     text-align: center;
-    font-size: 1.5rem;
-    /* width: 100vw; */
+    font-size: 1.6rem;
+    font-weight: 600;
+    box-shadow: 2px 4px 6px rgba(240, 4, 43, 0.705);
+    text-shadow:rgb(255, 255, 255) 1px 1px 3px;
+    font-family:serif;
+    box-sizing: border-box;
 }
 
 .social-icons {
@@ -173,9 +177,41 @@ main{
   background: #fff;
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
-  margin-right: 5vw;
-  padding: 0.5rem;
+  margin: 1px 0;
+  box-shadow: 1px 7px 3px rgba(240, 4, 43, 0.247);
+  transition: background-color 0.3s ease;
+  cursor: pointer; 
 }
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0.2rem;
+}
+.ans{
+    color: #ff0202;
+    font-size: 1rem;
+    padding: 0.5rem;
+    font-weight: 500;
+    text-align: justify;
+    font-family: serif;
+
+}
+.faq:hover {
+      color: rgba(253, 55, 6, 0.966);
+      animation: link-hover 0.3s ease forwards;
+    }
+   @keyframes link-hover {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
 a{
     text-decoration: none;
     color: #780000;
@@ -190,8 +226,25 @@ a{
     margin: auto;
     align-items: center;
     gap: 0.5rem ;   
-    border-radius: 1rem; 
+    border-radius: 3rem; 
+    box-shadow: 3px 7px 5px rgba(240, 4, 43, 0.61);
+    margin-top: 0.5rem;
 }
+.ask:hover {
+      animation: link-hover 0.3s ease forwards;
+    }
+   @keyframes link-hover {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
 
 .mail{
     background-color: #fdf0d5;
@@ -199,7 +252,26 @@ a{
     border-radius: 1.5rem;
     text-align: center;
     padding: 0.5rem;
+    color: #780000;
+    text-shadow: #79050588 0.1rem 0.1rem 0.2rem;
+    font-weight: 600;
+    font-size: 1rem;
 }
+.mail:hover {
+      color: rgb(6, 175, 253); /* Example color change */
+      animation: link-hover 0.3s ease forwards;
+    }
+   @keyframes link-hover {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
 .ask h3{
     font-size: 1.5rem;
 }
