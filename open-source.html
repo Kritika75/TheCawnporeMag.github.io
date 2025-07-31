@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Open Source | The Cawnpore</title>
-  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +26,7 @@
 
   <!-- Navbar -->
   <section class="header">
-    <nav>
+    <nav role="navigation" aria-label="Main Menu">
       <div class="nav-links" id="navLinks">
         <i class="fa fa-times" onclick="hideMenu()"></i>
         <ul>
@@ -35,6 +35,7 @@
           <li><a href="submission.html">SUBMIT</a></li>
           <li><a href="issue.html">ISSUE</a></li>
           <li><a href="masthead.html">MASTHEAD</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="open-source.html">OPEN SOURCE</a></li>
         </ul>
       </div>
@@ -50,17 +51,18 @@
 
   <!-- Welcome Section -->
   <section class="Welcome" style="text-align: center; padding: 40px 20px;">
-    <h2 id="namaste">Namaste Contributors 👋</h2>
+    <h2 id="namaste">Namaste Contributors </h2>
     <p id="intro" style="max-width: 700px; margin: auto;">
       This project is proudly part of <strong>GirlScript Summer of Code (GSSoC) 2025</strong>!<br><br>
       We believe in the power of open-source collaboration, where ideas grow, and developers like you bring them to life.
-      Whether you're a beginner or an experienced dev, your contributions matter. ❤️
+      Whether you're a beginner or an experienced dev, your contributions matter. 
     </p>
     <br>
-    <a href="https://gssoc.girlscript.tech" target="_blank" id="issue1-btn"
-      style="padding: 12px 25px; background: #780000; color: white; border-radius: 4px; text-decoration: none;">Know
-      More about GSSoC</a>
+   <a href="https://gssoc.girlscript.tech" target="_blank" id="issue1-btn" class="btn-gssoc">
+  Know More about GSSoC
+</a>
   </section>
+  
 
   <!-- Logos -->
   <section class="listings" style="text-align: center; margin-bottom: 40px;">
@@ -84,12 +86,12 @@
           <h3>Quick Links</h3>
           <ul>
             <li><a href="index.html" >Home</a></li>
-            <li><a href="about.html" target="_blank">About</a></li>
-            <li><a href="submission.html" target="_blank">Submit</a></li>
-            <li><a href="issue.html" target="_blank">Issue</a></li>
-            <li><a href="masthead.html" target="_blank">Masthead</a></li>
-            <li><a href="faq.html" target="_blank">FAQ</a></li>
-            <li><a href="open-source.html" target="_blank">Open Source</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="submission.html">Submit</a></li>
+            <li><a href="issue.html">Issue</a></li>
+            <li><a href="masthead.html">Masthead</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="open-source.html">Open Source</a></li>
           </ul>
         </div>
         <div class="footer-contact">

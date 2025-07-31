@@ -28,6 +28,13 @@
 
   </head>
   <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <i class="fa-solid fa-spinner"></i>
+            <h2>Loading<span class="dots"></span></h2>
+        </div>
+    </div>
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
     </div>
@@ -37,13 +44,13 @@
           <i class="fa fa-times" onclick="hideMenu()"></i>
           <ul>
 
-            <li><a href="index.html" target="_blank">HOME</a></li>
-            <li><a href="about.html" target="_blank">ABOUT</a></li>
-            <li><a href="submission.html" target="_blank">SUBMIT</a></li>
-            <li><a href="issue.html" target="_blank">ISSUE</a></li>
-            <li><a href="masthead.html" target="_blank">MASTHEAD</a></li>
-            <li><a href="faq.html" target="_blank">FAQ</a></li>
-            <li><a href="open-source.html" target="_blank">OPEN SOURCE</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="submission.html">SUBMIT</a></li>
+            <li><a href="issue.html">ISSUE</a></li>
+            <li><a href="masthead.html">MASTHEAD</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="open-source.html">OPEN SOURCE</a></li>
 
           </ul>
         </div>
@@ -65,44 +72,68 @@
 
     <section class="Welcome">
       <h1 id="namaste">Namaste!</h1>
-      <p id="intro">
+      <div class="container">
+ <div class="card">
+      <p class="card-title">Introduction</p>
+      <p class="small-desc">
         The Cawnpore Magazine's motive is to delve into the profound influence
         and impact of various cultures worldwide through the art of literature.
         Our mission is to celebrate the richness of each culture, beautifully
         showcased through the lenses of literature and art. By providing a safe
         and inclusive platform, we aim to foster a community that encourages
-        readers to explore, learn, and appreciate diverse perspectives. We
+        readers to explore, learn, and appreciate diverse perspectives.
+      </p>
+      <div class="go-corner">
+        <div class="go-arrow">→</div>
+      </div>
+      </div>
+      <div class="card">
+      <p class="card-title">What we do !!</p>
+      <p class="small-desc">
+         We
         firmly believe that the exchange of ideas and experiences is the key to
         a more tolerant and compassionate world, and we strive to achieve this
         through The Cawnpore Magazine.
-        <br />
-        <br />
         So, step right up and get ready for The Cawnpore Magazine your one stop
         destination to explore the best in fiction, non-fiction, poetry,
         artwork, interviews, breathtaking photos and so much more!
-        <!--             Are you a budding writer or artist? Then you're in luck because submissions for issue 1 are now open! Head over to our submission page and let your creativity run wild!
-            <br> -->
-        <br />
+      </p>
+      <div class="go-corner">
+        <div class="go-arrow">→</div>
+      </div>
+      </div>
+      <div class="card">
+      <p class="card-title">Don't Wait, Subscribe</p>
+      <p class="small-desc">
         We understand that submitting your work can be a daunting task, but we
         assure you that we will treat each submission with the utmost respect
         and care. We are excited to read your submissions and grateful for your
         contribution to The Cawnpore. Thank you for considering us as a platform
         to showcase your talent.
-        <br />
-        <br />
-        <!--             Our publication schedule consists of six issues per year, which are released in January, March, May, July, September, and November. We invite you to stay up-to-date with our latest issues by marking your calendar for the release dates. Thank you for your continued support. -->
       </p>
-
+      <div class="go-corner">
+        <div class="go-arrow">→</div>
+      </div>
+      </div>
+      
+    </div>
       <a
-        href="issue.html" target="_blank"
-        aria-label="View Issue 2 of The Cawnpore"
+        href="issue.html"
+        aria-label="View the latest Issue of The Cawnpore"
         id="issue1-btn"
-        >ISSUE 2</a
+        >READ THE LATEST ISSUE</a
+      >
+    </br>
+      <a
+        href="submission.html" 
+        aria-label="Submit your work on The Cawnpore"
+        id="cta1-btn"
+        >SUBMIT YOUR WORK</a
       >
     </section>
 
     <section class="listings">
-      <h3>Proudly Listed On</h3>
+      <h3>Proudly Listed On... &#128640;</h3>
       <div class="listing-images">
         <a href="https://duotrope.com/magazine/the-cawnpore-magazine-37420" target="_blank">
           <img
@@ -129,19 +160,19 @@
           <h3>The Cawnpore</h3>
           <p>An independent magazine celebrating literary voices and untold stories.</p>
         </div>
-        <div class="footer-links">
+        <div class="footer-links" id="footerLinks">
           <h3>Quick Links</h3>
           <ul>
             <li><a href="index.html" >Home</a></li>
-            <li><a href="about.html" target="_blank">About</a></li>
-            <li><a href="submission.html" target="_blank">Submit</a></li>
-            <li><a href="issue.html" target="_blank">Issue</a></li>
-            <li><a href="masthead.html" target="_blank">Masthead</a></li>
-            <li><a href="faq.html" target="_blank">FAQ</a></li>
-            <li><a href="open-source.html" target="_blank">Open Source</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="submission.html">Submit</a></li>
+            <li><a href="issue.html">Issue</a></li>
+            <li><a href="masthead.html">Masthead</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="open-source.html">Open Source</a></li>
           </ul>
         </div>
-        <div class="footer-contact">
+        <div class="footer-contact" id="footerContact">
           <h3>Contact Us</h3>
           <div class="social-icons">
             <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
@@ -176,5 +207,18 @@
     </footer>
 
     <script src="index.js"></script>
+
+    <!-- Visibility change  -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loadingScreen = document.getElementById("loading-screen");
+        
+            // Set a timeout to hide the loading screen
+            setTimeout(() => {
+                loadingScreen.classList.add("hidden");
+            }, 6000); // 6000ms = 6 seconds (adjust as needed)
+        });
+        
+    </script>
   </body>
 </html>

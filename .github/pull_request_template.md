@@ -33,6 +33,7 @@ Fixes: #[Issue Number]
 - [ ] Follows the design/style guide of the project.
 - [ ] Added contributor name above.
 - [ ] Confirmed that the feature fits well with the latest updated version of the website.
+- [ ] Ensured images and layout are responsive (look good on both desktop and small screens like phones).
 
 ---
 
@@ -40,5 +41,3 @@ Fixes: #[Issue Number]
 <!-- Add anything else you'd like reviewers to know -->
 
 ---
-
-

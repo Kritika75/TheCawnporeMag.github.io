@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.body{
+    background-color: #fdf0d5;
+}
+main{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    background-color: #780000;
+    color: #fdf0d5;
+    text-align: center;
+    font-size: 1.5rem;
+    /* width: 100vw; */
+}
+
+
+.faq {
+  color: #780000;
+  border-left: 4px solid #780000;
+  background: #fff;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  margin-right: 5vw;
+  padding: 0.5rem;
+}
+a{
+    text-decoration: none;
+    color: #780000;
+}
+.ask{
+    display: flex;
+    color: #fdf0d5;
+    flex-direction: column;
+    height: 10rem;
+    background-color: #780000;
+    width: 25rem;
+    margin: auto;
+    align-items: center;
+    gap: 0.5rem ;   
+    border-radius: 1rem; 
+}
+
+.mail{
+    background-color: #fdf0d5;
+    width: 80%;
+    border-radius: 1.5rem;
+    text-align: center;
+    padding: 0.5rem;
+}
+.ask h3{
+    font-size: 1.5rem;
+}
+.seperator{
+    height: 2rem;
+}
+.ask p{
+    justify-self: end;
+}
+.mail img{
+    object-fit: cover;
+}
+
+
+
+/*  CSS for Phone */
+@media screen and (max-width:768px) {
+    .heading{
+        font-size: 0.75rem;
+    }
+    .ask{
+        border-radius: 0;
+    }
+}
