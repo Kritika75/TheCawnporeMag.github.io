@@ -42,9 +42,13 @@
     align-items: center;
     padding: 0.75rem 0%;
     margin-right: 6px;
-    background: #780000; /* Solid maroon background */
-    backdrop-filter: none; /* Optional: disable the blur if no longer needed */
-    -webkit-backdrop-filter: none; /* Optional: same for Safari */
+      background: linear-gradient( 135deg,
+    rgba(242, 237, 237, 0.3), 
+    rgba(122, 0, 0, 0.8),    
+    rgba(17, 16, 16, 0.3)        
+);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(179, 177, 177, 0.2);
     position: fixed;
@@ -55,7 +59,7 @@
     }
 
     .header1 {
-        background-color: #780000;
+    background-color: #780000;
     min-height:37vh;  
     width: 100%;
     background-position: center;
@@ -89,7 +93,7 @@ font-size: 20px
 }
 
 
-        .nav-links {
+    .nav-links {
     flex: 1;
     text-align: right;
 }
@@ -129,47 +133,45 @@ font-size: 20px
 
 nav .fa {
     display: none;
+}@media (max-width: 700px) {
+  .text-box h1 {
+    margin-top: 15px;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 40px;
+  }
+  .nav-links ul li {
+    display: block;
+  }
+  .nav-links {
+    position: fixed;
+    background: linear-gradient(135deg, #d24848 ,#7a0000, #cea8bc);
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    z-index: 2;
+    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s ease-in-out;
+  }
+
+ nav .fa {
+        display: block;
+        color: #663346;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+        z-index: 10;
+        background: linear-gradient(135deg, #fdfbfb, #ebedee); /* soft gradient backdrop */
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+  .nav-links ul {
+    padding: 30px;
+  }
 }
-        @media(max-width: 700px) {
-        .text-box h1 {
-        margin-top: 15px;
-        font-weight: 700;
-        font-style: italic;
-        font-size: 40px;
-        }
-        .nav-links ul li {
-            display: block;
-        }
-        .nav-links {
-            position: fixed;
-            background: #780000fc;
-            height: 100vh;
-            width: 200px;
-            top: 0;
-            right: -200px;
-            text-align: left;
-            z-index: 2;
-            transition: 1s;
-        }
-    
-        nav .fa-times {
-    display: block;
-    color: #fdf0d5;
-    margin: 10px;
-    font-size: 22px;
-    cursor: pointer;
-  }
-  nav .fa-bars {
-    display: block;
-    color: #780000fc; 
-    margin: 10px;
-    font-size: 22px;
-    cursor: pointer;
-  }
-        .nav-links ul{
-            padding: 30px;
-        }
-        }
 
         .footer {
             background-color: #780000;
