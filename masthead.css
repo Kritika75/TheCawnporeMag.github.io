@@ -55,13 +55,13 @@ nav {
   border-bottom: 1px solid rgba(179, 177, 177, 0.2);
   position: fixed;
   top: 0;
-  height: 6%;
+  height: 9%;
   width: 100%;
   z-index: 999; 
 }
 
 .header1 {
-  min-height: 26vh;
+  min-height: 36vh;
   width: 100%;
   background-color: #fdf0d5;
   background-position: center;
@@ -112,7 +112,6 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 0px 5%;
-
 }
 .nav-links {
   flex: 1;
@@ -162,11 +161,12 @@ nav .fa {
     font-size: 40px;
   }
   .nav-links ul li {
+    background-color: #780000;
     display: block;
   }
   .nav-links {
     position: fixed;
-    background: #780000fc;
+    background: #780000;
     height: 100vh;
     width: 200px;
     top: 0;
