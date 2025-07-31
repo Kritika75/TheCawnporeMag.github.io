@@ -41,23 +41,25 @@ html {
 }
 
 nav {
-  display: flex;
-  /* margin-top: 6px; */
-  margin-right: 6px;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 5%;
-  margin-right: 6px;
-  background: rgba(177, 177, 177, 0.144);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid rgba(179, 177, 177, 0.2);
-  position: fixed;
-  top: 0;
-  height: 9%;
-  width: 100%;
-  z-index: 999; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 5%;
+    margin-right: 6px;
+      background: linear-gradient( 135deg,
+    rgba(242, 237, 237, 0.3), /* soft highlight */
+    rgba(122, 0, 0, 0.8),     /* your base color */
+    rgba(17, 16, 16, 0.3)        /* subtle depth */
+);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(179, 177, 177, 0.2);
+    position: fixed;
+    top: 0;
+    height: 9%;
+    width: 100%;
+    z-index: 999;
 }
 
 .header1 {
@@ -106,13 +108,6 @@ nav {
   }
 }
 
-nav{
-    display: flex;
-    background-color: #780000;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 5%;
-}
 .nav-links {
   flex: 1;
   text-align: right;
@@ -161,35 +156,34 @@ nav .fa {
     font-size: 40px;
   }
   .nav-links ul li {
-    background-color: #780000;
     display: block;
   }
   .nav-links {
     position: fixed;
-    background: #780000;
+    background: linear-gradient(135deg, #d24848 ,#7a0000, #cea8bc);
     height: 100vh;
     width: 200px;
     top: 0;
     right: -200px;
     text-align: left;
     z-index: 2;
-    transition: 1s;
+     box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s ease-in-out;
+   
   }
 
-  nav .fa-times {
-    display: block;
-    color: #fdf0d5;
-    margin: 10px;
-    font-size: 22px;
-    cursor: pointer;
-  }
-  nav .fa-bars {
-    display: block;
-    color: #fdf0d5;
-    margin: 10px;
-    font-size: 22px;
-    cursor: pointer;
-  }
+ nav .fa {
+        display: block;
+        color: #663346;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+        z-index: 10;
+        background: linear-gradient(135deg, #fdfbfb, #ebedee); /* soft gradient backdrop */
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
   .nav-links ul {
     padding: 30px;
   }
