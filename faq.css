@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-.body{
+.body {
   background-color: #fdf0d5;
 }
 html {
@@ -11,21 +11,21 @@ html {
 }
 .progress-container {
   width: 100%;
-  height: 4px; 
-  background: #EAE0D5; 
-  position: fixed; 
+  height: 4px;
+  background: #eae0d5;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 .progress-bar {
   height: 100%;
-  width: 0%; 
-  background: #8B0000; 
+  width: 0%;
+  background: #8b0000;
 }
-.faq-page .header{
-    min-height:20vh;
+.faq-page .header {
+  min-height: 20vh;
 }
 .header {
   min-height: 0vh;
@@ -52,7 +52,7 @@ nav {
   top: 0;
   height: 6%;
   width: 100%;
-  z-index: 999; 
+  z-index: 999;
 }
 nav {
   display: flex;
@@ -71,14 +71,14 @@ nav {
   top: 0;
   height: 6%;
   width: 100%;
-  z-index: 999; 
+  z-index: 999;
 }
-nav{
-    display: flex;
-    background-color: #780000;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 5%;
+nav {
+  display: flex;
+  background-color: #780000;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5%;
 }
 
 .nav-links {
@@ -111,7 +111,6 @@ nav{
   transition: 0.5s;
 }
 .nav-links ul li a:hover {
-  text-decoration: underline;
   transition: 0.3s ease;
 }
 .nav-links ul li:hover::after {
@@ -156,21 +155,21 @@ nav .fa {
   }
 }
 
-main{
-    display: flex;
-    gap: 1rem;
-    flex-direction: column;
+main {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
 }
-.heading{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5rem;
-    background-color: #780000;
-    color: #fdf0d5;
-    text-align: center;
-    font-size: 1.5rem;
-    /* width: 100vw; */
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  background-color: #780000;
+  color: #fdf0d5;
+  text-align: center;
+  font-size: 1.5rem;
+  /* width: 100vw; */
 }
 
 .social-icons {
@@ -189,7 +188,6 @@ main{
   transform: translateY(-3px) scale(1.15);
 }
 
-
 .faq {
   color: #780000;
   border-left: 4px solid #780000;
@@ -199,51 +197,49 @@ main{
   margin-right: 5vw;
   padding: 0.5rem;
 }
-a{
-    text-decoration: none;
-    color: #780000;
+a {
+  text-decoration: none;
+  color: #780000;
 }
-.ask{
-    display: flex;
-    color: #fdf0d5;
-    flex-direction: column;
-    height: 10rem;
-    background-color: #780000;
-    width: 25rem;
-    margin: auto;
-    align-items: center;
-    gap: 0.5rem ;   
-    border-radius: 1rem; 
-}
-
-.mail{
-    background-color: #fdf0d5;
-    width: 80%;
-    border-radius: 1.5rem;
-    text-align: center;
-    padding: 0.5rem;
-}
-.ask h3{
-    font-size: 1.5rem;
-}
-.seperator{
-    height: 2rem;
-}
-.ask p{
-    justify-self: end;
-}
-.mail img{
-    object-fit: cover;
+.ask {
+  display: flex;
+  color: #fdf0d5;
+  flex-direction: column;
+  height: 10rem;
+  background-color: #780000;
+  width: 25rem;
+  margin: auto;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
 }
 
+.mail {
+  background-color: #fdf0d5;
+  width: 80%;
+  border-radius: 1.5rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+.ask h3 {
+  font-size: 1.5rem;
+}
+.seperator {
+  height: 2rem;
+}
+.ask p {
+  justify-self: end;
+}
+.mail img {
+  object-fit: cover;
+}
 
-
-/*  CSS for Phone */
-@media screen and (max-width:768px) {
-    .heading{
-        font-size: 0.75rem;
-    }
-    .ask{
-        border-radius: 0;
-    }
+/* CSS for Phone */
+@media screen and (max-width: 768px) {
+  .heading {
+    font-size: 0.75rem;
+  }
+  .ask {
+    border-radius: 0;
+  }
 }
