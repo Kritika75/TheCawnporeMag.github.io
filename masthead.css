@@ -647,3 +647,31 @@ button:active{
   }
 }
 
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.search-bar input[type="text"] {
+  padding: 8px;
+  border: 1px solid #780000;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  font-size: 15px;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  border: none;
+  background: #780000;
+  color: #fdf0d5;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-bar button:hover {
+  background: #a30000;
+}

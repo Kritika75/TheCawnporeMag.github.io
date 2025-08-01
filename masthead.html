@@ -154,8 +154,14 @@
       <div class="text-box1">
             <h1>Masthead</h1>
             <p>The Cawnpore...</p>
+            <form id="searchForm" class="search-bar" autocomplete="off">
+  <input type="text" id="searchInput" placeholder="Search..." />
+  <button type="submit">Search</button>
+</form>
             
+ 
         </div>
+
 
     </section>
 
@@ -756,6 +762,47 @@
         <p>&copy; 2024 THE CAWNPORE — ALL RIGHTS RESERVED</p>
       </div>
     </footer>
+    <script>
+      document.getElementById('searchForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const query = document.getElementById('searchInput').value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.team-card, .founder-card');
+  
+  if (query === "") {
+    // If input box is empty, show all cards
+    cards.forEach(card => card.style.display = "");
+  } else {
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      if (text.includes(query)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+});
+
+// Optional: Live search as you type
+document.getElementById('searchInput').addEventListener('input', function() {
+  const query = this.value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.team-card, .founder-card');
+  if (query === "") {
+    // If input box is empty, show all cards
+    cards.forEach(card => card.style.display = "");
+  } else {
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      if (text.includes(query)) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+});
+
+    </script>
 
     <script src="index.js" ></script>
 
