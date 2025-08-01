@@ -705,15 +705,19 @@ button:active {
   position: absolute;
   top: var(--cursor-y, 0px);
   left: var(--cursor-x, 0px);
-  width: 80px;
-  height: 25px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 0, 0, 0.3), transparent 60%);
+  background: rgba(255, 0, 0, 0.6); /* Solid red core */
+  box-shadow:
+    0 0 15px rgba(255, 0, 0, 0.8),
+    0 0 30px rgba(255, 0, 0, 0.5),
+    0 0 60px rgba(255, 0, 0, 0.3); /* Strong outer glow */
   transform: translate(-50%, -50%);
   pointer-events: none;
   mix-blend-mode: screen;
-  transition: top 0.1s ease, left 0.1s ease;
-  box-shadow: 0 0 30px 20px rgba(255, 0, 0, 0.2);
+  transition: top 0.08s ease, left 0.08s ease;
 }
+
 
 
