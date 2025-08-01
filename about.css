@@ -232,6 +232,15 @@ width: 80%;
 margin: auto;
 text-align: center;
 padding-top: 20px;
+background: linear-gradient(to bottom right, #fffdf7, #fff3e4);
+  border: 2px solid #ecd1b3;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+}
+.Introductory:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
 #intro1 {
@@ -245,10 +254,70 @@ font-family: 'Times New Roman', Times, serif;
 }
 .bold-words{
    font-weight: bold;
+   font-style: italic;
+  color: #800000;
+  background-color: #fff0d6;
+  padding: 1px 4px;
+  border-radius: 4px;
+  box-shadow: inset 0 -1.5px 0 #dca179;
+  transition: background-color 0.3s ease;
+}
+.bold-words:hover {
+  background-color: #ffe3bd;
+  cursor: default;
 }
 .underline-words{
   text-decoration: underline;
+  text-decoration-color: #800000;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+  color:#800000;
+  font-style: italic;
+  transition: color 0.3s ease;
 }
+
+ /* Separator Styling */
+    .section-separator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 4rem auto;
+      padding: 0.5rem 0;
+      background-color: #fff7ec;
+      position: relative;
+    }
+
+    .separator-line {
+      flex-grow: 1;
+      height: 3px;
+      background: linear-gradient(to right, #800000, #d89f7a, #0066cc);
+      border-radius: 3px;
+      margin: 0 1.5rem;
+      opacity: 0.8;
+      box-shadow: 0 0 6px rgba(128, 0, 0, 0.15);
+    }
+
+    .separator-label {
+      font-size: 2rem;
+      color: #800000;
+      font-weight: bold;
+      padding: 0 0.5rem;
+      transform: rotate(45deg);
+      text-shadow: 0 0 6px rgba(0, 102, 204, 0.2), 0 0 4px rgba(128, 0, 0, 0.3);
+      animation: pulse 2.5s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: rotate(45deg) scale(1);
+        opacity: 0.85;
+      }
+      50% {
+        transform: rotate(45deg) scale(1.2);
+        opacity: 1;
+      }
+    }
+
 #CardsHeading{
     color : #780000;
     font-size: 25px;
@@ -259,13 +328,21 @@ font-family: 'Times New Roman', Times, serif;
 .landmarks{
     display: flex;
     justify-content: center;
-    width: 95%;
+    width: 80%;
     margin: auto;
+    margin-bottom: 20px;
     text-align: center;
     padding-top: 50px;
-    background-color: #ffd9e7;
-    border-radius: 10px;
+    background: linear-gradient(to bottom right, #fffdf7, #fff3e4);
+  border: 2px solid #ecd1b3;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
     flex-wrap: wrap;
+}
+.landmarks:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 .landmarkCard{
     display: flex;
