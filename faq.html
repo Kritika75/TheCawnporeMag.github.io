@@ -2,127 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ - The Cawnpore Magazine</title>
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <link rel="stylesheet" href="faq.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ | The Cawnpore</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="faq.css">
 </head>
 <body>
 
-  <nav>
+  <header>
+    <div class="site-title">The Cawnpore</div>
     <div class="nav-links">
-      <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-        <li><a href="submission.html">SUBMIT</a></li>
-        <li><a href="issue.html">ISSUE</a></li>
-        <li><a href="masthead.html">MASTHEAD</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="open-source.html">OPEN SOURCE</a></li>
-      </ul>
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="submit.html">SUBMIT</a>
+      <a href="issue.html">ISSUE</a>
+      <a href="masthead.html">MASTHEAD</a>
+      <a href="faq.html" class="active">FAQ</a>
+      <a href="opensource.html">OPEN SOURCE</a>
     </div>
-  </nav>
+    <i class="fas fa-bars hamburger" onclick="toggleMenu()"></i>
+  </header>
 
-  <div class="heading">
-    <h1>Frequently Asked Questions</h1>
+  <!-- Sidebar for mobile -->
+  <div class="sidebar" id="navbar">
+    <i class="fas fa-times close-icon" onclick="toggleMenu()"></i>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="submit.html">SUBMIT</a>
+    <a href="issue.html">ISSUE</a>
+    <a href="masthead.html">MASTHEAD</a>
+    <a href="faq.html" class="active">FAQ</a>
+    <a href="opensource.html">OPEN SOURCE</a>
   </div>
 
-  <main>
-    <section class="faq-section">
-      <div class="accordion">
-        <div class="accordion-item">
-          <button class="accordion-button">How can I submit my work?</button>
-          <div class="accordion-content">
-            <p>You can submit through the "Submit" tab on our website.</p>
-          </div>
-        </div>
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
 
-        <div class="accordion-item">
-          <button class="accordion-button">Who can contribute?</button>
-          <div class="accordion-content">
-            <p>Anyone with an interest in writing, art, or photography can contribute.</p>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-button">What is the deadline for the submission?</button>
-          <div class="accordion-content">
-            <p>Deadlines vary based on upcoming issues. Keep an eye on our website or social media pages for official announcements and submission windows.</p>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-button">Do I retain rights to my work?</button>
-          <div class="accordion-content">
-            <p>Yes! Contributors retain full rights to their work. By submitting, you only grant us permission to publish it on The Cawnpore Magazine platform (web and PDF formats).</p>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-button">How to get involved as a developer or designer?</button>
-          <div class="accordion-content">
-            <p>We’re open to collaboration! You can contribute to our open-source website on GitHub by fixing bugs, improving UI, or suggesting new features.
-              Check out the <a href="https://github.com/Kritika75/TheCawnporeMag.github.io.git" target="_blank">GitHub repository</a> to get started with the contributing guidelines.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="ask">
-      <h3>Got more questions?</h3>
-      <span>Drop us an email at</span>
-      <div class="mail">
-        <a href="mailto:thecawnporemagofficial@gmail.com">@ thecawnporemagofficial@gmail.com</a>
-      </div>
-      <p>— we're here to help!</p>
+    <div class="faq-item">
+      <div class="faq-question">Q: How can I submit my work?</div>
+      <div class="faq-answer">A: You can submit through the "Submit" tab on our website.</div>
     </div>
-  </main>
 
-  <footer>
-    <div class="footer-top">
-      <div class="footer-about">
-        <h3>The Cawnpore</h3>
-        <p>An independent magazine celebrating literary voices and untold stories.</p>
-      </div>
-      <div class="footer-links">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="submission.html">Submit</a></li>
-          <li><a href="issue.html">Issue</a></li>
-          <li><a href="masthead.html">Masthead</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="open-source.html">Open Source</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <h3>Contact Us</h3>
-        <div class="social-icons">
-          <a href="mailto:thecawnporemagofficial@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-          <a href="https://www.instagram.com/thecawnporemagazine/"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/the-cawnpore-magazine/"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://x.com/TheCawnporeMag"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="https://www.tumblr.com/thecawnporemagazine"><i class="fa-brands fa-tumblr"></i></a>
+    <div class="faq-item">
+      <div class="faq-question">Q: Who can contribute?</div>
+      <div class="faq-answer">A: Anyone with an interest in writing, art, or photography can contribute.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Q: What is the deadline for the submission?</div>
+      <div class="faq-answer">A: Deadlines vary based on upcoming issues. Keep an eye on our website or social media pages for official announcements and submission windows.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Q: Do I retain rights to my work?</div>
+      <div class="faq-answer">A: Yes! Contributors retain full rights to their work. By submitting, you only grant us permission to publish it on The Cawnpore Magazine platform (web and PDF formats).</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Q: How to get involved as a developer or designer?</div>
+      <div class="faq-answer">A: We’re open to collaboration! You can contribute to our open-source website on GitHub by fixing bugs, improving UI, or suggesting new features. Check out the GitHub repository to get started with the contributing guidelines.</div>
+    </div>
+
+    <div class="contact-box">
+      <p>Got more questions?<br>Drop us an email at</p>
+      <a href="mailto:thecawnporemagofficial2@gmail.com">thecawnporemagofficial2@gmail.com</a>
+      <p>— we’re here to help!</p>
+    </div>
+  </section>
+
+   <footer class="site-footer" id="footer" >
+      <a class="back-to-top" href="#">
+          <i class="fa-solid fa-chevron-up"></i>
+      </a>
+      <div class="footer-top" >
+        <div class="footer-about">
+          <h3 >The Cawnpore</h3>
+          <p>An independent magazine celebrating literary voices and untold stories.</p>
+        </div>
+        <div class="footer-links"   id="footerLinks">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="submission.html">Submit</a></li>
+            <li><a href="issue.html">Issue</a></li>
+            <li><a href="masthead.html">Masthead</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="open-source.html">Open Source</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact"  id="footerContact">
+          <h3>Contact Us</h3>
+          <div class="social-icons">
+            <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/TheCawnporeMag?s=09" target="_blank">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank">
+              <i class="fa-brands fa-tumblr"></i>
+            </a>
+          </div>
+        </div>
+        <div class="subscription-box">
+          <h3>Subscribe to our Newsletter</h3>
+          <form action="/subscribe" method="post">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>Made with ❤️ by Kritika Singh</p>
-      <p>&copy; 2024 THE CAWNPORE — ALL RIGHTS RESERVED</p>
-    </div>
-  </footer>
+      <div class="footer-bottom">
+        <p>Made with &#x2665; by Kritika Singh</p>
+        <p>&copy; 2024 THE CAWNPORE — ALL RIGHTS RESERVED</p>
+      </div>
+    </footer>
 
   <script>
-    document.querySelectorAll('.accordion-button').forEach(button => {
-      button.addEventListener('click', () => {
-        const item = button.parentElement;
-        item.classList.toggle('active');
+    function toggleMenu() {
+      document.getElementById('navbar').classList.toggle('active');
+    }
+
+    const questions = document.querySelectorAll('.faq-question');
+    questions.forEach(q => {
+      q.addEventListener('click', () => {
+        q.classList.toggle('active');
+        q.nextElementSibling.classList.toggle('show');
       });
     });
   </script>
-
 </body>
 </html>
