@@ -175,6 +175,7 @@ main{
   border-bottom-right-radius: 1rem;
   margin-right: 5vw;
   padding: 0.5rem;
+  box-shadow: #780000 0 0 7px;
 }
 a{
     text-decoration: none;
