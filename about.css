@@ -680,7 +680,7 @@ button:active {
   border-radius: 20px;
   padding: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
+  color: #000;
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
@@ -705,14 +705,15 @@ button:active {
   position: absolute;
   top: var(--cursor-y, 0px);
   left: var(--cursor-x, 0px);
-  width: 25px;
+  width: 80px;
   height: 25px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 60%);
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.3), transparent 60%);
   transform: translate(-50%, -50%);
   pointer-events: none;
   mix-blend-mode: screen;
   transition: top 0.1s ease, left 0.1s ease;
+  box-shadow: 0 0 30px 20px rgba(255, 0, 0, 0.2);
 }
 
 
