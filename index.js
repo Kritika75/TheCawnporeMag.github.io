@@ -98,18 +98,30 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //Typewriter effect
-document.addEventListener("DOMContentLoaded", () => {
+window.onload = function () {
+    const loadingScreen = document.getElementById("loading-screen");
     const mainName = document.querySelector(".main-name");
     const text = "The Cawnpore";
-    let charIndex = 0;
 
-    function type() {
-        if (charIndex < text.length) {
-            mainName.textContent += text.charAt(charIndex);
-            charIndex++;
-            setTimeout(type, 150); // Adjust typing speed (ms per character)
+    setTimeout(() => {
+        loadingScreen.classList.add("hidden");
+
+        if (!mainName) {
+            console.error("main-name span not found");
+            return;
         }
-    }
 
-    type();
-},6000);
+        mainName.textContent = "";
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < text.length) {
+                mainName.textContent += text.charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 150);
+            }
+        }
+
+        type();
+    }, 6000);
+};
