@@ -97,3 +97,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+//Typewriter effect
+document.addEventListener("DOMContentLoaded", () => {
+    const mainName = document.querySelector(".main-name");
+    const text = "The Cawnpore";
+    let charIndex = 0;
+
+    function type() {
+        if (charIndex < text.length) {
+            mainName.textContent += text.charAt(charIndex);
+            charIndex++;
+            setTimeout(type, 150); // Adjust typing speed (ms per character)
+        }
+    }
+
+    type();
+},6000);
