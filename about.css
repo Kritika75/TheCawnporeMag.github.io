@@ -104,8 +104,7 @@ font-size: 20px
     display: block;
 }
 .nav-links ul li a:hover {
-    text-decoration: underline;
-    transition: 0.3s ease;
+    text-decoration: none; /* REMOVE underline */
 }
 
 .nav-links ul li::after {

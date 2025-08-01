@@ -112,9 +112,8 @@ nav {
 
 }
 
-.nav-links ul li a:hover{
-    text-decoration: underline;
-    transition: 0.3s ease;
+.nav-links ul li a:hover {
+    text-decoration: none; /* REMOVE underline */
 }
 
 .nav-links ul li::after {
@@ -130,6 +129,7 @@ nav {
 .nav-links ul li:hover::after {
     width: 100%;
 }
+
 
 nav .fa {
     display: none;
