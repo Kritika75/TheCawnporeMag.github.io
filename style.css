@@ -62,13 +62,12 @@ nav {
     align-items: center;
     padding: 0.75rem 5%;
     margin-right: 6px;
-    background: linear-gradient( 135deg,
-    rgba(242, 237, 237, 0.3), /* soft highlight */
-    rgba(122, 0, 0, 0.8),     /* your base color */
-    rgba(17, 16, 16, 0.3)        /* subtle depth */
-);
+    
+    background: #780000; /* use a solid color that suits the site theme */
+    backdrop-filter: none; /* optional, or remove entirely */
+
     /* backdrop-filter: none; Optional: disable the blur if no longer needed */
-    backdrop-filter: blur(8px);
+
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-bottom: 1px solid rgba(179, 177, 177, 0.2);
     position: fixed;
