@@ -125,3 +125,14 @@ window.onload = function () {
         type();
     }, 6000);
 };
+
+//about cards
+document.addEventListener('mousemove', (e) => {
+  document.querySelectorAll('.glass-card').forEach((card) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--cursor-x', `${x}px`);
+    card.style.setProperty('--cursor-y', `${y}px`);
+  });
+});
