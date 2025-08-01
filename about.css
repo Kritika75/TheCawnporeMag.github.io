@@ -665,3 +665,20 @@ button:active {
   background: #e6b85c;
 }
 
+/*typewriter blinking effect*/
+.main-name::after {
+  content: '|';
+  animation: blink 0.7s infinite;
+  margin-left: 2px;
+  color: inherit;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
