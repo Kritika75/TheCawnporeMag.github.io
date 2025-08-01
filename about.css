@@ -666,19 +666,17 @@ button:active {
 }
 
 /*typewriter blinking effect*/
+
 .main-name::after {
   content: '|';
-  animation: blink 0.7s infinite;
-  margin-left: 2px;
-  color: inherit;
+  animation: blink 1s steps(2, start) infinite;
   font-weight: bold;
+  color: inherit;
+  margin-left: 2px;
 }
 
 @keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
+  to {
+    visibility: hidden;
   }
 }
