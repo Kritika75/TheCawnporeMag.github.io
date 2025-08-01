@@ -126,7 +126,7 @@ window.onload = function () {
     }, 6000);
 };
 
-//about cards
+//about cards.
 document.addEventListener('mousemove', (e) => {
   document.querySelectorAll('.glass-card').forEach((card) => {
     const rect = card.getBoundingClientRect();

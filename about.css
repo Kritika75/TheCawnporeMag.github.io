@@ -708,11 +708,11 @@ button:active {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: rgba(255, 0, 0, 0.6); /* Solid red core */
+  background: rgba(255, 0, 0, 0.6); 
   box-shadow:
     0 0 15px rgba(255, 0, 0, 0.8),
     0 0 30px rgba(255, 0, 0, 0.5),
-    0 0 60px rgba(255, 0, 0, 0.3); /* Strong outer glow */
+    0 0 60px rgba(255, 0, 0, 0.3); 
   transform: translate(-50%, -50%);
   pointer-events: none;
   mix-blend-mode: screen;
