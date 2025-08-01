@@ -22,6 +22,23 @@ window.showMenu = () => toggleMenu(true);
 window.hideMenu = () => toggleMenu(false);
 
 
+//search bar code
+
+document.getElementById('searchBtn').addEventListener('click', function() {
+    const query = document.getElementById('searchBar').value.toLowerCase();
+    const cards = document.querySelectorAll('.team-card, .founder-card');
+
+    cards.forEach(card => {
+        const name = card.querySelector('h2, h3')?.textContent.toLowerCase();
+        if (name.includes(query)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
+
+
     // === Newsletter Form Validation ===
     var form = document.querySelector('form[action="/subscribe"]');
         if(form) {
