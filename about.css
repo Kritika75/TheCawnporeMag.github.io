@@ -87,6 +87,15 @@ transform: translate(-50%, -50%);
 text-align: center;
 }
 
+.text-box{
+color:#fdf0d5;
+background-color: #780000;
+display: flex;
+flex-direction: column;
+justify-content: center; 
+align-items: center;
+min-height: 35vh;
+}
 .text-box1 h1 {
 margin-top: 15px;
 font-weight: 700;
@@ -153,6 +162,7 @@ nav .fa {
 
     .nav-links {
         position: fixed;
+        color: #fdf0d5;
         background: linear-gradient(135deg, #d24848 ,#7a0000, #cea8bc);
         height: 100vh;
         width: 200px;
@@ -163,6 +173,25 @@ nav .fa {
         box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
         transition: right 0.4s ease-in-out;
     }
+
+    .nav-links ul li a{
+      color:#fdf0d5;
+    }
+    nav .fa-times {
+    display: block;
+    color: #fdf0d5;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  nav .fa-bars {
+    display: block;
+    color: #fdf0d5; 
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
 
    nav .fa {
         display: block;
@@ -176,6 +205,7 @@ nav .fa {
         border-radius: 12px;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
     }
+
     .nav-links ul{
         padding: 30px;
     }
@@ -240,20 +270,39 @@ font-size: 40px;
 }
 }
 
+#intro {
+  color: #111717;
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 22px;
+  width:100%;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+}
+
 .Introductory {
-width: 80%;
-margin: auto;
-text-align: center;
-padding-top: 20px;
-background: linear-gradient(to bottom right, #fffdf7, #fff3e4);
+
+  width: 67%;
+  margin: auto;
+  text-align: center;
+  padding-top: 20px;
+  background: linear-gradient(to bottom right, #fffdf7, #fff3e4);
   border: 2px solid #ecd1b3;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
 }
+
+
+
+#about1{
+  font-weight: bold;
+}
+
 .Introductory:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+
 }
 
 #intro1 {
@@ -337,6 +386,23 @@ font-family: 'Times New Roman', Times, serif;
     margin : 10px;
 }
 
+#aboutwhy{
+  color: #780000;
+  font-size: 25px;
+  margin: 10px;
+  font-family: "Times New Roman", Times, serif;
+}
+.landmarks {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  background-color: #ffd9e7;
+  border-radius: 10px;
+  flex-wrap: wrap;
+
 
 .landmarks{
     display: flex;
@@ -352,6 +418,7 @@ font-family: 'Times New Roman', Times, serif;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
     transition: all 0.4s ease;
     flex-wrap: wrap;
+
 }
 .landmarks:hover {
   transform: translateY(-4px);
@@ -443,6 +510,20 @@ h2 {
 
 .layer:hover {
     background: rgba(226,0,0,0.4);
+}
+.Introductory {
+width: 67%;
+margin: auto;
+text-align: center;
+padding-top: 20px;
+}
+.Introductoryabt {
+width: 67%;
+margin: 40px auto 0 auto;
+text-align: center;
+padding-top: 20px;
+padding-left: 20px;
+background: linear-gradient(135deg, #780000, #fdf0d5 );
 }
 
 
@@ -645,6 +726,27 @@ button:active {
   }
 }
 
+#word {
+  font-size: 4rem;
+  font-family:'Times New Roman', Times, serif;
+  white-space: nowrap; 
+  width: max-content;
+  padding-right: 5px;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media(max-width: 700px){.landmarks{
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+}
 .fa-heart {
     color: #fdf0d5;
     font-size: 15px;
@@ -755,6 +857,7 @@ button:active {
 .subscription-box button:hover {
   background: #e6b85c;
 }
+
 .glass-info-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -809,6 +912,7 @@ button:active {
   mix-blend-mode: screen;
   transition: top 0.08s ease, left 0.08s ease;
 }
+
 
 
 
