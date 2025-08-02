@@ -330,7 +330,7 @@ nav .fa {
     padding: 2rem;
     box-shadow: 0 4px 12px rgba(106, 13, 173, 0.1);
     transition: transform 0.6s ease-in-out 0.3s,
-                box-shadow 0.6s ease-in-out 0.3s;
+                box-shadow 0.6s ease-in-out 0.3s;           
 }
 
 
@@ -367,8 +367,14 @@ nav .fa {
 .founder-card .intro {
     color: #333;
     line-height: 1.6;
-    margin-bottom: 0.8rem;
+    margin:1px;
+    font-size: 16px;
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+
 }
+
 
 .founder-card .social-link a {
     color: #f2f2f3;
@@ -424,13 +430,18 @@ nav .fa {
 }
 
 .insta-link {
-  display: inline-block;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  font-size: 14px;
+  word-break:break-word;
   margin-top: 1rem;
   text-decoration: none;
   color: #fdf0d5;
   background-color: #780000;
-  padding: 8px 14px;
-  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  border-radius: 24px;
   transition: background-color 0.3s ease;
 }
 
