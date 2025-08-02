@@ -697,3 +697,35 @@ button:active{
     }
 }
 
+/* ===================== Testimonials Section ===================== */
+.testimonials {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 700px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.02);
+}
+
+.testimonial-card p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.testimonial-card h4 {
+  color: #555;
+  font-weight: normal;
+}
