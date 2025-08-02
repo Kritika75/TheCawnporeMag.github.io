@@ -25,6 +25,7 @@ body{
       pointer-events: none;
       z-index: 99999999;
       transition: transform 0.1s ease-out;
+
     }
 
 .progress-container {
