@@ -1,131 +1,139 @@
 <!-- faq.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Footer css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <!--  -->
-    <link rel="stylesheet" href="faq.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Footer css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <!--  -->
+  <link rel="stylesheet" href="faq.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <title>FAQ - The Cawnpore Magazine</title>
-  </head>
-  <body class="faq-page">
-                           <!-- Circles -->
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div> 
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-              <script>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <title>FAQ - The Cawnpore Magazine</title>
+</head>
 
-  // Coordinates for the cursor
-  const coords = { x: 0, y: 0 };
-  const circles = document.querySelectorAll(".circle");
+<body class="faq-page">
+  <!-- Circles -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <script>
+    // --- ADD THIS WRAPPER ---
+    document.addEventListener("DOMContentLoaded", function () {
 
-  // Colors for the circles
-  const colors = [
-    "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-    "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-    "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-    "#680060", "#60005f", "#48005f", "#3d005e"
-  ];
+      // All of your existing cursor code goes inside here.
+      // No need to change anything inside.
 
-  // Assign colors and initial position to each circle
-  circles.forEach(function (circle, index) {
-    circle.x = 0;
-    circle.y = 0;
-    circle.style.backgroundColor = colors[index % colors.length];
-  });
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+      const cursorToggle = document.getElementById("cursorToggle");
+      let isEffectEnabled = true;
 
-  // Update the coordinates when the mouse moves
-  window.addEventListener("mousemove", function (e) {
-    coords.x = e.clientX;
-    coords.y = e.clientY;
-  });
+      const colors = [
+        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+        "#680060", "#60005f", "#48005f", "#3d005e"
 
-  // Animation function to move the circles
-  function animateCircles() {
-    let x = coords.x;
-    let y = coords.y;
+      ];
 
-    circles.forEach(function (circle, index) {
-      // Update the position and scale of each circle
-      circle.style.left = x - 12 + "px";
-      circle.style.top = y - 12 + "px";
-      circle.style.scale = (circles.length - index) / circles.length;
+      circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+      });
 
-      circle.x = x;
-      circle.y = y;
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+      });
 
-      // Get the next circle in the sequence
-      const nextCircle = circles[index + 1] || circles[0];
-      x += (nextCircle.x - x) * 0.15;
-      y += (nextCircle.y - y) * 0.15;
+      function animateCircles() {
+        if (isEffectEnabled) {
+          let x = coords.x;
+          let y = coords.y;
+
+          circles.forEach(function (circle, index) {
+            circle.style.display = 'block';
+            circle.style.left = x - 12 + "px";
+            circle.style.top = y - 12 + "px";
+            circle.style.scale = (circles.length - index) / circles.length;
+            circle.x = x;
+            circle.y = y;
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.15;
+            y += (nextCircle.y - y) * 0.15;
+          });
+        }
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
+
+      cursorToggle.addEventListener('change', () => {
+        isEffectEnabled = cursorToggle.checked;
+
+        if (!isEffectEnabled) {
+          circles.forEach(circle => {
+            circle.style.display = 'none';
+          });
+        }
+      });
+
+      // --- END OF THE WRAPPER ---
     });
-
-    // Repeat the animation
-    requestAnimationFrame(animateCircles);
-  }
-
-  // Start the animation
-  animateCircles();
-
-</script>
-    <div class="progress-container">
+  </script>
+  <div class="progress-container">
     <div class="progress-bar" id="progressBar"></div>
   </div>
-    <section class="header">
+  <section class="header">
     <nav role="navigation" aria-label="Main Menu">
-      <!-- Hamburger Icon -->
-      <i class="fa fa-bars" onclick="showMenu()"></i>
-
-      <!-- Sidebar Menu -->
       <div class="nav-links" id="navLinks">
-        <!-- Close Icon -->
         <i class="fa fa-times" onclick="hideMenu()"></i>
         <ul>
           <li><a href="index.html">HOME</a></li>
@@ -135,122 +143,134 @@
           <li><a href="masthead.html">MASTHEAD</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="open-source.html">OPEN SOURCE</a></li>
+
+          <li class="toggle-item">
+            <span>Pointer Effect</span>
+            <label class="switch">
+              <input type="checkbox" id="cursorToggle" checked>
+              <span class="slider"></span>
+            </label>
+          </li>
         </ul>
       </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
   </section>
-    <main>
-      <div class="heading">
-        <h1>Frequently Asked Questions</h1>
-      </div>
-    
-      
-      <div class="faq">
-        <details>
+  <main>
+    <div class="heading">
+      <h1>Frequently Asked Questions</h1>
+    </div>
+
+
+    <div class="faq">
+      <details>
         <summary><strong>Q: Who can contribute?</strong></summary>
         <p class="ans">A: Anyone with an interest in writing, art, or photography can contribute.</p>
-        </details>
-      </div>
-      <div class="faq">
-        <details>
+      </details>
+    </div>
+    <div class="faq">
+      <details>
         <summary><strong>Q: What is the deadline for the submission?</strong></summary>
-        <p class="ans">A: Deadlines vary based on upcoming issues. Keep an eye on our website or social     media pages for official announcements and submission windows.</p>
-        </details>
-      </div>  
-      <div class="faq">
-        <details>
+        <p class="ans">A: Deadlines vary based on upcoming issues. Keep an eye on our website or social media pages for
+          official announcements and submission windows.</p>
+      </details>
+    </div>
+    <div class="faq">
+      <details>
         <summary><strong>Q: Do I retain rights to my work?</strong></summary>
-        <p class="ans">A: Yes! Contributors retain full rights to their work. By submitting, you only grant us permission to publish it on The Cawnpore Magazine platform (web and PDF formats).</p>
-        </details>
-      </div> 
-      
-      <div class="faq">
-        <details>
+        <p class="ans">A: Yes! Contributors retain full rights to their work. By submitting, you only grant us
+          permission to publish it on The Cawnpore Magazine platform (web and PDF formats).</p>
+      </details>
+    </div>
+
+    <div class="faq">
+      <details>
         <summary><strong>Q: How to get involved as a developer or designer?</strong></summary>
         <p class="ans">
-        A: We’re open to collaboration! You can contribute to our open-source website on GitHub by fixing bugs, improving UI, or suggesting new features.
-        Check out the 
-        <a href="https://github.com/Kritika75/TheCawnporeMag.github.io.git" target="_blank">
-         <b><i>GitHub Repository</i></b>
-        </a>
-        to get started with the contributing guidelines.
+          A: We’re open to collaboration! You can contribute to our open-source website on GitHub by fixing bugs,
+          improving UI, or suggesting new features.
+          Check out the
+          <a href="https://github.com/Kritika75/TheCawnporeMag.github.io.git" target="_blank">
+            <b><i>GitHub Repository</i></b>
+          </a>
+          to get started with the contributing guidelines.
         </p>
-        </details>
-      </div>
-      </div>
-
-
-      <div class="ask">
-        <h3>Got more questions?</h3>
-        <span>Drop us an email at </span>
-        <div class="mail">
-          <a href="mailto:thecawnporemagofficial@gmail.com">@thecawnporemagofficial@gmail.com</a>
-        </div>
-        <p>— we're here to help!</p>
-      </div>
-    </main>
-
-
-    <div class="seperator">
-      <!-- seperating footer and main -->
+      </details>
     </div>
-    <!-- Footer -->
-    <footer class="site-footer">
-      <a class="back-to-top" href="#">
-          <i class="fa-solid fa-chevron-up"></i>
-      </a>
-      <div class="footer-top">
-        <div class="footer-about">
-          <h3>The Cawnpore</h3>
-          <p>An independent magazine celebrating literary voices and untold stories.</p>
-        </div>
-        <div class="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="index.html" >Home</a></li>
-            <li><a href="about.html" target="_blank">About</a></li>
-            <li><a href="submission.html" target="_blank">Submit</a></li>
-            <li><a href="issue.html" target="_blank">Issue</a></li>
-            <li><a href="masthead.html" target="_blank">Masthead</a></li>
-            <li><a href="faq.html" target="_blank">FAQ</a></li>
-            <li><a href="open-source.html" target="_blank">Open Source</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h3>Contact Us</h3>
-          <div class="social-icons" id = "footerContact">
-            <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
-              <i class="fa-solid fa-envelope"></i>
-            </a>
-            <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="https://x.com/TheCawnporeMag?s=09" target="_blank">
-              <i class="fa-brands fa-x-twitter"></i>
-            </a>
-            <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank">
-              <i class="fa-brands fa-tumblr"></i>
-            </a>
-          </div>
-        </div>
-        <div class="subscription-box">
-          <h3>Subscribe to our Newsletter</h3>
-          <form action="/subscribe" method="post">
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
-          </form>
+    </div>
+
+
+    <div class="ask">
+      <h3>Got more questions?</h3>
+      <span>Drop us an email at </span>
+      <div class="mail">
+        <a href="mailto:thecawnporemagofficial@gmail.com">@thecawnporemagofficial@gmail.com</a>
+      </div>
+      <p>— we're here to help!</p>
+    </div>
+  </main>
+
+
+  <div class="seperator">
+    <!-- seperating footer and main -->
+  </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <a class="back-to-top" href="#">
+      <i class="fa-solid fa-chevron-up"></i>
+    </a>
+    <div class="footer-top">
+      <div class="footer-about">
+        <h3>The Cawnpore</h3>
+        <p>An independent magazine celebrating literary voices and untold stories.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" target="_blank">About</a></li>
+          <li><a href="submission.html" target="_blank">Submit</a></li>
+          <li><a href="issue.html" target="_blank">Issue</a></li>
+          <li><a href="masthead.html" target="_blank">Masthead</a></li>
+          <li><a href="faq.html" target="_blank">FAQ</a></li>
+          <li><a href="open-source.html" target="_blank">Open Source</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <div class="social-icons" id="footerContact">
+          <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://x.com/TheCawnporeMag?s=09" target="_blank">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank">
+            <i class="fa-brands fa-tumblr"></i>
+          </a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>Made with &#x2665; by Kritika Singh</p>
-        <p>&copy; 2024 THE CAWNPORE — ALL RIGHTS RESERVED</p>
+      <div class="subscription-box">
+        <h3>Subscribe to our Newsletter</h3>
+        <form action="/subscribe" method="post">
+          <input type="email" name="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
       </div>
-    </footer>
-    <script src="index.js"></script>
-  </body>
+    </div>
+    <div class="footer-bottom">
+      <p>Made with &#x2665; by Kritika Singh</p>
+      <p>&copy; 2024 THE CAWNPORE — ALL RIGHTS RESERVED</p>
+    </div>
+  </footer>
+  <script src="index.js"></script>
+</body>
+
 </html>
 <!-- synced after conflict -->
-

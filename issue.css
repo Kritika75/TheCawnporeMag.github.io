@@ -626,4 +626,65 @@ button:active{
     width: 100%;
   }
 }
+/* Container for the text and switch */
+.toggle-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  color: white;
+}
 
+/* The switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;  /* Total width of the switch */
+  height: 28px; /* Total height of the switch */
+  margin-left: 10px;
+}
+
+/* Hide the default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider (the track) */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #757575; /* The grey color when OFF */
+  border-radius: 28px; /* This makes it pill-shaped */
+  transition: background-color 0.3s;
+}
+
+/* The handle (the circle) */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px; /* Diameter of the handle */
+  width: 22px;  /* Diameter of the handle */
+  left: 3px;    /* Position from the left */
+  bottom: 3px;  /* Position from the bottom */
+  background-color: white;
+  border-radius: 50%; /* This makes it a circle */
+  transition: transform 0.3s;
+}
+
+/* --- The "ON" State --- */
+
+/* Change background color of the track when checked */
+input:checked + .slider {
+  background-color: #ac265e; /* Your theme's accent color */
+}
+
+/* Move the handle to the right when checked */
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
