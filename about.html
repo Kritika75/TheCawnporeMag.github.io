@@ -15,7 +15,23 @@
     />
 </head>
 <body>
-
+<!-- Back Button (Fixed Top-Left Corner) -->
+<button onclick="history.back()" style="
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background-color: #800000;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+">
+  ← Back
+</button>
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
     </div>
