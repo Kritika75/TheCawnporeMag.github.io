@@ -202,6 +202,7 @@ nav .fa {
   .nav-links ul {
     padding: 30px;
   }
+
   .people {
     width: 100%;
     padding-left: 0;
@@ -238,6 +239,63 @@ nav .fa {
 
 }
 
+.team-heading{
+  color: #8B0000;
+  margin-top: 8%;
+  font-size: 4vh;
+  text-decoration: underline;
+}
+
+.search-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#searchBar {
+    padding: 8px;
+    flex-grow: 1;
+    border-radius: 25px;
+    width: 30vw;
+    border: 3px solid transparent;
+    background-image: linear-gradient(#ffffff, #f1e9e9), 
+                    linear-gradient(135deg, gold, orange, crimson);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    outline: none;
+}
+
+#searchBtn {
+    padding: 8px 16px;
+    background: linear-gradient(-45deg, #ff6ec4, #7873f5, #4ade80, #facc15);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: white;
+    box-shadow: 0 0 30px rgba(255, 110, 196, 0.6), 
+                0 0 60px rgba(120, 115, 245, 0.4), 
+                0 0 90px rgba(74, 222, 128, 0.3);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#searchBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(120, 115, 245, 0.6);
+}
 
 .people {
   width: 80%;
