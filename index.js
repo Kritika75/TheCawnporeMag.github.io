@@ -1,74 +1,74 @@
-window.onscroll = function() {
-  scrollProgressBar();
+window.onscroll = function () {
+    scrollProgressBar();
 };
 
 function scrollProgressBar() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  document.getElementById("progressBar").style.width = scrolled + "%";
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("progressBar").style.width = scrolled + "%";
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     var navLinks = document.getElementById("navLinks");
 
-   function toggleMenu(show) {
-  navLinks.style.right = show ? "0" : "-200px";
-  document.body.style.overflow = show ? "hidden" : "auto";
-}
+    function toggleMenu(show) {
+        navLinks.style.right = show ? "0" : "-200px";
+        document.body.style.overflow = show ? "hidden" : "auto";
+    }
 
-// Call like this:
-window.showMenu = () => toggleMenu(true);
-window.hideMenu = () => toggleMenu(false);
+    // Call like this:
+    window.showMenu = () => toggleMenu(true);
+    window.hideMenu = () => toggleMenu(false);
 
 
-//search bar code
+    //search bar code
 
-document.getElementById('searchBtn').addEventListener('click', function() {
-    const query = document.getElementById('searchBar').value.toLowerCase();
-    const cards = document.querySelectorAll('.team-card, .founder-card');
+    document.getElementById('searchBtn').addEventListener('click', function () {
+        const query = document.getElementById('searchBar').value.toLowerCase();
+        const cards = document.querySelectorAll('.team-card, .founder-card');
 
-    cards.forEach(card => {
-        const name = card.querySelector('h2, h3')?.textContent.toLowerCase();
-        if (name.includes(query)) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
+        cards.forEach(card => {
+            const name = card.querySelector('h2, h3')?.textContent.toLowerCase();
+            if (name.includes(query)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
     });
-});
 
 
     // === Newsletter Form Validation ===
     var form = document.querySelector('form[action="/subscribe"]');
-        if(form) {
-            var emailInput = form.querySelector('input[name="email"]');
-            var errorMsg = document.createElement("p");
-            errorMsg.style.color = "red";
-            errorMsg.style.marginTop = "5px";
-            errorMsg.style.display = "none";
-            form.appendChild(errorMsg);
+    if (form) {
+        var emailInput = form.querySelector('input[name="email"]');
+        var errorMsg = document.createElement("p");
+        errorMsg.style.color = "red";
+        errorMsg.style.marginTop = "5px";
+        errorMsg.style.display = "none";
+        form.appendChild(errorMsg);
 
-            form.addEventListener("submit", function (e) {
-                e.preventDefault();
-                var email = emailInput.value.trim();
-                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            var email = emailInput.value.trim();
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-                if(!emailRegex.test(email)) {
-                    errorMsg.textContent = "Please enter a valid email address.";
-                    errorMsg.style.color = "red";
-                    errorMsg.style.display = "block";
-                } else {
-                    errorMsg.textContent = "Subscribed successfully!";
-                    errorMsg.style.color = "#a0ed79";
-                    errorMsg.style.display = "block";
-                }
-                setTimeout(() => {
-                    errorMsg.style.display = "none";
-                }, 3000);
-                emailInput.value = "";
-            });
-        }
+            if (!emailRegex.test(email)) {
+                errorMsg.textContent = "Please enter a valid email address.";
+                errorMsg.style.color = "red";
+                errorMsg.style.display = "block";
+            } else {
+                errorMsg.textContent = "Subscribed successfully!";
+                errorMsg.style.color = "#a0ed79";
+                errorMsg.style.display = "block";
+            }
+            setTimeout(() => {
+                errorMsg.style.display = "none";
+            }, 3000);
+            emailInput.value = "";
+        });
+    }
 });
 
 const container = document.getElementById('container');
@@ -86,7 +86,7 @@ loginBtn.addEventListener('click', () => {
 
 // to show and hide the back-to-top button
 window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 300) { 
+    if (window.pageYOffset > 300) {
         backToTop.classList.add("active");
     } else {
         backToTop.classList.remove("active");
@@ -144,12 +144,69 @@ window.onload = function () {
 };
 
 //about cards.
-document.addEventListener('mousemove', (e) => {
-  document.querySelectorAll('.glass-card').forEach((card) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    card.style.setProperty('--cursor-x', `${x}px`);
-    card.style.setProperty('--cursor-y', `${y}px`);
-  });
+
+// --- ADD THIS WRAPPER ---
+document.addEventListener("DOMContentLoaded", function () {
+
+    // All of your existing cursor code goes inside here.
+    // No need to change anything inside.
+
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+    const cursorToggle = document.getElementById("cursorToggle");
+    let isEffectEnabled = true;
+
+    const colors = [
+        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+        "#680060", "#60005f", "#48005f", "#3d005e"
+
+    ];
+
+    circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+    window.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+    });
+
+    function animateCircles() {
+        if (isEffectEnabled) {
+            let x = coords.x;
+            let y = coords.y;
+
+            circles.forEach(function (circle, index) {
+                circle.style.display = 'block';
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                circle.style.scale = (circles.length - index) / circles.length;
+                circle.x = x;
+                circle.y = y;
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.15;
+                y += (nextCircle.y - y) * 0.15;
+            });
+        }
+        requestAnimationFrame(animateCircles);
+    }
+
+    animateCircles();
+
+    cursorToggle.addEventListener('change', () => {
+        isEffectEnabled = cursorToggle.checked;
+
+        if (!isEffectEnabled) {
+            circles.forEach(circle => {
+                circle.style.display = 'none';
+            });
+        }
+    });
+
+    // --- END OF THE WRAPPER ---
 });
+
