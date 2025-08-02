@@ -13,6 +13,20 @@ body{
     line-height: 1.6;
 }
 
+    /* Circle styles */
+    .circle {
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      background-color: black;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99999999;
+      transition: transform 0.1s ease-out;
+    }
+
 .progress-container {
   width: 100%;
   height: 4px; 
@@ -48,19 +62,22 @@ nav {
     align-items: center;
     padding: 0.75rem 5%;
     margin-right: 6px;
-    background: #780000; /* Solid maroon background */
-    backdrop-filter: none; /* Optional: disable the blur if no longer needed */
-    -webkit-backdrop-filter: none; /* Optional: same for Safari */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    background: linear-gradient( 135deg,
+    rgba(242, 237, 237, 0.3), /* soft highlight */
+    rgba(122, 0, 0, 0.8),     /* your base color */
+    rgba(17, 16, 16, 0.3)        /* subtle depth */
+);
+    /* backdrop-filter: none; Optional: disable the blur if no longer needed */
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-bottom: 1px solid rgba(179, 177, 177, 0.2);
     position: fixed;
     top: 0;
     height: 9%;
     width: 100%;
     z-index: 999;
-    
+    /* animation: color 10s ease-in-out infinite; */
 }
-
 
 
 .text-box {
@@ -109,9 +126,8 @@ nav {
 
 }
 
-.nav-links ul li a:hover{
-    text-decoration: underline;
-    transition: 0.3s ease;
+.nav-links ul li a:hover {
+    text-decoration: none; /* REMOVE underline */
 }
 
 .nav-links ul li::after {
@@ -127,6 +143,7 @@ nav {
 .nav-links ul li:hover::after {
     width: 100%;
 }
+
 
 nav .fa {
     display: none;
@@ -181,8 +198,8 @@ nav .fa {
 .card {
   display: block;
   position: relative;
-  max-width: 300px;
-  max-height: 400px;
+  width: 300px;
+  height: 400px;
   background-color: rgba(234, 171, 214,0.4);
   border-radius: 10px;
   padding: 2em 1.2em;
@@ -265,27 +282,31 @@ nav .fa {
 
     .nav-links {
         position: fixed;
-        background: #780000fc;
+        background: linear-gradient(135deg, #d24848 ,#7a0000, #cea8bc);
         height: 100vh;
         width: 200px;
         top: 0;
         right: -100%;
         text-align: left;
         z-index: 2;
+        box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
         transition: right 0.4s ease-in-out;
     }
-
     .nav-links.nav-active {
         right: 0;
     }
 
     nav .fa {
         display: block;
-        color: #fdf0d5;
+        color: #663346;
         margin: 10px;
         font-size: 22px;
         cursor: pointer;
         z-index: 10;
+        background: linear-gradient(135deg, #fdfbfb, #ebedee); /* soft gradient backdrop */
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
     }
 }
 
@@ -313,6 +334,10 @@ nav .fa {
     font-style: italic;
     font-family: 'Times New Roman', Times, serif;
     /* max-width: 75ch; */
+}
+
+.issues_btn{
+    height: 10rem;
 }
 
 #issue1-btn {
@@ -671,5 +696,4 @@ button:active{
         transform: rotate(360deg);
     }
 }
-
 
