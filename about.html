@@ -15,103 +15,7 @@
     />
 </head>
 <body>
-                         <!-- Circles -->
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div> 
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-              <script>
 
-  // Coordinates for the cursor
-  const coords = { x: 0, y: 0 };
-  const circles = document.querySelectorAll(".circle");
-
-  // Colors for the circles
-  const colors = [
-    "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-    "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-    "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-    "#680060", "#60005f", "#48005f", "#3d005e"
-  ];
-
-  // Assign colors and initial position to each circle
-  circles.forEach(function (circle, index) {
-    circle.x = 0;
-    circle.y = 0;
-    circle.style.backgroundColor = colors[index % colors.length];
-  });
-
-  // Update the coordinates when the mouse moves
-  window.addEventListener("mousemove", function (e) {
-    coords.x = e.clientX;
-    coords.y = e.clientY;
-  });
-
-  // Animation function to move the circles
-  function animateCircles() {
-    let x = coords.x;
-    let y = coords.y;
-
-    circles.forEach(function (circle, index) {
-      // Update the position and scale of each circle
-      circle.style.left = x - 12 + "px";
-      circle.style.top = y - 12 + "px";
-      circle.style.scale = (circles.length - index) / circles.length;
-
-      circle.x = x;
-      circle.y = y;
-
-      // Get the next circle in the sequence
-      const nextCircle = circles[index + 1] || circles[0];
-      x += (nextCircle.x - x) * 0.15;
-      y += (nextCircle.y - y) * 0.15;
-    });
-
-    // Repeat the animation
-    requestAnimationFrame(animateCircles);
-  }
-
-  // Start the animation
-  animateCircles();
-
-</script>
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
     </div>
@@ -141,31 +45,25 @@
         </div>
 
     </section>
-    
-    <section class="Introductory">
 
-        <p id="intro1">
-            The city of <span class="bold-words">"Kanpur"</span>, formerly known as <span class="bold-words">Cawnpore</span> , has a rich and complex history that has shaped its identity. <br> Originally established by a Hindu King named <span class="bold-words">Chandel</span>, the city was named <span class="bold-words">"Kahnapur"</span> in honor of his devotion to <span class="bold-words">Lord Krishna</span>.  <br> 
-            However, during the <span class="underline-words">British colonial era</span>, the name was anglicized to <span class="bold-words">"Cawnpore"</span> due to difficulties in pronunciation. This change was significant as Cawnpore, known as the <span class="bold-words">"Manchester of India"</span> ,emerged as the commercial capital of <span class="underline-words">Uttar Pradesh</span>.
 
-            Kanpur's history is deeply intertwined with the Indian struggle for independence. The city played a pivotal role in the revolt of <span class="bold-words">1857</span>, witnessing tragic events such as the "wheeler’s entrenchment episode," the "massacre at <span class="bold-words">Sati Chaura Ghat</span>," and the <span class="bold-words">"Bibighar massacre"</span> . <br> 
-            These events left a lasting impact on the city and its people.
-            
-            Following India's independence in <span class="bold-words"> 1947</span>, the city was renamed <span class="bold-words">Kanpur</span>, <span class="underline-words">symbolizing a new era and a fresh start</span>. Despite its tumultuous past, Kanpur has emerged as a beacon of happiness and positivity. <br>
-             In <span class="bold-words">2023</span>, it was recognized as the <span class="underline-words">11th happiest city in the world</span>, a testament to the resilience and friendliness of its people.<br>
-            
-          This vibrant city continues to honor its history while embracing progress and prosperity, making it a truly remarkable place with a captivating story to tell.
+      <div class="glass-card">
+        <h3>Colonial Era & Rebellion</h3>
+        <p>
+          Under British rule, Cawnpore emerged as the <strong>“Manchester of India”</strong> and the commercial hub of Uttar Pradesh. <br><br>
+          The city played a major role in the <strong>Revolt of 1857</strong>, witnessing tragic episodes such as <em>Wheeler’s Entrenchment</em>, the <em>Massacre at Sati Chaura Ghat</em>, and the <em>Bibighar Massacre</em> — events that deeply marked its identity.
         </p>
-    
-            
+      </div>
+
+      <div class="glass-card">
+        <h3>Independence & Legacy</h3>
+        <p>
+          After India's independence in 1947, the city was renamed <strong>Kanpur</strong>, ushering in a new era of hope and transformation. <br><br>
+          Today, Kanpur stands as a vibrant symbol of resilience. In 2023, it was ranked the <strong>11th happiest city in the world</strong> — a proud recognition of its spirit, progress, and the warmth of its people.
+        </p>
+      </div>
     </section>
 
-    <!-- Stylish Section Separator -->
-  <div class="section-separator">
-    <div class="separator-line"></div>
-    <div class="separator-label">◉</div>
-    <div class="separator-line"></div>
-  </div>
 
     <h2 id="CardsHeading">Cawnpore's Prominent Landmarks</h2>
     <section class="landmarks">
