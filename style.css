@@ -316,7 +316,7 @@ nav .fa {
     text-align: center;
     padding-top: 80px;
 }
-#namaste {
+#namaste, #contributors{
     font-size: 36px;
     font-weight: 600;
     font-family: serif;
@@ -326,7 +326,7 @@ nav .fa {
     text-shadow: 0 0 5px #cea8bc, 0 0 10px #ffa7f2;
 }
 
-#intro {
+#intro, #contributor-subline {
     font-size: 19px;
     font-weight: 300;
     line-height: 22px;

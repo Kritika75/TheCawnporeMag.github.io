@@ -50,7 +50,7 @@
   </section>
 
   <!-- Welcome Section -->
-  <section class="Welcome" style="text-align: center; padding: 40px 20px;">
+  <section class="Welcome" style="text-align: center; padding: 15px 15px;">
     <h2 id="namaste">Namaste Contributors </h2>
     <p id="intro" style="max-width: 700px; margin: auto;">
       This project is proudly part of <strong>GirlScript Summer of Code (GSSoC) 2025</strong>!<br><br>
@@ -65,12 +65,18 @@
   
 
   <!-- Logos -->
-  <section class="listings" style="text-align: center; margin-bottom: 40px;">
+  <section class="listings" style="text-align: center; margin-bottom: 20px;">
     <h3>Open Source Proudly Powered By:</h3>
-    <div class="listing-images" style="margin-top: 20px;">
+    <div class="listing-images" style="margin-top: 5px;">
       <img src="assets/gssoc-logo.png" alt="GSSoC 2025 Logo" style="max-width: 220px;" />
     </div>
   </section>
+
+  <section class="contributors" style="text-align: center; padding: 40px 20px;">
+  <h2 id="contributors">Our Contributors</h2>
+  <p id="contributor-subline" style="max-width: 700px; margin: auto;">Meet the amazing people who make this project possible!</p>
+  <div id="contributors-list" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;"></div>
+</section>
 
     <!-- Footer -->
     <footer class="site-footer">
@@ -153,6 +159,32 @@
       document.body.style.overflow = "auto";
     }
   </script>
+  <script>
+
+  const owner = "Kritika75";
+  const repo = "TheCawnporeMag.github.io";
+
+  fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`)
+    .then(response => response.json())
+    .then(contributors => {
+      const container = document.getElementById("contributors-list");
+      contributors.forEach(contributor => {
+        const contributorDiv = document.createElement("div");
+        contributorDiv.style.width = "100px";
+        contributorDiv.innerHTML = `
+          <a href="${contributor.html_url}" target="_blank" style="text-decoration: none; color: inherit;">
+            <img src="${contributor.avatar_url}" alt="${contributor.login}" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;">
+            <p style="margin-top: 10px;">${contributor.login}</p>
+          </a>
+        `;
+        container.appendChild(contributorDiv);
+      });
+    })
+    .catch(error => {
+      console.error("Failed to load contributors:", error);
+    });
+</script>
+
 </body>
 
 </html>
