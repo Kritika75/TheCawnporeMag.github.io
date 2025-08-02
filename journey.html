@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cawnpore Magazine Journey</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fdf0d5;
+      color: #3e2c1c;
+      overflow-x: hidden;
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+    }
+
+    /* Magazine-inspired decorative elements */
+    .page-corner {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 30px solid rgba(120, 0, 0, 0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    .corner-1 {
+      top: -100px;
+      right: -100px;
+    }
+    
+    .corner-2 {
+      bottom: -100px;
+      left: -100px;
+      transform: rotate(180deg);
+    }
+
+    .header {
+      text-align: center;
+      padding: 40px 0;
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: #780000;
+      margin-bottom: 15px;
+      position: relative;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out forwards;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #780000;
+      margin-top: 5px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.3s forwards;
+    }
+
+    .intro {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: rgba(120, 0, 0, 0.03);
+      border-radius: 10px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #5a2e0e;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.5s forwards;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 60px auto 80px;
+      padding: 20px 0;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: linear-gradient(to bottom, #780000, #b26d2e);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+      z-index: 1;
+    }
+
+    .container {
+      padding: 10px 30px;
+      position: relative;
+      width: 50%;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .container::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-color: #780000;
+      border: 4px solid #fdf0d5;
+      top: 20px;
+      border-radius: 50%;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .left {
+      left: 0;
+    }
+
+    .left::after {
+      right: -12px;
+    }
+
+    .right {
+      left: 50%;
+    }
+
+    .right::after {
+      left: -12px;
+    }
+
+    .content {
+      padding: 30px;
+      background-color: #fff;
+      position: relative;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid #ffd7b8;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(to right, #780000, #b26d2e);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+
+    .content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+
+    .content:hover::before {
+      transform: scaleX(1);
+    }
+
+    .year {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #780000;
+      margin-bottom: 15px;
+      display: inline-block;
+      padding: 5px 15px;
+      background-color: rgba(120, 0, 0, 0.08);
+      border-radius: 20px;
+    }
+
+    .content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #5a2e0e;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .icon {
+      font-size: 1.8rem;
+      color: #780000;
+    }
+
+    .content p {
+      line-height: 1.8;
+      color: #5a4635;
+      margin-bottom: 15px;
+    }
+
+    .content .highlight {
+      padding: 15px;
+      background-color: rgba(120, 0, 0, 0.03);
+      border-left: 3px solid #780000;
+      border-radius: 0 5px 5px 0;
+      margin: 15px 0;
+      font-style: italic;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 0;
+      color: #5a4635;
+      font-size: 0.9rem;
+      background-color: rgba(120, 0, 0, 0.03);
+      margin-top: 60px;
+      border-radius: 10px;
+    }
+
+    .footer a {
+      color: #780000;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+
+      .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+
+      .container::after {
+        left: 28px;
+      }
+
+      .right {
+        left: 0;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .content {
+        padding: 20px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .content h3 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-corner corner-1"></div>
+  <div class="page-corner corner-2"></div>
+
+  <div class="header">
+    <h1>Our Journey</h1>
+    <div class="subtitle">The Cawnpore Magazine: A Chronicle of Creativity</div>
+    
+    <div class="intro">
+      Founded by students, The Cawnpore Magazine is a global platform for teen and university creatives. We publish poetry, prose, essays, fashion editorials, visual art, and games. With each issue, we aim to tell stories that live in the in-betweenness — of place, identity, memory, and imagination.
+    </div>
+  </div>
+
+  <div class="timeline">
+    <!-- Event 1 -->
+    <div class="container left">
+      <div class="content">
+        <div class="year">2021</div>
+        <h3><span class="icon">🌸</span> Birth of Cawnpore Magazine</h3>
+        <p>We began with a dream to create a space for student creativity, passion, and thought. Our inaugural issue featured submissions from students across the country, showcasing poetry, essays, photography, and artwork that reflected the diverse perspectives of young creators.</p>
+        <p>The magazine was born out of late-night conversations and a shared vision to amplify student voices. We established our editorial team, developed submission guidelines, and built our first website to share our content with the world.</p>
+        <div class="highlight">
+          "Our mission was simple: create a platform where student voices could be heard, celebrated, and amplified."
+        </div>
+      </div>
+    </div>
+
+    <!-- Event 2 -->
+    <div class="container right">
+      <div class="content">
+        <div class="year">2022</div>
+        <h3><span class="icon">🖋️</span> Girlhood Issue</h3>
+        <p>Our first themed issue explored the tenderness and complexities of growing up feminine. This groundbreaking edition featured personal essays, poetry, and artwork that captured the diverse experiences of girlhood across different cultures and backgrounds.</p>
+        <p>We received over 200 submissions from 15 countries, with contributors sharing intimate stories about identity, self-discovery, and the challenges of navigating adolescence. The issue was particularly praised for its honest portrayal of female friendships and intergenerational relationships.</p>
+        <p>The Girlhood Issue sparked important conversations in schools and communities about representation in media and the need for safe spaces for young women to share their stories.</p>
+      </div>
+    </div>
+
+    <!-- Event 3 -->
+    <div class="container left">
+      <div class="content">
+        <div class="year">2023</div>
+        <h3><span class="icon">🕊️</span> Voice of Change</h3>
+        <p>We raised our voices on social issues, empowering students to write with impact and integrity. This issue focused on youth activism, climate justice, mental health awareness, and educational reform, featuring powerful testimonies from young changemakers.</p>
+        <p>Our editorial team partnered with youth organizations to create resources for student activists, including guides to organizing peaceful protests, writing advocacy letters, and using social media for social good.</p>
+        <p>The Voice of Change edition included:</p>
+        <ul style="padding-left: 20px; margin: 10px 0; line-height: 1.8;">
+          <li>An interview series with young activists from marginalized communities</li>
+          <li>Photo essays documenting student-led movements</li>
+          <li>Resources for mental health support in academic environments</li>
+          <li>A special section on digital citizenship and online activism</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Event 4 -->
+    <div class="container right">
+      <div class="content">
+        <div class="year">2024</div>
+        <h3><span class="icon">🎨</span> Art Revival</h3>
+        <p>We introduced visual arts to showcase creativity beyond the written word — colors, lines, stories! This expansion transformed the magazine into a multimedia platform, featuring digital art galleries, photography spreads, and collaborative art projects.</p>
+        <p>Our Art Revival initiative included:</p>
+        <ul style="padding-left: 20px; margin: 10px 0; line-height: 1.8;">
+          <li>A monthly digital art showcase featuring emerging student artists</li>
+          <li>Collaborative mural projects in schools and communities</li>
+          <li>Illustrated poetry series that combined visual and literary arts</li>
+          <li>Artist interviews and behind-the-scenes features</li>
+        </ul>
+        <p>We also launched our first print edition with enhanced visual design, featuring foil-stamped covers and high-quality paper to showcase the artwork in its best light.</p>
+        <div class="highlight">
+          "Art became our universal language, transcending borders and connecting young creators from around the world."
+        </div>
+      </div>
+    </div>
+    
+    <!-- Event 5 -->
+    <div class="container left">
+      <div class="content">
+        <div class="year">2025</div>
+        <h3><span class="icon">🌍</span> Global Expansion</h3>
+        <p>Building on our success, we launched international editions in three languages and established partnerships with youth organizations across four continents. Our global mentorship program connected young creators with established artists and writers worldwide.</p>
+        <p>This expansion included regional editions focusing on local cultures and issues, while maintaining our core mission of amplifying youth voices. We introduced translation teams to share stories across language barriers and created a global advisory board of educators and artists.</p>
+        <p>Key achievements this year:</p>
+        <ul style="padding-left: 20px; margin: 10px 0; line-height: 1.8;">
+          <li>Launched Spanish, French, and Hindi editions of the magazine</li>
+          <li>Established partnerships with 12 youth organizations worldwide</li>
+          <li>Created a digital archive of global youth perspectives</li>
+          <li>Hosted our first international virtual art festival</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <p>This project is part of <a href="https://github.com/TheCawnporeMag/TheCawnporeMag.github.io" target="_blank">TheCawnporeMag.github.io</a> repository</p>
+    <p>We invite developers, designers, and creatives to collaborate in making this space more accessible, interactive, and beautiful</p>
+    <p>Licensed under MIT | Maintained with ❤️ by The Cawnpore Magazine Team</p>
+  </div>
+
+  <script>
+    // Scroll animation for timeline items
+    document.addEventListener('DOMContentLoaded', function() {
+      const timelineItems = document.querySelectorAll('.container');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.style.opacity = 1;
+              entry.target.style.transform = 'translateY(0)';
+              entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+            }, 150 * index);
+          }
+        });
+      }, { 
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      });
+      
+      timelineItems.forEach(item => {
+        observer.observe(item);
+      });
+    });
+  </script>
+</body>
+</html>
