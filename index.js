@@ -22,6 +22,23 @@ window.showMenu = () => toggleMenu(true);
 window.hideMenu = () => toggleMenu(false);
 
 
+//search bar code
+
+document.getElementById('searchBtn').addEventListener('click', function() {
+    const query = document.getElementById('searchBar').value.toLowerCase();
+    const cards = document.querySelectorAll('.team-card, .founder-card');
+
+    cards.forEach(card => {
+        const name = card.querySelector('h2, h3')?.textContent.toLowerCase();
+        if (name.includes(query)) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+});
+
+
     // === Newsletter Form Validation ===
     var form = document.querySelector('form[action="/subscribe"]');
         if(form) {
@@ -97,3 +114,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+//Typewriter effect
+window.onload = function () {
+    const loadingScreen = document.getElementById("loading-screen");
+    const mainName = document.querySelector(".main-name");
+    const text = "The Cawnpore";
+
+    setTimeout(() => {
+        loadingScreen.classList.add("hidden");
+
+        if (!mainName) {
+            console.error("main-name span not found");
+            return;
+        }
+
+        mainName.textContent = "";
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < text.length) {
+                mainName.textContent += text.charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 150);
+            }
+        }
+
+        type();
+    }, 6000);
+};
+
+//about cards.
+document.addEventListener('mousemove', (e) => {
+  document.querySelectorAll('.glass-card').forEach((card) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--cursor-x', `${x}px`);
+    card.style.setProperty('--cursor-y', `${y}px`);
+  });
+});

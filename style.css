@@ -336,6 +336,10 @@ nav .fa {
     /* max-width: 75ch; */
 }
 
+.issues_btn{
+    height: 10rem;
+}
+
 #issue1-btn {
     display: inline-block;
     text-decoration: none;
@@ -692,5 +696,4 @@ button:active{
         transform: rotate(360deg);
     }
 }
-
 
