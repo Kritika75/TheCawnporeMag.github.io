@@ -330,7 +330,7 @@ nav .fa {
     padding: 2rem;
     box-shadow: 0 4px 12px rgba(106, 13, 173, 0.1);
     transition: transform 0.6s ease-in-out 0.3s,
-                box-shadow 0.6s ease-in-out 0.3s;
+                box-shadow 0.6s ease-in-out 0.3s;           
 }
 
 
@@ -367,8 +367,14 @@ nav .fa {
 .founder-card .intro {
     color: #333;
     line-height: 1.6;
-    margin-bottom: 0.8rem;
+    margin:1px;
+    font-size: 16px;
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+
 }
+
 
 .founder-card .social-link a {
     color: #f2f2f3;
@@ -424,13 +430,18 @@ nav .fa {
 }
 
 .insta-link {
-  display: inline-block;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  font-size: 14px;
+  word-break:break-word;
   margin-top: 1rem;
   text-decoration: none;
   color: #fdf0d5;
   background-color: #780000;
-  padding: 8px 14px;
-  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  border-radius: 24px;
   transition: background-color 0.3s ease;
 }
 
@@ -705,3 +716,65 @@ button:active{
   }
 }
 
+/* Container for the text and switch */
+.toggle-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  color: white;
+}
+
+/* The switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;  /* Total width of the switch */
+  height: 28px; /* Total height of the switch */
+  margin-left: 10px;
+}
+
+/* Hide the default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider (the track) */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #757575; /* The grey color when OFF */
+  border-radius: 28px; /* This makes it pill-shaped */
+  transition: background-color 0.3s;
+}
+
+/* The handle (the circle) */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px; /* Diameter of the handle */
+  width: 22px;  /* Diameter of the handle */
+  left: 3px;    /* Position from the left */
+  bottom: 3px;  /* Position from the bottom */
+  background-color: white;
+  border-radius: 50%; /* This makes it a circle */
+  transition: transform 0.3s;
+}
+
+/* --- The "ON" State --- */
+
+/* Change background color of the track when checked */
+input:checked + .slider {
+  background-color: #ac265e; /* Your theme's accent color */
+}
+
+/* Move the handle to the right when checked */
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
