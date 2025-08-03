@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -115,6 +116,25 @@
 
       cursorToggle.addEventListener('change', () => {
         isEffectEnabled = cursorToggle.checked;
+
+  </head>
+  <body>            
+    <!-- Loading Screen -->
+     <div id="loading-screen"> 
+         <div class="loader">
+            <i class="fa-solid fa-spinner"></i>
+            <h2>Loading<span class="dots"></span></h2>
+        </div>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <section class="header">
+      <nav role="navigation" aria-label="Main Menu">
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+
 
         if (!isEffectEnabled) {
           circles.forEach(circle => {
@@ -317,4 +337,21 @@
   </script>
 </body>
 
+
 </html>
+
+    <!-- Visibility change  -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const loadingScreen = document.getElementById("loading-screen");
+        
+            // Set a timeout to hide the loading screen
+            setTimeout(() => {
+                loadingScreen.classList.add("hidden");
+            },1000); // 1000ms = 1 second (adjust as needed)
+        });
+        
+    </script>
+  </body>
+</html>
+

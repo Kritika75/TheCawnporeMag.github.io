@@ -20,6 +20,99 @@
 </head>
 
 <body>
+  <!-- Back Button (Fixed Top-Left Corner) -->
+<button onclick="history.back()" style="
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background-color: #800000;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+">
+  ← Back
+</button>
+                           <!-- Circles -->
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div> 
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+              <script>
+
+  // Coordinates for the cursor
+  const coords = { x: 0, y: 0 };
+  const circles = document.querySelectorAll(".circle");
+
+  // Colors for the circles
+  const colors = [
+    "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+    "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+    "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+    "#680060", "#60005f", "#48005f", "#3d005e"
+  ];
+
+  // Assign colors and initial position to each circle
+  circles.forEach(function (circle, index) {
+    circle.x = 0;
+    circle.y = 0;
+    circle.style.backgroundColor = colors[index % colors.length];
+  });
+
+  // Update the coordinates when the mouse moves
+  window.addEventListener("mousemove", function (e) {
+    coords.x = e.clientX;
+    coords.y = e.clientY;
+  });
+
+  // Animation function to move the circles
+  function animateCircles() {
+    let x = coords.x;
+    let y = coords.y;
+
+
+<body>
   <!-- Circles -->
   <div class="circle"></div>
   <div class="circle"></div>
@@ -300,6 +393,25 @@
                 class="fa-brands fa-instagram"></i> your.typicalnobody</a></p>
 
         </div>
+
+
+    <p class="intro">
+        Kritika is the visionary behind our magazine. Hailing from India, she is a multi-talented force with skills spanning writing, art, programming, and editorial work. Her deep passion for storytelling and creativity has led to her being featured on several renowned platforms such as<em> Teen Ink</em>, <em>Ritambhara </em>, <em>Alfaz-tere-mere</em>, <em>The Library of Ink</em>, <em>Homer’s Odyssey Magazine</em>, <em>Carmilla Collective</em>, <em>Paper Cranes Literary</em>, <em>Moonbow Magazine</em>, <em>Bread & Butter Magazine</em>,and <em>Butter Mochi Journal</em>.
+    </p>
+    <p class="intro">
+        Outside of her editorial duties, she enjoys reading, binge-watching Netflix, and playing the piano. While pursuing a bachelor's degree in Maths, she also contributes as an editor to various literary magazines.
+    </p>
+    <p class="social-link">
+        Connect with her on Instagram: 
+        <a href="https://instagram.com/krits._._" target="_blank" class="insta-link"><i class="fa-brands fa-instagram"></i> krits._._</a>
+    </p>
+</div>
+<h1 class="team-heading">Team Members</h1>
+<div class="search-wrapper">
+  <input type="text" id="searchBar" placeholder="Search by name..." />
+  <button id="searchBtn"> <i class="fa-solid fa-magnifying-glass"></i> &nbsp;Search </button>
+</div>
+
 
         <div class="team-card">
           <h3>Sophie</h3>
