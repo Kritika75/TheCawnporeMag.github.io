@@ -113,6 +113,25 @@ document.addEventListener("DOMContentLoaded", () => {
         quoteAuthorEl.textContent = `– ${randomQuote.author}`;
     }
 });
+// === Social Share Buttons ===
+document.addEventListener("DOMContentLoaded", () => {
+    const pageURL = encodeURIComponent(window.location.href);
+    const pageTitle = encodeURIComponent(document.title);
+
+    const twitterBtn = document.querySelector(".share-btn.twitter");
+    const linkedinBtn = document.querySelector(".share-btn.linkedin");
+    const whatsappBtn = document.querySelector(".share-btn.whatsapp");
+
+    if (twitterBtn) {
+        twitterBtn.href = `https://twitter.com/intent/tweet?url=${pageURL}&text=${pageTitle}`;
+    }
+    if (linkedinBtn) {
+        linkedinBtn.href = `https://www.linkedin.com/shareArticle?mini=true&url=${pageURL}&title=${pageTitle}`;
+    }
+    if (whatsappBtn) {
+        whatsappBtn.href = `https://api.whatsapp.com/send?text=${pageTitle}%20${pageURL}`;
+    }
+});
 
 // Update the year in the footer
 document.getElementById("year").textContent = new Date().getFullYear();
