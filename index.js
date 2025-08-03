@@ -98,30 +98,33 @@ document.getElementById('searchBtn').addEventListener('click', function() {
 });
 
 
-    // === Newsletter Form Validation ===
-    var form = document.querySelector('form[action="/subscribe"]');
+    // === Newsletter Form Validation === //
+ document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector('form[action="/subscribe"]');
         if(form) {
-            var emailInput = form.querySelector('input[name="email"]');
-            var errorMsg = document.createElement("p");
+            const emailInput = form.querySelector('input[name="email"]');
+            const errorMsg = document.createElement("p");
             errorMsg.style.color = "red";
-            errorMsg.style.marginTop = "5px";
+            errorMsg.style.marginTop = "bold";
             errorMsg.style.display = "none";
             form.appendChild(errorMsg);
 
             form.addEventListener("submit", function (e) {
                 e.preventDefault();
-                var email = emailInput.value.trim();
-                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const email = emailInput.value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
                 if(!emailRegex.test(email)) {
                     errorMsg.textContent = "Please enter a valid email address.";
                     errorMsg.style.color = "red";
-                    errorMsg.style.display = "block";
+                    
                 } else {
                     errorMsg.textContent = "Subscribed successfully!";
                     errorMsg.style.color = "#a0ed79";
-                    errorMsg.style.display = "block";
+                    
                 }
+                errorMsg.style.display = "block";
+
                 setTimeout(() => {
                     errorMsg.style.display = "none";
                 }, 3000);
