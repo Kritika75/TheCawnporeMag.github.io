@@ -244,3 +244,11 @@ a{
         border-radius: 0;
     }
 }
+
+.navbar-logo {
+  height: 40px;
+  margin-right: 16px
+  vertical-align: middle;
+}
+
+
