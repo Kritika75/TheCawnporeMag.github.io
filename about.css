@@ -756,3 +756,10 @@ button:active {
   background: #e6b85c;
 }
 
+.navbar-logo {
+  height: 40px;
+  margin-right: 16px
+  vertical-align: middle;
+}
+
+

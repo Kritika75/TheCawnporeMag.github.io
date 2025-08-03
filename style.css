@@ -820,6 +820,11 @@ button:active{
   transform: scale(1.2);
 }
 
+.navbar-logo {
+  height: 40px;
+  margin-right: 16px
+  vertical-align: middle;
+}
 
 
 
