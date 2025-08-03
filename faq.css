@@ -210,6 +210,12 @@ a{
     gap: 0.5rem ;   
     border-radius: 1rem; 
 }
+@media (max-width:768px ) {
+  .ask{
+    flex-direction: column;
+    width: 100%;
+  }
+}
 
 .mail{
     background-color: #fdf0d5;
