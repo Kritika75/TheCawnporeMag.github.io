@@ -182,10 +182,62 @@
             x += (nextCircle.x - x) * 0.15;
             y += (nextCircle.y - y) * 0.15;
 
+
           })};
     </script>
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
+      circle.x = x;
+      circle.y = y;
+
+      // Get the next circle in the sequence
+      const nextCircle = circles[index + 1] || circles[0];
+      x += (nextCircle.x - x) * 0.15;
+      y += (nextCircle.y - y) * 0.15;
+
+    });
+  </script>
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+  <section class="header">
+    <nav role="navigation" aria-label="Main Menu">
+      <!-- Logo on the left -->
+        <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+        
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="submission.html">SUBMIT</a></li>
+          <li><a href="issue.html">ISSUE</a></li>
+          <li><a href="masthead.html">MASTHEAD</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="open-source.html">OPEN SOURCE</a></li>
+
+          <li class="toggle-item">
+            <span>Pointer Effect</span>
+            <label class="switch">
+              <input type="checkbox" id="cursorToggle" checked>
+              <span class="slider round"></span>
+            </label>
+          </li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+  </section>
+
+
+
+  <section class="header1">
+
+    <div class="text-box1">
+      <h1>Issues</h1>
+      <p>The Cawnpore</p>
+
     </div>
     <section class="header">
       <nav role="navigation" aria-label="Main Menu">
