@@ -193,7 +193,7 @@
     </div>
     <div class="footer-bottom">
       <p>Made with &#x2665; by Kritika Singh</p>
-      <p>&copy; 2024 THE CAWNPORE — ALL RIGHTS RESERVED</p>
+      <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
     </div>
   </footer>
 
@@ -285,7 +285,10 @@
     function hideMenu() {
       navLinks.style.right = "-200px";
       document.body.style.overflow = "auto";
+
     }
+    // Update the year in the footer
+document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 
