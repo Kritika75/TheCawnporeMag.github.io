@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cawnpore Magazine Journey</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fdf0d5;
+      color: #3e2c1c;
+      overflow-x: hidden;
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+    }
+
+    /* Magazine-inspired decorative elements */
+    .page-corner {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 30px solid rgba(120, 0, 0, 0.05);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    .corner-1 {
+      top: -100px;
+      right: -100px;
+    }
+    
+    .corner-2 {
+      bottom: -100px;
+      left: -100px;
+      transform: rotate(180deg);
+    }
+
+    .header {
+      text-align: center;
+      padding: 40px 0;
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: #780000;
+      margin-bottom: 15px;
+      position: relative;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out forwards;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #780000;
+      margin-top: 5px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.3s forwards;
+    }
+
+    .intro {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: rgba(120, 0, 0, 0.03);
+      border-radius: 10px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #5a2e0e;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out 0.5s forwards;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 60px auto 80px;
+      padding: 20px 0;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: linear-gradient(to bottom, #780000, #b26d2e);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+      z-index: 1;
+    }
+
+    .container {
+      padding: 10px 30px;
+      position: relative;
+      width: 50%;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .container::after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-color: #780000;
+      border: 4px solid #fdf0d5;
+      top: 20px;
+      border-radius: 50%;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .left {
+      left: 0;
+    }
+
+    .left::after {
+      right: -12px;
+    }
+
+    .right {
+      left: 50%;
+    }
+
+    .right::after {
+      left: -12px;
+    }
+
+    .content {
+      padding: 30px;
+      background-color: #fff;
+      position: relative;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid #ffd7b8;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(to right, #780000, #b26d2e);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+
+    .content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+
+    .content:hover::before {
+      transform: scaleX(1);
+    }
+
+    .year {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #780000;
+      margin-bottom: 15px;
+      display: inline-block;
+      padding: 5px 15px;
+      background-color: rgba(120, 0, 0, 0.08);
+      border-radius: 20px;
+    }
+
+    .content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #5a2e0e;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .icon {
+      font-size: 1.8rem;
+      color: #780000;
+    }
+
+    .content p {
+      line-height: 1.8;
+      color: #5a4635;
+      margin-bottom: 15px;
+    }
+
+    .content .highlight {
+      padding: 15px;
+      background-color: rgba(120, 0, 0, 0.03);
+      border-left: 3px solid #780000;
+      border-radius: 0 5px 5px 0;
+      margin: 15px 0;
+      font-style: italic;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 0;
+      color: #5a4635;
+      font-size: 0.9rem;
+      background-color: rgba(120, 0, 0, 0.03);
+      margin-top: 60px;
+      border-radius: 10px;
+    }
+
+    .footer a {
+      color: #780000;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+
+      .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+
+      .container::after {
+        left: 28px;
+      }
+
+      .right {
+        left: 0;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .content {
+        padding: 20px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .content h3 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-corner corner-1"></div>
+  <div class="page-corner corner-2"></div>
+
+  <div class="header">
+    <h1>Our Journey</h1>
+    <div class="subtitle">The Cawnpore Magazine: A Chronicle of Creativity</div>
+    
+    <div class="intro">
+      Founded by students, The Cawnpore Magazine is a global platform for teen and university creatives. We publish poetry, prose, essays, fashion editorials, visual art, and games. With each issue, we aim to tell stories that live in the in-betweenness — of place, identity, memory, and imagination.
+    </div>
+  </div>
+
+  <div class="timeline">
+    <!-- Event 1 -->
+    <div class="container left">
+      <div class="content">
+        <div class="year">2024</div>
+        <h3><span class="icon">🌸</span> Birth of Cawnpore Magazine</h3>
+        <p>Its first issue received 180+ submissions from young writers and artists around the world.</p>
+        <p>A digital-only, English-language platform, the magazine was created to celebrate youth creativity in fiction, poetry, essays, and art.</p>
+        <p>Built by teens and twenty-somethings, the magazine offers something for everyone from dreamy storytelling to sharp cultural critique, with a shared mission to uplift emerging voices.</p>
+      
+      </div>
+    </div>
+
+    <!-- Event 2 -->
+    <div class="container right">
+      <div class="content">
+        <div class="year">2024</div>
+        <h3><span class="icon">🖋️</span> First Issue & Literary Identity</h3>
+        <p>The debut issue established the magazine’s literary and cultural focus, spotlighting bold, honest, and heartfelt work.</p>
+        <p>With no thematic constraints, the issue embraced diverse forms, genres, and perspectives, drawing contributors and readers into a welcoming, creative space.</p>
+        <p>At this stage, the magazine operated independently, without formal collaborations or co-publishing efforts.</p>
+      </div>
+    </div>
+
+    <!-- Event 3 -->
+    <div class="container left">
+      <div class="content">
+        <div class="year">2025</div>
+        <h3><span class="icon">🕊️</span> VOICE: International Youth Competition</h3>
+        <p>In 2025, The Cawnpore Magazine co-hosted the VOICE competition with 7 international youth magazines.</p>
+        <p>The competition celebrated self-expression, identity, and change, with cash prizes for selected winners.</p>
+        <p>It became a milestone event that connected young creatives across borders, reinforced the magazine’s global vision, and spotlighted its role in the international literary youth scene.</p>
+
+      </div>
+    </div>
+
+    <!-- Event 4 -->
+    <div class="container right">
+      <div class="content">
+        
+        <h3><span class="icon"></span>Ongoing – A Digital-Only Global Platform</h3>
+        <p>The Cawnpore Magazine continues to be 100% digital with no print editions to date.</p>
+        <p>All content is published in English, with a strong emphasis on accessibility and storytelling integrity.</p>
+        <p>The platform remains committed to its founding vision: to be a vibrant, inclusive space for students, teens, and twenty-somethings to share their voices with the world.</p>
+       
+      
+      </div>
+    </div>
+    
+    
+  </div>
+  
+  <div class="footer">
+    <p>This project is part of <a href="https://github.com/TheCawnporeMag/TheCawnporeMag.github.io" target="_blank">TheCawnporeMag.github.io</a> repository</p>
+    <p>We invite developers, designers, and creatives to collaborate in making this space more accessible, interactive, and beautiful</p>
+    <p>Licensed under MIT | Maintained with ❤️ by The Cawnpore Magazine Team</p>
+  </div>
+
+  <script>
+    // Scroll animation for timeline items
+    document.addEventListener('DOMContentLoaded', function() {
+      const timelineItems = document.querySelectorAll('.container');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.style.opacity = 1;
+              entry.target.style.transform = 'translateY(0)';
+              entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+            }, 150 * index);
+          }
+        });
+      }, { 
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      });
+      
+      timelineItems.forEach(item => {
+        observer.observe(item);
+      });
+    });
+  </script>
+</body>
+</html>
