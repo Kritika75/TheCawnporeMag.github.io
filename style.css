@@ -39,7 +39,6 @@ body{
     background-size: cover;
     position: relative;
     padding-top: 80px;
-    
 }
 
 nav {
@@ -754,5 +753,37 @@ button:active{
         transform: rotate(360deg);
     }
 }
+
+/* Share Buttons Section */
+.footer-share {
+  margin-top: 20px;
+}
+
+.footer-share h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #fff8e7;
+}
+
+.share-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.share-icons a {
+  color: #f5f5dc;
+  font-size: 20px;
+  background: #780000; /* Same as header */
+  padding: 10px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.share-icons a:hover {
+  background: #a00000;
+  transform: scale(1.2);
+}
+
 
 
