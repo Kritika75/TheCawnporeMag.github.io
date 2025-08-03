@@ -267,6 +267,12 @@
   margin-bottom: 10px;
   font-family: 'Georgia', serif;
 }
+@media (max-width:768px ) {
+  .ask{
+    flex-direction: column;
+    width: 100%;
+  }
+}
 
 .subscription-box form {
   width: 100%;
