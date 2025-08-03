@@ -155,7 +155,7 @@ main{
     gap: 1rem;
     flex-direction: column;
 }
-.heading{
+.heading-faq{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,6 +164,7 @@ main{
     color: #fdf0d5;
     text-align: center;
     font-size: 1.5rem;
+    padding-bottom: 48px;
     /* width: 100vw; */
 }
 
@@ -191,6 +192,7 @@ main{
   border-top-right-radius: 1rem;
   border-bottom-right-radius: 1rem;
   margin-right: 5vw;
+  margin-left: 60px;
   padding: 0.5rem;
   box-shadow: #780000 0 0 7px;
 }
