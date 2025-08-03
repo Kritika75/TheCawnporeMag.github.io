@@ -461,8 +461,8 @@ h2 {
 
 .template-slider {
     position: relative;
-    height: 60vh;
-    width: 60vw;
+    height: 80vh;
+    width: 53vw;
     text-align: center;
     list-style: none;
 }
@@ -480,8 +480,8 @@ h2 {
 }
 
 .template-slider li img{
-height: 280px;
-object-fit: fill;
+height: 60vh;
+object-fit: cover;
 }
 .template-slider li.active {
     opacity: 1;
