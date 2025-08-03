@@ -1,19 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Submissions</title>
-    <link rel="stylesheet" href="submission.css">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="submission.css" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <!-- <link rel="stylesheet" href="style.css"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap"
+      rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Back Button (Fixed Top-Left Corner) -->
+    <button
+      onclick="history.back()"
+      style="
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+        background-color: #800000;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      "
+    >
+      ← Back
+    </button>
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <script>
+      // Coordinates for the cursor
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
 </head>
 <body>
   
@@ -73,51 +157,94 @@
     "#680060", "#60005f", "#48005f", "#3d005e"
   ];
 
-  // Assign colors and initial position to each circle
-  circles.forEach(function (circle, index) {
-    circle.x = 0;
-    circle.y = 0;
-    circle.style.backgroundColor = colors[index % colors.length];
-  });
 
-  // Update the coordinates when the mouse moves
-  window.addEventListener("mousemove", function (e) {
-    coords.x = e.clientX;
-    coords.y = e.clientY;
-  });
+      // Colors for the circles
+      const colors = [
+        "#ffb56b",
+        "#fdaf69",
+        "#f89d63",
+        "#f59761",
+        "#ef865e",
+        "#ec805d",
+        "#e36e5c",
+        "#df685c",
+        "#d5585c",
+        "#d1525c",
+        "#c5415d",
+        "#c03b5d",
+        "#b22c5e",
+        "#ac265e",
+        "#9c155f",
+        "#950f5f",
+        "#830060",
+        "#7c0060",
+        "#680060",
+        "#60005f",
+        "#48005f",
+        "#3d005e",
+      ];
 
-  // Animation function to move the circles
-  function animateCircles() {
-    let x = coords.x;
-    let y = coords.y;
+      // Assign colors and initial position to each circle
+      circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+      });
 
-    circles.forEach(function (circle, index) {
-      // Update the position and scale of each circle
-      circle.style.left = x - 12 + "px";
-      circle.style.top = y - 12 + "px";
-      circle.style.scale = (circles.length - index) / circles.length;
+      // Update the coordinates when the mouse moves
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+      });
 
-      circle.x = x;
-      circle.y = y;
+      // Animation function to move the circles
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
 
-      // Get the next circle in the sequence
-      const nextCircle = circles[index + 1] || circles[0];
-      x += (nextCircle.x - x) * 0.15;
-      y += (nextCircle.y - y) * 0.15;
-    });
+        circles.forEach(function (circle, index) {
+          // Update the position and scale of each circle
+          circle.style.left = x - 12 + "px";
+          circle.style.top = y - 12 + "px";
+          circle.style.scale = (circles.length - index) / circles.length;
 
-    // Repeat the animation
-    requestAnimationFrame(animateCircles);
-  }
+          circle.x = x;
+          circle.y = y;
 
-  // Start the animation
-  animateCircles();
+          // Get the next circle in the sequence
+          const nextCircle = circles[index + 1] || circles[0];
+          x += (nextCircle.x - x) * 0.15;
+          y += (nextCircle.y - y) * 0.15;
+        });
 
-</script>
+        // Repeat the animation
+        requestAnimationFrame(animateCircles);
+      }
+
+      // Start the animation
+      animateCircles();
+    </script>
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
     </div>
     <section class="header">
+
+      <nav role="navigation" aria-label="Main Menu">
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="submission.html">SUBMIT</a></li>
+            <li><a href="issue.html">ISSUE</a></li>
+            <li><a href="masthead.html">MASTHEAD</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="open-source.html">OPEN SOURCE</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+
         <nav role="navigation" aria-label="Main Menu">
           <!-- Logo on the left -->
             <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
@@ -139,31 +266,31 @@
           <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
     
+
     </section>
     <section class="header1">
-
-        <div class="text-box1">
-            <h1>Submissions</h1>
-            <h2>The Cawnpore</h2>
-            <h3 class="theme-heading">THEME for Issue-04: "Between Here and There"</h3>
-            <br>
-        </div>
-
+      <div class="text-box1">
+        <h1>Submissions</h1>
+        <h2>The Cawnpore</h2>
+        <h3 class="theme-heading">
+          THEME for Issue-04: "Between Here and There"
+        </h3>
+        <br />
+      </div>
     </section>
 
     <section class="submit">
       <div class="submission-guidelines-wrapper">
         <h3 class="h1k">Submission Guidelines</h3>
-        <br>
+        <br />
 
-            <div class="mh10">
-            
-            <p class="intro">
-                 <strong>Submissions are now closed.</strong>  
-                 Thank you to everyone who shared their work with us!  
-                 Further updates will be shared via email.
-                <br>
-<!--                 We understand that following submission guidelines can be crucial and sometimes challenging. Your attention to these guidelines will greatly assist us in reviewing your work effectively and maintaining the quality of our publication.
+        <div class="mh10">
+          <p class="intro">
+            <strong>Submissions are now closed.</strong>
+            Thank you to everyone who shared their work with us! Further updates
+            will be shared via email.
+            <br />
+            <!--                 We understand that following submission guidelines can be crucial and sometimes challenging. Your attention to these guidelines will greatly assist us in reviewing your work effectively and maintaining the quality of our publication.
                     <br>
                     <br>
                     1. We kindly ask that you refrain from submitting works that have been previously published or are being simultaneously considered elsewhere.
@@ -198,39 +325,53 @@
                     <br>
                     11. If you have anything else you'd like to submit, such as a book or movie review, just send it to thecawnporemagofficial@gmail.com.
                     <br> -->
-                    <br>
-                    Should you wish to partake in an interview to discuss your professional endeavors or accomplishments, or any other subject matter, kindly forward your name and the topic of interest to thecawnporemagofficial@gmail.com. We commit to responding to your inquiry within one week.
-                    <br>
-                    <br>
-                    The rights to all content published and submitted are vested with The Cawnpore and the respective authors..
-                    <br>
-                    <br>
-                    Unfortunately, we're not able to compensate our contributors at the moment.
-                    <br>
-                    <br>
-                    Upon thorough review of all submissions, our response time may be extended, so if you don't hear from us within one month, please feel free to follow up by sending an email to thecawnporemagofficial@gmail.com. We always appreciate your patience and understanding!</p>  
-                
-<!--                     <p class="intro">
+            <br />
+            Should you wish to partake in an interview to discuss your
+            professional endeavors or accomplishments, or any other subject
+            matter, kindly forward your name and the topic of interest to
+            thecawnporemagofficial@gmail.com. We commit to responding to your
+            inquiry within one week.
+            <br />
+            <br />
+            The rights to all content published and submitted are vested with
+            The Cawnpore and the respective authors..
+            <br />
+            <br />
+            Unfortunately, we're not able to compensate our contributors at the
+            moment.
+            <br />
+            <br />
+            Upon thorough review of all submissions, our response time may be
+            extended, so if you don't hear from us within one month, please feel
+            free to follow up by sending an email to
+            thecawnporemagofficial@gmail.com. We always appreciate your patience
+            and understanding!
+          </p>
+
+          <!--                     <p class="intro">
                         *Want to learn more about the theme? Visit our Instagram post <a href="https://www.instagram.com/p/DJrNiZ7zSRM/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA%3D%3D" target="_blank">here</a>.
                         </p> -->
-            </div>
-          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
       <a class="back-to-top" href="#">
-          <i class="fa-solid fa-chevron-up"></i>
+        <i class="fa-solid fa-chevron-up"></i>
       </a>
       <div class="footer-top">
         <div class="footer-about">
           <h3>The Cawnpore</h3>
-          <p>An independent magazine celebrating literary voices and untold stories.</p>
+          <p>
+            An independent magazine celebrating literary voices and untold
+            stories.
+          </p>
         </div>
         <div class="footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html" >Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="submission.html">Submit</a></li>
             <li><a href="issue.html">Issue</a></li>
@@ -245,24 +386,38 @@
             <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
               <i class="fa-solid fa-envelope"></i>
             </a>
-            <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank">
+            <a
+              href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D"
+              target="_blank"
+            >
               <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
+            <a
+              href="https://www.linkedin.com/company/the-cawnpore-magazine/"
+              target="_blank"
+            >
               <i class="fa-brands fa-linkedin"></i>
             </a>
             <a href="https://x.com/TheCawnporeMag?s=09" target="_blank">
               <i class="fa-brands fa-x-twitter"></i>
             </a>
-            <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank">
+            <a
+              href="https://www.tumblr.com/thecawnporemagazine?source=share"
+              target="_blank"
+            >
               <i class="fa-brands fa-tumblr"></i>
             </a>
           </div>
         </div>
-        <div class="subscription-box">
+        <div class="subscription-box-about">
           <h3>Subscribe to our Newsletter</h3>
           <form action="/subscribe" method="post">
-            <input type="email" name="email" placeholder="Enter your email" required>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
             <button type="submit">Subscribe</button>
           </form>
         </div>
@@ -273,8 +428,6 @@
       </div>
     </footer>
 
-
-    <script src="index.js" ></script>
-
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>

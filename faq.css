@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-.body{
+.body {
   background-color: #fdf0d5;
 }
 html {
@@ -11,35 +11,35 @@ html {
 }
 .progress-container {
   width: 100%;
-  height: 4px; 
-  background: #EAE0D5; 
-  position: fixed; 
+  height: 4px;
+  background: #eae0d5;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
-    /* Circle styles */
-    .circle {
-      height: 24px;
-      width: 24px;
-      border-radius: 50%;
-      background-color: black;
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 99999999;
-      transition: transform 0.1s ease-out;
-    }
-    
+/* Circle styles */
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999;
+  transition: transform 0.1s ease-out;
+}
+
 .progress-bar {
   height: 100%;
-  width: 0%; 
-  background: #8B0000; 
+  width: 0%;
+  background: #8b0000;
 }
-.faq-page .header{
-    min-height:20vh;
+.faq-page .header {
+  min-height: 20vh;
 }
 .header {
   min-height: 0vh;
@@ -50,27 +50,27 @@ html {
   padding: 20px 0;
 }
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 5%;
-    margin-right: 6px;
-      background: linear-gradient( 135deg,
-    rgba(242, 237, 237, 0.3), /* soft highlight */
-    rgba(122, 0, 0, 0.8),     /* your base color */
-    rgba(17, 16, 16, 0.3)        /* subtle depth */
-);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(179, 177, 177, 0.2);
-    position: fixed;
-    top: 0;
-    height: 9%;
-    width: 100%;
-    z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 5%;
+  margin-right: 6px;
+  background: linear-gradient(
+    135deg,
+    rgba(242, 237, 237, 0.3),
+    /* soft highlight */ rgba(122, 0, 0, 0.8),
+    /* your base color */ rgba(17, 16, 16, 0.3) /* subtle depth */
+  );
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(179, 177, 177, 0.2);
+  position: fixed;
+  top: 0;
+  height: 9%;
+  width: 100%;
+  z-index: 999;
 }
-
 
 .nav-links {
   flex: 1;
@@ -94,23 +94,22 @@ nav {
 }
 
 .nav-links ul li a:hover {
-    text-decoration: none; /* REMOVE underline */
+  text-decoration: none; /* REMOVE underline */
 }
 
 .nav-links ul li::after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: #fdf0d5;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #fdf0d5;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
 }
 
 .nav-links ul li:hover::after {
-    width: 100%;
+  width: 100%;
 }
-
 
 nav .fa {
   display: none;
@@ -121,7 +120,7 @@ nav .fa {
   }
   .nav-links {
     position: fixed;
-     background: linear-gradient(135deg, #d24848 ,#7a0000, #cea8bc);
+    background: linear-gradient(135deg, #d24848, #7a0000, #cea8bc);
     height: 100vh;
     width: 200px;
     top: 0;
@@ -144,28 +143,28 @@ nav .fa {
     margin: 10px;
     font-size: 22px;
     cursor: pointer;
-    }
   }
-  .nav-links ul {
-    padding: 30px;
-  }
-
-main{
-    display: flex;
-    gap: 1rem;
-    flex-direction: column;
 }
-.heading-faq{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5rem;
-    background-color: #780000;
-    color: #fdf0d5;
-    text-align: center;
-    font-size: 1.5rem;
-    padding-bottom: 48px;
-    /* width: 100vw; */
+.nav-links ul {
+  padding: 30px;
+}
+
+main {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.heading-faq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  background-color: #780000;
+  color: #fdf0d5;
+  text-align: center;
+  font-size: 1.5rem;
+  padding-bottom: 48px;
+  /* width: 100vw; */
 }
 
 .social-icons {
@@ -180,10 +179,9 @@ main{
   transition: transform 0.2s ease, color 0.3s ease;
 }
 .social-icons a:hover {
-  color: #ffd9b3;
+  color: #ec6f35;
   transform: translateY(-3px) scale(1.15);
 }
-
 
 .faq {
   color: #780000;
@@ -196,53 +194,51 @@ main{
   padding: 0.5rem;
   box-shadow: #780000 0 0 7px;
 }
-a{
-    text-decoration: none;
-    color: #780000;
+a {
+  text-decoration: none;
+  color: #780000;
 }
-.ask{
-    display: flex;
-    color: #fdf0d5;
-    flex-direction: column;
-    height: 10rem;
-    background-color: #780000;
-    width: 25rem;
-    margin: auto;
-    align-items: center;
-    gap: 0.5rem ;   
-    border-radius: 1rem; 
-}
-
-.mail{
-    background-color: #fdf0d5;
-    width: 80%;
-    border-radius: 1.5rem;
-    text-align: center;
-    padding: 0.5rem;
-}
-.ask h3{
-    font-size: 1.5rem;
-}
-.seperator{
-    height: 2rem;
-}
-.ask p{
-    justify-self: end;
-}
-.mail img{
-    object-fit: cover;
+.ask {
+  display: flex;
+  color: #fdf0d5;
+  flex-direction: column;
+  height: 10rem;
+  background-color: #780000;
+  width: 25rem;
+  margin: auto;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
 }
 
-
+.mail {
+  background-color: #fdf0d5;
+  width: 80%;
+  border-radius: 1.5rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+.ask h3 {
+  font-size: 1.5rem;
+}
+.seperator {
+  height: 2rem;
+}
+.ask p {
+  justify-self: end;
+}
+.mail img {
+  object-fit: cover;
+}
 
 /*  CSS for Phone */
-@media screen and (max-width:768px) {
-    .heading{
-        font-size: 0.75rem;
-    }
-    .ask{
-        border-radius: 0;
-    }
+@media screen and (max-width: 768px) {
+  .heading {
+    font-size: 0.75rem;
+  }
+  .ask {
+    border-radius: 0;
+  }
 }
 
 .navbar-logo {
