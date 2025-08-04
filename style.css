@@ -847,7 +847,7 @@ button:active{
               border-color 0.2s ease;
 }
 
-/* * The ::before pseudo-element creates the animated warm glow.
+/* The ::before pseudo-element creates the animated warm glow.
 * It uses a conic gradient with shades of red and maroon to match the theme.
 */
 #skip-loading::before {
