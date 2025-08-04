@@ -459,6 +459,42 @@ h2 {
     }
 }
 
+.template-slider {
+    position: relative;
+    height: 80vh;
+    width: 53vw;
+    text-align: center;
+    list-style: none;
+}
+ 
+.template-slider li {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.template-slider li img{
+height: 60vh;
+object-fit: cover;
+}
+.template-slider li.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+
+  .template-slider {
+        width: 80vw;
+      }
+}
+
 
 .site-footer {
 background: linear-gradient(135deg, #7a0000, #390303,#c12a2a);
