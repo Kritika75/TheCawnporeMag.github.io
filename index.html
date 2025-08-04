@@ -324,12 +324,10 @@
             }, 6000); // default 6 seconds
 
 
-            if (skipButton) {
-              skipButton.addEventListener("click", () => {
-                clearTimeout(loadingTimeout); // Cancel auto-hide
-                loadingScreen.classList.add("hidden"); // Hide immediately
-              });
-            }
+            skipButton.addEventListener("click", () => {
+              clearTimeout(loadingTimeout); // Cancel auto-hide
+              loadingScreen.classList.add("hidden"); // Hide immediately
+            });
         });
       
         const musicToggle = document.getElementById("music-toggle");
