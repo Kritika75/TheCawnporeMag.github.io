@@ -444,26 +444,11 @@ nav .fa {
 /** FOOTER **/
 
 .site-footer {
-background: linear-gradient(135deg, #7a0000, #390303,#c12a2a);
+  background: #7a0000;
   color: #f9f9e6;
-  background-size: 600% 600%;  
   font-family: 'Georgia', serif;
   padding: 50px 20px 15px;
-  background-size: 400% 400%;  /* Enables movement */
-  animation: gradientShift 6s linear infinite;
 }
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 
 /* Back-to-top button */
 .back-to-top {
@@ -513,11 +498,10 @@ background: linear-gradient(135deg, #7a0000, #390303,#c12a2a);
 }
 
 .footer-top h3 {
-  /* font-weight: 900; */
   font-size: 13px;
   text-transform: uppercase;
-  margin-bottom: 20px;
-  color: #ffe7e7;
+  margin-bottom: 10px;
+  color: #fff8e7;
 }
 
 /* Links with underline grow */
@@ -536,7 +520,7 @@ background: linear-gradient(135deg, #7a0000, #390303,#c12a2a);
   height: 1px;
   bottom: -2px;
   left: 0;
-  background: #ec6f35;
+  background: #ffd9b3;
   transition: width 0.3s ease;
 }
 .footer-top a:hover::after {
@@ -566,55 +550,48 @@ background: linear-gradient(135deg, #7a0000, #390303,#c12a2a);
   transition: transform 0.2s ease, color 0.3s ease;
 }
 .social-icons a:hover {
-  color: #ec6f35;
+  color: #ffd9b3;
   transform: translateY(-3px) scale(1.15);
 }
 
 /* Footer Newsletter Section */
 
-.subscription-box-about h2 {
+.subscription-box h2 {
   font-size: 18px;
   color: #fff8e7;
   margin-bottom: 10px;
   font-family: 'Georgia', serif;
 }
 
-
-.subscription-box-about form {
+.subscription-box form {
   width: 100%;
-  
 }
 
-.subscription-box-about input {
-  
+.subscription-box input {
   padding: 15px;
   width: 65%;
-  border: 2px solid orangered;
-  border-radius: 50px;
+  border: none;
+  border-radius: 15px;
   margin-bottom: 10px;
 }
   
-.subscription-box-about button {
-  background: #ee834e;
+.subscription-box button {
+  background: #ffcc66;
   color: #7a0000;
   border: none;
   padding: 14px 10px;
   width: 100px;
-  border-radius: 60px;
+  border-radius: 15px;
   cursor: pointer;
   font-weight: bold;
   font-size: 16px;
   text-align: center;
   transition: all 0.3s;
-  
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* subtle default shadow */
 }
-.subscription-box-about button:hover {
-  background: #da715ee1;
-    box-shadow: 0 6px 18px rgba(218, 113, 94, 0.5); /* deeper colored glow on hover */
-
+.subscription-box button:hover {
+  background: #e6b85c;
 }
-button:active {
+button:active{
   scale: 0.95;
 }
 /* Bottom bar */
@@ -711,11 +688,3 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(24px);
 }
-
-.navbar-logo {
-  height: 40px;
-  margin-right: 16px
-  vertical-align: middle;
-}
-
-

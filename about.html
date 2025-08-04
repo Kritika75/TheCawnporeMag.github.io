@@ -171,12 +171,12 @@
   </div>
 
     <h2 id="CardsHeading">Cawnpore's Prominent Landmarks</h2>
-    <section class="landmarks">
+    <ul class="landmarks template-slider">
       
         
         <!-- landmark cards -->
         <!-- lal imli -->
-        <div class="landmarkCard">
+        <li class="landmarkCard">
             <img src="lal imli.jpg" alt="Lal Imli" />
             <div class="landmarkInfo">
               <p class="Tag-line" style="color: #FDF0D5;">
@@ -187,9 +187,9 @@
                     <button class="landmarkButton">Learn More</button>
                 </a>
             </div>
-        </div>
+        </li>
         <!-- kanpur memorial church -->
-        <div class="landmarkCard">
+        <li class="landmarkCard">
             <img src="Kanpur_Memorial_Church.jpg" alt="Kanpur Memorial Church" />
             <div class="landmarkInfo">
               <p class="Tag-line" style="color: #FDF0D5;">
@@ -201,9 +201,9 @@
                     <button class="landmarkButton">Learn More</button>
                 </a>
             </div>
-        </div>
+        </li>
         <!-- Kanpur Central Station -->
-        <div class="landmarkCard">
+        <li class="landmarkCard">
             <img src="Kanpur_Central_Station.jpg" alt="Kanpur Central" />
             <div class="landmarkInfo">
               <p class="Tag-line" style="color: #FDF0D5;">
@@ -215,10 +215,10 @@
                     <button class="landmarkButton">Learn More</button>
                 </a>
             </div>
-        </div>
+        </li>
 
         <!-- JK Temple -->
-        <div class="landmarkCard">
+        <li class="landmarkCard">
             <img src="1920px-JK_Temple(Juggilal_Kamlapati_temple)_is_a_temple_in_the_Indian_city_of_Kanpur.It_is_considered_to_be_a_unique_blend_of_ancient_and_modern_architecture.jpg" alt="J.K. Temple" />
             <div class="landmarkInfo">
              <p class="Tag-line" style="color: #FDF0D5;">
@@ -230,11 +230,11 @@
                     <button class="landmarkButton">Learn More</button>
                 </a>
             </div>
-        </div>
+        </li>
 
         <!-- Kanpur Zoological Park -->
 
-         <div class="landmarkCard">
+         <li class="landmarkCard">
             <img src="Kanpur.jpg" alt="Kanpur Zoological Park" />
             <div class="landmarkInfo">
               <p class="Tag-line" style="color: #FDF0D5;">
@@ -246,9 +246,86 @@
                     <button class="landmarkButton">Learn More</button>
                 </a>
             </div>
-        </div>
+          </li>
 
-    </section>
+      </ul>
+      <div style="width: 100%; margin-top: 1rem; margin-bottom: 3rem; text-align: center">
+          <button
+            id="slider-left"
+            aria-label="Previous Slide"
+            style="
+              font-size: 1.5rem;
+              padding: 14px;
+              background: #fff;
+              border-radius: 50%;
+              border: none;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+              cursor: pointer;
+              margin-right: 20px;
+               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+               font-weight: bolder;
+            "
+          >
+            &#8592;
+          </button>
+          <button
+            id="slider-right"
+            aria-label="Next Slide"
+            style="
+              z-index: 10;
+              font-size: 1.5rem;
+              padding: 14px;
+              background: #fff;
+              border-radius: 50%;
+              border: none;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+              cursor: pointer;
+              font-weight: bolder;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            "
+          >
+            &#8594;
+          </button>
+        </div>
+    <script>
+        // template gallery slider
+  const template_slider = document.querySelector(".template-slider");
+  const template_slides = template_slider.querySelectorAll("li");
+  const slideCount = template_slides.length;
+  let activeSlide = 0;
+
+  // Ensure first slide is visible
+  template_slides[0].classList.add("active");
+
+  // Arrow buttons
+  const leftArrow = document.getElementById("slider-left");
+  const rightArrow = document.getElementById("slider-right");
+
+  function showSlide(index) {
+    template_slides[activeSlide].classList.remove("active");
+    activeSlide = (index + slideCount) % slideCount;
+    template_slides[activeSlide].classList.add("active");
+  }
+
+  // Auto slide
+  let sliderInterval = setInterval(() => {
+    showSlide(activeSlide + 1);
+  }, 5000);
+
+  // Arrow navigation
+  if (leftArrow && rightArrow) {
+    leftArrow.addEventListener("click", () => {
+      showSlide(activeSlide - 1);
+      clearInterval(sliderInterval);
+      sliderInterval = setInterval(() => showSlide(activeSlide + 1), 5000);
+    });
+    rightArrow.addEventListener("click", () => {
+      showSlide(activeSlide + 1);
+      clearInterval(sliderInterval);
+      sliderInterval = setInterval(() => showSlide(activeSlide + 1), 5000);
+    });
+  }
+    </script>
 
     <!-- Stylish Section Separator -->
   <div class="section-separator">
