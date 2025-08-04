@@ -818,6 +818,68 @@ button:active{
 }
 
 
+#skip-loading {
+  /* Positioning and Box Model */
+  position: relative; /* Required for the ::before pseudo-element positioning */
+  overflow: hidden; /* Clips the pseudo-element's animation within the button's bounds */
+  padding: 14px 28px;
+  border: 1px solid rgba(243, 234, 211, 0.2); /* Subtle border using the cream color */
+  border-radius: 8px; /* Slightly sharper radius to match the site's aesthetic */
+  
+  /* Typography and Color */
+  color: #F3EAD3; /* Creamy, off-white text color from the theme */
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  
+  /* Background and Effects */
+  background-color: rgba(110, 18, 11, 1); /* Deep maroon from the theme with slight transparency */
+  backdrop-filter: blur(8px); /* Frosted glass effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  
+  /* Animation and Transitions */
+  transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), 
+              box-shadow 0.2s cubic-bezier(0.25, 0.1, 0.25, 1),
+              background-color 0.2s ease,
+              border-color 0.2s ease;
+}
+
+/* * The ::before pseudo-element creates the animated warm glow.
+* It uses a conic gradient with shades of red and maroon to match the theme.
+*/
+#skip-loading::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%; 
+  height: 400%;
+  background: conic-gradient(
+      from 180deg at 50% 50%,
+      #8B0000 0deg,   /* DarkRed */
+      #A52A2A 120deg, /* Brown */
+      #DC143C 240deg, /* Crimson */
+      #8B0000 360deg
+  );
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Place it behind the button content */
+  animation: rotate-aurora 5s linear infinite; /* The animation */
+  filter: blur(50px); /* Creates the soft glow */
+  opacity: 0.7; /* Tone down the glow intensity */
+}
+
+/* Hover state: The button lifts and the background becomes slightly more solid */
+#skip-loading:hover {
+  transform: translateY(-4px);
+  background-color: rgb(75, 12, 7);
+  box-shadow: 0 10px 15px rgba(46, 16, 16, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-color: rgba(243, 234, 211, 0.4);
+}
+
+
 @keyframes dots {
     0% {
         content: "";
@@ -882,7 +944,8 @@ button:active{
 
 .navbar-logo {
   height: 40px;
-  margin-right: 16px
+  /* added ';' */
+  margin-right: 16px; 
   vertical-align: middle;
 }
 
