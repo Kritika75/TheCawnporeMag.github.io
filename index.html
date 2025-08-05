@@ -69,7 +69,6 @@
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div>
-      <div class="circle"></div>
               <script>
 
   // Coordinates for the cursor
@@ -127,9 +126,10 @@
 </script>
     <!-- Loading Screen -->
      <div id="loading-screen"> 
-         <div class="loader">
-            <i class="fa-solid fa-spinner"></i>
-            <h2>Loading<span class="dots"></span></h2>
+         <div class="branded-loader">
+            <div class="tagline-container">
+                <h1 class="tagline">Kanpur-born, read everywhere</h1>
+            </div>
         </div>
     </div>
     <div class="progress-container">
@@ -324,10 +324,10 @@
         document.addEventListener("DOMContentLoaded", function () {
             const loadingScreen = document.getElementById("loading-screen");
         
-            // Set a timeout to hide the loading screen
+            // Set a timeout to hide the loading screen after the tagline animation completes
             setTimeout(() => {
                 loadingScreen.classList.add("hidden");
-            }, 6000); // 6000ms = 6 seconds (adjust as needed)
+            }, 4200); // 4.2 seconds total (0.3s delay + 0.8s slide in + 3s visible + 0.6s fade out)
         });
         
         const musicToggle = document.getElementById("music-toggle");
