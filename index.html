@@ -175,8 +175,8 @@
       <h1 id="namaste">Namaste!</h1>
       <div class="container">
        <div class="card">
-      <p class="card-title">Introduction</p>
-      <p class="small-desc">
+      <p class="card-title">Introduction<button class="speakBtn" data-target="para1" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button>
+      <p id="para1" class="small-desc">
         The Cawnpore Magazine's motive is to delve into the profound influence
         and impact of various cultures worldwide through the art of literature.
         Our mission is to celebrate the richness of each culture, beautifully
@@ -184,13 +184,16 @@
         and inclusive platform, we aim to foster a community that encourages
         readers to explore, learn, and appreciate diverse perspectives.
       </p>
+     
+
+
       <div class="go-corner">
         <div class="go-arrow">→</div>
       </div>
       </div>
       <div class="card">
-      <p class="card-title">What we do !!</p>
-      <p class="small-desc">
+      <p class="card-title">What we do !!<button class="speakBtn" data-target="para2" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button>  
+        <p  id="para2" class="small-desc">
          We
         firmly believe that the exchange of ideas and experiences is the key to
         a more tolerant and compassionate world, and we strive to achieve this
@@ -199,13 +202,14 @@
         destination to explore the best in fiction, non-fiction, poetry,
         artwork, interviews, breathtaking photos and so much more!
       </p>
+      
       <div class="go-corner">
         <div class="go-arrow">→</div>
       </div>
       </div>
       <div class="card">
-      <p class="card-title">Don't Wait, Subscribe</p>
-      <p class="small-desc">
+      <p class="card-title">Don't Wait, Subscribe<button class="speakBtn" data-target="para3" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button></p>
+      <p class="small-desc" id="para3">
         We understand that submitting your work can be a daunting task, but we
         assure you that we will treat each submission with the utmost respect
         and care. We are excited to read your submissions and grateful for your
@@ -216,7 +220,33 @@
         <div class="go-arrow">→</div>
       </div>
       </div>
-      
+      <script>
+  document.querySelectorAll('.speakBtn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const paragraph = document.getElementById(targetId);
+      const text = paragraph.innerText;
+
+      if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        // Optional: voice select
+        const voices = window.speechSynthesis.getVoices();
+        if (voices.length > 0) {
+          for (let voice of voices) {
+            if (voice.lang === 'en-US') {
+              utterance.voice = voice;
+              break;
+            }
+          }
+        }
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert('Aapke browser mein speech synthesis support nahi karta.');
+      }
+    });
+  });
+</script>
+
     </div>
       <a
         href="issue.html"
@@ -321,6 +351,8 @@
 
     <!-- Visibility change  -->
     <script>
+     
+  
         document.addEventListener("DOMContentLoaded", function () {
             const loadingScreen = document.getElementById("loading-screen");
         
