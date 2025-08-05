@@ -1,0 +1,1 @@
+Thanks for your contribution! Could you please clarify why you made so many style and layout changes in addition to adding the navbar? Did you use any code generation tool like ChatGPT, or was there another reason for the extensive modifications? For future updates, please try to keep changes focused on the specific feature being added.
