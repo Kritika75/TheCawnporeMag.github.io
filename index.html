@@ -1,394 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TheCawnpore</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
 
-  </head>
-  <body>
-                       <!-- Circles -->
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div> 
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-              <script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TheCawnpore</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  // Coordinates for the cursor
-  const coords = { x: 0, y: 0 };
-  const circles = document.querySelectorAll(".circle");
+</head>
 
-  // Colors for the circles
-  const colors = [
-    "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-    "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-    "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-    "#680060", "#60005f", "#48005f", "#3d005e"
-  ];
+<body>
+  <!-- Circles -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
 
-  // Assign colors and initial position to each circle
-  circles.forEach(function (circle, index) {
-    circle.x = 0;
-    circle.y = 0;
-    circle.style.backgroundColor = colors[index % colors.length];
-  });
+      // Coordinates for the cursor
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+      const cursorToggle = document.getElementById("cursorToggle");
+      let isEffectEnabled = true;
 
-  // Update the coordinates when the mouse moves
-  window.addEventListener("mousemove", function (e) {
-    coords.x = e.clientX;
-    coords.y = e.clientY;
-  });
+      // Colors for the circles
+      const colors = [
+        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+        "#680060", "#60005f", "#48005f", "#3d005e"
+      ];
 
-  // Animation function to move the circles
-  function animateCircles() {
-    let x = coords.x;
-    let y = coords.y;
+      // Assign colors and initial position to each circle
+      circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+      });
 
-    circles.forEach(function (circle, index) {
-      // Update the position and scale of each circle
-      circle.style.left = x - 12 + "px";
-      circle.style.top = y - 12 + "px";
-      circle.style.scale = (circles.length - index) / circles.length;
+      // Update the coordinates when the mouse moves
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+      });
 
-      circle.x = x;
-      circle.y = y;
-
-      // Get the next circle in the sequence
-      const nextCircle = circles[index + 1] || circles[0];
-      x += (nextCircle.x - x) * 0.15;
-      y += (nextCircle.y - y) * 0.15;
+      // Animation function to move the circles
+      function animateCircles() {
+        if (isEffectEnabled) {
+          let x = coords.x;
+          let y = coords.y;
+          circles.forEach(function (circle, index) {
+            // Update the position and scale of each circle
+            circle.style.left = x - 12 + "px";
+            circle.style.top = y - 12 + "px";
+            circle.style.scale = (circles.length - index) / circles.length;
+            circle.x = x;
+            circle.y = y;
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.15;
+            y += (nextCircle.y - y) * 0.15;
+          });
+        }
+        requestAnimationFrame(animateCircles);
+      }
+      animateCircles();
+      cursorToggle.addEventListener('change', () => {
+        isEffectEnabled = cursorToggle.checked;
+        if (!isEffectEnabled) {
+          circles.forEach(circle => {
+            circle.style.display = 'none';
+          });
+        }
+      });
     });
+  </script>
 
-    // Repeat the animation
-    requestAnimationFrame(animateCircles);
-  }
-
-  // Start the animation
-  animateCircles();
-
-</script>
-    <!-- Loading Screen -->
-     <div id="loading-screen"> 
-         <div class="loader">
-            <i class="fa-solid fa-spinner"></i>
-            <h2>Loading<span class="dots"></span></h2>
-        </div>
+  <div id="loading-screen">
+    <div class="loader">
+      <i class="fa-solid fa-spinner"></i>
+      <h2>Loading<span class="dots"></span></h2>
     </div>
-    <div class="progress-container">
-      <div class="progress-bar" id="progressBar"></div>
+  </div>
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+  <section class="header">
+    <nav role="navigation" aria-label="Main Menu">
+      <!-- Logo on the left -->
+      <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="submission.html">SUBMIT</a></li>
+          <li><a href="issue.html">ISSUE</a></li>
+          <li><a href="masthead.html">MASTHEAD</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="open-source.html">OPEN SOURCE</a></li>
+          <li><a href="journey.html">OUR JOURNEY</a></li>
+
+          <li class="toggle-item">
+            <span>Pointer effect</span>
+            <label class="switch">
+              <input type="checkbox" id="cursorToggle" checked>
+              <span class="slider"></span>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    <div class="text-box">
+      <h1>The Cawnpore</h1>
+      <p>EST. 2024</p>
+      <div id="quote-widget">
+        <p id="quote-text">Loading quote...</p>
+        <p id="quote-author"></p>
+      </div>
     </div>
-    <section class="header">
-      <nav role="navigation" aria-label="Main Menu">
-        <!-- Logo on the left -->
-        <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
-        
-        <div class="nav-links" id="navLinks">
-          <i class="fa fa-times" onclick="hideMenu()"></i>
-          <ul>
+  </section>
 
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="submission.html">SUBMIT</a></li>
-            <li><a href="issue.html">ISSUE</a></li>
-            <li><a href="masthead.html">MASTHEAD</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="open-source.html">OPEN SOURCE</a></li>
-            <li><a href="journey.html">OUR JOURNEY</a></li>
+  <!--Welcoming page-->
 
-          </ul>
+  <section class="Welcome">
+    <h1 id="namaste">Namaste!</h1>
+    <div class="container">
+      <div class="card">
+        <p class="card-title">Introduction</p>
+        <p class="small-desc">
+          The Cawnpore Magazine's motive is to delve into the profound influence
+          and impact of various cultures worldwide through the art of literature.
+          Our mission is to celebrate the richness of each culture, beautifully
+          showcased through the lenses of literature and art. By providing a safe
+          and inclusive platform, we aim to foster a community that encourages
+          readers to explore, learn, and appreciate diverse perspectives.
+        </p>
+        <div class="go-corner">
+          <div class="go-arrow">→</div>
         </div>
-
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-      </nav>
-
-      <div class="text-box">
-        <h1>The Cawnpore</h1>
-        <p>EST. 2024</p>
-        <div id="quote-widget">
-          <p id="quote-text">Loading quote...</p>
-          <p id="quote-author"></p>
-        </div>
-      </div>
-    </section>
-
-    <!--Welcoming page-->
-
-    <section class="Welcome">
-      <h1 id="namaste">Namaste!</h1>
-      <div class="container">
-       <div class="card">
-      <p class="card-title">Introduction</p>
-      <p class="small-desc">
-        The Cawnpore Magazine's motive is to delve into the profound influence
-        and impact of various cultures worldwide through the art of literature.
-        Our mission is to celebrate the richness of each culture, beautifully
-        showcased through the lenses of literature and art. By providing a safe
-        and inclusive platform, we aim to foster a community that encourages
-        readers to explore, learn, and appreciate diverse perspectives.
-      </p>
-      <div class="go-corner">
-        <div class="go-arrow">→</div>
-      </div>
       </div>
       <div class="card">
-      <p class="card-title">What we do !!</p>
-      <p class="small-desc">
-         We
-        firmly believe that the exchange of ideas and experiences is the key to
-        a more tolerant and compassionate world, and we strive to achieve this
-        through The Cawnpore Magazine.
-        So, step right up and get ready for The Cawnpore Magazine your one stop
-        destination to explore the best in fiction, non-fiction, poetry,
-        artwork, interviews, breathtaking photos and so much more!
-      </p>
-      <div class="go-corner">
-        <div class="go-arrow">→</div>
-      </div>
+        <p class="card-title">What we do !!</p>
+        <p class="small-desc">
+          We
+          firmly believe that the exchange of ideas and experiences is the key to
+          a more tolerant and compassionate world, and we strive to achieve this
+          through The Cawnpore Magazine.
+          So, step right up and get ready for The Cawnpore Magazine your one stop
+          destination to explore the best in fiction, non-fiction, poetry,
+          artwork, interviews, breathtaking photos and so much more!
+        </p>
+        <div class="go-corner">
+          <div class="go-arrow">→</div>
+        </div>
       </div>
       <div class="card">
-      <p class="card-title">Don't Wait, Subscribe</p>
-      <p class="small-desc">
-        We understand that submitting your work can be a daunting task, but we
-        assure you that we will treat each submission with the utmost respect
-        and care. We are excited to read your submissions and grateful for your
-        contribution to The Cawnpore. Thank you for considering us as a platform
-        to showcase your talent.
-      </p>
-      <div class="go-corner">
-        <div class="go-arrow">→</div>
+        <p class="card-title">Don't Wait, Subscribe</p>
+        <p class="small-desc">
+          We understand that submitting your work can be a daunting task, but we
+          assure you that we will treat each submission with the utmost respect
+          and care. We are excited to read your submissions and grateful for your
+          contribution to The Cawnpore. Thank you for considering us as a platform
+          to showcase your talent.
+        </p>
+        <div class="go-corner">
+          <div class="go-arrow">→</div>
+        </div>
       </div>
-      </div>
-      
+
     </div>
-      <a
-        href="issue.html"
-        aria-label="View the latest Issue of The Cawnpore"
-        id="issue1-btn"
-        >READ THE LATEST ISSUE</a
-      >
-    </br>
-      <a
-        href="submission.html" 
-        aria-label="Submit your work on The Cawnpore"
-        id="cta1-btn"
-        >SUBMIT YOUR WORK</a
-      >
-    </section>
+    <a href="issue.html" aria-label="View the latest Issue of The Cawnpore" id="issue1-btn">READ THE LATEST ISSUE</a>
+    <br>
+    <a href="submission.html" aria-label="Submit your work on The Cawnpore" id="cta1-btn">SUBMIT YOUR WORK</a>
+  </section>
 
-    <section class="listings">
-      <h3>Proudly Listed On... &#128640;</h3>
-      <div class="listing-images">
-        <a href="https://duotrope.com/magazine/the-cawnpore-magazine-37420" target="_blank">
-          <img
-            src="listed-on-duotrope.png"
-            alt="The Cawnpore Magazine is listed on Duotrope"
-          />
-        </a>
-        <a href="https://www.chillsubs.com/magazine/the-cawnpore-magazine" target="_blank">
-          <img
-            src="professional-1.png"
-            alt="The Cawnpore Magazine is a professional member of Chill Subs"
-          />
-        </a>
-      </div>
-    </section>
-
-      <!-- Footer -->
-   <footer class="site-footer" id="footer" >
-      <a class="back-to-top" href="#">
-          <i class="fa-solid fa-chevron-up"></i>
+  <section class="listings">
+    <h3>Proudly Listed On... &#128640;</h3>
+    <div class="listing-images">
+      <a href="https://duotrope.com/magazine/the-cawnpore-magazine-37420" target="_blank">
+        <img src="listed-on-duotrope.png" alt="The Cawnpore Magazine is listed on Duotrope" />
       </a>
-      <div class="footer-top" >
-        <div class="footer-about">
-          <h3>The Cawnpore</h3>
-          <p>An independent magazine celebrating literary voices and untold stories.</p>
-        </div>
-        <div class="footer-links"   id="footerLinks">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="index.html" >Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="submission.html">Submit</a></li>
-            <li><a href="issue.html">Issue</a></li>
-            <li><a href="masthead.html">Masthead</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="open-source.html">Open Source</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact"  id="footerContact">
-          <h3>Contact Us</h3>
-          <div class="social-icons">
-            <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
-              <i class="fa-solid fa-envelope"></i>
-            </a>
-            <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="https://x.com/TheCawnporeMag?s=09" target="_blank">
-              <i class="fa-brands fa-x-twitter"></i>
-            </a>
-            <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank">
-              <i class="fa-brands fa-tumblr"></i>
-            </a>
-          </div>
-        </div>
-        <div class="subscription-box-about">
-          <h3>Subscribe to our Newsletter</h3>
-          <form action="/subscribe" method="post">
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
-          </form>
+      <a href="https://www.chillsubs.com/magazine/the-cawnpore-magazine" target="_blank">
+        <img src="professional-1.png" alt="The Cawnpore Magazine is a professional member of Chill Subs" />
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="footer">
+    <a class="back-to-top" href="#">
+      <i class="fa-solid fa-chevron-up"></i>
+    </a>
+    <div class="footer-top">
+      <div class="footer-about">
+        <h3>The Cawnpore</h3>
+        <p>An independent magazine celebrating literary voices and untold stories.</p>
+      </div>
+      <div class="footer-links" id="footerLinks">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="submission.html">Submit</a></li>
+          <li><a href="issue.html">Issue</a></li>
+          <li><a href="masthead.html">Masthead</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="open-source.html">Open Source</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact" id="footerContact">
+        <h3>Contact Us</h3>
+        <div class="social-icons">
+          <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://x.com/TheCawnporeMag?s=09" target="_blank">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank">
+            <i class="fa-brands fa-tumblr"></i>
+          </a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>Made with &#x2665; by Kritika Singh</p>
-        <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
+      <div class="subscription-box-about">
+        <h3>Subscribe to our Newsletter</h3>
+        <form action="/subscribe" method="post">
+          <input type="email" name="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
       </div>
-      <audio id="bg-music" loop preload="auto">
-           <source src="assets/music/lofi.mp3" type="audio/mpeg" />
-           Your browser does not support the audio element.
-      </audio>
-      <div id="music-toggle" aria-label="Toggle Background Music" role="button" tabindex="0">
-        <i class="fa-solid fa-music"></i>
-      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Made with &#x2665; by Kritika Singh</p>
+      <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
+    </div>
+    <audio id="bg-music" loop preload="auto">
+      <source src="assets/music/lofi.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <div id="music-toggle" aria-label="Toggle Background Music" role="button" tabindex="0">
+      <i class="fa-solid fa-music"></i>
+    </div>
 
 
-    </footer>
+  </footer>
 
 
-    <script src="index.js"></script>
+  <script src="index.js"></script>
 
-    <!-- Visibility change  -->
-    <script>
+  <!-- Visibility change  -->
+  <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const loadingScreen = document.getElementById("loading-screen");
-        
-            // Set a timeout to hide the loading screen
-            setTimeout(() => {
-                loadingScreen.classList.add("hidden");
-            }, 6000); // 6000ms = 6 seconds (adjust as needed)
+          const loadingScreen = document.getElementById("loading-screen");
+
+          // Set a timeout to hide the loading screen
+          setTimeout(() => {
+            loadingScreen.classList.add("hidden");
+          }, 6000); // 6000ms = 6 seconds (adjust as needed)
         });
-        
+
         const musicToggle = document.getElementById("music-toggle");
         const bgMusic = document.getElementById("bg-music");
 
-  // Load previous state if exists
-  const isMusicEnabled = localStorage.getItem("musicEnabled") === "true";
-  if (isMusicEnabled) {
-    bgMusic.volume = 0;
-    bgMusic.play().then(() => {
-      fadeInMusic();
-      musicToggle.classList.add("active");
-    });
-  }
+        // Load previous state if exists
+        const isMusicEnabled = localStorage.getItem("musicEnabled") === "true";
+        if (isMusicEnabled) {
+          bgMusic.volume = 0;
+          bgMusic.play().then(() => {
+            fadeInMusic();
+            musicToggle.classList.add("active");
+          });
+        }
 
-  function fadeInMusic() {
-    let volume = 0;
-    const fadeIn = setInterval(() => {
-      if (volume < 1) {
-        volume += 0.05;
-        bgMusic.volume = volume;
-      } else {
-        clearInterval(fadeIn);
-      }
-    }, 100);
-  }
+        function fadeInMusic() {
+          let volume = 0;
+          const fadeIn = setInterval(() => {
+            if (volume < 1) {
+              volume += 0.05;
+              bgMusic.volume = volume;
+            } else {
+              clearInterval(fadeIn);
+            }
+          }, 100);
+        }
 
-  function fadeOutMusic() {
-    let volume = bgMusic.volume;
-    const fadeOut = setInterval(() => {
-      if (volume > 0) {
-        volume -= 0.05;
-        bgMusic.volume = volume;
-      } else {
-        clearInterval(fadeOut);
-        bgMusic.pause();
-      }
-    }, 100);
-  }
+        function fadeOutMusic() {
+          let volume = bgMusic.volume;
+          const fadeOut = setInterval(() => {
+            if (volume > 0) {
+              volume -= 0.05;
+              bgMusic.volume = volume;
+            } else {
+              clearInterval(fadeOut);
+              bgMusic.pause();
+            }
+          }, 100);
+        }
 
-  musicToggle.addEventListener("click", () => {
-    if (bgMusic.paused) {
-      bgMusic.volume = 0;
-      bgMusic.play().then(() => {
-        fadeInMusic();
-        localStorage.setItem("musicEnabled", "true");
-        musicToggle.classList.add("active");
-      });
-    } else {
-      fadeOutMusic();
-      localStorage.setItem("musicEnabled", "false");
-      musicToggle.classList.remove("active");
-    }
-  });
+        musicToggle.addEventListener("click", () => {
+          if (bgMusic.paused) {
+            bgMusic.volume = 0;
+            bgMusic.play().then(() => {
+              fadeInMusic();
+              localStorage.setItem("musicEnabled", "true");
+              musicToggle.classList.add("active");
+            });
+          } else {
+            fadeOutMusic();
+            localStorage.setItem("musicEnabled", "false");
+            musicToggle.classList.remove("active");
+          }
+        });
 
 
 
-        
-    </script>
-  </body>
+
+  </script>
+</body>
+
 </html>
-
-
-
