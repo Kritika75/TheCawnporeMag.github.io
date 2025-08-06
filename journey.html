@@ -5,6 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Cawnpore Magazine Journey</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap">
+   <!-- Back Button (Fixed Top-Left Corner) -->
+    <button
+      onclick="history.back()"
+      style="
+        position: fixed;
+        top: 70px;
+        left: 20px;
+        z-index: 1000;
+        background-color: #800000;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      "
+    >
+      ← Back
+    </button>
   <style>
     * {
       margin: 0;
@@ -312,7 +332,11 @@
   z-index: 10000;
   transition: background-color 0.2s ease;
 }
-
+ @media (max-width: 600px) {
+  .circle {
+    display: none !important;
+  }
+}
     
 
 

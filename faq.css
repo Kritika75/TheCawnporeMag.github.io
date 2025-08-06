@@ -16,6 +16,7 @@ html {
   position: fixed;
   top: 0;
   left: 0;
+
   z-index: 1000;
 }
 
@@ -31,6 +32,29 @@ html {
   pointer-events: none;
   z-index: 99999999;
   transition: transform 0.1s ease-out;
+}
+
+
+  z-index: 1000; 
+}
+
+    /* Circle styles */
+    .circle {
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      background-color: black;
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99999999;
+      transition: transform 0.1s ease-out;
+    }
+     @media (max-width: 600px) {
+  .circle {
+    display: none !important;
+  }
 }
 
 .progress-bar {
