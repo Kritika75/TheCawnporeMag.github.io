@@ -945,7 +945,7 @@ button:active{
 
 .navbar-logo {
   height: 40px;
-  margin-right: 16px
+  margin-right: 16px;
   vertical-align: middle;
 }
 
@@ -1035,3 +1035,30 @@ button:active{
 }
 
 
+@media (min-width: 700px) and (max-width: 1000px) {
+    .nav-links ul li {
+        /* Option 1: Reduce padding */
+        padding: 6px 8px; /* Slightly less padding than the default */
+    }
+
+    .nav-links ul li a {
+        /* Option 2: Reduce font size */
+        font-size: 12px; /* Slightly smaller font size */
+        padding: 10px 12px; /* Adjust padding if font size is reduced */
+    }
+
+    /* Option 3: Consider a more compact display for list items */
+    .nav-links ul {
+        white-space: nowrap; /* Prevents wrapping of list items */
+        overflow-x: auto; /* Adds horizontal scroll if content overflows */
+        -webkit-overflow-scrolling: touch; /* Improves scrolling on touch devices */
+    }
+
+    .nav-links {
+        flex-basis: auto; /* Allow nav-links to shrink/grow as needed */
+    }
+
+    nav {
+        padding: 0.75rem 2%; /* Reduce overall nav padding */
+    }
+}
