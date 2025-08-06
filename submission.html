@@ -36,7 +36,7 @@
       onclick="history.back()"
       style="
         position: fixed;
-        top: 20px;
+        top: 70px;
         left: 20px;
         z-index: 1000;
         background-color: #800000;
@@ -51,6 +51,7 @@
     >
       ← Back
     </button>
+
     <!-- Circles -->
     <div class="circle"></div>
     <div class="circle"></div>
@@ -100,6 +101,55 @@
 
       </head>
       <body>
+
+</head>
+<body>
+  
+      
+                       <!-- Circles -->
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div> 
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+              <script>
+
 
                                <!-- Circles -->
             <div class="circle"></div>
@@ -224,6 +274,49 @@
             // Start the animation
             animateCircles();
     </script>
+
+  // Assign colors and initial position to each circle
+  circles.forEach(function (circle, index) {
+    circle.x = 0;
+    circle.y = 0;
+    circle.style.backgroundColor = colors[index % colors.length];
+  });
+
+  // Update the coordinates when the mouse moves
+  window.addEventListener("mousemove", function (e) {
+    coords.x = e.clientX;
+    coords.y = e.clientY;
+  });
+
+  // Animation function to move the circles
+  function animateCircles() {
+    let x = coords.x;
+    let y = coords.y;
+
+    circles.forEach(function (circle, index) {
+      // Update the position and scale of each circle
+      circle.style.left = x - 12 + "px";
+      circle.style.top = y - 12 + "px";
+      circle.style.scale = (circles.length - index) / circles.length;
+
+      circle.x = x;
+      circle.y = y;
+
+      // Get the next circle in the sequence
+      const nextCircle = circles[index + 1] || circles[0];
+      x += (nextCircle.x - x) * 0.15;
+      y += (nextCircle.y - y) * 0.15;
+    });
+
+    // Repeat the animation
+    requestAnimationFrame(animateCircles);
+  }
+
+  // Start the animation
+  animateCircles();
+
+</script>
+
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
     </div>
