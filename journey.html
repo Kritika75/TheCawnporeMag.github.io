@@ -360,40 +360,62 @@
       .content {
         padding: 20px;
       }
+    }
 
-      /* Mobile navbar styles */
+    @media (max-width: 700px) {
       nav {
-        padding: 0.75rem 3%;
+        height: 7%;
       }
 
       .nav-links ul {
-        position: fixed;
-        right: -200px;
-        top: 0;
-        text-align: left;
-        z-index: 2;
-        transition: 0.5s;
-        background: rgba(120, 0, 0, 0.95);
-        height: 100vh;
-        width: 200px;
-        padding-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 40px 20px;
       }
 
       .nav-links ul li {
         display: block;
-        margin: 25px;
+        opacity: 0;
+        transform: translateX(30px);
+        animation: slideIn 0.4s forwards;
       }
 
-      nav .fa {
-        display: block;
-        color: #fdf0d5;
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
+      @keyframes slideIn {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .nav-links {
+        position: fixed;
+        background: linear-gradient(135deg, #d24848 ,#7a0000, #cea8bc);
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -100%;
+        text-align: left;
+        z-index: 2;
+        box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
+        transition: right 0.4s ease-in-out;
       }
 
       .nav-links.nav-active {
         right: 0;
+      }
+
+      nav .fa {
+        display: block;
+        color: #663346;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+        z-index: 10;
+        background: linear-gradient(135deg, #fdfbfb, #ebedee);
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
       }
     }
 
