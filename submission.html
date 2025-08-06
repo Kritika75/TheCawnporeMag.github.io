@@ -32,7 +32,7 @@
   </head>
   <body>
     <!-- Back Button (Fixed Top-Left Corner) -->
-    <button
+    <!-- <button
       onclick="history.back()"
       style="
         position: fixed;
@@ -50,7 +50,7 @@
       "
     >
       ← Back
-    </button>
+    </button> -->
     <!-- Circles -->
     <div class="circle"></div>
     <div class="circle"></div>
@@ -240,6 +240,7 @@
             <li><a href="masthead.html">MASTHEAD</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="open-source.html">OPEN SOURCE</a></li>
+            
           </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -260,6 +261,13 @@
               <li><a href="masthead.html">MASTHEAD</a></li>
               <li><a href="faq.html">FAQ</a></li>
               <li><a href="open-source.html">OPEN SOURCE</a></li>
+              <li class="toggle-item">
+                <span>Pointer Effect</span>
+                <label class="switch">
+                  <input type="checkbox" id="cursorToggle" checked>
+                  <span class="slider round"></span>
+                </label>
+          </li>
             
             </ul>
           </div>

@@ -120,6 +120,9 @@
   </div>
     <section class="header">
     <nav role="navigation" aria-label="Main Menu">
+      <!-- Logo on the left -->
+        <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+
       <!-- Hamburger Icon -->
       <i class="fa fa-bars" onclick="showMenu()"></i>
 
@@ -135,6 +138,13 @@
           <li><a href="masthead.html">MASTHEAD</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="open-source.html">OPEN SOURCE</a></li>
+          <li class="toggle-item">
+            <span>Pointer Effect</span>
+            <label class="switch">
+              <input type="checkbox" id="cursorToggle" checked>
+              <span class="slider round"></span>
+            </label>
+          </li>
         </ul>
       </div>
     </nav>

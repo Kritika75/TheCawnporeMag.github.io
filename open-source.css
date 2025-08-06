@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 8px 12px;
-  color: white;
+  color: #fdf0d5cf;
 }
 
 /* The switch container */
@@ -46,10 +46,10 @@
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: -2px;
+  left: -2px;
+  right: 2px;
+  bottom: 2px;
   background-color: #757575; /* The grey color when OFF */
   border-radius: 28px; /* This makes it pill-shaped */
   transition: background-color 0.3s;
@@ -59,10 +59,10 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 22px; /* Diameter of the handle */
-  width: 22px;  /* Diameter of the handle */
+  height: 24px; /* Diameter of the handle */
+  width: 24px;  /* Diameter of the handle */
   left: 3px;    /* Position from the left */
-  bottom: 3px;  /* Position from the bottom */
+  bottom: px;  /* Position from the bottom */
   background-color: white;
   border-radius: 50%; /* This makes it a circle */
   transition: transform 0.3s;
@@ -78,4 +78,10 @@ input:checked + .slider {
 /* Move the handle to the right when checked */
 input:checked + .slider:before {
   transform: translateX(24px);
+}
+
+.navbar-logo {
+  height: 40px;
+  margin-right: 16px;
+  vertical-align: middle;
 }

@@ -119,9 +119,71 @@ nav {
     display: inline-block;
     padding: 8px 12px;
     position: relative;
-
+    color:#fdf0d5cf
+}
+/* Container for the text and switch * hinduja*/ 
+.toggle-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  color: #fdf0d5cf;
 }
 
+/* The switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;  /* Total width of the switch */
+  height: 28px; /* Total height of the switch */
+  margin-left: 10px;
+}
+
+/* Hide the default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider (the track) */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: -2px;
+  left: -2px;
+  right: 2px;
+  bottom: 2px;
+  background-color: #757575; /* The grey color when OFF */
+  border-radius: 28px; /* This makes it pill-shaped */
+  transition: background-color 0.3s;
+}
+
+/* The handle (the circle) */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px; /* Diameter of the handle */
+  width: 24px;  /* Diameter of the handle */
+  left: 3px;    /* Position from the left */
+  bottom: 2px;  /* Position from the bottom */
+  background-color: white;
+  border-radius: 50%; /* This makes it a circle */
+  transition: transform 0.3s;
+}
+
+/* --- The "ON" State --- */
+
+/* Change background color of the track when checked */
+input:checked + .slider {
+  background-color: #ac265e; /* Your theme's accent color */
+}
+
+/* Move the handle to the right when checked */
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+/* .... hinduja */
 .nav-links ul li a{
     color: #fdf0d5;
     text-decoration: none;
@@ -890,7 +952,7 @@ button:active{
 
 .navbar-logo {
   height: 40px;
-  margin-right: 16px
+  margin-right: 16px;
   vertical-align: middle;
 }
 

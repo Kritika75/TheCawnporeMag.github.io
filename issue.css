@@ -46,19 +46,19 @@
         background-position: center;
         background-size: cover;
         position: relative;
-        padding-top: 20px;
+        padding: 20px 0;
     }
 
-    nav {
-        display: flex;
+   nav {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem 0%;
+    padding: 1rem 1.2%;
     margin-right: 6px;
       background: linear-gradient( 135deg,
-    rgba(242, 237, 237, 0.3), 
-    rgba(122, 0, 0, 0.8),    
-    rgba(17, 16, 16, 0.3)        
+    rgba(242, 237, 237, 0.3), /* soft highlight */
+    rgba(122, 0, 0, 0.8),     /* your base color */
+    rgba(17, 16, 16, 0.3)        /* subtle depth */
 );
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -66,10 +66,11 @@
     border-bottom: 1px solid rgba(179, 177, 177, 0.2);
     position: fixed;
     top: 0;
-    height: 7%;
+    height: 9%;
     width: 100%;
     z-index: 999;
-    }
+}
+
 
     .header1 {
     background-color: #780000;
@@ -169,8 +170,7 @@ nav .fa {
     box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
     transition: right 0.4s ease-in-out;
   }
-
- nav .fa {
+  nav .fa {
         display: block;
         color: #663346;
         margin: 10px;
@@ -632,7 +632,7 @@ button:active{
   align-items: center;
   justify-content: space-between;
   padding: 8px 12px;
-  color: white;
+  color: #fdf0d5cf;
 }
 
 /* The switch container */
@@ -655,10 +655,10 @@ button:active{
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: -2px;
+  left: -2px;
+  right: 2px;
+  bottom: 2px;
   background-color: #757575; /* The grey color when OFF */
   border-radius: 28px; /* This makes it pill-shaped */
   transition: background-color 0.3s;
@@ -668,10 +668,10 @@ button:active{
 .slider:before {
   position: absolute;
   content: "";
-  height: 22px; /* Diameter of the handle */
-  width: 22px;  /* Diameter of the handle */
+  height: 24px; /* Diameter of the handle */
+  width: 24px;  /* Diameter of the handle */
   left: 3px;    /* Position from the left */
-  bottom: 3px;  /* Position from the bottom */
+  bottom: 2px;  /* Position from the bottom */
   background-color: white;
   border-radius: 50%; /* This makes it a circle */
   transition: transform 0.3s;
@@ -687,4 +687,10 @@ input:checked + .slider {
 /* Move the handle to the right when checked */
 input:checked + .slider:before {
   transform: translateX(24px);
+}
+
+.navbar-logo {
+  height: 40px;
+  margin-right: 16px;
+  vertical-align: middle;
 }

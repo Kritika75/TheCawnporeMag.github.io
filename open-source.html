@@ -59,7 +59,7 @@
   <div class="circle"></div>
 =======
   <!-- Back Button (Fixed Top-Left Corner) -->
-<button onclick="history.back()" style="
+<!-- <button onclick="history.back()" style="
     position: fixed;
     top: 20px;
     left: 20px;
@@ -74,7 +74,7 @@
     box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
 ">
   ← Back
-</button>
+</button> -->
   <!-- Scroll Progress Bar -->
 
   <div class="progress-container">
@@ -87,6 +87,8 @@
   <!-- Navbar -->
   <section class="header">
     <nav role="navigation" aria-label="Main Menu">
+      <!-- Logo on the left -->
+            <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
       <div class="nav-links" id="navLinks">
         <i class="fa fa-times" onclick="hideMenu()"></i>
         <ul>
@@ -102,7 +104,7 @@
             <span>Pointer Effect</span>
             <label class="switch">
               <input type="checkbox" id="cursorToggle" checked>
-              <span class="slider"></span>
+              <span class="slider round"></span>
             </label>
           </li>
         </ul>
