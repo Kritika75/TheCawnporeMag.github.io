@@ -113,11 +113,11 @@
       animateCircles();
       cursorToggle.addEventListener('change', () => {
         isEffectEnabled = cursorToggle.checked;
-        if (!isEffectEnabled) {
-          circles.forEach(circle => {
-            circle.style.display = 'none';
-          });
-        }
+
+        // This will handle both states correctly.
+        circles.forEach(circle => {
+          circle.style.display = isEffectEnabled ? 'block' : 'none';
+        });
       });
     });
   </script>
@@ -308,67 +308,67 @@
 
   <!-- Visibility change  -->
   <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          const loadingScreen = document.getElementById("loading-screen");
+    document.addEventListener("DOMContentLoaded", function () {
+      const loadingScreen = document.getElementById("loading-screen");
 
-          // Set a timeout to hide the loading screen
-          setTimeout(() => {
-            loadingScreen.classList.add("hidden");
-          }, 6000); // 6000ms = 6 seconds (adjust as needed)
+      // Set a timeout to hide the loading screen
+      setTimeout(() => {
+        loadingScreen.classList.add("hidden");
+      }, 6000); // 6000ms = 6 seconds (adjust as needed)
+    });
+
+    const musicToggle = document.getElementById("music-toggle");
+    const bgMusic = document.getElementById("bg-music");
+
+    // Load previous state if exists
+    const isMusicEnabled = localStorage.getItem("musicEnabled") === "true";
+    if (isMusicEnabled) {
+      bgMusic.volume = 0;
+      bgMusic.play().then(() => {
+        fadeInMusic();
+        musicToggle.classList.add("active");
+      });
+    }
+
+    function fadeInMusic() {
+      let volume = 0;
+      const fadeIn = setInterval(() => {
+        if (volume < 1) {
+          volume += 0.05;
+          bgMusic.volume = volume;
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 100);
+    }
+
+    function fadeOutMusic() {
+      let volume = bgMusic.volume;
+      const fadeOut = setInterval(() => {
+        if (volume > 0) {
+          volume -= 0.05;
+          bgMusic.volume = volume;
+        } else {
+          clearInterval(fadeOut);
+          bgMusic.pause();
+        }
+      }, 100);
+    }
+
+    musicToggle.addEventListener("click", () => {
+      if (bgMusic.paused) {
+        bgMusic.volume = 0;
+        bgMusic.play().then(() => {
+          fadeInMusic();
+          localStorage.setItem("musicEnabled", "true");
+          musicToggle.classList.add("active");
         });
-
-        const musicToggle = document.getElementById("music-toggle");
-        const bgMusic = document.getElementById("bg-music");
-
-        // Load previous state if exists
-        const isMusicEnabled = localStorage.getItem("musicEnabled") === "true";
-        if (isMusicEnabled) {
-          bgMusic.volume = 0;
-          bgMusic.play().then(() => {
-            fadeInMusic();
-            musicToggle.classList.add("active");
-          });
-        }
-
-        function fadeInMusic() {
-          let volume = 0;
-          const fadeIn = setInterval(() => {
-            if (volume < 1) {
-              volume += 0.05;
-              bgMusic.volume = volume;
-            } else {
-              clearInterval(fadeIn);
-            }
-          }, 100);
-        }
-
-        function fadeOutMusic() {
-          let volume = bgMusic.volume;
-          const fadeOut = setInterval(() => {
-            if (volume > 0) {
-              volume -= 0.05;
-              bgMusic.volume = volume;
-            } else {
-              clearInterval(fadeOut);
-              bgMusic.pause();
-            }
-          }, 100);
-        }
-
-        musicToggle.addEventListener("click", () => {
-          if (bgMusic.paused) {
-            bgMusic.volume = 0;
-            bgMusic.play().then(() => {
-              fadeInMusic();
-              localStorage.setItem("musicEnabled", "true");
-              musicToggle.classList.add("active");
-            });
-          } else {
-            fadeOutMusic();
-            localStorage.setItem("musicEnabled", "false");
-            musicToggle.classList.remove("active");
-          }
-        });
+      } else {
+        fadeOutMusic();
+        localStorage.setItem("musicEnabled", "false");
+        musicToggle.classList.remove("active");
+      }
+    });
 
 
 

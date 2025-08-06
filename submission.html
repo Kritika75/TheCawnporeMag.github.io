@@ -118,11 +118,11 @@
       animateCircles();
       cursorToggle.addEventListener('change', () => {
         isEffectEnabled = cursorToggle.checked;
-        if (!isEffectEnabled) {
-          circles.forEach(circle => {
-            circle.style.display = 'none';
-          });
-        }
+
+        // This will handle both states correctly.
+        circles.forEach(circle => {
+          circle.style.display = isEffectEnabled ? 'block' : 'none';
+        });
       });
     });
 
