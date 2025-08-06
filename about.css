@@ -23,6 +23,12 @@ line-height: 1.6;
       z-index: 99999999;
       transition: transform 0.1s ease-out;
     }
+     @media (max-width: 600px) {
+  .circle {
+    display: none !important;
+  }
+}
+
     
 .progress-container {
   width: 100%;
