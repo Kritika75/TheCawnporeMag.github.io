@@ -444,9 +444,36 @@
       z-index: 10000;
       transition: background-color 0.2s ease;
     }
+
+    @media (max-width: 600px) {
+      .circle {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Back Button (Fixed Top-Left Corner) -->
+  <button
+    onclick="history.back()"
+    style="
+      position: fixed;
+      top: 70px;
+      left: 20px;
+      z-index: 1000;
+      background-color: #800000;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    "
+  >
+    ← Back
+  </button>
+  
   <!-- Navbar -->
   <nav role="navigation" aria-label="Main Menu">
     <!-- Logo on the left -->
@@ -469,6 +496,7 @@
     <i class="fa fa-bars" onclick="showMenu()"></i>
   </nav>
 
+  <div class="circle"></div>
   <div class="circle"></div>
   <div class="circle"></div>
   <div class="circle"></div>
@@ -539,7 +567,7 @@
       <div class="content">
         <div class="year">2024</div>
         <h3><span class="icon">🖋️</span> First Issue & Literary Identity</h3>
-        <p>The debut issue established the magazine’s literary and cultural focus, spotlighting bold, honest, and heartfelt work.</p>
+        <p>The debut issue established the magazine's literary and cultural focus, spotlighting bold, honest, and heartfelt work.</p>
         <p>With no thematic constraints, the issue embraced diverse forms, genres, and perspectives, drawing contributors and readers into a welcoming, creative space.</p>
         <p>At this stage, the magazine operated independently, without formal collaborations or co-publishing efforts.</p>
       </div>
@@ -552,7 +580,7 @@
         <h3><span class="icon">🕊️</span> VOICE: International Youth Competition</h3>
         <p>In 2025, The Cawnpore Magazine co-hosted the VOICE competition with 7 international youth magazines.</p>
         <p>The competition celebrated self-expression, identity, and change, with cash prizes for selected winners.</p>
-        <p>It became a milestone event that connected young creatives across borders, reinforced the magazine’s global vision, and spotlighted its role in the international literary youth scene.</p>
+        <p>It became a milestone event that connected young creatives across borders, reinforced the magazine's global vision, and spotlighted its role in the international literary youth scene.</p>
 
       </div>
     </div>
@@ -560,13 +588,11 @@
     <!-- Event 4 -->
     <div class="container right">
       <div class="content">
-        
-        <h3><span class="icon"></span>Ongoing – A Digital-Only Global Platform</h3>
+        <div class="year">2025</div>
+        <h3><span class="icon">🌐</span> Ongoing – A Digital-Only Global Platform</h3>
         <p>The Cawnpore Magazine continues to be 100% digital with no print editions to date.</p>
         <p>All content is published in English, with a strong emphasis on accessibility and storytelling integrity.</p>
         <p>The platform remains committed to its founding vision: to be a vibrant, inclusive space for students, teens, and twenty-somethings to share their voices with the world.</p>
-       
-      
       </div>
     </div>
     
@@ -679,4 +705,3 @@ document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
