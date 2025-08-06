@@ -91,6 +91,7 @@
         coords.y = e.clientY;
       });
 
+
       // Animation function to move the circles
       function animateCircles() {
         if (isEffectEnabled) {
@@ -126,6 +127,15 @@
     <div class="loader">
       <i class="fa-solid fa-spinner"></i>
       <h2>Loading<span class="dots"></span></h2>
+
+</script>
+    <!-- Loading Screen -->
+     <div id="loading-screen"> 
+         <div class="loader">
+            <i class="fa-solid fa-spinner"></i>
+            <span class="loader-tagline">Kanpur-born, read everywhere</span>
+        </div>
+
     </div>
   </div>
   <div class="progress-container">
@@ -191,6 +201,7 @@
           <div class="go-arrow">→</div>
         </div>
       </div>
+
       <div class="card">
         <p class="card-title">What we do !!</p>
         <p class="small-desc">
@@ -218,6 +229,131 @@
         <div class="go-corner">
           <div class="go-arrow">→</div>
         </div>
+
+    </section>
+
+
+    <!--hero section-->
+    <section class="hero-section">
+        <div class="hero-text">
+            <h1>Welcome to The Cawnpore Magazine</h1>
+            <p>Celebrating literature art, and diversity worldwide.</p>
+            <a href="about.html"><button class="hero-btn">ABOUT US</button></a>
+            <a href="issue.html"><button class="hero-btn">READ OUR ISSUES</button></a>
+            <a href="submission.html"><button class="hero-btn">SUBMIT YOUR WORK</button></a>
+        </div>
+    </section>
+
+    <!--Welcoming page-->
+
+    <section class="Welcome">
+      <h1 id="namaste">Namaste!</h1>
+      <div class="container">
+       <div class="card">
+      <p class="card-title">Introduction<button class="speakBtn" data-target="para1" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button>
+      <p id="para1" class="small-desc">
+        The Cawnpore Magazine's motive is to delve into the profound influence
+        and impact of various cultures worldwide through the art of literature.
+        Our mission is to celebrate the richness of each culture, beautifully
+        showcased through the lenses of literature and art. By providing a safe
+        and inclusive platform, we aim to foster a community that encourages
+        readers to explore, learn, and appreciate diverse perspectives.
+      </p>
+     
+
+
+      <div class="go-corner">
+        <div class="go-arrow">→</div>
+      </div>
+      </div>
+      <div class="card">
+      <p class="card-title">What we do !!<button class="speakBtn" data-target="para2" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button>  
+        <p  id="para2" class="small-desc">
+         We
+        firmly believe that the exchange of ideas and experiences is the key to
+        a more tolerant and compassionate world, and we strive to achieve this
+        through The Cawnpore Magazine.
+        So, step right up and get ready for The Cawnpore Magazine your one stop
+        destination to explore the best in fiction, non-fiction, poetry,
+        artwork, interviews, breathtaking photos and so much more!
+      </p>
+      
+      <div class="go-corner">
+        <div class="go-arrow">→</div>
+      </div>
+      </div>
+      <div class="card">
+      <p class="card-title">Don't Wait, Subscribe<button class="speakBtn" data-target="para3" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button></p>
+      <p class="small-desc" id="para3">
+        We understand that submitting your work can be a daunting task, but we
+        assure you that we will treat each submission with the utmost respect
+        and care. We are excited to read your submissions and grateful for your
+        contribution to The Cawnpore. Thank you for considering us as a platform
+        to showcase your talent.
+      </p>
+      <div class="go-corner">
+        <div class="go-arrow">→</div>
+      </div>
+      </div>
+      <script>
+  document.querySelectorAll('.speakBtn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const paragraph = document.getElementById(targetId);
+      const text = paragraph.innerText;
+
+      if ('speechSynthesis' in window) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        // Optional: voice select
+        const voices = window.speechSynthesis.getVoices();
+        if (voices.length > 0) {
+          for (let voice of voices) {
+            if (voice.lang === 'en-US') {
+              utterance.voice = voice;
+              break;
+            }
+          }
+        }
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert('Aapke browser mein speech synthesis support nahi karta.');
+      }
+    });
+  });
+</script>
+
+    </div>
+      <a
+        href="issue.html"
+        aria-label="View the latest Issue of The Cawnpore"
+        id="issue1-btn"
+        >READ THE LATEST ISSUE</a
+      >
+    </br>
+      <a
+        href="submission.html" 
+        aria-label="Submit your work on The Cawnpore"
+        id="cta1-btn"
+        >SUBMIT YOUR WORK</a
+      >
+    </section>
+
+    <section class="listings">
+      <h3>Proudly Listed On... &#128640;</h3>
+      <div class="listing-images">
+        <a href="https://duotrope.com/magazine/the-cawnpore-magazine-37420" target="_blank">
+          <img
+            src="listed-on-duotrope.png"
+            alt="The Cawnpore Magazine is listed on Duotrope"
+          />
+        </a>
+        <a href="https://www.chillsubs.com/magazine/the-cawnpore-magazine" target="_blank">
+          <img
+            src="professional-1.png"
+            alt="The Cawnpore Magazine is a professional member of Chill Subs"
+          />
+        </a>
+
       </div>
 
     </div>
@@ -306,15 +442,21 @@
 
   <script src="index.js"></script>
 
-  <!-- Visibility change  -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const loadingScreen = document.getElementById("loading-screen");
 
-      // Set a timeout to hide the loading screen
-      setTimeout(() => {
-        loadingScreen.classList.add("hidden");
-      }, 6000); // 6000ms = 6 seconds (adjust as needed)
+  <!-- Visibility change  -->
+
+    <script>
+     
+  
+        document.addEventListener("DOMContentLoaded", function () {
+            const loadingScreen = document.getElementById("loading-screen");
+        
+            // Set a timeout to hide the loading screen
+            setTimeout(() => {
+                loadingScreen.classList.add("hidden");
+            }, 6000); // 6000ms = 6 seconds (adjust as needed)
+
+
     });
 
     const musicToggle = document.getElementById("music-toggle");

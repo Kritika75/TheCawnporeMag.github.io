@@ -69,6 +69,17 @@ document.getElementById('searchBtn').addEventListener('click', function() {
                 emailInput.value = "";
             });
         }
+
+    // Loader logic
+    var loaderScreen = document.getElementById('loading-screen');
+    if (loaderScreen) {
+        setTimeout(function() {
+            loaderScreen.classList.add('fading');
+        }, 1700); // Start fade/scale at 1.7s
+        setTimeout(function() {
+            loaderScreen.classList.add('hidden');
+        }, 2000); // Hide after 2s
+    }
 });
 
 const container = document.getElementById('container');

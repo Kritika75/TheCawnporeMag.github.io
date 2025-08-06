@@ -32,7 +32,11 @@ html {
       z-index: 99999999;
       transition: transform 0.1s ease-out;
     }
-    
+     @media (max-width: 600px) {
+  .circle {
+    display: none !important;
+  }
+}
 .progress-bar {
   height: 100%;
   width: 0%; 
