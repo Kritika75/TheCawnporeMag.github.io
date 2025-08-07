@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Issues – The Cawnpore Magazine</title>
+  <link rel="stylesheet" href="issue_alt.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Karla&display=swap" rel="stylesheet">
+</head>
+<body>                         
+  <!-- Header/Navbar -->
+  <nav class="navbar">
+    <div class="logo"><a href="index.html">The Cawnpore</a></div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="submission.html">Submit</a></li>
+      <li><a href="issue.html" class="active">Issues</a></li>
+      <li><a href="masthead.html">Masthead</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="open-source.html">Open Source</a></li>
+    </ul>
+
+    <!-- Theme Toggle Button inside Navbar -->
+    <button id="theme-toggle" aria-label="Toggle Theme">
+      <img id="theme-icon" src="https://cdn-icons-png.flaticon.com/512/5662/5662790.png" alt="Sun icon" />
+    </button>
+
+    <!-- Mobile Hamburger Menu -->
+    <button class="hamburger" id="hamburger">&#9776;</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Issues</h1>
+    <p>A collection of work that has grown with the community.</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="issues-grid">
+    <div class="issue-card">
+      <h2>Issue I</h2>
+      <p>A debut collection of voices, stories, and expression.</p>
+      <a href="#" class="btn">Read Issue</a>
+    </div>
+    <div class="issue-card">
+      <h2>Issue II</h2>
+      <p>Exploring memory, identity, and coming of age.</p>
+      <a href="#" class="btn">Read Issue</a>
+    </div>
+    <div class="issue-card">
+      <h2>Issue III</h2>
+      <p>Stories from in-between spaces — of time and place.</p>
+      <a href="#" class="btn">Read Issue</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h3>The Cawnpore</h3>
+        <p>A space for young, desi, and diasporic voices.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="submission.html">Submit</a></li>
+          <li><a href="issue.html">Issues</a></li>
+          <li><a href="masthead.html">Masthead</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="open-source.html">Open Source</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Social</h4>
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/thecawnporemagazine/" target="_blank">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+          </li>
+          <li>
+            <a href="mailto:thecawnporemagazine@gmail.com">
+              <i class="fas fa-envelope"></i> Email Us
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p class="credit">© 2025 The Cawnpore Magazine. Built with love by Kritika Singh.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleBtn = document.getElementById('theme-toggle');
+      const icon = document.getElementById('theme-icon');
+      const navToggle = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+
+      toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        if (document.body.classList.contains('light-mode')) {
+          icon.src = 'https://cdn-icons-png.flaticon.com/512/6714/6714978.png';
+          icon.alt = 'Moon icon';
+        } else {
+          icon.src = 'https://cdn-icons-png.flaticon.com/512/5662/5662790.png';
+          icon.alt = 'Sun icon';
+        }
+      });
+
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
