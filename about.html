@@ -1,18 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
-    <link rel = "stylesheet" href="about.css">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    <link rel="stylesheet" href="about.css" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap"
+      rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <script>
+      // Coordinates for the cursor
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      // Colors for the circles
+      const colors = [
+        "#ffb56b",
+        "#fdaf69",
+        "#f89d63",
+        "#f59761",
+        "#ef865e",
+        "#ec805d",
+        "#e36e5c",
+        "#df685c",
+        "#d5585c",
+        "#d1525c",
+        "#c5415d",
+        "#c03b5d",
+        "#b22c5e",
+        "#ac265e",
+        "#9c155f",
+        "#950f5f",
+        "#830060",
+        "#7c0060",
+        "#680060",
+        "#60005f",
+        "#48005f",
+        "#3d005e",
+      ];
+
+      // Assign colors and initial position to each circle
+      circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+      });
+
+      // Update the coordinates when the mouse moves
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+      });
+
+      // Animation function to move the circles
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+          // Update the position and scale of each circle
+          circle.style.left = x - 12 + "px";
+          circle.style.top = y - 12 + "px";
+          circle.style.scale = (circles.length - index) / circles.length;
+
+          circle.x = x;
+          circle.y = y;
+
+          // Get the next circle in the sequence
+          const nextCircle = circles[index + 1] || circles[0];
+          x += (nextCircle.x - x) * 0.15;
+          y += (nextCircle.y - y) * 0.15;
+        });
+
+        // Repeat the animation
+        requestAnimationFrame(animateCircles);
+      }
+
+      // Start the animation
+      animateCircles();
+    </script>
+
 
      <!-- Back Button (Fixed Top-Left Corner) -->
     <button
@@ -133,319 +264,386 @@
   animateCircles();
 
 </script>
+
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
     </div>
     <section class="header">
-        <nav role="navigation" aria-label="Main Menu">
+      <nav role="navigation" aria-label="Main Menu">
+
+        <!-- Logo on the left -->
+
           <!-- Logo on the left -->
+
         <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
-        
-          <div class = "nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()"></i>
-            <ul>
-               <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="submission.html">SUBMIT</a></li>
-                <li><a href="issue.html">ISSUE</a></li>
-                <li><a href="masthead.html">MASTHEAD</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="open-source.html">OPEN SOURCE</a></li>
-            </ul>
-          </div>
-          <i class="fa fa-bars" onclick="showMenu()"></i>
-        </nav>
-    
+
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="submission.html">SUBMIT</a></li>
+            <li><a href="issue.html">ISSUE</a></li>
+            <li><a href="masthead.html">MASTHEAD</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="open-source.html">OPEN SOURCE</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
     </section>
     <section class="header1">
-
-        <div class="text-box1">
-            <h1>About</h1>
-            <p>The Cawnpore</p>
-        </div>
-
+      <div class="text-box1">
+        <h1>About</h1>
+        <p>The Cawnpore</p>
+      </div>
     </section>
-    
+
     <section class="Introductory">
+      <p id="intro1">
+        The city of <span class="bold-words">"Kanpur"</span>, formerly known as
+        <span class="bold-words">Cawnpore</span> , has a rich and complex
+        history that has shaped its identity. <br />
+        Originally established by a Hindu King named
+        <span class="bold-words">Chandel</span>, the city was named
+        <span class="bold-words">"Kahnapur"</span> in honor of his devotion to
+        <span class="bold-words">Lord Krishna</span>. <br />
+        However, during the
+        <span class="underline-words">British colonial era</span>, the name was
+        anglicized to <span class="bold-words">"Cawnpore"</span> due to
+        difficulties in pronunciation. This change was significant as Cawnpore,
+        known as the
+        <span class="bold-words">"Manchester of India"</span> ,emerged as the
+        commercial capital of
+        <span class="underline-words">Uttar Pradesh</span>. Kanpur's history is
+        deeply intertwined with the Indian struggle for independence. The city
+        played a pivotal role in the revolt of
+        <span class="bold-words">1857</span>, witnessing tragic events such as
+        the "wheeler’s entrenchment episode," the "massacre at
+        <span class="bold-words">Sati Chaura Ghat</span>," and the
+        <span class="bold-words">"Bibighar massacre"</span> . <br />
+        These events left a lasting impact on the city and its people. Following
+        India's independence in <span class="bold-words"> 1947</span>, the city
+        was renamed <span class="bold-words">Kanpur</span>,
+        <span class="underline-words"
+          >symbolizing a new era and a fresh start</span
+        >. Despite its tumultuous past, Kanpur has emerged as a beacon of
+        happiness and positivity. <br />
+        In <span class="bold-words">2023</span>, it was recognized as the
+        <span class="underline-words">11th happiest city in the world</span>, a
+        testament to the resilience and friendliness of its people.<br />
 
-        <p id="intro1">
-            The city of <span class="bold-words">"Kanpur"</span>, formerly known as <span class="bold-words">Cawnpore</span> , has a rich and complex history that has shaped its identity. <br> Originally established by a Hindu King named <span class="bold-words">Chandel</span>, the city was named <span class="bold-words">"Kahnapur"</span> in honor of his devotion to <span class="bold-words">Lord Krishna</span>.  <br> 
-            However, during the <span class="underline-words">British colonial era</span>, the name was anglicized to <span class="bold-words">"Cawnpore"</span> due to difficulties in pronunciation. This change was significant as Cawnpore, known as the <span class="bold-words">"Manchester of India"</span> ,emerged as the commercial capital of <span class="underline-words">Uttar Pradesh</span>.
-
-            Kanpur's history is deeply intertwined with the Indian struggle for independence. The city played a pivotal role in the revolt of <span class="bold-words">1857</span>, witnessing tragic events such as the "wheeler’s entrenchment episode," the "massacre at <span class="bold-words">Sati Chaura Ghat</span>," and the <span class="bold-words">"Bibighar massacre"</span> . <br> 
-            These events left a lasting impact on the city and its people.
-            
-            Following India's independence in <span class="bold-words"> 1947</span>, the city was renamed <span class="bold-words">Kanpur</span>, <span class="underline-words">symbolizing a new era and a fresh start</span>. Despite its tumultuous past, Kanpur has emerged as a beacon of happiness and positivity. <br>
-             In <span class="bold-words">2023</span>, it was recognized as the <span class="underline-words">11th happiest city in the world</span>, a testament to the resilience and friendliness of its people.<br>
-            
-          This vibrant city continues to honor its history while embracing progress and prosperity, making it a truly remarkable place with a captivating story to tell.
-        </p>
-    
-            
+        This vibrant city continues to honor its history while embracing
+        progress and prosperity, making it a truly remarkable place with a
+        captivating story to tell.
+      </p>
     </section>
 
     <!-- Stylish Section Separator -->
-  <div class="section-separator">
-    <div class="separator-line"></div>
-    <div class="separator-label">◉</div>
-    <div class="separator-line"></div>
-  </div>
+    <div class="section-separator">
+      <div class="separator-line"></div>
+      <div class="separator-label">◉</div>
+      <div class="separator-line"></div>
+    </div>
 
     <h2 id="CardsHeading">Cawnpore's Prominent Landmarks</h2>
     <ul class="landmarks template-slider">
-      
-        
-        <!-- landmark cards -->
-        <!-- lal imli -->
-        <li class="landmarkCard">
-            <img src="lal imli.jpg" alt="Lal Imli" />
-            <div class="landmarkInfo">
-              <p class="Tag-line" style="color: #FDF0D5;">
-  A Forgotten woollen Empire of India's Colonial era.
-</p>
-                <h2>Lal Imli</h2>
-                <a href="https://heritagehackathon.weebly.com/lal-imli-mills.html" target="_blank" rel="noopener noreferrer">
-                    <button class="landmarkButton">Learn More</button>
-                </a>
-            </div>
-        </li>
-        <!-- kanpur memorial church -->
-        <li class="landmarkCard">
-            <img src="Kanpur_Memorial_Church.jpg" alt="Kanpur Memorial Church" />
-            <div class="landmarkInfo">
-              <p class="Tag-line" style="color: #FDF0D5;">
-  A Solemn echo of 1857 — where history and memory unite in silence.
-</p>
-
-                <h2>Kanpur Memorial Church</h2>
-                <a href="https://en.wikipedia.org/wiki/Kanpur_Memorial_Church" target="_blank" rel="noopener noreferrer">
-                    <button class="landmarkButton">Learn More</button>
-                </a>
-            </div>
-        </li>
-        <!-- Kanpur Central Station -->
-        <li class="landmarkCard">
-            <img src="Kanpur_Central_Station.jpg" alt="Kanpur Central" />
-            <div class="landmarkInfo">
-              <p class="Tag-line" style="color: #FDF0D5;">
-  From colonial rails to digital tracks — Kanpur's timeless junction.
-</p>
-
-                <h2>Kanpur Central</h2>
-                <a href="https://en.wikipedia.org/wiki/Kanpur_Central_railway_station" target="_blank" rel="noopener noreferrer">
-                    <button class="landmarkButton">Learn More</button>
-                </a>
-            </div>
-        </li>
-
-        <!-- JK Temple -->
-        <li class="landmarkCard">
-            <img src="1920px-JK_Temple(Juggilal_Kamlapati_temple)_is_a_temple_in_the_Indian_city_of_Kanpur.It_is_considered_to_be_a_unique_blend_of_ancient_and_modern_architecture.jpg" alt="J.K. Temple" />
-            <div class="landmarkInfo">
-             <p class="Tag-line" style="color: #FDF0D5;">
-  A divine fusion of modernity and tradition in marble and serenity.
-</p>
-
-                <h2>J.K. Temple</h2>
-                <a href="https://en.wikipedia.org/wiki/JK_Temple" target="_blank" rel="noopener noreferrer">
-                    <button class="landmarkButton">Learn More</button>
-                </a>
-            </div>
-        </li>
-
-        <!-- Kanpur Zoological Park -->
-
-         <li class="landmarkCard">
-            <img src="Kanpur.jpg" alt="Kanpur Zoological Park" />
-            <div class="landmarkInfo">
-              <p class="Tag-line" style="color: #FDF0D5;">
-  Also known as Allen Zoo, established in 1974. It's one of the oldest zoo in India.
-</p>
-
-                <h2>Kanpur Zoological Park</h2>
-                <a href="https://en.wikipedia.org/wiki/Kanpur_Zoological_Park" target="_blank" rel="noopener noreferrer">
-                    <button class="landmarkButton">Learn More</button>
-                </a>
-            </div>
-          </li>
-
-      </ul>
-      <div style="width: 100%; margin-top: 1rem; margin-bottom: 3rem; text-align: center">
-          <button
-            id="slider-left"
-            aria-label="Previous Slide"
-            style="
-              font-size: 1.5rem;
-              padding: 14px;
-              background: #fff;
-              border-radius: 50%;
-              border: none;
-              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-              cursor: pointer;
-              margin-right: 20px;
-               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-               font-weight: bolder;
-            "
+      <!-- landmark cards -->
+      <!-- lal imli -->
+      <li class="landmarkCard">
+        <img src="lal imli.jpg" alt="Lal Imli" />
+        <div class="landmarkInfo">
+          <p class="Tag-line" style="color: #fdf0d5">
+            A Forgotten woollen Empire of India's Colonial era.
+          </p>
+          <h2>Lal Imli</h2>
+          <a
+            href="https://heritagehackathon.weebly.com/lal-imli-mills.html"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            &#8592;
-          </button>
-          <button
-            id="slider-right"
-            aria-label="Next Slide"
-            style="
-              z-index: 10;
-              font-size: 1.5rem;
-              padding: 14px;
-              background: #fff;
-              border-radius: 50%;
-              border: none;
-              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-              cursor: pointer;
-              font-weight: bolder;
-              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-            "
-          >
-            &#8594;
-          </button>
+            <button class="landmarkButton">Learn More</button>
+          </a>
         </div>
+      </li>
+      <!-- kanpur memorial church -->
+      <li class="landmarkCard">
+        <img src="Kanpur_Memorial_Church.jpg" alt="Kanpur Memorial Church" />
+        <div class="landmarkInfo">
+          <p class="Tag-line" style="color: #fdf0d5">
+            A Solemn echo of 1857 — where history and memory unite in silence.
+          </p>
+
+          <h2>Kanpur Memorial Church</h2>
+          <a
+            href="https://en.wikipedia.org/wiki/Kanpur_Memorial_Church"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="landmarkButton">Learn More</button>
+          </a>
+        </div>
+      </li>
+      <!-- Kanpur Central Station -->
+      <li class="landmarkCard">
+        <img src="Kanpur_Central_Station.jpg" alt="Kanpur Central" />
+        <div class="landmarkInfo">
+          <p class="Tag-line" style="color: #fdf0d5">
+            From colonial rails to digital tracks — Kanpur's timeless junction.
+          </p>
+
+          <h2>Kanpur Central</h2>
+          <a
+            href="https://en.wikipedia.org/wiki/Kanpur_Central_railway_station"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="landmarkButton">Learn More</button>
+          </a>
+        </div>
+      </li>
+
+      <!-- JK Temple -->
+      <li class="landmarkCard">
+        <img
+          src="1920px-JK_Temple(Juggilal_Kamlapati_temple)_is_a_temple_in_the_Indian_city_of_Kanpur.It_is_considered_to_be_a_unique_blend_of_ancient_and_modern_architecture.jpg"
+          alt="J.K. Temple"
+        />
+        <div class="landmarkInfo">
+          <p class="Tag-line" style="color: #fdf0d5">
+            A divine fusion of modernity and tradition in marble and serenity.
+          </p>
+
+          <h2>J.K. Temple</h2>
+          <a
+            href="https://en.wikipedia.org/wiki/JK_Temple"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="landmarkButton">Learn More</button>
+          </a>
+        </div>
+      </li>
+
+      <!-- Kanpur Zoological Park -->
+
+      <li class="landmarkCard">
+        <img src="Kanpur.jpg" alt="Kanpur Zoological Park" />
+        <div class="landmarkInfo">
+          <p class="Tag-line" style="color: #fdf0d5">
+            Also known as Allen Zoo, established in 1974. It's one of the oldest
+            zoo in India.
+          </p>
+
+          <h2>Kanpur Zoological Park</h2>
+          <a
+            href="https://en.wikipedia.org/wiki/Kanpur_Zoological_Park"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="landmarkButton">Learn More</button>
+          </a>
+        </div>
+      </li>
+    </ul>
+    <div
+      style="
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        text-align: center;
+      "
+    >
+      <button
+        id="slider-left"
+        aria-label="Previous Slide"
+        style="
+          font-size: 1.5rem;
+          padding: 14px;
+          background: #fff;
+          border-radius: 50%;
+          border: none;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+          cursor: pointer;
+          margin-right: 20px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+          font-weight: bolder;
+        "
+      >
+        &#8592;
+      </button>
+      <button
+        id="slider-right"
+        aria-label="Next Slide"
+        style="
+          z-index: 10;
+          font-size: 1.5rem;
+          padding: 14px;
+          background: #fff;
+          border-radius: 50%;
+          border: none;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+          cursor: pointer;
+          font-weight: bolder;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        "
+      >
+        &#8594;
+      </button>
+    </div>
     <script>
-        // template gallery slider
-  const template_slider = document.querySelector(".template-slider");
-  const template_slides = template_slider.querySelectorAll("li");
-  const slideCount = template_slides.length;
-  let activeSlide = 0;
+      // template gallery slider
+      const template_slider = document.querySelector(".template-slider");
+      const template_slides = template_slider.querySelectorAll("li");
+      const slideCount = template_slides.length;
+      let activeSlide = 0;
 
-  // Ensure first slide is visible
-  template_slides[0].classList.add("active");
+      // Ensure first slide is visible
+      template_slides[0].classList.add("active");
 
-  // Arrow buttons
-  const leftArrow = document.getElementById("slider-left");
-  const rightArrow = document.getElementById("slider-right");
+      // Arrow buttons
+      const leftArrow = document.getElementById("slider-left");
+      const rightArrow = document.getElementById("slider-right");
 
-  function showSlide(index) {
-    template_slides[activeSlide].classList.remove("active");
-    activeSlide = (index + slideCount) % slideCount;
-    template_slides[activeSlide].classList.add("active");
-  }
+      function showSlide(index) {
+        template_slides[activeSlide].classList.remove("active");
+        activeSlide = (index + slideCount) % slideCount;
+        template_slides[activeSlide].classList.add("active");
+      }
 
-  // Auto slide
-  let sliderInterval = setInterval(() => {
-    showSlide(activeSlide + 1);
-  }, 5000);
+      // Auto slide
+      let sliderInterval = setInterval(() => {
+        showSlide(activeSlide + 1);
+      }, 5000);
 
-  // Arrow navigation
-  if (leftArrow && rightArrow) {
-    leftArrow.addEventListener("click", () => {
-      showSlide(activeSlide - 1);
-      clearInterval(sliderInterval);
-      sliderInterval = setInterval(() => showSlide(activeSlide + 1), 5000);
-    });
-    rightArrow.addEventListener("click", () => {
-      showSlide(activeSlide + 1);
-      clearInterval(sliderInterval);
-      sliderInterval = setInterval(() => showSlide(activeSlide + 1), 5000);
-    });
-  }
+      // Arrow navigation
+      if (leftArrow && rightArrow) {
+        leftArrow.addEventListener("click", () => {
+          showSlide(activeSlide - 1);
+          clearInterval(sliderInterval);
+          sliderInterval = setInterval(() => showSlide(activeSlide + 1), 5000);
+        });
+        rightArrow.addEventListener("click", () => {
+          showSlide(activeSlide + 1);
+          clearInterval(sliderInterval);
+          sliderInterval = setInterval(() => showSlide(activeSlide + 1), 5000);
+        });
+      }
     </script>
 
     <!-- Stylish Section Separator -->
-  <div class="section-separator">
-    <div class="separator-line"></div>
-    <div class="separator-label">◉</div>
-    <div class="separator-line"></div>
-  </div>
+    <div class="section-separator">
+      <div class="separator-line"></div>
+      <div class="separator-label">◉</div>
+      <div class="separator-line"></div>
+    </div>
 
-<!-- Food Section Starts from here -->
-    
-     <h2 id="CardsHeading">Cawnpore's Famous Food </h2>
+    <!-- Food Section Starts from here -->
+
+    <h2 id="CardsHeading">Cawnpore's Famous Food</h2>
     <section class="landmarks">
-        
-        <!-- food cards -->
-        <!-- Imarti -->
-        <div class="landmarkCard">
-            <img src="Imarti.jpeg" alt="Lal Imli" />
-            <div class="landmarkInfo">
-              <p class="Tag-line" style="color: #FDF0D5;">
-  Famous golden dessert of Kanpur known for it's crispiness and sweetness.
-</p>
-                <h2>Imarti</h2>
-            </div>
+      <!-- food cards -->
+      <!-- Imarti -->
+      <div class="landmarkCard">
+        <img src="Imarti.jpeg" alt="Lal Imli" />
+        <div class="landmarkInfo">
+          <p class="Tag-line" style="color: #fdf0d5">
+            Famous golden dessert of Kanpur known for it's crispiness and
+            sweetness.
+          </p>
+          <h2>Imarti</h2>
         </div>
-        <!-- Sultani Dal -->
-        <div class="landmarkCard">
-            <img src="Sultani Dal.jpeg" alt="Sultani Dal" />
-            <div class="landmarkInfo">
-              <p class="Tag-line" style="color: #FDF0D5;">
-  A royal Dal made with tur dal cooked with milk,cream and yogurt with some tadka on top.
-</p>
+      </div>
+      <!-- Sultani Dal -->
+      <div class="landmarkCard">
+        <img src="Sultani Dal.jpeg" alt="Sultani Dal" />
+        <div class="landmarkInfo">
+          <p class="Tag-line" style="color: #fdf0d5">
+            A royal Dal made with tur dal cooked with milk,cream and yogurt with
+            some tadka on top.
+          </p>
 
-                <h2>Sultani Dal</h2>
-            </div>
+          <h2>Sultani Dal</h2>
         </div>
-        <!-- Luchi Sabji -->
-        <div class="landmarkCard">
-            <img src="Luchi Sabji.jpeg" alt="Luchi Sabji" />
-            <div class="landmarkInfo">
-              <p class="Tag-line" style="color: #FDF0D5;">
-  It's a breakfast dish made by deep frying the bread and bolied potato.
-</p>
+      </div>
+      <!-- Luchi Sabji -->
+      <div class="landmarkCard">
+        <img src="Luchi Sabji.jpeg" alt="Luchi Sabji" />
+        <div class="landmarkInfo">
+          <p class="Tag-line" style="color: #fdf0d5">
+            It's a breakfast dish made by deep frying the bread and bolied
+            potato.
+          </p>
 
-                <h2>Luchi Sabji</h2>
-            </div>
+          <h2>Luchi Sabji</h2>
         </div>
+      </div>
 
-        <!-- Makhan Malai -->
-        <div class="landmarkCard">
-            <img src="Makhan Malai.jpeg" alt="Makhan-Malai" />
-            <div class="landmarkInfo">
-             <p class="Tag-line" style="color: #FDF0D5;">
-  This food is quite famous in Kanpur during winter seasons..
-</p>
+      <!-- Makhan Malai -->
+      <div class="landmarkCard">
+        <img src="Makhan Malai.jpeg" alt="Makhan-Malai" />
+        <div class="landmarkInfo">
+          <p class="Tag-line" style="color: #fdf0d5">
+            This food is quite famous in Kanpur during winter seasons..
+          </p>
 
-                <h2>Makhan Malai</h2>
-            </div>
+          <h2>Makhan Malai</h2>
         </div>
-
+      </div>
     </section>
 
     <!-- Footer -->
-   <footer class="site-footer" id="footer" >
+    <footer class="site-footer" id="footer">
       <a class="back-to-top" href="#">
-          <i class="fa-solid fa-chevron-up"></i>
+        <i class="fa-solid fa-chevron-up"></i>
       </a>
-      <div class="footer-top" >
+      <div class="footer-top">
         <div class="footer-about">
           <h3>The Cawnpore</h3>
-          <p>An independent magazine celebrating literary voices and untold stories.</p>
+          <p>
+            An independent magazine celebrating literary voices and untold
+            stories.
+          </p>
         </div>
-        <div class="footer-links"   id="footerLinks">
+        <div class="footer-links" id="footerLinks">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html" >Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="submission.html">Submit</a></li>
             <li><a href="issue.html">Issue</a></li>
             <li><a href="masthead.html">Masthead</a></li>
             <li><a href="faq.html">FAQ</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
             <li><a href="open-source.html">Open Source</a></li>
           </ul>
         </div>
-        <div class="footer-contact"  id="footerContact">
+        <div class="footer-contact" id="footerContact">
           <h3>Contact Us</h3>
           <div class="social-icons">
             <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
               <i class="fa-solid fa-envelope"></i>
             </a>
-            <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank">
+            <a
+              href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D"
+              target="_blank"
+            >
               <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
+            <a
+              href="https://www.linkedin.com/company/the-cawnpore-magazine/"
+              target="_blank"
+            >
               <i class="fa-brands fa-linkedin"></i>
             </a>
             <a href="https://x.com/TheCawnporeMag?s=09" target="_blank">
               <i class="fa-brands fa-x-twitter"></i>
             </a>
-            <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank">
+            <a
+              href="https://www.tumblr.com/thecawnporemagazine?source=share"
+              target="_blank"
+            >
               <i class="fa-brands fa-tumblr"></i>
             </a>
           </div>
@@ -453,7 +651,12 @@
         <div class="subscription-box-about">
           <h3>Subscribe to our Newsletter</h3>
           <form action="/subscribe" method="post">
-            <input type="email" name="email" placeholder="Enter your email" required>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
             <button type="submit">Subscribe</button>
           </form>
         </div>
@@ -463,10 +666,7 @@
         <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
       </div>
     </footer>
-   
 
-<script src="index.js"></script>
-
-
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>
