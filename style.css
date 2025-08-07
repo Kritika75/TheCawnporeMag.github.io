@@ -68,12 +68,16 @@ nav {
     align-items: center;
     padding: 0.75rem 5%;
     margin-right: 6px;
-    background: linear-gradient( 135deg,
-    rgba(242, 237, 237, 0.3), /* soft highlight */
-    rgba(122, 0, 0, 0.8),     /* your base color */
-    rgba(17, 16, 16, 0.3)        /* subtle depth */
-);
-    /* backdrop-filter: none; Optional: disable the blur if no longer needed */
+    background: linear-gradient(135deg,
+        rgb(99, 0, 0),
+        rgba(218, 67, 67, 0.665),
+        rgb(71, 22, 22),
+        rgba(17, 16, 16, 0.3)
+
+    );
+    background-size: 400% 400%; /* make the gradient larger to animate */
+    animation: gradientMove 5s linear infinite;
+
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-bottom: 1px solid rgba(179, 177, 177, 0.2);
@@ -82,8 +86,35 @@ nav {
     height: 9%;
     width: 100%;
     z-index: 999;
-    /* animation: color 10s ease-in-out infinite; */
 }
+
+/* Animation Keyframes */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Animation Keyframes */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 
 .text-box {
@@ -945,7 +976,7 @@ button:active{
 
 .navbar-logo {
   height: 40px;
-  margin-right: 16px
+  margin-right: 16px;
   vertical-align: middle;
 }
 
@@ -1035,3 +1066,30 @@ button:active{
 }
 
 
+@media (min-width: 700px) and (max-width: 1000px) {
+    .nav-links ul li {
+        /* Option 1: Reduce padding */
+        padding: 6px 8px; /* Slightly less padding than the default */
+    }
+
+    .nav-links ul li a {
+        /* Option 2: Reduce font size */
+        font-size: 12px; /* Slightly smaller font size */
+        padding: 10px 12px; /* Adjust padding if font size is reduced */
+    }
+
+    /* Option 3: Consider a more compact display for list items */
+    .nav-links ul {
+        white-space: nowrap; /* Prevents wrapping of list items */
+        overflow-x: auto; /* Adds horizontal scroll if content overflows */
+        -webkit-overflow-scrolling: touch; /* Improves scrolling on touch devices */
+    }
+
+    .nav-links {
+        flex-basis: auto; /* Allow nav-links to shrink/grow as needed */
+    }
+
+    nav {
+        padding: 0.75rem 2%; /* Reduce overall nav padding */
+    }
+}

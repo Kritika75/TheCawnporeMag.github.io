@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cawnpore Gallery</title>
+    <link rel="stylesheet" href="gallery.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav role="navigation" aria-label="Main Menu">
+      <!-- Logo on the left -->
+      <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="submission.html">SUBMIT</a></li>
+          <li><a href="issue.html">ISSUE</a></li>
+          <li><a href="masthead.html">MASTHEAD</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+
+          <li><a href="open-source.html">OPEN SOURCE</a></li>
+          <li><a href="journey.html">OUR JOURNEY</a></li>
+        </ul>
+      </div>
+
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <h1>Cawnpore Traditional Gallery</h1>
+
+    <div class="gallery">
+      <img src="gallary/CAWNPORE.jpeg" alt="Cawnpore" />
+      <img src="gallary/clock tower.webp" alt="Clock Tower" />
+      <img src="gallary/ganga river.webp" alt="Ganga River" />
+      <img src="gallary/iskcon kanpur.webp" alt="ISKCON Kanpur" />
+      <img src="gallary/jk temple.webp" alt="JK Temple" />
+      <img
+        src="gallary/Kanpur Memorial Church.jpeg"
+        alt="Kanpur Memorial Church"
+      />
+      <img src="Imarti.jpeg" alt="Lal Imli" />
+      <img src="Sultani Dal.jpeg" alt="Sultani Dal" />
+      <img src="Kanpur.jpg" alt="Kanpur Zoological Park" />
+      <img
+        src="1920px-JK_Temple(Juggilal_Kamlapati_temple)_is_a_temple_in_the_Indian_city_of_Kanpur.It_is_considered_to_be_a_unique_blend_of_ancient_and_modern_architecture.jpg"
+        alt="J.K. Temple"
+      />
+      <img src="gallary/kanpur museum.webp" alt="Kanpur Museum" />
+      <img
+        src="gallary/kanpur railway station.jpeg"
+        alt="Kanpur Railway Station"
+      />
+      <img src="gallary/Lal Imli Mill Kanpur.jpeg" alt="Lal Imli Mill" />
+    </div>
+    <footer class="site-footer" id="footer" >
+      <a class="back-to-top" href="#">
+          <i class="fa-solid fa-chevron-up"></i>
+      </a>
+      <div class="footer-top" >
+        <div class="footer-about">
+          <h3>The Cawnpore</h3>
+          <p>An independent magazine celebrating literary voices and untold stories.</p>
+        </div>
+        <div class="footer-links"   id="footerLinks">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="submission.html">Submit</a></li>
+            <li><a href="issue.html">Issue</a></li>
+            <li><a href="masthead.html">Masthead</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="open-source.html">Open Source</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact"  id="footerContact">
+          <h3>Contact Us</h3>
+          <div class="social-icons">
+            <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/TheCawnporeMag?s=09" target="_blank">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank">
+              <i class="fa-brands fa-tumblr"></i>
+            </a>
+          </div>
+        </div>
+        <div class="subscription-box-about">
+          <h3>Subscribe to our Newsletter</h3>
+          <form action="/subscribe" method="post">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Made with &#x2665; by Kritika Singh</p>
+        <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
+      </div>
+      <audio id="bg-music" loop preload="auto">
+           <source src="assets/music/lofi.mp3" type="audio/mpeg" />
+           Your browser does not support the audio element.
+      </audio>
+      <div id="music-toggle" aria-label="Toggle Background Music" role="button" tabindex="0">
+        <i class="fa-solid fa-music"></i>
+      </div>
+
+
+    </footer>
+  </body>
+</html>
