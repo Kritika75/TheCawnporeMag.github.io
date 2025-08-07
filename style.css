@@ -68,12 +68,16 @@ nav {
     align-items: center;
     padding: 0.75rem 5%;
     margin-right: 6px;
-    background: linear-gradient( 135deg,
-    rgba(242, 237, 237, 0.3), /* soft highlight */
-    rgba(122, 0, 0, 0.8),     /* your base color */
-    rgba(17, 16, 16, 0.3)        /* subtle depth */
-);
-    /* backdrop-filter: none; Optional: disable the blur if no longer needed */
+    background: linear-gradient(135deg,
+        rgb(99, 0, 0),
+        rgba(218, 67, 67, 0.665),
+        rgb(71, 22, 22),
+        rgba(17, 16, 16, 0.3)
+
+    );
+    background-size: 400% 400%; /* make the gradient larger to animate */
+    animation: gradientMove 5s linear infinite;
+
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-bottom: 1px solid rgba(179, 177, 177, 0.2);
@@ -82,8 +86,35 @@ nav {
     height: 9%;
     width: 100%;
     z-index: 999;
-    /* animation: color 10s ease-in-out infinite; */
 }
+
+/* Animation Keyframes */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Animation Keyframes */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 
 .text-box {
