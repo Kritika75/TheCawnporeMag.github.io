@@ -1,11 +1,54 @@
-*{
-    margin: 0;
-    padding: 0;
-    }
-    
-    body{
-    background-color: #fdf0d5;
-    }
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background-color: #fdf0d5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Circle styles */
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999;
+  transition: transform 0.1s ease-out;
+}
+
+.progress-container {
+  width: 100%;
+  height: 4px;
+  background: #eae0d5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #8b0000;
+}
+.header {
+  min-height: 0vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding-top: 20px;
+}
 
   html {
     scroll-behavior: smooth;
@@ -51,105 +94,121 @@
         padding-top: 20px;
     }
 
-    nav {
-        display: flex;
+
+nav {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem 0%;
+    padding: 0.75rem 5%;
     margin-right: 6px;
-      background: linear-gradient( 135deg,
-    rgba(242, 237, 237, 0.3), 
-    rgba(122, 0, 0, 0.8),    
-    rgba(17, 16, 16, 0.3)        
-);
+    background: linear-gradient(135deg,
+        rgb(99, 0, 0),
+        rgba(218, 67, 67, 0.665),
+        rgb(71, 22, 22),
+        rgba(17, 16, 16, 0.3)
+
+    );
+    background-size: 400% 400%; /* make the gradient larger to animate */
+    animation: gradientMove 5s linear infinite;
+
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(179, 177, 177, 0.2);
     position: fixed;
     top: 0;
-    height: 7%;
+    height: 9%;
     width: 100%;
     z-index: 999;
-    }
+}
 
-    .header1 {
-    background-color: #780000;
-    min-height:37vh;  
-    width: 100%;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    background-size:300% 300% ;
-    animation: color 12s ease-in-out infinite;
+/* Animation Keyframes */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
     }
-    
-    
-    .text-box1 {
-color: #fdf0d5;
-font-family:"Crimson Text", serif;
-width: 90%;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-text-align: center;
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.header1 {
+  background-color: #780000;
+  min-height: 37vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  background-size: 300% 300%;
+  animation: color 12s ease-in-out infinite;
+}
+
+.text-box1 {
+  color: #fdf0d5;
+  font-family: "Crimson Text", serif;
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .text-box1 h1 {
-margin-top: 15px;
-font-weight: 700;
-font-style: italic;
-font-size: 62px;
+  margin-top: 15px;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 62px;
 }
 .text-box1 p {
-margin: 10px 0 40px;
-font-size: 20px   
+  margin: 10px 0 40px;
+  font-size: 20px;
 }
 
-
-    .nav-links {
-    flex: 1;
-    text-align: right;
+.nav-links {
+  flex: 1;
+  text-align: right;
 }
 
 .nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
 }
 
-.nav-links ul li a{
-    color: #fdf0d5;
-    text-decoration: none;
-    font-family: serif;
-    font-size: 13px;
-    padding: 12px 16px;
-    display: block;
+.nav-links ul li a {
+  color: #fdf0d5;
+  text-decoration: none;
+  font-family: serif;
+  font-size: 13px;
+  padding: 12px 16px;
+  display: block;
 }
 .nav-links ul li a:hover {
-    text-decoration: none; /* REMOVE underline */
+  text-decoration: none; /* REMOVE underline */
 }
 
 .nav-links ul li::after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: #fdf0d5;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #fdf0d5;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
 }
 
 .nav-links ul li:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
-
 nav .fa {
-    display: none;
-}@media (max-width: 700px) {
+  display: none;
+}
+@media (max-width: 700px) {
   .text-box h1 {
     margin-top: 15px;
     font-weight: 700;
@@ -161,7 +220,7 @@ nav .fa {
   }
   .nav-links {
     position: fixed;
-    background: linear-gradient(135deg, #d24848 ,#7a0000, #cea8bc);
+    background: linear-gradient(135deg, #d24848, #7a0000, #cea8bc);
     height: 100vh;
     width: 200px;
     top: 0;
@@ -172,58 +231,60 @@ nav .fa {
     transition: right 0.4s ease-in-out;
   }
 
- nav .fa {
-        display: block;
-        color: #663346;
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
-        z-index: 10;
-        background: linear-gradient(135deg, #fdfbfb, #ebedee); /* soft gradient backdrop */
-        padding: 10px;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-    }
+  nav .fa {
+    display: block;
+    color: #663346;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 10;
+    background: linear-gradient(
+      135deg,
+      #fdfbfb,
+      #ebedee
+    ); /* soft gradient backdrop */
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  }
   .nav-links ul {
     padding: 30px;
   }
 }
 
-        .footer {
-            background-color: #780000;
-            color: #fdf0d5;
-            margin-top: 55vh ;
-            width: 100%;
-            text-align: center;
-            padding: 30px 0;
-        
-        }
-        
-        .footer h4 {
-            color: #fdf0d5;
-            margin-bottom: 25px;
-            margin-top: 20px;
-            font-weight: 600;
-            font-family: 'Times New Roman', Times, serif;
-        
-        }
-        .footer p {
-            font-style: italic;
-            font-family: 'Times New Roman', Times, serif;
-            text-align: center;
-            font-size: 15px;
-        }
-        .icons {
-            color: #fdf0d5;
-            margin: 0 13px;
-            cursor: pointer;
-            padding: 18px 0;
-        }
-        
-        .fa-heart {
-            color: #fdf0d5;
-            font-size: 15px;
-        }
+.footer {
+  background-color: #780000;
+  color: #fdf0d5;
+  margin-top: 55vh;
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.footer h4 {
+  color: #fdf0d5;
+  margin-bottom: 25px;
+  margin-top: 20px;
+  font-weight: 600;
+  font-family: "Times New Roman", Times, serif;
+}
+.footer p {
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-size: 15px;
+}
+.icons {
+  color: #fdf0d5;
+  margin: 0 13px;
+  cursor: pointer;
+  padding: 18px 0;
+}
+
+.fa-heart {
+  color: #fdf0d5;
+  font-size: 15px;
+}
 
 /*        .issue01 {
 
@@ -243,15 +304,12 @@ nav .fa {
   padding-bottom: 100px;
 }
 
-
 .issue-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 50px;
   margin-top: 40px;
 }
-
-
 
 .issue-box {
   display: flex;
@@ -260,240 +318,233 @@ nav .fa {
   gap: 12px;
 }
 
+.issuecover {
+  background: linear-gradient(135deg, #fce8e4, #ffe9d1, #e1f2ec, #e3d6f7);
+  border-radius: 20px;
+  animation: shrinkPulse 4s ease-in-out infinite alternate,
+    color 5s ease-in-out infinite;
+  background-size: 400% 400%;
+  width: 48%; /* Shrink the cover width */
+  margin: 0 auto 30px auto; /* Center and add bottom margin */
+  position: relative;
+  overflow: hidden;
+  padding: 25px 0 45px 0; /* Top and bottom padding for spacing */
+  box-shadow: 0 0 20px #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@keyframes color {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
 
+@keyframes shrinkPulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.85);
+  }
+}
+.issuecover img {
+  width: 85%;
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
 
-
-       .issuecover {
-        background: linear-gradient(135deg, #fce8e4, #ffe9d1, #e1f2ec, #e3d6f7);
-        border-radius: 20px;
-        animation: shrinkPulse 4s ease-in-out infinite alternate, color 5s ease-in-out infinite;
-        background-size: 400% 400%;
-        width: 48%;           /* Shrink the cover width */
-        margin: 0 auto 30px auto; /* Center and add bottom margin */
-        position: relative;
-        overflow: hidden;
-        padding: 25px 0 45px 0; /* Top and bottom padding for spacing */
-        box-shadow: 0 0 20px #000000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        }
-        @keyframes color {
-                       0% {
-                           background-position: 0 50%;
-                           }
-                         50% {
-                           background-position: 100% 50%;
-                         }
-                        100% {
-                           background-position: 0 50%;
-                         }
-                        }
-    
-        @keyframes shrinkPulse {
-        0% {
-            transform: scale(1);
-           }
-      100% {
-            transform: scale(0.85);
-           }
-}        
-            .issuecover img {
-            width: 85%;
-            display: block;
-            margin-top: 10px;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 10px;
-            }
-
-
-            .layer {
-            background: transparent;
-            text-align: center;
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0px;
-            transition: 0.5s;
-            padding-top: 20px;
-            }
-            
+.layer {
+  background: transparent;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  transition: 0.5s;
+  padding-top: 20px;
+}
 
 .issuecover h3 {
-    text-align: center;
-    color: #6b4b3e;
-    font-weight: 700;
-    font-style: italic;
-    font-size: 35px;
-    padding-top: 20px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-} 
+  text-align: center;
+  color: #6b4b3e;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 35px;
+  padding-top: 20px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
 
+#pdf {
+  display: inline-block;
+  text-decoration: none;
+  color: #365144;
+  border-radius: 20px;
+  padding: 12px 34px;
+  font-size: 13px;
+  background: #d5f5e3;
+  position: relative;
+  cursor: pointer;
+  font-weight: 600;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 10px #00ffff44;
+}
 
-                #pdf {
-                    display: inline-block;
-                    text-decoration: none;
-                    color:#365144;
-                    border-radius: 20px;
-                    padding: 12px 34px;
-                    font-size: 13px;
-                    background: #d5f5e3;
-                    position: relative;
-                    cursor: pointer;
-                    font-weight: 600;
-                     transition: box-shadow 0.3s ease, transform 0.3s ease;
-                     box-shadow: 0 0 10px #00ffff44;
-                }
-                
-                #pdf:hover {
-                   box-shadow: 0 0 20px #00ffffaa, 0 0 40px #00ffffaa;
-                     box-shadow: 0 0 20px #f69cc4aa, 0 0 40px #f69cc4aa;
-                   background: transparent;
-                   transform: scale(1.05);
-                   outline: none;
-                }
-                
-                
-                #flipbook {
-                    display: inline-block;
-                    text-decoration: none;
-                    color: #365144;
-                    border-radius: 20px;
-                    padding: 12px 34px;
-                    font-size: 13px;
-                    margin-left: 10px;
-                    background:#7ccc9b;
-                    background:#d5f5e3;
-                    position: relative;
-                    cursor: pointer;
-                    font-weight: 600;
-                    transition: box-shadow 0.3s ease, transform 0.3s ease;
-                     box-shadow: 0 0 10px #00ffff44;
-                }
-                
-                #flipbook:hover {
-                   box-shadow: 0 0 20px #f69cc4aa, 0 0 40px #f69cc4aa;
-                   background: transparent;
-                   transform: scale(1.05);
-                   outline: none;
-                }
-                
-                @media(max-width: 700px) {
-                    .issues {
-                        width: 100%;
-                    } 
-                    .issuecover img {
-                        width: 90%;
-                    }
-                }
+#pdf:hover {
+  box-shadow: 0 0 20px #00ffffaa, 0 0 40px #00ffffaa;
+  box-shadow: 0 0 20px #f69cc4aa, 0 0 40px #f69cc4aa;
+  background: transparent;
+  transform: scale(1.05);
+  outline: none;
+}
 
-        .h1k {
-            text-align: center;
-            padding-left: 40px;
-            font-style: italic;
-            color: #780000;
-            font-size: 35px;
-        }
+#flipbook {
+  display: inline-block;
+  text-decoration: none;
+  color: #365144;
+  border-radius: 20px;
+  padding: 12px 34px;
+  font-size: 13px;
+  margin-left: 10px;
+  background: #7ccc9b;
+  background: #d5f5e3;
+  position: relative;
+  cursor: pointer;
+  font-weight: 600;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 10px #00ffff44;
+}
 
-        .h2k {
-            margin-top: 30px;
-            text-align: center;
-            padding-left: 40px;
-            font-style: italic;
-            color: #780000;
-            font-size: 20px;
-        }
-    
- 
-        .intro {
-            color: #111717;
-            font-size: 19px;
-            font-weight: 300;
-            line-height: 22px;
-            padding: 10px;
-            font-style: italic;
-            font-family: 'Times New Roman', Times, serif;
-        }
-                
-        .social {
-            color: #780000;
-            font-size: 19px;
-            font-weight: 300;
-            line-height: 22px;
-            padding: 10px;
-            font-style: italic;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        
-        .icons {
-            color: #fdf0d5;
-            margin: 0 13px;
-            cursor: pointer;
-            padding: 18px 0;
-        }
-        
-        .icons a {
-            color: #fdf0d5;
-            font-size: 25px;
-        } 
-        .fa-heart {
-            color: #fdf0d5;
-            font-size: 15px;
-        }
+#flipbook:hover {
+  box-shadow: 0 0 20px #f69cc4aa, 0 0 40px #f69cc4aa;
+  background: transparent;
+  transform: scale(1.05);
+  outline: none;
+}
+
+@media (max-width: 700px) {
+  .issues {
+    width: 100%;
+  }
+  .issuecover img {
+    width: 90%;
+  }
+}
+
+.h1k {
+  text-align: center;
+  padding-left: 40px;
+  font-style: italic;
+  color: #780000;
+  font-size: 35px;
+}
+
+.h2k {
+  margin-top: 30px;
+  text-align: center;
+  padding-left: 40px;
+  font-style: italic;
+  color: #780000;
+  font-size: 20px;
+}
+
+.intro {
+  color: #111717;
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.social {
+  color: #780000;
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.icons {
+  color: #fdf0d5;
+  margin: 0 13px;
+  cursor: pointer;
+  padding: 18px 0;
+}
+
+.icons a {
+  color: #fdf0d5;
+  font-size: 25px;
+}
+.fa-heart {
+  color: #fdf0d5;
+  font-size: 15px;
+}
 
 /** FOOTER **/
 
 .site-footer {
   background: #7a0000;
   color: #f9f9e6;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   padding: 50px 20px 15px;
 }
 
 /* Back-to-top button */
 .back-to-top {
-    position: fixed;
-    height: 45px;
-    width: 45px;
-    bottom: 16px;
-    right: 30px;
-    font-size: 26px;
-    background-color: #780000;
-    color: #fdf0d5;
-    border-radius: 50%;;
-    text-decoration: none;
-    display: flex;
-    opacity: 0;
-    pointer-events: none;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 10px #fdf0d5;
-    transition: all .4s;
+  position: fixed;
+  height: 45px;
+  width: 45px;
+  bottom: 16px;
+  right: 30px;
+  font-size: 26px;
+  background-color: #780000;
+  color: #fdf0d5;
+  border-radius: 50%;
+  text-decoration: none;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px #fdf0d5;
+  transition: all 0.4s;
 }
 
 .back-to-top.active {
-    bottom: 30px;
-    opacity: 1;
-    pointer-events: auto;
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .back-to-top:focus {
-    outline:none;
+  outline: none;
 }
 
 .back-to-top:hover {
-    background-color: #fdf0d5;
-    color: #780000;
-    box-shadow: 0px 0px 10px #780000;
-    font-size: 28px;
+  background-color: #fdf0d5;
+  color: #780000;
+  box-shadow: 0px 0px 10px #780000;
+  font-size: 28px;
 }
 
 /* Top section */
 .footer-top {
   display: grid;
-  justify-content:center ;
+  justify-content: center;
   grid-template-columns: 28% 10% 13% 30%;
   gap: 40px;
   margin-bottom: 100px;
@@ -562,7 +613,7 @@ nav .fa {
   font-size: 18px;
   color: #fff8e7;
   margin-bottom: 10px;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
 }
 
 .subscription-box form {
@@ -576,7 +627,7 @@ nav .fa {
   border-radius: 15px;
   margin-bottom: 10px;
 }
-  
+
 .subscription-box button {
   background: #ffcc66;
   color: #7a0000;
@@ -593,7 +644,7 @@ nav .fa {
 .subscription-box button:hover {
   background: #e6b85c;
 }
-button:active{
+button:active {
   scale: 0.95;
 }
 /* Bottom bar */
@@ -641,7 +692,7 @@ button:active{
 .switch {
   position: relative;
   display: inline-block;
-  width: 52px;  /* Total width of the switch */
+  width: 52px; /* Total width of the switch */
   height: 28px; /* Total height of the switch */
   margin-left: 10px;
 }
@@ -671,9 +722,9 @@ button:active{
   position: absolute;
   content: "";
   height: 22px; /* Diameter of the handle */
-  width: 22px;  /* Diameter of the handle */
-  left: 3px;    /* Position from the left */
-  bottom: 3px;  /* Position from the bottom */
+  width: 22px; /* Diameter of the handle */
+  left: 3px; /* Position from the left */
+  bottom: 3px; /* Position from the bottom */
   background-color: white;
   border-radius: 50%; /* This makes it a circle */
   transition: transform 0.3s;
