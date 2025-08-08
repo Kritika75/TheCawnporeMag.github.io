@@ -848,5 +848,127 @@ button:active {
   margin-right: 16px;
   vertical-align: middle;
 }
+/* food Section */
+.food-section {
+      background: #fffaf0;
+      border-radius: 20px;
+      padding: 40px 30px;
+      margin: 40px auto;
+      max-width: 1200px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
 
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #8B0000;
+    }
+
+    .food-cards-container {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 20px;
+      scrollbar-width: auto;
+      padding-bottom: 10px;
+    }
+
+    .food-card {
+      background-color: #800000;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      padding: 20px;
+      width: 300px;
+      flex: 0 0 auto;
+      color: #FDF0D5;
+    }
+
+    .food-card img {
+      width: 100%;
+      border-radius: 8px;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .food-name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .description {
+      font-size: 14px;
+    }
+
+    /* Scrollbar Styling */
+    .food-cards-container::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .food-cards-container::-webkit-scrollbar-track {
+      background: #ffe4cc;
+      border-radius: 10px;
+    }
+
+    .food-cards-container::-webkit-scrollbar-thumb {
+      background: #cd5c5c;
+      border-radius: 10px;
+    }
+
+    .food-cards-container::-webkit-scrollbar-thumb:hover {
+      background: #a94442;
+    }
+    @media screen and (max-width: 768px) {
+  #CardsHeading {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+
+  .landmarks {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #b08968 #fef6e4; /* Change this based on your theme */
+  }
+
+  .landmarkCard {
+    flex: 0 0 100%;
+    max-width: 100%;
+    background-color: #fef6e4; /* Card background if needed */
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 10px;
+    scroll-snap-align: start;
+  }
+
+  .landmarkCard img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .landmarkInfo {
+    padding-top: 10px;
+  }
+
+  .Tag-line {
+    font-size: 0.95rem;
+    color: #6f4e37; /* Based on your theme */
+  }
+
+   
+  .landmarkCard h2 {
+    font-size: 1.2rem;
+    margin-top: 5px;
+    color: #3b2f2f;
+  }
+} 
 
