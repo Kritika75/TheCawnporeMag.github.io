@@ -70,7 +70,9 @@
     <div class="circle"></div>
 
     <!-- Back Button (Fixed Top-Left Corner) -->
-    <button onclick="history.back()" style="
+    <button
+      onclick="history.back()"
+      style="
         position: fixed;
         top: 20px;
         left: 20px;
@@ -82,8 +84,9 @@
         border-radius: 6px;
         cursor: pointer;
         font-weight: bold;
-        box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-    ">
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      "
+    >
       ← Back
     </button>
 
@@ -153,6 +156,8 @@
     </div>
     <section class="header">
       <nav role="navigation" aria-label="Main Menu">
+        <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+
         <div class="nav-links" id="navLinks">
           <i class="fa fa-times" onclick="hideMenu()"></i>
           <ul>
