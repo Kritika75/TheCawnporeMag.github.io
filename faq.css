@@ -185,7 +185,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 5rem;
+  height: auto;
   background-color: #780000;
   color: #fdf0d5;
   text-align: center;
