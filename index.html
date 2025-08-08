@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TheCawnpore</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" alt="The Cawnpore Magazine logo">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -137,10 +137,10 @@
     <section class="header">
       <nav role="navigation" aria-label="Main Menu">
         <!-- Logo on the left -->
-        <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+        <img src="assets/favicon.ico" alt="The Cawnpore Magazine logo" class="navbar-logo" />
         
         <div class="nav-links" id="navLinks">
-          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <i class="fa fa-times" onclick="hideMenu()" aria-label="Close menu"></i>
           <ul>
 
             <li><a href="index.html">HOME</a></li>
@@ -157,7 +157,7 @@
           </ul>
         </div>
 
-        <i class="fa fa-bars" onclick="showMenu()"></i>
+        <i class="fa fa-bars" onclick="showMenu()" aria-label="Open menu"></i>
       </nav>
 
       <div class="text-box">
@@ -188,7 +188,7 @@
       <h1 id="namaste">Namaste!</h1>
       <div class="container">
        <div class="card">
-      <p class="card-title">Introduction<button class="speakBtn" data-target="para1" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button>
+      <p class="card-title">Introduction<button class="speakBtn" data-target="para1" aria-label="Read introduction aloud" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button>
       <p id="para1" class="small-desc">
         The Cawnpore Magazine's motive is to delve into the profound influence
         and impact of various cultures worldwide through the art of literature.
@@ -205,7 +205,7 @@
       </div>
       </div>
       <div class="card">
-      <p class="card-title">What we do !!<button class="speakBtn" data-target="para2" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button>  
+      <p class="card-title">What we do !!<button class="speakBtn" data-target="para2" aria-label="Read 'What we do' section aloud" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button>  
         <p  id="para2" class="small-desc">
          We
         firmly believe that the exchange of ideas and experiences is the key to
@@ -221,7 +221,7 @@
       </div>
       </div>
       <div class="card">
-      <p class="card-title">Don't Wait, Subscribe<button class="speakBtn" data-target="para3" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button></p>
+      <p class="card-title">Don't Wait, Subscribe<button class="speakBtn" data-target="para3" aria-label="Read subscription information aloud" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button></p>
       <p class="small-desc" id="para3">
         We understand that submitting your work can be a daunting task, but we
         assure you that we will treat each submission with the utmost respect
@@ -282,13 +282,13 @@
         <a href="https://duotrope.com/magazine/the-cawnpore-magazine-37420" target="_blank">
           <img
             src="listed-on-duotrope.png"
-            alt="The Cawnpore Magazine is listed on Duotrope"
+            alt="The Cawnpore Magazine listing on Duotrope literary database"
           />
         </a>
         <a href="https://www.chillsubs.com/magazine/the-cawnpore-magazine" target="_blank">
           <img
             src="professional-1.png"
-            alt="The Cawnpore Magazine is a professional member of Chill Subs"
+            alt="The Cawnpore Magazine professional membership badge from Chill Subs"
           />
         </a>
       </div>
@@ -296,7 +296,7 @@
 
       <!-- Footer -->
    <footer class="site-footer" id="footer" >
-      <a class="back-to-top" href="#">
+      <a class="back-to-top" href="#" aria-label="Back to top">
           <i class="fa-solid fa-chevron-up"></i>
       </a>
       <div class="footer-top" >
@@ -320,19 +320,19 @@
         <div class="footer-contact"  id="footerContact">
           <h3>Contact Us</h3>
           <div class="social-icons">
-            <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
+            <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank" aria-label="Email us">
               <i class="fa-solid fa-envelope"></i>
             </a>
-            <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank">
+            <a href="https://www.instagram.com/thecawnporemagazine/" target="_blank" aria-label="Visit our Instagram">
               <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
+            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank" aria-label="Visit our LinkedIn">
               <i class="fa-brands fa-linkedin"></i>
             </a>
-            <a href="https://x.com/TheCawnporeMag?s=09" target="_blank">
+            <a href="https://x.com/TheCawnporeMag" target="_blank" aria-label="Visit our Twitter">
               <i class="fa-brands fa-x-twitter"></i>
             </a>
-            <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank">
+            <a href="https://www.tumblr.com/thecawnporemagazine" target="_blank" aria-label="Visit our Tumblr">
               <i class="fa-brands fa-tumblr"></i>
             </a>
           </div>
@@ -349,24 +349,19 @@
         <p>Made with &#x2665; by Kritika Singh</p>
         <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
       </div>
-      <audio id="bg-music" loop preload="auto">
+      <audio id="bg-music" loop preload="auto" aria-label="Background music">
            <source src="assets/music/lofi.mp3" type="audio/mpeg" />
            Your browser does not support the audio element.
       </audio>
       <div id="music-toggle" aria-label="Toggle Background Music" role="button" tabindex="0">
         <i class="fa-solid fa-music"></i>
       </div>
-
-
     </footer>
-
 
     <script src="index.js"></script>
 
     <!-- Visibility change  -->
     <script>
-     
-  
         document.addEventListener("DOMContentLoaded", function () {
             const loadingScreen = document.getElementById("loading-screen");
         
@@ -379,62 +374,55 @@
         const musicToggle = document.getElementById("music-toggle");
         const bgMusic = document.getElementById("bg-music");
 
-  // Load previous state if exists
-  const isMusicEnabled = localStorage.getItem("musicEnabled") === "true";
-  if (isMusicEnabled) {
-    bgMusic.volume = 0;
-    bgMusic.play().then(() => {
-      fadeInMusic();
-      musicToggle.classList.add("active");
-    });
-  }
+        // Load previous state if exists
+        const isMusicEnabled = localStorage.getItem("musicEnabled") === "true";
+        if (isMusicEnabled) {
+          bgMusic.volume = 0;
+          bgMusic.play().then(() => {
+            fadeInMusic();
+            musicToggle.classList.add("active");
+          });
+        }
 
-  function fadeInMusic() {
-    let volume = 0;
-    const fadeIn = setInterval(() => {
-      if (volume < 1) {
-        volume += 0.05;
-        bgMusic.volume = volume;
-      } else {
-        clearInterval(fadeIn);
-      }
-    }, 100);
-  }
+        function fadeInMusic() {
+          let volume = 0;
+          const fadeIn = setInterval(() => {
+            if (volume < 1) {
+              volume += 0.05;
+              bgMusic.volume = volume;
+            } else {
+              clearInterval(fadeIn);
+            }
+          }, 100);
+        }
 
-  function fadeOutMusic() {
-    let volume = bgMusic.volume;
-    const fadeOut = setInterval(() => {
-      if (volume > 0) {
-        volume -= 0.05;
-        bgMusic.volume = volume;
-      } else {
-        clearInterval(fadeOut);
-        bgMusic.pause();
-      }
-    }, 100);
-  }
+        function fadeOutMusic() {
+          let volume = bgMusic.volume;
+          const fadeOut = setInterval(() => {
+            if (volume > 0) {
+              volume -= 0.05;
+              bgMusic.volume = volume;
+            } else {
+              clearInterval(fadeOut);
+              bgMusic.pause();
+            }
+          }, 100);
+        }
 
-  musicToggle.addEventListener("click", () => {
-    if (bgMusic.paused) {
-      bgMusic.volume = 0;
-      bgMusic.play().then(() => {
-        fadeInMusic();
-        localStorage.setItem("musicEnabled", "true");
-        musicToggle.classList.add("active");
-      });
-    } else {
-      fadeOutMusic();
-      localStorage.setItem("musicEnabled", "false");
-      musicToggle.classList.remove("active");
-    }
-  });
-
-
-
-        
+        musicToggle.addEventListener("click", () => {
+          if (bgMusic.paused) {
+            bgMusic.volume = 0;
+            bgMusic.play().then(() => {
+              fadeInMusic();
+              localStorage.setItem("musicEnabled", "true");
+              musicToggle.classList.add("active");
+            });
+          } else {
+            fadeOutMusic();
+            localStorage.setItem("musicEnabled", "false");
+            musicToggle.classList.remove("active");
+          }
+        });
     </script>
   </body>
 </html>
-
-
-
