@@ -69,6 +69,17 @@ document.getElementById('searchBtn').addEventListener('click', function() {
                 emailInput.value = "";
             });
         }
+
+    // Loader logic
+    var loaderScreen = document.getElementById('loading-screen');
+    if (loaderScreen) {
+        setTimeout(function() {
+            loaderScreen.classList.add('fading');
+        }, 1700); // Start fade/scale at 1.7s
+        setTimeout(function() {
+            loaderScreen.classList.add('hidden');
+        }, 2000); // Hide after 2s
+    }
 });
 
 const container = document.getElementById('container');
@@ -113,4 +124,25 @@ document.addEventListener("DOMContentLoaded", () => {
         quoteAuthorEl.textContent = `– ${randomQuote.author}`;
     }
 });
+// === Social Share Buttons ===
+document.addEventListener("DOMContentLoaded", () => {
+    const pageURL = encodeURIComponent(window.location.href);
+    const pageTitle = encodeURIComponent(document.title);
 
+    const twitterBtn = document.querySelector(".share-btn.twitter");
+    const linkedinBtn = document.querySelector(".share-btn.linkedin");
+    const whatsappBtn = document.querySelector(".share-btn.whatsapp");
+
+    if (twitterBtn) {
+        twitterBtn.href = `https://twitter.com/intent/tweet?url=${pageURL}&text=${pageTitle}`;
+    }
+    if (linkedinBtn) {
+        linkedinBtn.href = `https://www.linkedin.com/shareArticle?mini=true&url=${pageURL}&title=${pageTitle}`;
+    }
+    if (whatsappBtn) {
+        whatsappBtn.href = `https://api.whatsapp.com/send?text=${pageTitle}%20${pageURL}`;
+    }
+});
+
+// Update the year in the footer
+document.getElementById("year").textContent = new Date().getFullYear();

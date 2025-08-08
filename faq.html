@@ -16,6 +16,26 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <title>FAQ - The Cawnpore Magazine</title>
+     <!-- Back Button (Fixed Top-Left Corner) -->
+    <button
+      onclick="history.back()"
+      style="
+        position: fixed;
+        top: 70px;
+        left: 20px;
+        z-index: 1000;
+        background-color: #800000;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      "
+    >
+      ← Back
+    </button>
   </head>
   <body class="faq-page">
                            <!-- Circles -->
@@ -134,13 +154,14 @@
           <li><a href="issue.html">ISSUE</a></li>
           <li><a href="masthead.html">MASTHEAD</a></li>
           <li><a href="faq.html">FAQ</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
           <li><a href="open-source.html">OPEN SOURCE</a></li>
         </ul>
       </div>
     </nav>
   </section>
     <main>
-      <div class="heading">
+      <div class="heading-faq">
         <h1>Frequently Asked Questions</h1>
       </div>
     
@@ -246,7 +267,7 @@
       </div>
       <div class="footer-bottom">
         <p>Made with &#x2665; by Kritika Singh</p>
-        <p>&copy; 2024 THE CAWNPORE — ALL RIGHTS RESERVED</p>
+        <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
       </div>
     </footer>
     <script src="index.js"></script>

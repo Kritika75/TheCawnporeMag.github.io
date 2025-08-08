@@ -6,60 +6,88 @@
 body {
   background-color: #fdf0d5;
 }
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 html {
   scroll-behavior: smooth;
 }
-    /* Circle styles */
-    .circle {
-      height: 24px;
-      width: 24px;
-      border-radius: 50%;
-      background-color: black;
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 99999999;
-      transition: transform 0.1s ease-out;
-    }
-.progress-container {
-  width: 100%;
-  height: 4px; 
-  background: #EAE0D5; 
-  position: fixed; 
+/* Circle styles */
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: black;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000; 
+  pointer-events: none;
+  z-index: 99999999;
+  transition: transform 0.1s ease-out;
+}
+ @media (max-width: 600px) {
+  .circle {
+    display: none !important;
+  }
+}
+
+.progress-container {
+  width: 100%;
+  height: 4px;
+  background: #eae0d5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .progress-bar {
   height: 100%;
-  width: 0%; 
-  background: #8B0000; 
+  width: 0%;
+  background: #8b0000;
 }
-
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem 5%;
     margin-right: 6px;
-      background: linear-gradient( 135deg,
-    rgba(242, 237, 237, 0.3), /* soft highlight */
-    rgba(122, 0, 0, 0.8),     /* your base color */
-    rgba(17, 16, 16, 0.3)        /* subtle depth */
-);
+    background: linear-gradient(135deg,
+        rgb(99, 0, 0),
+        rgba(218, 67, 67, 0.665),
+        rgb(71, 22, 22),
+        rgba(17, 16, 16, 0.3)
+
+    );
+    background-size: 400% 400%; /* make the gradient larger to animate */
+    animation: gradientMove 5s linear infinite;
+
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(179, 177, 177, 0.2);
     position: fixed;
     top: 0;
-    height: 6%;
+    height: 9%;
     width: 100%;
     z-index: 999;
 }
+
+/* Animation Keyframes */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 
 .header1 {
   min-height: 36vh;
@@ -85,11 +113,28 @@ nav {
 }
 
 .text-box1 h1 {
-  margin-top: 15px;
+  margin-top: 50px;
   font-weight: 700;
   font-style: italic;
-  font-size: 62px;
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  margin-bottom: 10px;
 }
+.text-box1 h2 {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.text-box1 h3 {
+  margin-bottom: 40px;
+  color: #111717;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+}
+.theme-heading {
+  margin-bottom: 40px;
+}
+.submission-guidelines-wrapper {
+  margin-top: 50px;
+}
+
 .text-box1 p {
   width: 100%;
   margin: 10px 0 40px;
@@ -109,50 +154,48 @@ nav {
 }
 
 .nav-links {
-    margin-right:10%;
-    flex: 1;
-    text-align: right;
-    
+  margin-right: 10%;
+  flex: 1;
+  text-align: right;
 }
 
 .nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
 }
 
-.nav-links ul li a{
-    color: #fdf0d5;
-    text-decoration: none;
-    font-family: serif;
-    font-size: 13px;
-    padding: 12px 16px;
-    display: block;
+.nav-links ul li a {
+  color: #fdf0d5;
+  text-decoration: none;
+  font-family: serif;
+  font-size: 13px;
+  padding: 12px 16px;
+  display: block;
 }
 .nav-links ul li a:hover {
-
-    text-decoration: none; /* REMOVE underline */
+  text-decoration: none; /* REMOVE underline */
 }
 
 .nav-links ul li::after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: #fdf0d5;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #fdf0d5;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
 }
 
 .nav-links ul li:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 nav .fa {
-    display: none;
+  display: none;
 }
-@media (max-width: 700px) {
+@media (max-width: 856px) {
   .text-box h1 {
     margin-top: 15px;
     font-weight: 700;
@@ -164,7 +207,7 @@ nav .fa {
   }
   .nav-links {
     position: fixed;
-    background: linear-gradient(135deg, #d24848 ,#7a0000, #cea8bc);
+    background: linear-gradient(135deg, #d24848, #7a0000, #cea8bc);
     height: 100vh;
     width: 200px;
     top: 0;
@@ -176,17 +219,21 @@ nav .fa {
   }
 
   nav .fa {
-        display: block;
-        color: #663346;
-        margin: 10px;
-        font-size: 22px;
-        cursor: pointer;
-        z-index: 10;
-        background: linear-gradient(135deg, #fdfbfb, #ebedee); /* soft gradient backdrop */
-        padding: 10px;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-    }
+    display: block;
+    color: #663346;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 10;
+    background: linear-gradient(
+      135deg,
+      #fdfbfb,
+      #ebedee
+    ); /* soft gradient backdrop */
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  }
   .nav-links ul {
     padding: 30px;
   }
@@ -195,64 +242,79 @@ nav .fa {
 /** FOOTER **/
 
 .site-footer {
-  background: #7a0000;
+  background: linear-gradient(135deg, #7a0000, #390303, #c12a2a);
   color: #f9f9e6;
-  font-family: 'Georgia', serif;
+  background-size: 600% 600%;
+  font-family: "Georgia", serif;
   padding: 50px 20px 15px;
+  background-size: 400% 400%; /* Enables movement */
+  animation: gradientShift 6s linear infinite;
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Back-to-top button */
 .back-to-top {
-    position: fixed;
-    height: 45px;
-    width: 45px;
-    bottom: 16px;
-    right: 30px;
-    font-size: 26px;
-    background-color: #780000;
-    color: #fdf0d5;
-    border-radius: 50%;;
-    text-decoration: none;
-    display: flex;
-    opacity: 0;
-    pointer-events: none;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 10px #fdf0d5;
-    transition: all .4s;
+  position: fixed;
+  height: 45px;
+  width: 45px;
+  bottom: 16px;
+  right: 30px;
+  font-size: 26px;
+  background-color: #780000;
+  color: #fdf0d5;
+  border-radius: 50%;
+  text-decoration: none;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px #fdf0d5;
+  transition: all 0.4s;
 }
 
 .back-to-top.active {
-    bottom: 30px;
-    opacity: 1;
-    pointer-events: auto;
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .back-to-top:focus {
-    outline:none;
+  outline: none;
 }
 
 .back-to-top:hover {
-    background-color: #fdf0d5;
-    color: #780000;
-    box-shadow: 0px 0px 10px #780000;
-    font-size: 28px;
+  background-color: #fdf0d5;
+  color: #780000;
+  box-shadow: 0px 0px 10px #780000;
+  font-size: 28px;
 }
 
 /* Top section */
 .footer-top {
   display: grid;
-  justify-content:center ;
+  justify-content: center;
   grid-template-columns: 28% 10% 13% 30%;
   gap: 40px;
   margin-bottom: 100px;
 }
 
 .footer-top h3 {
+  /* font-weight: 900; */
   font-size: 13px;
   text-transform: uppercase;
-  margin-bottom: 10px;
-  color: #fff8e7;
+  margin-bottom: 20px;
+  color: #ffe7e7;
 }
 
 /* Links with underline grow */
@@ -271,7 +333,7 @@ nav .fa {
   height: 1px;
   bottom: -2px;
   left: 0;
-  background: #ffd9b3;
+  background: #ec6f35;
   transition: width 0.3s ease;
 }
 .footer-top a:hover::after {
@@ -282,7 +344,7 @@ nav .fa {
 }
 
 .footer-links ul {
-  font-size: 6px;
+  font-size: 12px;
   padding: 0px 2px;
   list-style-type: none;
 }
@@ -301,48 +363,50 @@ nav .fa {
   transition: transform 0.2s ease, color 0.3s ease;
 }
 .social-icons a:hover {
-  color: #ffd9b3;
+  color: #ec6f35;
   transform: translateY(-3px) scale(1.15);
 }
 
 /* Footer Newsletter Section */
-
-.subscription-box h2 {
+.subscription-box-about h2 {
   font-size: 18px;
   color: #fff8e7;
   margin-bottom: 10px;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
 }
 
-.subscription-box form {
+.subscription-box-about form {
   width: 100%;
 }
 
-.subscription-box input {
+.subscription-box-about input {
   padding: 15px;
   width: 65%;
-  border: none;
-  border-radius: 15px;
+  border: 2px solid orangered;
+  border-radius: 50px;
   margin-bottom: 10px;
 }
-  
-.subscription-box button {
-  background: #ffcc66;
+
+.subscription-box-about button {
+  background: #ee834e;
   color: #7a0000;
   border: none;
   padding: 14px 10px;
   width: 100px;
-  border-radius: 15px;
+  border-radius: 60px;
   cursor: pointer;
   font-weight: bold;
   font-size: 16px;
   text-align: center;
   transition: all 0.3s;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* subtle default shadow */
 }
-.subscription-box button:hover {
-  background: #e6b85c;
+.subscription-box-about button:hover {
+  background: #da715ee1;
+  box-shadow: 0 6px 18px rgba(218, 113, 94, 0.5); /* deeper colored glow on hover */
 }
-button:active{
+button:active {
   scale: 0.95;
 }
 /* Bottom bar */
@@ -356,10 +420,19 @@ button:active{
 }
 
 /* Responsive */
+
 @media (max-width: 768px) {
   .footer-top {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+  }
+  .intro {
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 10px;
+    white-space: normal; /* allows wrapping */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 @media (max-width: 500px) {
@@ -376,8 +449,15 @@ button:active{
   .ripple-btn {
     width: 100%;
   }
+  .h1k {
+    font-size: 1.3rem;
+    padding: 1rem;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-top: 15px !important;
+  }
 }
-
 
 .submit {
   width: 80%;
@@ -392,6 +472,7 @@ button:active{
   font-style: italic;
   color: #780000;
   font-size: 25px;
+  margin-top: 30px;
 }
 
 .intro {
@@ -413,3 +494,15 @@ button:active{
   font-style: italic;
   font-family: "Times New Roman", Times, serif;
 }
+.submission-guidelines-wrapper {
+  max-width: 800px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.navbar-logo {
+  height: 40px;
+  margin-right: 16px
+  vertical-align: middle;
+}
+
