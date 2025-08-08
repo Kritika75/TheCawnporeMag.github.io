@@ -892,7 +892,7 @@ button:active{
 #music-toggle {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  left: 20px;
   background-color: #ffffffc0;
   border: 1px solid #ccc;
   border-radius: 50%;
@@ -1092,4 +1092,5 @@ button:active{
     nav {
         padding: 0.75rem 2%; /* Reduce overall nav padding */
     }
+
 }
