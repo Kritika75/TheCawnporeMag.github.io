@@ -1,4 +1,3 @@
-<!-- faq.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,36 +5,425 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Footer css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <!--  -->
-    <link rel="stylesheet" href="faq.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <title>FAQ - The Cawnpore Magazine</title>
-     <!-- Back Button (Fixed Top-Left Corner) -->
-    <button
-      onclick="history.back()"
-      style="
-        position: fixed;
-        top: 70px;
-        left: 20px;
-        z-index: 1000;
-        background-color: #800000;
-        color: white;
-        border: none;
-        padding: 10px 16px;
-        border-radius: 6px;
+    
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .body{
+        background-color: #fdf0d5;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .progress-container {
+        width: 100%;
+        height: 4px; 
+        background: #EAE0D5; 
+        position: fixed; 
+        top: 0;
+        left: 0;
+        z-index: 1000; 
+      }
+
+          /* Circle styles */
+          .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+            transition: transform 0.1s ease-out;
+          }
+          
+      .progress-bar {
+        height: 100%;
+        width: 0%; 
+        background: #8B0000; 
+      }
+      .faq-page .header{
+          min-height: 10vh;
+      }
+      .header {
+        min-height: 0vh;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        padding: 20px 0;
+      }
+      nav {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.75rem 5%;
+          margin-right: 6px;
+            background: linear-gradient( 135deg,
+          rgba(242, 237, 237, 0.3), /* soft highlight */
+          rgba(122, 0, 0, 0.8),     /* your base color */
+          rgba(17, 16, 16, 0.3)        /* subtle depth */
+      );
+          backdrop-filter: blur(8px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+          border-bottom: 1px solid rgba(179, 177, 177, 0.2);
+          position: fixed;
+          top: 0;
+          height: 9%;
+          width: 100%;
+          z-index: 999;
+      }
+
+
+      .nav-links {
+        flex: 1;
+        text-align: right;
+      }
+
+      .nav-links ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 8px 12px;
+        position: relative;
+      }
+
+      .nav-links ul li a {
+        color: #fdf0d5;
+        text-decoration: none;
+        font-family: serif;
+        font-size: 13px;
+        padding: 12px 16px;
+        display: block;
+      }
+
+      .nav-links ul li a:hover {
+          text-decoration: none; /* REMOVE underline */
+      }
+
+      .nav-links ul li::after {
+          content: '';
+          width: 0%;
+          height: 2px;
+          background: #fdf0d5;
+          display: block;
+          margin: auto;
+          transition: 0.5s;
+      }
+
+      .nav-links ul li:hover::after {
+          width: 100%;
+      }
+
+
+      nav .fa {
+        display: none;
+      }
+      @media (max-width: 700px) {
+        .nav-links ul li {
+          display: block;
+        }
+        .nav-links {
+          position: fixed;
+           background: linear-gradient(135deg, #d24848 ,#7a0000, #cea8bc);
+          height: 100vh;
+          width: 200px;
+          top: 0;
+          right: -200px;
+          text-align: left;
+          z-index: 2;
+          box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
+          transition: right 0.4s ease-in-out;
+        }
+        nav .fa-times {
+          display: block;
+          color: #663346;
+          margin: 10px;
+          font-size: 22px;
+          cursor: pointer;
+        }
+        nav .fa-bars {
+          display: block;
+          color: #663346;
+          margin: 10px;
+          font-size: 22px;
+          cursor: pointer;
+          }
+        }
+        .nav-links ul {
+          padding: 30px;
+        }
+
+      main{
+          display: flex;
+          gap: 1rem;
+          flex-direction: column;
+      }
+      .heading-faq{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 5rem;
+          background-color: #780000;
+          color: #fdf0d5;
+          text-align: center;
+          font-size: 1.5rem;
+          padding-bottom: 48px;
+          /* width: 100vw; */
+      }
+
+      .social-icons {
+        margin-top: 10px;
+      }
+
+      .social-icons a {
+        font-size: 18px;
+        margin-right: 10px;
+        color: #f5f5dc;
+        display: inline-block;
+        transition: transform 0.2s ease, color 0.3s ease;
+      }
+      .social-icons a:hover {
+        color: #ffd9b3;
+        transform: translateY(-3px) scale(1.15);
+      }
+
+
+      .faq {
+        color: #780000;
+        border-left: 4px solid #780000;
+        background: #fff;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        margin-right: 5vw;
+        margin-left: 60px;
+        padding: 0.5rem;
+        box-shadow: #780000 0 0 7px;
+        overflow: hidden;
+      }
+      
+      /* Enhanced FAQ Animation Styles */
+      .faq-item {
+        color: #780000;
+        border-left: 4px solid #780000;
+        background: #fff;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        margin-right: 5vw;
+        margin-left: 60px;
+        padding: 0.5rem;
+        box-shadow: #780000 0 0 7px;
+        overflow: hidden;
+        margin-bottom: 1rem;
+      }
+      
+      .faq-question {
         cursor: pointer;
+        padding: 1rem 0.5rem;
         font-weight: bold;
-        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-      "
-    >
-      ← Back
-    </button>
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s ease;
+      }
+      
+      .faq-question:hover {
+        background-color: rgba(120, 0, 0, 0.05);
+      }
+      
+      .faq-icon {
+        transition: transform 0.3s ease;
+        font-size: 1.2em;
+      }
+      
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+        padding: 0 0.5rem;
+      }
+      
+      .faq-answer.open {
+        max-height: 500px;
+        padding: 1rem 0.5rem;
+      }
+      
+      .faq-item.active .faq-icon {
+        transform: rotate(45deg);
+      }
+      
+      a{
+          text-decoration: none;
+          color: #780000;
+      }
+      .ask{
+          display: flex;
+          color: #fdf0d5;
+          flex-direction: column;
+          height: 10rem;
+          background-color: #780000;
+          width: 25rem;
+          margin: auto;
+          align-items: center;
+          gap: 0.5rem ;   
+          border-radius: 1rem; 
+      }
+
+      .mail{
+          background-color: #fdf0d5;
+          width: 80%;
+          border-radius: 1.5rem;
+          text-align: center;
+          padding: 0.5rem;
+      }
+      .ask h3{
+          font-size: 1.5rem;
+      }
+      .seperator{
+          height: 2rem;
+      }
+      .ask p{
+          justify-self: end;
+      }
+      .mail img{
+          object-fit: cover;
+      }
+
+      /* Footer Styles */
+      .site-footer {
+        background: linear-gradient(135deg, #8B0000, #660000);
+        color: #fdf0d5;
+        padding: 3rem 0 1rem;
+        position: relative;
+      }
+
+      .back-to-top {
+        position: absolute;
+        top: -25px;
+        right: 2rem;
+        background: #780000;
+        color: #fdf0d5;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .back-to-top:hover {
+        background: #a00000;
+        transform: translateY(-3px);
+      }
+
+      .footer-top {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .footer-about h3,
+      .footer-links h3,
+      .footer-contact h3,
+      .subscription-box h3 {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        color: #ffd9b3;
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-links ul li a {
+        color: #fdf0d5;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links ul li a:hover {
+        color: #ffd9b3;
+      }
+
+      .subscription-box form {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .subscription-box input {
+        flex: 1;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .subscription-box button {
+        background: #780000;
+        color: #fdf0d5;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .subscription-box button:hover {
+        background: #a00000;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(253, 240, 213, 0.2);
+      }
+
+      /*  CSS for Phone */
+      @media screen and (max-width:768px) {
+          .heading{
+              font-size: 0.75rem;
+          }
+          .ask{
+              border-radius: 0;
+          }
+          
+          .faq-item {
+            margin-left: 20px;
+            margin-right: 20px;
+          }
+          
+          .footer-top {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+          
+          .subscription-box form {
+            flex-direction: column;
+          }
+      }
+    </style>
   </head>
   <body class="faq-page">
                            <!-- Circles -->
@@ -80,61 +468,7 @@
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div>
-              <script>
-
-  // Coordinates for the cursor
-  const coords = { x: 0, y: 0 };
-  const circles = document.querySelectorAll(".circle");
-
-  // Colors for the circles
-  const colors = [
-    "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
-    "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
-    "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
-    "#680060", "#60005f", "#48005f", "#3d005e"
-  ];
-
-  // Assign colors and initial position to each circle
-  circles.forEach(function (circle, index) {
-    circle.x = 0;
-    circle.y = 0;
-    circle.style.backgroundColor = colors[index % colors.length];
-  });
-
-  // Update the coordinates when the mouse moves
-  window.addEventListener("mousemove", function (e) {
-    coords.x = e.clientX;
-    coords.y = e.clientY;
-  });
-
-  // Animation function to move the circles
-  function animateCircles() {
-    let x = coords.x;
-    let y = coords.y;
-
-    circles.forEach(function (circle, index) {
-      // Update the position and scale of each circle
-      circle.style.left = x - 12 + "px";
-      circle.style.top = y - 12 + "px";
-      circle.style.scale = (circles.length - index) / circles.length;
-
-      circle.x = x;
-      circle.y = y;
-
-      // Get the next circle in the sequence
-      const nextCircle = circles[index + 1] || circles[0];
-      x += (nextCircle.x - x) * 0.15;
-      y += (nextCircle.y - y) * 0.15;
-    });
-
-    // Repeat the animation
-    requestAnimationFrame(animateCircles);
-  }
-
-  // Start the animation
-  animateCircles();
-
-</script>
+              
     <div class="progress-container">
     <div class="progress-bar" id="progressBar"></div>
   </div>
@@ -163,46 +497,60 @@
   </section>
     <main>
       <div class="heading-faq">
-        <h1>Frequently Asked Questions</h1>
-      </div>
+  <h1 style="margin-top: 50px; font-size: clamp(1.5rem, 4vw, 2.5rem);">
+    Frequently Asked Questions
+  </h1>
+</div>
     
-      
-      <div class="faq">
-        <details>
-        <summary><strong>Q: Who can contribute?</strong></summary>
-        <p class="ans">A: Anyone with an interest in writing, art, or photography can contribute.</p>
-        </details>
+      <!-- Enhanced FAQ Items with Smooth Animation -->
+      <div class="faq-item">
+        <div class="faq-question">
+          <span><strong>Q: Who can contribute?</strong></span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p class="ans">A: Anyone with an interest in writing, art, or photography can contribute.</p>
+        </div>
       </div>
-      <div class="faq">
-        <details>
-        <summary><strong>Q: What is the deadline for the submission?</strong></summary>
-        <p class="ans">A: Deadlines vary based on upcoming issues. Keep an eye on our website or social     media pages for official announcements and submission windows.</p>
-        </details>
-      </div>  
-      <div class="faq">
-        <details>
-        <summary><strong>Q: Do I retain rights to my work?</strong></summary>
-        <p class="ans">A: Yes! Contributors retain full rights to their work. By submitting, you only grant us permission to publish it on The Cawnpore Magazine platform (web and PDF formats).</p>
-        </details>
-      </div> 
       
-      <div class="faq">
-        <details>
-        <summary><strong>Q: How to get involved as a developer or designer?</strong></summary>
-        <p class="ans">
-        A: We’re open to collaboration! You can contribute to our open-source website on GitHub by fixing bugs, improving UI, or suggesting new features.
-        Check out the 
-        <a href="https://github.com/Kritika75/TheCawnporeMag.github.io.git" target="_blank">
-         <b><i>GitHub Repository</i></b>
-        </a>
-        to get started with the contributing guidelines.
-        </p>
-        </details>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span><strong>Q: What is the deadline for the submission?</strong></span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p class="ans">A: Deadlines vary based on upcoming issues. Keep an eye on our website or social media pages for official announcements and submission windows.</p>
+        </div>
       </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span><strong>Q: Do I retain rights to my work?</strong></span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p class="ans">A: Yes! Contributors retain full rights to their work. By submitting, you only grant us permission to publish it on The Cawnpore Magazine platform (web and PDF formats).</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span><strong>Q: How to get involved as a developer or designer?</strong></span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          <p class="ans">
+            A: We're open to collaboration! You can contribute to our open-source website on GitHub by fixing bugs, improving UI, or suggesting new features.
+            Check out the 
+            <a href="https://github.com/Kritika75/TheCawnporeMag.github.io.git" target="_blank">
+             <b><i>GitHub Repository</i></b>
+            </a>
+            to get started with the contributing guidelines.
+          </p>
+        </div>
       </div>
 
-
-      <div class="ask">
+      <div class="ask" style="padding-top: 15px;">
         <h3>Got more questions?</h3>
         <span>Drop us an email at </span>
         <div class="mail">
@@ -271,8 +619,117 @@
         <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
       </div>
     </footer>
-    <script src="index.js"></script>
-  </body>
-</html>
-<!-- synced after conflict -->
+    
+    <script>
+      // Mouse cursor circles animation
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
 
+      // Colors for the circles
+      const colors = [
+        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+        "#680060", "#60005f", "#48005f", "#3d005e"
+      ];
+
+      // Assign colors and initial position to each circle
+      circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+      });
+
+      // Update the coordinates when the mouse moves
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+      });
+
+      // Animation function to move the circles
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+          // Update the position and scale of each circle
+          circle.style.left = x - 12 + "px";
+          circle.style.top = y - 12 + "px";
+          circle.style.scale = (circles.length - index) / circles.length;
+
+          circle.x = x;
+          circle.y = y;
+
+          // Get the next circle in the sequence
+          const nextCircle = circles[index + 1] || circles[0];
+          x += (nextCircle.x - x) * 0.15;
+          y += (nextCircle.y - y) * 0.15;
+        });
+
+        // Repeat the animation
+        requestAnimationFrame(animateCircles);
+      }
+
+      // Start the animation
+      animateCircles();
+
+      // Navigation menu functions
+      function showMenu() {
+        document.getElementById("navLinks").style.right = "0";
+      }
+
+      function hideMenu() {
+        document.getElementById("navLinks").style.right = "-200px";
+      }
+
+      // Progress bar
+      window.addEventListener('scroll', function() {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
+        document.getElementById('progressBar').style.width = scrolled + '%';
+      });
+
+      // FAQ smooth animation functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+          const question = item.querySelector('.faq-question');
+          const answer = item.querySelector('.faq-answer');
+          const icon = item.querySelector('.faq-icon');
+          
+          question.addEventListener('click', function() {
+            const isOpen = item.classList.contains('active');
+            
+            // Close all other FAQ items
+            faqItems.forEach(otherItem => {
+              if (otherItem !== item) {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.faq-answer').classList.remove('open');
+              }
+            });
+            
+            // Toggle current FAQ item
+            if (isOpen) {
+              item.classList.remove('active');
+              answer.classList.remove('open');
+            } else {
+              item.classList.add('active');
+              answer.classList.add('open');
+            }
+          });
+        });
+      });
+
+      // Set current year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Back to top functionality
+      document.querySelector('.back-to-top').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
+  </body>_
+_</html>
