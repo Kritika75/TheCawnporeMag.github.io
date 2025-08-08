@@ -836,33 +836,36 @@ button:active{
     }
 }
 
-#skip-loading {
-  /* Positioning and Box Model */
-  position: relative; /* Required for the ::before pseudo-element positioning */
-  overflow: hidden; /* Clips the pseudo-element's animation within the button's bounds */
-  padding: 14px 28px;
-  border: 1px solid rgba(243, 234, 211, 0.2); /* Subtle border using the cream color */
-  border-radius: 8px; /* Slightly sharper radius to match the site's aesthetic */
-  
-  /* Typography and Color */
-  color: #F3EAD3; /* Creamy, off-white text color from the theme */
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+/* Utility classes for buttons */
+.btn {
+  position: relative;
+  overflow: hidden;
+  padding: var(--btn-padding);
+  border: 1px solid var(--color-border);
+  border-radius: var(--btn-radius);
+  color: var(--color-cream);
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  letter-spacing: var(--btn-letter-spacing);
   text-decoration: none;
   text-transform: uppercase;
-  
-  /* Background and Effects */
-  background-color: rgba(110, 18, 11, 1); /* Deep maroon from the theme with slight transparency */
-  backdrop-filter: blur(8px); /* Frosted glass effect */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-color: var(--color-maroon-bg);
+  box-shadow: var(--btn-shadow);
   cursor: pointer;
-  
-  /* Animation and Transitions */
-  transition: transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), 
-              box-shadow 0.2s cubic-bezier(0.25, 0.1, 0.25, 1),
-              background-color 0.2s ease,
-              border-color 0.2s ease;
+  transition: 
+    transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), 
+    box-shadow 0.2s cubic-bezier(0.25, 0.1, 0.25, 1),
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.frosted {
+  backdrop-filter: var(--btn-blur);
+}
+
+/* Specific styles for #skip-loading if needed */
+#skip-loading {
+  /* Only add unique styles here, if any */
 }
 
 /* * The ::before pseudo-element creates the animated warm glow.
