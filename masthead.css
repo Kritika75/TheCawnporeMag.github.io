@@ -409,10 +409,34 @@ nav .fa {
   border-radius: 15px;
   padding: 1.5rem;
   color: #780000;
-  /* font-family: 'Crimson Text', serif; */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* NEW: make card a flex container */
+  display: flex;
+  flex-direction: column;
 }
+
+.team-card .team-card-social-link-wrapper {
+  margin-top: auto; /* Push this to bottom */
+  padding: 5px;
+}
+
+.insta-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  color: #fdf0d5;
+  background-color: #780000;
+  padding: 8px 14px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.insta-link:hover {
+  background-color: #a30000;
+}
+
 
 .team-card:hover {
   background: linear-gradient(to bottom, #bcaf87, #fdf0d5, #cdb2ad);
@@ -434,21 +458,6 @@ nav .fa {
 .team-card .intro {
   font-size: 15px;
   line-height: 1.6;
-}
-
-.insta-link {
-  display: inline-block;
-  margin-top: 1rem;
-  text-decoration: none;
-  color: #fdf0d5;
-  background-color: #780000;
-  padding: 8px 14px;
-  border-radius: 25px;
-  transition: background-color 0.3s ease;
-}
-
-.insta-link:hover {
-  background-color: #a30000;
 }
 
 /* .mh10{
