@@ -81,7 +81,7 @@ nav {
     border-bottom: 1px solid rgba(179, 177, 177, 0.2);
     position: fixed;
     top: 0;
-    height: 9%;
+    height: 70px;
     width: 100%;
     z-index: 999;
 }

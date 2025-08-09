@@ -7,9 +7,30 @@
     <link rel="stylesheet" href="gallery.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+
+    <button
+      onclick="history.back()"
+      style="
+        position: fixed;
+        top: 70px;
+        left: 20px;
+        z-index: 1000;
+        background-color: #800000;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      "
+    >
+      ← Back
+    </button>
   </head>
   <body>
     <nav role="navigation" aria-label="Main Menu">
+      
       <!-- Logo on the left -->
       <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
 
