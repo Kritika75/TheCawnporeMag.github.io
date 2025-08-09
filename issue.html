@@ -183,57 +183,92 @@
       </div>
     </section>
 
-    <section class="issues">
-      <div class="row issue-grid">
-        <div class="issue-box">
-          <div class="issuecover">
-            <h3>Issue-01</h3>
-            <img
-              src="THE CAWNPORE MAGAZINE front c.png"
-              alt="Cover of The Cawnpore Magazine Issue 01"
-            />
-          </div>
-          <a href="https://cawnporemag.gumroad.com/l/thvqc"
-            ><button id="pdf">PDF Format</button></a
-          >
-          <a href="https://cawnporemag.gumroad.com/l/etkzr"
-            ><button id="flipbook">FlipBook Format</button></a
-          >
-        </div>
+     <section class="issues">
+  <div class="issues-container">
 
-        <div class="issue-box">
-          <div class="issuecover">
-            <h3>Issue-02</h3>
-            <img
-              src="The Cawnpore cover page issue02.jpg"
-              alt="Cover of The Cawnpore Magazine Issue 02"
-            />
-          </div>
-          <a href="https://cawnporemag.gumroad.com/l/wzomk"
-            ><button id="pdf">PDF Format</button></a
-          >
-          <a href="https://cawnporemag.gumroad.com/l/kerfqyy"
-            ><button id="flipbook">FlipBook Format</button></a
-          >
-        </div>
-
-        <div class="issue-box">
-          <div class="issuecover">
-            <h3>Issue-03</h3>
-            <img
-              src="CawnporeMagazine Issue03 WithText v3.png"
-              alt="Cover of The Cawnpore Magazine Issue 03"
-            />
-          </div>
-          <a href="https://cawnporemag.gumroad.com/l/zfswap"
-            ><button id="pdf">PDF Format</button></a
-          >
-          <a href="https://cawnporemag.gumroad.com/l/kaywy"
-            ><button id="flipbook">FlipBook Format</button></a
-          >
+    <!-- LEFT: Featured Issue -->
+    <div class="featured-issue">
+      <h3 id="featured-title">Issue-01</h3>
+      <div class="issuecover">
+        <img id="featured-img" src="THE CAWNPORE MAGAZINE front c.png" alt="Cover of The Cawnpore Magazine Issue 01">
+        <div class="buttons">
+          <a id="featured-pdf" href="https://cawnporemag.gumroad.com/l/thvqc" target="_blank">
+            <button>PDF Format</button>
+          </a>
+          <a id="featured-flipbook" href="https://cawnporemag.gumroad.com/l/etkzr" target="_blank">
+            <button>FlipBook Format</button>
+          </a>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- RIGHT: Scrollable Issues -->
+    <div class="scrollable-issues">
+
+      <!-- ISSUE 01 -->
+      <div class="issue-box"
+           data-title="Issue-01"
+           data-img="THE CAWNPORE MAGAZINE front c.png"
+           data-pdf="https://cawnporemag.gumroad.com/l/thvqc"
+           data-flipbook="https://cawnporemag.gumroad.com/l/etkzr">
+        <div class="issuecover">
+          <h3>Issue-01</h3>
+          <img src="THE CAWNPORE MAGAZINE front c.png" alt="Cover of The Cawnpore Magazine Issue 01">
+        </div>
+      </div>
+
+      <!-- ISSUE 02 -->
+      <div class="issue-box"
+           data-title="Issue-02"
+           data-img="The Cawnpore cover page issue02.jpg"
+           data-pdf="https://cawnporemag.gumroad.com/l/wzomk"
+           data-flipbook="https://cawnporemag.gumroad.com/l/kerfqyy">
+        <div class="issuecover">
+          <h3>Issue-02</h3>
+          <img src="The Cawnpore cover page issue02.jpg" alt="Cover of The Cawnpore Magazine Issue 02">
+        </div>
+      </div>
+
+      <!-- ISSUE 03 -->
+      <div class="issue-box"
+           data-title="Issue-03"
+           data-img="CawnporeMagazine Issue03 WithText v3.png"
+           data-pdf="https://cawnporemag.gumroad.com/l/zfswap"
+           data-flipbook="https://cawnporemag.gumroad.com/l/kaywy">
+        <div class="issuecover">
+          <h3>Issue-03</h3>
+          <img src="CawnporeMagazine Issue03 WithText v3.png" alt="Cover of The Cawnpore Magazine Issue 03">
+        </div>
+      </div>
+
+    </div> 
+
+  </div> 
+</section>
+
+
+<script>  // javascript to update featured issue whenever user clicks on any issue box
+
+  document.querySelectorAll('.scrollable-issues .issue-box').forEach(box => {
+    box.addEventListener('click', () => {
+      const title = box.dataset.title;
+      const img = box.dataset.img;
+      const pdf = box.dataset.pdf;
+      const flipbook = box.dataset.flipbook;
+
+      document.getElementById('featured-title').textContent = title;
+      document.getElementById('featured-img').src = img;
+      document.getElementById('featured-img').alt = `Cover of The Cawnpore Magazine ${title}`;
+
+      const pdfLink = document.getElementById('featured-pdf');
+      pdfLink.href = pdf;
+
+      const flipbookLink = document.getElementById('featured-flipbook');
+      flipbookLink.href = flipbook;
+    });
+  });
+</script> 
+
 
     <!-- Footer -->
     <footer class="site-footer">
