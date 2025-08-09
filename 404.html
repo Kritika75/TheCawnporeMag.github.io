@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Redirecting...</title>
-  <meta http-equiv="refresh" content="0; url=/" />
-  <script>
-    // In case meta-refresh fails
-    window.location.replace("/");
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fdf0d5;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #780000;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        a {
+            color: #780000;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid #780000;
+            padding-bottom: 3px;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #a00000;
+        }
+    </style>
 </head>
 <body>
-  <p>Redirecting to <a href="/">home page</a>...</p>
+    <h1>404 - Page Not Found</h1>
+    <p>Oops! It seems like the page you are looking for does not exist.</p>
+    <p>You can return to the <a href="index.html">homepage</a>.</p>
 </body>
 </html>

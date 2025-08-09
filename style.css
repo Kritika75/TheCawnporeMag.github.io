@@ -480,7 +480,7 @@ background: linear-gradient(135deg, #7a0000, #390303,#c12a2a);
     font-size: 26px;
     background-color: #780000;
     color: #fdf0d5;
-    border-radius: 50%;;
+    border-radius: 50%;
     text-decoration: none;
     display: flex;
     opacity: 0;
@@ -1093,4 +1093,143 @@ button:active{
         padding: 0.75rem 2%; /* Reduce overall nav padding */
     }
 
+}
+
+/* Container for the text and switch */
+.toggle-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  color: white;
+}
+
+/* The switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;  /* Total width of the switch */
+  height: 28px; /* Total height of the switch */
+  margin-left: 10px;
+}
+
+/* Hide the default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider (the track) */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #757575; /* The grey color when OFF */
+  border-radius: 28px; /* This makes it pill-shaped */
+  transition: background-color 0.3s;
+}
+
+/* The handle (the circle) */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px; /* Diameter of the handle */
+  width: 22px;  /* Diameter of the handle */
+  left: 3px;    /* Position from the left */
+  bottom: 3px;  /* Position from the bottom */
+  background-color: white;
+  border-radius: 50%; /* This makes it a circle */
+  transition: transform 0.3s;
+}
+
+/* --- The "ON" State --- */
+
+/* Change background color of the track when checked */
+input:checked + .slider {
+  background-color: #ac265e; /* Your theme's accent color */
+}
+
+/* Move the handle to the right when checked */
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+/* ...existing code... */
+#music-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #ffffffc0;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+#music-toggle.active {
+  background-color: #f0d9ff;
+  box-shadow: 0 0 10px #be94e5;
+}
+#music-toggle i {
+  font-size: 18px;
+  color: #444;
+}
+
+@media (max-width: 700px) {
+    /* Existing mobile styles... */
+
+    .nav-links ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 40px 20px;
+    }
+
+    .nav-links ul li {
+        display: block;
+        opacity: 0;
+        transform: translateX(30px);
+        animation: slideIn 0.4s forwards;
+    }
+
+    @keyframes slideIn {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .nav-links {
+        position: fixed;
+        background: linear-gradient(135deg, #d24848 ,#7a0000, #cea8bc);
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -100%;
+        text-align: left;
+        z-index: 2;
+        box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
+        transition: right 0.4s ease-in-out;
+    }
+
+    .nav-links.nav-active {
+        right: 0;
+    }
+
+    nav .fa {
+        display: block;
+        color: #663346;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+        z-index: 10;
+        background: linear-gradient(135deg, #fdfbfb, #ebedee); /* soft gradient backdrop */
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
 }

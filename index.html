@@ -68,8 +68,11 @@
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div>
-      <div class="circle"></div>
-              <script>
+ <a class="back-to-top" href="#">
+    <i class="fa-solid fa-chevron-up"></i>
+ </a>
+</body>
+<script>
 
   // Coordinates for the cursor
   const coords = { x: 0, y: 0 };
@@ -156,6 +159,14 @@
 
           </ul>
         </div>
+        <!-- ...existing code... -->
+<li class="toggle-item">
+    <span>Pointer Effect</span>
+    <label class="switch">
+        <input type="checkbox" id="cursorToggle" checked>
+        <span class="slider"></span>
+    </label>
+</li>
 
         <i class="fa fa-bars" onclick="showMenu()"></i>
       </nav>
@@ -428,9 +439,23 @@
       musicToggle.classList.remove("active");
     }
   });
-
-
-
+  
+  // Wrap the audio and div elements in a parent div
+  document.body.appendChild(
+    (() => {
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = `
+        <audio id="bg-music" loop preload="auto">
+          <source src="assets/music/lofi.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+        <div id="music-toggle" aria-label="Toggle Background Music" role="button" tabindex="0">
+          <i class="fa-solid fa-music"></i>
+        </div>
+      `;
+      return wrapper.firstChild;
+    })()
+  );
         
     </script>
   </body>
