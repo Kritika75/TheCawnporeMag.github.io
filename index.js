@@ -69,6 +69,17 @@ document.getElementById('searchBtn').addEventListener('click', function() {
                 emailInput.value = "";
             });
         }
+
+    // Loader logic
+    var loaderScreen = document.getElementById('loading-screen');
+    if (loaderScreen) {
+        setTimeout(function() {
+            loaderScreen.classList.add('fading');
+        }, 1700); // Start fade/scale at 1.7s
+        setTimeout(function() {
+            loaderScreen.classList.add('hidden');
+        }, 2000); // Hide after 2s
+    }
 });
 
 const container = document.getElementById('container');
@@ -134,45 +145,25 @@ document.addEventListener("DOMContentLoaded", () => {
         quoteAuthorEl.textContent = `– ${randomQuote.author}`;
     }
 });
+// === Social Share Buttons ===
+document.addEventListener("DOMContentLoaded", () => {
+    const pageURL = encodeURIComponent(window.location.href);
+    const pageTitle = encodeURIComponent(document.title);
 
+    const twitterBtn = document.querySelector(".share-btn.twitter");
+    const linkedinBtn = document.querySelector(".share-btn.linkedin");
+    const whatsappBtn = document.querySelector(".share-btn.whatsapp");
 
-//Typewriter effect
-window.onload = function () {
-    const loadingScreen = document.getElementById("loading-screen");
-    const mainName = document.querySelector(".main-name");
-    const text = "The Cawnpore";
-
-    setTimeout(() => {
-        loadingScreen.classList.add("hidden");
-
-        if (!mainName) {
-            console.error("main-name span not found");
-            return;
-        }
-
-        mainName.textContent = "";
-        let charIndex = 0;
-
-        function type() {
-            if (charIndex < text.length) {
-                mainName.textContent += text.charAt(charIndex);
-                charIndex++;
-                setTimeout(type, 150);
-            }
-        }
-
-        type();
-    }, 6000);
-};
-
-//about cards.
-document.addEventListener('mousemove', (e) => {
-  document.querySelectorAll('.glass-card').forEach((card) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    card.style.setProperty('--cursor-x', `${x}px`);
-    card.style.setProperty('--cursor-y', `${y}px`);
-  });
+    if (twitterBtn) {
+        twitterBtn.href = `https://twitter.com/intent/tweet?url=${pageURL}&text=${pageTitle}`;
+    }
+    if (linkedinBtn) {
+        linkedinBtn.href = `https://www.linkedin.com/shareArticle?mini=true&url=${pageURL}&title=${pageTitle}`;
+    }
+    if (whatsappBtn) {
+        whatsappBtn.href = `https://api.whatsapp.com/send?text=${pageTitle}%20${pageURL}`;
+    }
 });
 
+// Update the year in the footer
+document.getElementById("year").textContent = new Date().getFullYear();
