@@ -5,26 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Cawnpore Magazine Journey</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap">
-   <!-- Back Button (Fixed Top-Left Corner) -->
-    <button
-      onclick="history.back()"
-      style="
-        position: fixed;
-        top: 70px;
-        left: 20px;
-        z-index: 1000;
-        background-color: #800000;
-        color: white;
-        border: none;
-        padding: 10px 16px;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: bold;
-        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-      "
-    >
-      ← Back
-    </button>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <style>
     * {
       margin: 0;
@@ -38,9 +21,80 @@
       color: #3e2c1c;
       overflow-x: hidden;
       min-height: 100vh;
-      padding: 20px;
       position: relative;
-      
+      padding-top: 100px; /* Add padding to account for fixed navbar */
+    }
+
+    /* Navbar Styles */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 5%;
+      background: linear-gradient( 135deg,
+      rgba(242, 237, 237, 0.3), /* soft highlight */
+      rgba(122, 0, 0, 0.8),     /* your base color */
+      rgba(17, 16, 16, 0.3)        /* subtle depth */
+    );
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-bottom: 1px solid rgba(179, 177, 177, 0.2);
+      position: fixed;
+      top: 0;
+      height: 9%;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .nav-links {
+      flex: 1;
+      text-align: right;
+      position: relative;
+      z-index: 10;
+    }
+
+    .nav-links ul li {
+      list-style: none;
+      display: inline-block;
+      padding: 8px 12px;
+      position: relative;
+    }
+
+    .nav-links ul li a{
+      color: #fdf0d5;
+      text-decoration: none;
+      font-family: serif;
+      font-size: 13px;
+      padding: 12px 16px;
+      display: block;
+    }
+
+    .nav-links ul li a:hover {
+      text-decoration: none;
+    }
+
+    .nav-links ul li::after {
+      content: '';
+      width: 0%;
+      height: 2px;
+      background: #fdf0d5;
+      display: block;
+      margin: auto;
+      transition: 0.5s;
+    }
+
+    .nav-links ul li:hover::after {
+      width: 100%;
+    }
+
+    nav .fa {
+      display: none;
+    }
+
+    .navbar-logo {
+      height: 40px;
+      margin-right: 16px;
+      vertical-align: middle;
     }
 
     /* Magazine-inspired decorative elements */
@@ -66,7 +120,7 @@
 
     .header {
       text-align: center;
-      padding: 40px 0;
+      padding: 40px 20px;
       position: relative;
       max-width: 800px;
       margin: 0 auto;
@@ -111,7 +165,7 @@
       position: relative;
       max-width: 1200px;
       margin: 60px auto 80px;
-      padding: 20px 0;
+      padding: 20px;
     }
 
     .timeline::after {
@@ -261,11 +315,11 @@
     /* Footer */
     .footer {
       text-align: center;
-      padding: 40px 0;
+      padding: 40px 20px;
       color: #5a4635;
       font-size: 0.9rem;
       background-color: rgba(120, 0, 0, 0.03);
-      margin-top: 60px;
+      margin: 60px 20px 0 20px;
       border-radius: 10px;
     }
 
@@ -308,6 +362,63 @@
       }
     }
 
+    @media (max-width: 700px) {
+      nav {
+        height: 7%;
+      }
+
+      .nav-links ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 40px 20px;
+      }
+
+      .nav-links ul li {
+        display: block;
+        opacity: 0;
+        transform: translateX(30px);
+        animation: slideIn 0.4s forwards;
+      }
+
+      @keyframes slideIn {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .nav-links {
+        position: fixed;
+        background: linear-gradient(135deg, #d24848 ,#7a0000, #cea8bc);
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -100%;
+        text-align: left;
+        z-index: 2;
+        box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
+        transition: right 0.4s ease-in-out;
+      }
+
+      .nav-links.nav-active {
+        right: 0;
+      }
+
+      nav .fa {
+        display: block;
+        color: #663346;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+        z-index: 10;
+        background: linear-gradient(135deg, #fdfbfb, #ebedee);
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      }
+    }
+
     @media screen and (max-width: 480px) {
       h1 {
         font-size: 2rem;
@@ -317,33 +428,114 @@
         font-size: 1.3rem;
       }
     }
+
     * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.circle {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 10000;
-  transition: background-color 0.2s ease;
-}
- @media (max-width: 600px) {
-  .circle {
-    display: none !important;
-  }
-}
-    
+    .circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 10000;
+      transition: background-color 0.2s ease;
+    }
 
+    @media (max-width: 600px) {
+      .circle {
+        display: none !important;
+      }
+    }
 
+    /* Back Button Styles */
+    .back-button-container {
+      position: fixed;
+      top: 90px;
+      left: 30px;
+      z-index: 1000;
+    }
 
+    .back-button {
+      background-color: #800000;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #5a0000;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(120, 0, 0, 0.4);
+    }
+
+    .back-button:active {
+      transform: translateY(0);
+    }
+
+    .back-button i {
+      font-size: 12px;
+    }
+
+    /* Responsive adjustments for back button */
+    @media screen and (max-width: 768px) {
+      .back-button-container {
+        top: 100px;
+        left: 20px;
+      }
+      
+      .back-button {
+        padding: 10px 16px;
+        font-size: 12px;
+      }
+    }
   </style>
 </head>
 <body>
+
+  
+  <!-- Navbar -->
+  <nav role="navigation" aria-label="Main Menu">
+    <!-- Logo on the left -->
+    <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+    
+    <div class="nav-links" id="navLinks">
+      <i class="fa fa-times" onclick="hideMenu()"></i>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="submission.html">SUBMIT</a></li>
+        <li><a href="issue.html">ISSUE</a></li>
+        <li><a href="masthead.html">MASTHEAD</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="open-source.html">OPEN SOURCE</a></li>
+        <li><a href="journey.html">OUR JOURNEY</a></li>
+      </ul>
+    </div>
+
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+  </nav>
+
+  <!-- Back Button -->
+  <div class="back-button-container">
+    <button class="back-button" onclick="goBack()">
+      ← Back
+    </button>
+  </div>
+
   <div class="circle"></div>
   <div class="circle"></div>
   <div class="circle"></div>
@@ -415,7 +607,7 @@
       <div class="content">
         <div class="year">2024</div>
         <h3><span class="icon">🖋️</span> First Issue & Literary Identity</h3>
-        <p>The debut issue established the magazine’s literary and cultural focus, spotlighting bold, honest, and heartfelt work.</p>
+        <p>The debut issue established the magazine's literary and cultural focus, spotlighting bold, honest, and heartfelt work.</p>
         <p>With no thematic constraints, the issue embraced diverse forms, genres, and perspectives, drawing contributors and readers into a welcoming, creative space.</p>
         <p>At this stage, the magazine operated independently, without formal collaborations or co-publishing efforts.</p>
       </div>
@@ -428,7 +620,7 @@
         <h3><span class="icon">🕊️</span> VOICE: International Youth Competition</h3>
         <p>In 2025, The Cawnpore Magazine co-hosted the VOICE competition with 7 international youth magazines.</p>
         <p>The competition celebrated self-expression, identity, and change, with cash prizes for selected winners.</p>
-        <p>It became a milestone event that connected young creatives across borders, reinforced the magazine’s global vision, and spotlighted its role in the international literary youth scene.</p>
+        <p>It became a milestone event that connected young creatives across borders, reinforced the magazine's global vision, and spotlighted its role in the international literary youth scene.</p>
 
       </div>
     </div>
@@ -436,13 +628,11 @@
     <!-- Event 4 -->
     <div class="container right">
       <div class="content">
-        
-        <h3><span class="icon"></span>Ongoing – A Digital-Only Global Platform</h3>
+        <div class="year">2025</div>
+        <h3><span class="icon">🌐</span> Ongoing – A Digital-Only Global Platform</h3>
         <p>The Cawnpore Magazine continues to be 100% digital with no print editions to date.</p>
         <p>All content is published in English, with a strong emphasis on accessibility and storytelling integrity.</p>
         <p>The platform remains committed to its founding vision: to be a vibrant, inclusive space for students, teens, and twenty-somethings to share their voices with the world.</p>
-       
-      
       </div>
     </div>
     
@@ -462,6 +652,17 @@
 
 
   <script>
+    // Mobile menu functions
+    function showMenu() {
+      document.getElementById("navLinks").style.right = "0";
+      document.body.style.overflow = "hidden";
+    }
+
+    function hideMenu() {
+      document.getElementById("navLinks").style.right = "-200px";
+      document.body.style.overflow = "auto";
+    }
+
     // Scroll animation for timeline items
     document.addEventListener('DOMContentLoaded', function() {
       const timelineItems = document.querySelectorAll('.container');
@@ -540,8 +741,12 @@ animateCircles();
     // Update the year in the footer
 document.getElementById("year").textContent = new Date().getFullYear();
 
+    // Back button functionality
+    function goBack() {
+      window.history.back();
+    }
+
 
   </script>
 </body>
 </html>
-
