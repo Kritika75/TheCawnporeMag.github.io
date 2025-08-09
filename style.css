@@ -83,7 +83,7 @@ nav {
     border-bottom: 1px solid rgba(179, 177, 177, 0.2);
     position: fixed;
     top: 0;
-    height: 9%;
+    height: 70px;
     width: 100%;
     z-index: 999;
 }
@@ -1094,3 +1094,25 @@ button:active{
     }
 
 }
+
+@media (min-width: 1000px) {
+  .nav-links {
+    position: static;
+    height: auto;
+    width: auto;
+    background: none;
+    transition: none;
+  }
+
+  .nav-links ul {
+    gap: 20px;
+    align-items: center;
+    right: -200px;
+  }
+
+  .fa-bars,
+  .fa-times {
+    display: none;
+  }
+}
+
