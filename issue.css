@@ -3,7 +3,6 @@
   padding: 0;
 }
 
-
 body {
   background-color: #fdf0d5;
 }
@@ -50,88 +49,85 @@ html {
   padding-top: 20px;
 }
 
-  html {
-    scroll-behavior: smooth;
-  }
-     
-    /* Circle styles */
-    .circle {
-      height: 24px;
-      width: 24px;
-      border-radius: 50%;
-      background-color: black;
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 99999999;
-      transition: transform 0.1s ease-out;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    
-    
-    .progress-container {
-        width: 100%;
-        height: 4px; 
-        background: #EAE0D5; 
-        position: fixed; 
-        top: 0;
-        left: 0;
-        z-index: 1000; 
-        }
+/* Circle styles */
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999;
+  transition: transform 0.1s ease-out;
+}
 
-    .progress-bar {
-        height: 100%;
-        width: 0%; 
-        background: #8B0000; 
-        }
-    .header {
-        min-height: 0vh;
-        width: 100%;
-        background-position: center;
-        background-size: cover;
-        position: relative;
-        padding-top: 20px;
-    }
+.progress-container {
+  width: 100%;
+  height: 4px;
+  background: #eae0d5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
 
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #8b0000;
+}
+.header {
+  min-height: 0vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding-top: 20px;
+}
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 5%;
-    margin-right: 6px;
-    background: linear-gradient(135deg,
-        rgb(99, 0, 0),
-        rgba(218, 67, 67, 0.665),
-        rgb(71, 22, 22),
-        rgba(17, 16, 16, 0.3)
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 5%;
+  margin-right: 6px;
+  background: linear-gradient(
+    135deg,
+    rgb(99, 0, 0),
+    rgba(218, 67, 67, 0.665),
+    rgb(71, 22, 22),
+    rgba(17, 16, 16, 0.3)
+  );
+  background-size: 400% 400%; /* make the gradient larger to animate */
+  animation: gradientMove 5s linear infinite;
 
-    );
-    background-size: 400% 400%; /* make the gradient larger to animate */
-    animation: gradientMove 5s linear infinite;
-
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-bottom: 1px solid rgba(179, 177, 177, 0.2);
-    position: fixed;
-    top: 0;
-    height: 9%;
-    width: 100%;
-    z-index: 999;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(179, 177, 177, 0.2);
+  position: fixed;
+  top: 0;
+  height: 9%;
+  width: 100%;
+  z-index: 999;
 }
 
 /* Animation Keyframes */
 @keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .navbar-logo {
   height: 40px;
@@ -291,14 +287,14 @@ nav .fa {
   font-size: 15px;
 }
 
-/*        .issue01 {
+/*        .issue01 {
 
-            width: 80%;
-            margin: auto;
-            text-align: center;
-            padding-top: 20px;
-            
-       } */
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 20px;
+            
+       } */
 
 .issues {
   width: 90%;
@@ -501,14 +497,13 @@ nav .fa {
 
 /** FOOTER **/
 
-
 .site-footer {
-background: linear-gradient(135deg, #7a0000, #390303,#c12a2a);
+  background: linear-gradient(135deg, #7a0000, #390303, #c12a2a);
   color: #f9f9e6;
-  background-size: 600% 600%;  
-  font-family: 'Georgia', serif;
+  background-size: 600% 600%;
+  font-family: "Georgia", serif;
   padding: 50px 20px 15px;
-  background-size: 400% 400%;  /* Enables movement */
+  background-size: 400% 400%; /* Enables movement */
   animation: gradientShift 6s linear infinite;
 }
 @keyframes gradientShift {
@@ -608,9 +603,7 @@ background: linear-gradient(135deg, #7a0000, #390303,#c12a2a);
   list-style-type: none;
 }
 
-
 /* Social Icons with bounce */
-
 
 .social-icons {
   margin-top: 10px;
@@ -634,24 +627,21 @@ background: linear-gradient(135deg, #7a0000, #390303,#c12a2a);
   font-size: 18px;
   color: #fff8e7;
   margin-bottom: 10px;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
 }
-
 
 .subscription-box-about form {
   width: 100%;
-  
 }
 
 .subscription-box-about input {
-  
   padding: 15px;
   width: 60%;
   border: 2px solid orangered;
   border-radius: 50px;
   margin-bottom: 10px;
 }
-  
+
 .subscription-box-about button {
   background: #ee834e;
   color: #7a0000;
@@ -668,8 +658,7 @@ background: linear-gradient(135deg, #7a0000, #390303,#c12a2a);
 }
 .subscription-box-about button:hover {
   background: #da715ee1;
-    box-shadow: 0 6px 18px rgba(218, 113, 94, 0.5); /* deeper colored glow on hover */
-
+  box-shadow: 0 6px 18px rgba(218, 113, 94, 0.5); /* deeper colored glow on hover */
 }
 button:active {
   scale: 0.95;
@@ -767,4 +756,66 @@ input:checked + .slider {
 /* Move the handle to the right when checked */
 input:checked + .slider:before {
   transform: translateX(24px);
+}
+/* New CSS for the search section */
+/* New CSS for the search section */
+.search-section {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.search-container {
+  display: inline-block;
+  position: relative;
+  width: 400px; /* Adjust as needed */
+  max-width: 90%;
+}
+
+#issueSearch {
+  width: 100%;
+  padding: 15px 50px 15px 20px;
+  border: 2px solid #780000;
+  border-radius: 50px;
+  font-size: 16px;
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+#issueSearch:focus {
+  outline: none;
+  border-color: #c12a2a;
+  box-shadow: 0 0 12px rgba(193, 42, 42, 0.5);
+}
+
+/* * This is the updated part.
+ * We're using flexbox to align the icon perfectly.
+ * The `right` property is adjusted to give it some space.
+ */
+#search-button {
+  position: absolute;
+  right: 15px; /* Increased from 5px for better spacing */
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0; /* Remove padding to avoid shifting the icon */
+  color: #780000;
+  font-size: 20px;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Make the button take full height of parent for easier centering */
+}
+
+#search-button:hover {
+  color: #c12a2a;
+}
+
+/* Hide elements when no search results are found */
+.issue-box.hidden {
+  display: none;
 }
