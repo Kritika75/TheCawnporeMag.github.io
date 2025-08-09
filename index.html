@@ -128,7 +128,7 @@
      <div id="loading-screen"> 
          <div class="loader">
             <i class="fa-solid fa-spinner"></i>
-            <span class="loader-tagline">Kanpur-born, read everywhere</span>
+            <span class="loader-tagline">Loading</span>
         </div>
     </div>
     <div class="progress-container">
@@ -367,14 +367,16 @@
     <script>
      
   
-        document.addEventListener("DOMContentLoaded", function () {
-            const loadingScreen = document.getElementById("loading-screen");
-        
-            // Set a timeout to hide the loading screen
-            setTimeout(() => {
-                loadingScreen.classList.add("hidden");
-            }, 6000); // 6000ms = 6 seconds (adjust as needed)
-        });
+        window.addEventListener("load", function () {
+    const loader = document.getElementById("loading-screen");
+    if (loader) {
+        loader.style.opacity = 0;
+        loader.style.transition = "opacity 0.5s ease-out";
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 500);
+    }
+});
         
         const musicToggle = document.getElementById("music-toggle");
         const bgMusic = document.getElementById("bg-music");

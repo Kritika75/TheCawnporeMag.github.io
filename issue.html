@@ -1,6 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ISSUES</title>
 
+  <link rel="stylesheet" href="issue.css" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet" />
+
+  
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      font-family: 'Crimson Text', serif;
+    }
+
+    .circle {
+      position: fixed;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      transition: transform 0.2s ease-out;
+      z-index: 9999;
+      display: block;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      background-color: #800000;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      margin-top: 60px;
+      padding-left: 20px;
+    }
+
+    .toggle-item {
+      margin-top: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 20px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #800000;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+  </style>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,11 +155,91 @@
         box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
       "
     >
-      ← Back
     </button>
 </head>
 <body>
-                           <!-- Circles -->
+
+  <button class="back-button" onclick="history.back()">← Back</button>
+
+  <div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div>
+  <div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div>
+  <div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div>
+  <div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div>
+  <div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div>
+  <div class="circle"></div><div class="circle"></div><div class="circle"></div><div class="circle"></div>
+
+  <nav>
+    <div class="toggle-item">
+      <span>Pointer Effect</span>
+      <label class="switch">
+        <input type="checkbox" id="cursorToggle" checked />
+        <span class="slider"></span>
+      </label>
+    </div>
+  </nav>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+      const cursorToggle = document.getElementById("cursorToggle");
+      let isEffectEnabled = cursorToggle.checked;
+
+      const colors = [
+        "#ffb56b", "#fdaf69", "#f89d63", "#f59761", "#ef865e", "#ec805d",
+        "#e36e5c", "#df685c", "#d5585c", "#d1525c", "#c5415d", "#c03b5d",
+        "#b22c5e", "#ac265e", "#9c155f", "#950f5f", "#830060", "#7c0060",
+        "#680060", "#60005f", "#48005f", "#3d005e", "#2a004c", "#1f003a"
+      ];
+
+      circles.forEach((circle, i) => {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[i % colors.length];
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+      });
+
+      function animateCircles() {
+        if (isEffectEnabled) {
+          let x = coords.x;
+          let y = coords.y;
+
+          circles.forEach((circle, index) => {
+            circle.style.left = (x - 12) + "px";
+            circle.style.top = (y - 12) + "px";
+            circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+            circle.x = x;
+            circle.y = y;
+
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.15;
+            y += (nextCircle.y - y) * 0.15;
+          });
+        } else {
+          circles.forEach(circle => circle.style.display = "none");
+        }
+
+        requestAnimationFrame(animateCircles);
+      }
+
+      animateCircles();
+
+      cursorToggle.addEventListener("change", () => {
+        isEffectEnabled = cursorToggle.checked;
+        if (isEffectEnabled) {
+          circles.forEach(circle => circle.style.display = "block");
+        } else {
+          circles.forEach(circle => circle.style.display = "none");
+        }
+      });
+    });
+  </script>
+
+</body>
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div>
@@ -142,7 +334,6 @@
 
   // Start the animation
   animateCircles();
-
 </script>
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
@@ -235,7 +426,11 @@
       </div>
     </section>
 
+<<<<<<< HEAD
+
+=======
     <!-- Footer -->
+>>>>>>> upstream/main
     <footer class="site-footer">
       <a class="back-to-top" href="#">
         <i class="fa-solid fa-chevron-up"></i>
