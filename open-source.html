@@ -7,6 +7,7 @@
   <title>Open Source | The Cawnpore</title>
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="open-source.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet" />
@@ -138,6 +139,56 @@
       Know More about GSSoC
     </a>
   </section>
+
+
+  <div class="container">
+    <div class="form">
+      <div class="contact-info">
+        <h3 class="title">Let's get in touch</h3>
+        <p class="text">Connet with us in our wonderful journey. Feel free to share you thoughts , we will appreciate it &#127882; </p>
+        <div class="info">
+          <div class="information">
+            <p><i class="fa-solid fa-location-dot"></i><br>Kanpur </p>
+            <p><i class="fa-solid fa-envelope"></i><br>thecawnporemagofficial@gmail.com</p>
+          </div>
+
+          <div class="social-media">
+            <p>Connect with us</p>
+            <div class="social-icon">
+              <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+               <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://x.com/TheCawnporeMag?s=09" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form
+         action="https://formspree.io/f/mzzvyzzo"
+         method="POST">
+          <h3 class="title">Contact Us</h3>
+          <div class="input-container">
+            <input type="text" name="name" class="input" required/>
+            <label for="">Username</label>
+            <span>Username</span>
+          </div>
+          <div class="input-container">
+            <input type="email" name="email" class="input" required/>
+            <label for="">Email</label>
+            <span>Email</span>
+          </div>
+          <div class="input-container textarea">
+            <textarea name="message" class="input"></textarea>
+            <label for="">Message</label>
+            <span>Message</span>
+          </div>
+          <input type="submit" value="Send" class="btn"/>
+        </form>
+      </div>
+    </div>
+  </div>
 
 
   <!-- Logos -->
@@ -303,6 +354,26 @@
     }
     // Update the year in the footer
 document.getElementById("year").textContent = new Date().getFullYear();
+const inputs = document.querySelectorAll(".input");
+
+function focusFunc() {
+  let parent = this.parentNode;
+  parent.classList.add("focus");
+}
+
+function blurFunc() {
+  let parent = this.parentNode;
+  if(this.value == "") {
+     parent.classList.remove("focus");
+  }
+}
+
+
+inputs.forEach(input => {
+  input.addEventListener("focus", focusFunc);
+  input.addEventListener("blur", blurFunc);
+});
+
   </script>
 </body>
 
