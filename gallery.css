@@ -223,6 +223,7 @@ button:hover::before {
     left: 100%;
 }
 
+ /* Style conflict: Back button's !important rules are affecting Subscribe button */
 button:hover {
     background-color: #600000 !important;
     transform: translateY(-3px) !important;
