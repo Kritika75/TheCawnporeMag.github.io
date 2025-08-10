@@ -81,7 +81,7 @@ nav {
     border-bottom: 1px solid rgba(179, 177, 177, 0.2);
     position: fixed;
     top: 0;
-    height: 70px;
+    height: 9%;
     width: 100%;
     z-index: 999;
 }
@@ -848,127 +848,100 @@ button:active {
   margin-right: 16px;
   vertical-align: middle;
 }
-/* food Section */
+
+/* Section Styling */
 .food-section {
-      background: #fffaf0;
-      border-radius: 20px;
-      padding: 40px 30px;
-      margin: 40px auto;
-      max-width: 1200px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    }
+  background: #fffaf0;
+  border-radius: 20px;
+  padding: 40px 30px;
+  margin: 40px auto;
+  max-width: 1200px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  font-family:"Crimson Text", serif;
+  
+}
 
-    .section-title {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 30px;
-      color: #8B0000;
-    }
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #8B0000;
+}
 
-    .food-cards-container {
-      display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      gap: 20px;
-      scrollbar-width: auto;
-      padding-bottom: 10px;
-    }
+/* Scroll Container */
+.food-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: auto;
+  padding-bottom: 10px;
+}
 
-    .food-card {
-      background-color: #800000;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      padding: 20px;
-      width: 300px;
-      flex: 0 0 auto;
-      color: #FDF0D5;
-    }
-
-    .food-card img {
-      width: 100%;
-      border-radius: 8px;
-      height: 200px;
-      object-fit: cover;
-      margin-bottom: 15px;
-    }
-
-    .food-name {
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .description {
-      font-size: 14px;
-    }
-
-    /* Scrollbar Styling */
-    .food-cards-container::-webkit-scrollbar {
-      height: 10px;
-    }
-
-    .food-cards-container::-webkit-scrollbar-track {
-      background: #ffe4cc;
-      border-radius: 10px;
-    }
-
-    .food-cards-container::-webkit-scrollbar-thumb {
-      background: #cd5c5c;
-      border-radius: 10px;
-    }
-
-    .food-cards-container::-webkit-scrollbar-thumb:hover {
-      background: #a94442;
-    }
-    @media screen and (max-width: 768px) {
-  #CardsHeading {
-    font-size: 1.5rem;
+.food-card {
+  background-color: #800000;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  flex: 0 0 calc(33.333% - 20px); /* 3 visible on desktop */
+  color: #FDF0D5;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+.food-card h2{
+ padding: 5px 20px;
+     font-size: 1.5rem;
+    color:whitesmoke;
     text-align: center;
-    margin-bottom: 20px;
-    padding: 0 10px;
-  }
+    font-family:'Times New Roman', Times, serif;
+    font-style:italic;
+    font-weight: bold;
+}
+.food-card p{
+ padding: 0px;
+    color:whitesmoke;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-style:italic;
+}
 
-  .landmarks {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 10px;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: #b08968 #fef6e4; /* Change this based on your theme */
-  }
+.food-card img {
+  width: 100%;
+  border-radius: 8px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
 
-  .landmarkCard {
-    flex: 0 0 100%;
-    max-width: 100%;
-    background-color: #fef6e4; /* Card background if needed */
-    box-sizing: border-box;
-    border-radius: 20px;
-    padding: 15px;
-    margin-bottom: 10px;
-    scroll-snap-align: start;
-  }
+/* Hover Animation */
+.food-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
 
-  .landmarkCard img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-  }
+/* Scrollbar Styling */
+.food-scroll::-webkit-scrollbar {
+  height: 10px;
+}
 
-  .landmarkInfo {
-    padding-top: 10px;
-  }
+.food-scroll::-webkit-scrollbar-track {
+  background: #ffe4cc;
+  border-radius: 10px;
+}
 
-  .Tag-line {
-    font-size: 0.95rem;
-    color: #6f4e37; /* Based on your theme */
-  }
+.food-scroll::-webkit-scrollbar-thumb {
+  background: #cd5c5c;
+  border-radius: 10px;
+}
 
-   
-  .landmarkCard h2 {
-    font-size: 1.2rem;
-    margin-top: 5px;
-    color: #3b2f2f;
-  }
-} 
+.food-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a94442;
+}
 
+/* Mobile View */
+@media screen and (max-width: 768px) {
+  .food-card {
+    flex: 0 0 100%; /* 1 card visible */
+  }
+}
