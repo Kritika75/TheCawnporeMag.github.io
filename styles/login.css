@@ -106,3 +106,38 @@ body {
   text-decoration: underline;
   color: #f0f0f0;
 }
+
+/* --- Media Query for Mobile Devices --- */
+@media (max-width: 600px) {
+  /* Body styles for smaller screens */
+  body {
+    padding: 20px; /* Adds space around the form on small screens */
+  }
+
+  /* Adjustments for the container on mobile */
+  .container {
+    padding: 25px; /* Reduces padding for a more compact layout */
+    border-radius: 8px; /* Slightly smaller border-radius */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Lighter shadow */
+    width: 100%; /* Ensures the form takes up the full width */
+  }
+
+  /* Heading adjustments */
+  .container h2 {
+    font-size: 1.7rem; /* Reduces heading font size */
+    margin-bottom: 20px;
+  }
+
+  /* Input field and button adjustments */
+  .container input[type="text"],
+  .container input[type="email"],
+  .container input[type="password"] {
+    padding: 10px; /* Reduces padding inside input fields */
+    font-size: 0.9rem; /* Smaller font size for inputs */
+  }
+
+  .container button {
+    padding: 12px; /* Reduces button padding */
+    font-size: 1rem; /* Smaller font size for button text */
+  }
+}
