@@ -52,7 +52,7 @@ line-height: 1.6;
 .header1 {
 min-height: 26vh;
 width: 100%;
-background-color: #fdf0d5;
+background-color:#780000;
 background-position: center;
 background-size: cover;
 position: relative;
@@ -81,7 +81,7 @@ nav {
     border-bottom: 1px solid rgba(179, 177, 177, 0.2);
     position: fixed;
     top: 0;
-    height: 9%;
+    height: 70px;
     width: 100%;
     z-index: 999;
 }
@@ -101,7 +101,7 @@ nav {
 
 
 .text-box1 {
-color: #780000;
+color: #fdf0d5;
 font-family:"Crimson Text", serif;
 width: 90%;
 position: absolute;
@@ -270,17 +270,17 @@ width: 80%;
 margin: auto;
 text-align: center;
 padding-top: 20px;
-background: linear-gradient(to bottom right, #fffdf7, #fff3e4);
-  border: 2px solid #ecd1b3;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+background:  #fdf0d5;
+  
   transition: all 0.4s ease;
 }
 .Introductory:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
-
+#about1{
+  font-weight: bold;
+}
 #intro1 {
 color: #111717;
 font-size: 19px;
@@ -849,4 +849,8 @@ button:active {
   vertical-align: middle;
 }
 
+#word{
+  margin-top:5%;
+  font-size: 67px;
+}
 
