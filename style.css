@@ -1140,3 +1140,73 @@ html[data-theme="dark"] body {
   background-color: #721e1e; /* Deep neutral for dark theme */
   color: var(--text);
 }
+
+/* Responsive Adjustments */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+  .header {
+    padding: 0.8rem 1rem;
+    text-align: center;
+  }
+  .nav-links ul {
+    gap: 0.5rem;
+  }
+  .nav-links ul li a {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+
+  .nav-links ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .nav-links ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links ul li a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .theme-toggle {
+    margin-top: 0.8rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.2rem;
+  }
+
+  .nav-links ul li a {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .theme-toggle {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}
