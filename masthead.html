@@ -258,7 +258,9 @@
 
 <h3>Mona </h3>
     <p class="role">Editor/Prose Reviewer</p>
-    <p class="intro">Simone, or Mona, is a fifteen-year-old from NJ, USA. She's been writing prose & poetry for personal enjoyment for the last four years. Outside of writing, she loves books, fashion, singing, desserts, and action movies. She can't wait to see how Cawnpore Magazine grows!</p>
+    <p class="intro">Simone, or Mona, is a fifteen-year-old from NJ, USA. She's been writing prose & poetry for personal enjoyment for the last four years. Outside of writing, she loves books, fashion, singing, desserts, and action movies. She can't wait to see how Cawnpore Magazine grows!
+
+When she’s not lost in a new novel or jotting down story ideas in her journal, you’ll find her experimenting with creative photography, or discovering quaint coffee shops in her neighborhood. She hopes to one day publish her own collection of short stories and travel the world to gather tales from different cultures.!</p>
 
     <p class="team-card-social-link-wrapper">You can connect with her on Instagram <a href="https://instagram.com/twinstarbow" target="_blank" class="insta-link">@twinstarbow</a></p>
 
@@ -270,7 +272,7 @@
 <div class="team-card">
     <h3>Swapna Selvam </h3>
     <p class="role">Editor</p>
-    <p class="intro">Swapna is currently in year 11. She has won awards for drama performances, and spelling bees and has made speeches for her school. </p>
+    <p class="intro">Swapna is currently in Year 11. She has won awards for drama performances and spelling bees, and has delivered speeches representing her school. A passionate communicator, she enjoys the art of storytelling both on stage and on paper. Outside of her academic achievements, Swapna is an avid reader with a particular love for historical fiction and mystery novels. She also spends her free time mentoring younger students in public speaking, participating in debate clubs, and volunteering at local community events. </p>
 
     <p class="team-card-social-link-wrapper">You can connect with her on Instagram <a href="https://instagram.com/swolenas" target="_blank" class="insta-link">@swolenas</a></p>
 
@@ -786,6 +788,28 @@
         <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
       </div>
     </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchBar"); // Change ID if needed
+    const teamCards = document.querySelectorAll(".team-card");
+
+    searchInput.addEventListener("input", function () {
+        const query = searchInput.value.trim().toLowerCase();
+
+        teamCards.forEach(card => {
+            const name = card.querySelector("h3").textContent.toLowerCase();
+
+            // Show if name starts with the query
+            if (query === "" || name.startsWith(query)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+});
+</script>
+
 
     <script src="index.js" ></script>
 
