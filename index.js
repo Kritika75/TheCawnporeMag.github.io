@@ -103,6 +103,27 @@ window.addEventListener("scroll", () => {
         backToTop.classList.remove("active");
     }
 })
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Word typing animation
+  const word = "About";
+  const container = document.getElementById("word");
+  let index = 0;
+
+  function typeLetter() {
+    if (index < word.length) {
+      container.textContent += word[index];
+      index++;
+      setTimeout(typeLetter, 300);
+    }
+  }
+
+  typeLetter();
+});
+
+
+
 // === Quote of the Day Widget ===
 document.addEventListener("DOMContentLoaded", () => {
     const quotes = [
