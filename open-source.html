@@ -7,6 +7,7 @@
   <title>Open Source | The Cawnpore</title>
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="open-source.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet" />
@@ -14,6 +15,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- Back Button (Fixed Top-Left Corner) -->
+    <button
+      onclick="history.back()"
+      style="
+        position: fixed;
+        top: 70px;
+        left: 20px;
+        z-index: 1000;
+        background-color: #800000;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      "
+    >
+      ← Back
+    </button>
 </head>
 
 <body>
@@ -71,9 +92,13 @@
   <!-- Navbar -->
   <section class="header">
     <nav role="navigation" aria-label="Main Menu">
+<<<<<<< HEAD
       <!-- Logo on the left -->
         <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
         
+=======
+      <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+>>>>>>> 82d6ef1265ff125bf1991ad7495d04518ab4257a
       <div class="nav-links" id="navLinks">
         <i class="fa fa-times" onclick="hideMenu()"></i>
         <ul>
@@ -84,6 +109,8 @@
           <li><a href="masthead.html">MASTHEAD</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="open-source.html">OPEN SOURCE</a></li>
+          <li><a href="journey.html">OUR JOURNEY</a></li>
+          <li><a href="gallery.html">GALLERY</a></li>
 
           <li class="toggle-item">
             <span>Pointer Effect</span>
@@ -120,13 +147,69 @@
   </section>
 
 
+  <div class="container">
+    <div class="form">
+      <div class="contact-info">
+        <h3 class="title">Let's get in touch</h3>
+        <p class="text">Connet with us in our wonderful journey. Feel free to share you thoughts , we will appreciate it &#127882; </p>
+        <div class="info">
+          <div class="information">
+            <p><i class="fa-solid fa-location-dot"></i><br>Kanpur </p>
+            <p><i class="fa-solid fa-envelope"></i><br>thecawnporemagofficial@gmail.com</p>
+          </div>
+
+          <div class="social-media">
+            <p>Connect with us</p>
+            <div class="social-icon">
+              <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+               <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://x.com/TheCawnporeMag?s=09" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form
+         action="https://formspree.io/f/mzzvyzzo"
+         method="POST">
+          <h3 class="title">Contact Us</h3>
+          <div class="input-container">
+            <input type="text" name="name" class="input" required/>
+            <label for="">Username</label>
+            <span>Username</span>
+          </div>
+          <div class="input-container">
+            <input type="email" name="email" class="input" required/>
+            <label for="">Email</label>
+            <span>Email</span>
+          </div>
+          <div class="input-container textarea">
+            <textarea name="message" class="input"></textarea>
+            <label for="">Message</label>
+            <span>Message</span>
+          </div>
+          <input type="submit" value="Send" class="btn"/>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
   <!-- Logos -->
   <section class="listings" style="text-align: center; margin-bottom: 40px;">
-    <h3>Open Source Proudly Powered By:</h3>
-    <div class="listing-images" style="margin-top: 20px;">
-      <img src="assets/gssoc-logo.png" alt="GSSoC 2025 Logo" style="max-width: 220px;" />
-    </div>
-  </section>
+  <h3>Open Source Proudly Powered By:</h3>
+  <div class="listing-images" style="margin-top: 10px;">
+    <a href="https://gssoc.girlscript.tech" target="_blank">
+      <img
+        src="gssoc_logo.jpeg"
+        alt="GSSoC 2025 Logo"
+        class="gssoc-logo"
+        style="max-width: 90px; transition: transform 0.3s ease;" />
+    </a>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -148,6 +231,7 @@
           <li><a href="masthead.html">Masthead</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="open-source.html">Open Source</a></li>
+          <li><a href="gallery.html">GALLERY</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -276,6 +360,26 @@
     }
     // Update the year in the footer
 document.getElementById("year").textContent = new Date().getFullYear();
+const inputs = document.querySelectorAll(".input");
+
+function focusFunc() {
+  let parent = this.parentNode;
+  parent.classList.add("focus");
+}
+
+function blurFunc() {
+  let parent = this.parentNode;
+  if(this.value == "") {
+     parent.classList.remove("focus");
+  }
+}
+
+
+inputs.forEach(input => {
+  input.addEventListener("focus", focusFunc);
+  input.addEventListener("blur", blurFunc);
+});
+
   </script>
 </body>
 

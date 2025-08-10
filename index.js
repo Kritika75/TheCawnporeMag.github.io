@@ -69,6 +69,17 @@ document.getElementById('searchBtn').addEventListener('click', function() {
                 emailInput.value = "";
             });
         }
+
+    // Loader logic
+    var loaderScreen = document.getElementById('loading-screen');
+    if (loaderScreen) {
+        setTimeout(function() {
+            loaderScreen.classList.add('fading');
+        }, 1700); // Start fade/scale at 1.7s
+        setTimeout(function() {
+            loaderScreen.classList.add('hidden');
+        }, 2000); // Hide after 2s
+    }
 });
 
 const container = document.getElementById('container');
@@ -92,6 +103,27 @@ window.addEventListener("scroll", () => {
         backToTop.classList.remove("active");
     }
 })
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Word typing animation
+  const word = "About";
+  const container = document.getElementById("word");
+  let index = 0;
+
+  function typeLetter() {
+    if (index < word.length) {
+      container.textContent += word[index];
+      index++;
+      setTimeout(typeLetter, 300);
+    }
+  }
+
+  typeLetter();
+});
+
+
+
 // === Quote of the Day Widget ===
 document.addEventListener("DOMContentLoaded", () => {
     const quotes = [
