@@ -13,6 +13,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
+     <!-- Back Button (Fixed Top-Left Corner) -->
+    <button
+      onclick="history.back()"
+      style="
+        position: fixed;
+        top: 70px;
+        left: 20px;
+        z-index: 1000;
+        background-color: #800000;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+      "
+    >
+      ← Back
+    </button>
 </head>
 <body>
                          <!-- Circles -->
@@ -171,12 +192,12 @@
   </div>
 
     <h2 id="CardsHeading">Cawnpore's Prominent Landmarks</h2>
-    <section class="landmarks">
+    <ul class="landmarks template-slider">
       
         
         <!-- landmark cards -->
         <!-- lal imli -->
-        <div class="landmarkCard">
+        <li class="landmarkCard">
             <img src="lal imli.jpg" alt="Lal Imli" />
             <div class="landmarkInfo">
               <p class="Tag-line" style="color: #FDF0D5;">
@@ -187,9 +208,9 @@
                     <button class="landmarkButton">Learn More</button>
                 </a>
             </div>
-        </div>
+        </li>
         <!-- kanpur memorial church -->
-        <div class="landmarkCard">
+        <li class="landmarkCard">
             <img src="Kanpur_Memorial_Church.jpg" alt="Kanpur Memorial Church" />
             <div class="landmarkInfo">
               <p class="Tag-line" style="color: #FDF0D5;">
@@ -201,9 +222,9 @@
                     <button class="landmarkButton">Learn More</button>
                 </a>
             </div>
-        </div>
+        </li>
         <!-- Kanpur Central Station -->
-        <div class="landmarkCard">
+        <li class="landmarkCard">
             <img src="Kanpur_Central_Station.jpg" alt="Kanpur Central" />
             <div class="landmarkInfo">
               <p class="Tag-line" style="color: #FDF0D5;">
@@ -215,10 +236,10 @@
                     <button class="landmarkButton">Learn More</button>
                 </a>
             </div>
-        </div>
+        </li>
 
         <!-- JK Temple -->
-        <div class="landmarkCard">
+        <li class="landmarkCard">
             <img src="1920px-JK_Temple(Juggilal_Kamlapati_temple)_is_a_temple_in_the_Indian_city_of_Kanpur.It_is_considered_to_be_a_unique_blend_of_ancient_and_modern_architecture.jpg" alt="J.K. Temple" />
             <div class="landmarkInfo">
              <p class="Tag-line" style="color: #FDF0D5;">
@@ -230,11 +251,11 @@
                     <button class="landmarkButton">Learn More</button>
                 </a>
             </div>
-        </div>
+        </li>
 
         <!-- Kanpur Zoological Park -->
 
-         <div class="landmarkCard">
+         <li class="landmarkCard">
             <img src="Kanpur.jpg" alt="Kanpur Zoological Park" />
             <div class="landmarkInfo">
               <p class="Tag-line" style="color: #FDF0D5;">
@@ -246,9 +267,86 @@
                     <button class="landmarkButton">Learn More</button>
                 </a>
             </div>
-        </div>
+          </li>
 
-    </section>
+      </ul>
+      <div style="width: 100%; margin-top: 1rem; margin-bottom: 3rem; text-align: center">
+          <button
+            id="slider-left"
+            aria-label="Previous Slide"
+            style="
+              font-size: 1.5rem;
+              padding: 14px;
+              background: #fff;
+              border-radius: 50%;
+              border: none;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+              cursor: pointer;
+              margin-right: 20px;
+               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+               font-weight: bolder;
+            "
+          >
+            &#8592;
+          </button>
+          <button
+            id="slider-right"
+            aria-label="Next Slide"
+            style="
+              z-index: 10;
+              font-size: 1.5rem;
+              padding: 14px;
+              background: #fff;
+              border-radius: 50%;
+              border: none;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+              cursor: pointer;
+              font-weight: bolder;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            "
+          >
+            &#8594;
+          </button>
+        </div>
+    <script>
+        // template gallery slider
+  const template_slider = document.querySelector(".template-slider");
+  const template_slides = template_slider.querySelectorAll("li");
+  const slideCount = template_slides.length;
+  let activeSlide = 0;
+
+  // Ensure first slide is visible
+  template_slides[0].classList.add("active");
+
+  // Arrow buttons
+  const leftArrow = document.getElementById("slider-left");
+  const rightArrow = document.getElementById("slider-right");
+
+  function showSlide(index) {
+    template_slides[activeSlide].classList.remove("active");
+    activeSlide = (index + slideCount) % slideCount;
+    template_slides[activeSlide].classList.add("active");
+  }
+
+  // Auto slide
+  let sliderInterval = setInterval(() => {
+    showSlide(activeSlide + 1);
+  }, 5000);
+
+  // Arrow navigation
+  if (leftArrow && rightArrow) {
+    leftArrow.addEventListener("click", () => {
+      showSlide(activeSlide - 1);
+      clearInterval(sliderInterval);
+      sliderInterval = setInterval(() => showSlide(activeSlide + 1), 5000);
+    });
+    rightArrow.addEventListener("click", () => {
+      showSlide(activeSlide + 1);
+      clearInterval(sliderInterval);
+      sliderInterval = setInterval(() => showSlide(activeSlide + 1), 5000);
+    });
+  }
+    </script>
 
     <!-- Stylish Section Separator -->
   <div class="section-separator">
@@ -256,59 +354,33 @@
     <div class="separator-label">◉</div>
     <div class="separator-line"></div>
   </div>
-
-<!-- Food Section Starts from here -->
-    
-     <h2 id="CardsHeading">Cawnpore's Famous Food </h2>
-    <section class="landmarks">
-        
-        <!-- food cards -->
-        <!-- Imarti -->
-        <div class="landmarkCard">
-            <img src="Imarti.jpeg" alt="Lal Imli" />
-            <div class="landmarkInfo">
-              <p class="Tag-line" style="color: #FDF0D5;">
-  Famous golden dessert of Kanpur known for it's crispiness and sweetness.
-</p>
-                <h2>Imarti</h2>
-            </div>
+<section id="famous-food" class="food-section">
+    <h2 class="section-title">Cawnpore's Famous Food</h2>
+    <div class="food-scroll">
+        <div class="food-card">
+            <img src="Imarti.jpeg" alt="Food 1">
+            <p>Famous golden dessert of Kanpur known for it's crispiness and sweetness.</p>
+            <h2>Imarti</h2>
         </div>
-        <!-- Sultani Dal -->
-        <div class="landmarkCard">
-            <img src="Sultani Dal.jpeg" alt="Sultani Dal" />
-            <div class="landmarkInfo">
-              <p class="Tag-line" style="color: #FDF0D5;">
-  A royal Dal made with tur dal cooked with milk,cream and yogurt with some tadka on top.
-</p>
+        <div class="food-card">
+            <img src="Sultani Dal.jpeg" alt="Food 2">
+            <p>A royal Dal made with tur dal cooked with milk,cream and yogurt with some tadka on top.</p>
+              <h2>Sultani Dal</h2>
+          </div>
+        <div class="food-card">
+            <img src="Luchi Sabji.jpeg" alt="Food 3">
+            <p>It's a breakfast dish made by deep frying the bread and bolied potato.</p>
+            <h2>Luchi Sabji</h2>
 
-                <h2>Sultani Dal</h2>
-            </div>
         </div>
-        <!-- Luchi Sabji -->
-        <div class="landmarkCard">
-            <img src="Luchi Sabji.jpeg" alt="Luchi Sabji" />
-            <div class="landmarkInfo">
-              <p class="Tag-line" style="color: #FDF0D5;">
-  It's a breakfast dish made by deep frying the bread and bolied potato.
-</p>
-
-                <h2>Luchi Sabji</h2>
-            </div>
+        <div class="food-card">
+            <img src="Makhan Malai.jpeg" alt="Food 4">
+            <p>This food is quite famous in Kanpur during winter seasons.</p>
+            <h2>Makhan Malai</h2>
         </div>
-
-        <!-- Makhan Malai -->
-        <div class="landmarkCard">
-            <img src="Makhan Malai.jpeg" alt="Makhan-Malai" />
-            <div class="landmarkInfo">
-             <p class="Tag-line" style="color: #FDF0D5;">
-  This food is quite famous in Kanpur during winter seasons..
-</p>
-
-                <h2>Makhan Malai</h2>
-            </div>
-        </div>
-
-    </section>
+      
+    </div>
+</section>
 
     <!-- Footer -->
    <footer class="site-footer" id="footer" >
@@ -317,7 +389,7 @@
       </a>
       <div class="footer-top" >
         <div class="footer-about">
-          <h3 >The Cawnpore</h3>
+          <h3>The Cawnpore</h3>
           <p>An independent magazine celebrating literary voices and untold stories.</p>
         </div>
         <div class="footer-links"   id="footerLinks">
@@ -352,7 +424,7 @@
             </a>
           </div>
         </div>
-        <div class="subscription-box">
+        <div class="subscription-box-about">
           <h3>Subscribe to our Newsletter</h3>
           <form action="/subscribe" method="post">
             <input type="email" name="email" placeholder="Enter your email" required>
