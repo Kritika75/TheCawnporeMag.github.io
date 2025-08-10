@@ -619,44 +619,6 @@ button:active {
   transform: translateY(-3px) scale(1.15);
 }
 
-/* Footer Newsletter Section */
-
-.subscription-box h2 {
-  font-size: 18px;
-  color: #fff8e7;
-  margin-bottom: 10px;
-  font-family: 'Georgia', serif;
-}
-
-.subscription-box form {
-  width: 100%;
-}
-
-.subscription-box input {
-  padding: 15px;
-  width: 65%;
-  border: none;
-  border-radius: 15px;
-  margin-bottom: 10px;
-}
-  
-.subscription-box button {
-  background: #ffcc66;
-  color: #7a0000;
-  border: none;
-  padding: 14px 10px;
-  width: 100px;
-  border-radius: 15px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 16px;
-  text-align: center;
-  transition: all 0.3s;
-}
-.subscription-box button:hover {
-  background: #e6b85c;
-}
-
 button:active{
   scale: 0.95;
 }
