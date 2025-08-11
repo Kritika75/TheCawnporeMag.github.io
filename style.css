@@ -976,7 +976,11 @@ button:active{
 
 .navbar-logo {
   height: 40px;
+<<<<<<< HEAD
+  margin-right: 16px
+=======
   margin-right: 16px;
+>>>>>>> 82d6ef1265ff125bf1991ad7495d04518ab4257a
   vertical-align: middle;
 }
 

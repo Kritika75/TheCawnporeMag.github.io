@@ -185,17 +185,41 @@ nav {
 }
 
 .nav-links ul li a {
+<<<<<<< HEAD
+  position: relative;      /* Essential for ::after positioning */
+=======
+>>>>>>> main
   color: #fdf0d5;
   text-decoration: none;
   font-family: serif;
   font-size: 13px;
   padding: 12px 16px;
   display: block;
+<<<<<<< HEAD
+  overflow: hidden;       /* Prevent underline overflow */
+=======
+>>>>>>> main
 }
+
 .nav-links ul li a:hover {
   text-decoration: none; /* REMOVE underline */
 }
 
+<<<<<<< HEAD
+.nav-links ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: #fdf0d5;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+=======
 .nav-links ul li::after {
   content: "";
   width: 0%;
@@ -209,6 +233,7 @@ nav {
 .nav-links ul li:hover::after {
   width: 100%;
 }
+>>>>>>> main
 
 nav .fa {
   display: none;
@@ -368,6 +393,63 @@ nav .fa {
   border-radius: 10px;
 }
 
+<<<<<<< HEAD
+
+       .issuecover {
+        background: linear-gradient(135deg, #fce8e4, #ffe9d1, #e1f2ec, #e3d6f7);
+        border-radius: 20px;
+        background-size: 400% 400%;
+        width: 48%;           /* Shrink the cover width */
+        margin: 0 auto 30px auto; /* Center and add bottom margin */
+        position: relative;
+        overflow: hidden;
+        padding: 25px 0 45px 0; /* Top and bottom padding for spacing */
+        box-shadow: 0 0 20px #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: color 5s ease-in-out infinite; /* If you want bg animate */
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .issuecover:hover {
+          transform: scale(1.06); /* Zooms in slightly on hover */
+          z-index: 2;
+          box-shadow: 0 0 40px #00000088; /* Optional: Extra shadow on hover */
+}
+        @keyframes color {
+                       0% {
+                           background-position: 0 50%;
+                           }
+                         50% {
+                           background-position: 100% 50%;
+                         }
+                        100% {
+                           background-position: 0 50%;
+                         }
+                        }       
+            .issuecover img {
+            width: 85%;
+            display: block;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            }
+
+
+            .layer {
+            background: transparent;
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0px;
+            transition: 0.5s;
+            padding-top: 20px;
+            }
+            
+=======
 .layer {
   background: transparent;
   text-align: center;
@@ -379,6 +461,7 @@ nav .fa {
   transition: 0.5s;
   padding-top: 20px;
 }
+>>>>>>> main
 
 .issuecover h3 {
   text-align: center;
@@ -768,3 +851,14 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(24px);
 }
+<<<<<<< HEAD
+
+.navbar-logo {
+  height: 40px;
+  margin-right: 16px
+  vertical-align: middle;
+}
+
+
+=======
+>>>>>>> 82d6ef1265ff125bf1991ad7495d04518ab4257a

@@ -742,6 +742,15 @@ button:active {
   }
 }
 
+<<<<<<< HEAD
+.navbar-logo {
+  height: 40px;
+  margin-right: 16px
+  vertical-align: middle;
+}
+
+
+=======
 
 .navbar-logo {
   height: 40px;
@@ -749,3 +758,4 @@ button:active {
   vertical-align: middle;
 }
 
+>>>>>>> 82d6ef1265ff125bf1991ad7495d04518ab4257a

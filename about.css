@@ -845,6 +845,13 @@ button:active {
 
 .navbar-logo {
   height: 40px;
+<<<<<<< HEAD
+  margin-right: 16px
+  vertical-align: middle;
+}
+
+
+=======
   margin-right: 16px;
   vertical-align: middle;
 }
@@ -945,3 +952,4 @@ button:active {
     flex: 0 0 100%; /* 1 card visible */
   }
 }
+>>>>>>> 82d6ef1265ff125bf1991ad7495d04518ab4257a

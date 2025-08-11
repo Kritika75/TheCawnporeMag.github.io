@@ -371,6 +371,13 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(24px);
 }
+<<<<<<< HEAD
+
+.navbar-logo {
+  height: 40px;
+  margin-right: 16px
+  vertical-align: middle;
+=======
 /* Circle styles */
 .circle {
   height: 24px;
@@ -388,4 +395,5 @@ input:checked + .slider:before {
   .circle {
     display: none !important;
   }
+>>>>>>> 82d6ef1265ff125bf1991ad7495d04518ab4257a
 }
