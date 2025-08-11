@@ -2,6 +2,8 @@
 
 *A comprehensive guide to visual consistency, brand identity, and implementation standards*
 
+> **Implementation Note:** This document uses CSS classes for visual examples rather than inline styles to improve maintainability. When adapting this guide for other formats (like PDF export), you may need to include the CSS definitions or convert them back to inline styles.
+
 ---
 
 ## Table of Contents
@@ -73,6 +75,27 @@ The Cawnpore Magazine's visual identity embodies:
 
 ### Primary Palette
 
+<style>
+/* CSS classes for color swatches */
+.color-swatch {
+  width: 50px;
+  height: 30px;
+  border: 1px solid #ccc;
+}
+.burgundy {
+  background-color: #780000;
+}
+.cream {
+  background-color: #fdf0d5;
+}
+.deep-rose {
+  background-color: #c5415d;
+}
+.deep-purple {
+  background-color: #37163a;
+}
+</style>
+
 <table>
   <tr>
     <th>Color</th>
@@ -83,28 +106,28 @@ The Cawnpore Magazine's visual identity embodies:
   </tr>
   <tr>
     <td>Burgundy</td>
-    <td><div style="background-color: #780000; width: 50px; height: 30px; border: 1px solid #ccc;"></div></td>
+    <td><div class="color-swatch burgundy"></div></td>
     <td>#780000</td>
     <td>rgb(120, 0, 0)</td>
     <td>Headers, navigation, buttons, accents</td>
   </tr>
   <tr>
     <td>Cream</td>
-    <td><div style="background-color: #fdf0d5; width: 50px; height: 30px; border: 1px solid #ccc;"></div></td>
+    <td><div class="color-swatch cream"></div></td>
     <td>#fdf0d5</td>
     <td>rgb(253, 240, 213)</td>
     <td>Backgrounds, text on dark colors</td>
   </tr>
   <tr>
     <td>Deep Rose</td>
-    <td><div style="background-color: #c5415d; width: 50px; height: 30px; border: 1px solid #ccc;"></div></td>
+    <td><div class="color-swatch deep-rose"></div></td>
     <td>#c5415d</td>
     <td>rgb(197, 65, 93)</td>
     <td>Highlights, active states</td>
   </tr>
   <tr>
     <td>Deep Purple</td>
-    <td><div style="background-color: #37163a; width: 50px; height: 30px; border: 1px solid #ccc;"></div></td>
+    <td><div class="color-swatch deep-purple"></div></td>
     <td>#37163a</td>
     <td>rgb(55, 22, 58)</td>
     <td>Secondary accents, card backgrounds</td>
@@ -112,6 +135,27 @@ The Cawnpore Magazine's visual identity embodies:
 </table>
 
 ### Gradient Specifications
+
+<style>
+/* CSS classes for gradient demonstrations */
+.gradient-demo {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #ccc;
+}
+.gradient-primary {
+  background: linear-gradient(135deg, #d24848, #7a0000, #cea8bc);
+}
+.gradient-card {
+  background: linear-gradient(to bottom, #cdb2ad, #fdf0d5, #bcaf87);
+}
+.gradient-button {
+  background: linear-gradient(45deg, #37163a, pink);
+}
+.gradient-secondary-button {
+  background: linear-gradient(45deg, pink, #37163a);
+}
+</style>
 
 <table>
   <tr>
@@ -122,25 +166,25 @@ The Cawnpore Magazine's visual identity embodies:
   </tr>
   <tr>
     <td>Primary Gradient</td>
-    <td><div style="background: linear-gradient(135deg, #d24848, #7a0000, #cea8bc); width: 100px; height: 30px; border: 1px solid #ccc;"></div></td>
+    <td><div class="gradient-demo gradient-primary"></div></td>
     <td><code>linear-gradient(135deg, #d24848, #7a0000, #cea8bc)</code></td>
     <td>Navigation background, feature sections</td>
   </tr>
   <tr>
     <td>Card Gradient</td>
-    <td><div style="background: linear-gradient(to bottom, #cdb2ad, #fdf0d5, #bcaf87); width: 100px; height: 30px; border: 1px solid #ccc;"></div></td>
+    <td><div class="gradient-demo gradient-card"></div></td>
     <td><code>linear-gradient(to bottom, #cdb2ad, #fdf0d5, #bcaf87)</code></td>
     <td>Card backgrounds, content containers</td>
   </tr>
   <tr>
     <td>Button Gradient</td>
-    <td><div style="background: linear-gradient(45deg, #37163a, pink); width: 100px; height: 30px; border: 1px solid #ccc;"></div></td>
+    <td><div class="gradient-demo gradient-button"></div></td>
     <td><code>linear-gradient(45deg, #37163a, pink)</code></td>
     <td>Primary buttons</td>
   </tr>
   <tr>
     <td>Secondary Button</td>
-    <td><div style="background: linear-gradient(45deg, pink, #37163a); width: 100px; height: 30px; border: 1px solid #ccc;"></div></td>
+    <td><div class="gradient-demo gradient-secondary-button"></div></td>
     <td><code>linear-gradient(45deg, pink, #37163a)</code></td>
     <td>Secondary buttons</td>
   </tr>
@@ -150,10 +194,49 @@ The Cawnpore Magazine's visual identity embodies:
 
 - Ensure text has a minimum contrast ratio of 4.5:1 against backgrounds
 - Use the WebAIM contrast checker for verification: https://webaim.org/resources/contrastchecker/
+  > **Note:** Always verify the trustworthiness of external tools before use. WebAIM is a reputable organization, but you may also consider alternative contrast checkers such as [Color Contrast Accessibility Validator](https://color.a11y.com/) or [Accessible Colors](https://accessible-colors.com/).
 - Don't rely solely on color to convey information or state
 - Provide additional visual cues (icons, patterns, etc.) alongside color indicators
 
 ### Color Combinations & Pairings
+
+<style>
+/* CSS classes for color combinations */
+.text-sample {
+  padding: 5px;
+}
+.primary-content {
+  background-color: #fdf0d5;
+  color: #262626;
+}
+.inverted-content {
+  background-color: #780000;
+  color: #fdf0d5;
+}
+.highlighted-content {
+  background-color: #c5415d;
+  color: #ffffff;
+}
+.secondary-content {
+  background-color: #37163a;
+  color: #fdf0d5;
+}
+/* Dark mode colors */
+.dark-mode-sample {
+  width: 100px;
+  height: 20px;
+  border: 1px solid #ccc;
+}
+.dark-brown {
+  background-color: #1a0f05;
+}
+.lighter-burgundy {
+  background-color: #a63636;
+}
+.off-white {
+  background-color: #e0e0e0;
+}
+</style>
 
 The following color combinations are recommended for consistent usage across the site:
 
@@ -168,25 +251,25 @@ The following color combinations are recommended for consistent usage across the
     <td>Primary Content</td>
     <td>Dark Text (#262626)</td>
     <td>Cream (#fdf0d5)</td>
-    <td><div style="background-color: #fdf0d5; color: #262626; padding: 5px;">Text Sample</div></td>
+    <td><div class="text-sample primary-content">Text Sample</div></td>
   </tr>
   <tr>
     <td>Inverted Content</td>
     <td>Cream (#fdf0d5)</td>
     <td>Burgundy (#780000)</td>
-    <td><div style="background-color: #780000; color: #fdf0d5; padding: 5px;">Text Sample</div></td>
+    <td><div class="text-sample inverted-content">Text Sample</div></td>
   </tr>
   <tr>
     <td>Highlighted Content</td>
     <td>White (#ffffff)</td>
     <td>Deep Rose (#c5415d)</td>
-    <td><div style="background-color: #c5415d; color: #ffffff; padding: 5px;">Text Sample</div></td>
+    <td><div class="text-sample highlighted-content">Text Sample</div></td>
   </tr>
   <tr>
     <td>Secondary Content</td>
     <td>Cream (#fdf0d5)</td>
     <td>Deep Purple (#37163a)</td>
-    <td><div style="background-color: #37163a; color: #fdf0d5; padding: 5px;">Text Sample</div></td>
+    <td><div class="text-sample secondary-content">Text Sample</div></td>
   </tr>
 </table>
 
@@ -203,17 +286,17 @@ While the site currently doesn't implement dark mode, these color mappings shoul
   <tr>
     <td>Cream Background (#fdf0d5)</td>
     <td>Dark Brown (#1a0f05)</td>
-    <td><div style="background-color: #1a0f05; width: 100px; height: 20px; border: 1px solid #ccc;"></div></td>
+    <td><div class="dark-mode-sample dark-brown"></div></td>
   </tr>
   <tr>
     <td>Burgundy (#780000)</td>
     <td>Lighter Burgundy (#a63636)</td>
-    <td><div style="background-color: #a63636; width: 100px; height: 20px; border: 1px solid #ccc;"></div></td>
+    <td><div class="dark-mode-sample lighter-burgundy"></div></td>
   </tr>
   <tr>
     <td>Dark Text (#262626)</td>
     <td>Off-white Text (#e0e0e0)</td>
-    <td><div style="background-color: #e0e0e0; width: 100px; height: 20px; border: 1px solid #ccc;"></div></td>
+    <td><div class="dark-mode-sample off-white"></div></td>
   </tr>
 </table>
 
@@ -323,33 +406,37 @@ form {
 #### Primary Button
 
 ```css
-display: inline-block;
-text-decoration: none;
-color: white;
-border: none;
-border-radius: 95px 8px;
-padding: 12px 34px;
-font-size: 13px;
-font-weight: 600;
-background: linear-gradient(45deg, #37163a, pink);
-position: relative;
-cursor: pointer;
+.primary-button {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  border: none;
+  border-radius: 95px 8px;
+  padding: 12px 34px;
+  font-size: 13px;
+  font-weight: 600;
+  background: linear-gradient(45deg, #37163a, pink);
+  position: relative;
+  cursor: pointer;
+}
 ```
 
 #### Secondary Button
 
 ```css
-display: inline-block;
-text-decoration: none;
-color: #f9f9e6;
-border: none;
-border-radius: 8px 95px;
-padding: 12px 46px;
-font-size: 13px;
-font-weight: 600;
-background: linear-gradient(45deg, pink, #37163a);
-position: relative;
-cursor: pointer;
+.secondary-button {
+  display: inline-block;
+  text-decoration: none;
+  color: #f9f9e6;
+  border: none;
+  border-radius: 8px 95px;
+  padding: 12px 46px;
+  font-size: 13px;
+  font-weight: 600;
+  background: linear-gradient(45deg, pink, #37163a);
+  position: relative;
+  cursor: pointer;
+}
 ```
 
 #### Button States
@@ -365,45 +452,49 @@ cursor: pointer;
 ### Cards
 
 ```css
-display: block;
-position: relative;
-width: 300px;
-height: auto;
-min-height: 416px;
-background-color: rgba(234, 171, 214, 0.4);
-border-radius: 10px;
-padding: 2em 1.2em;
-margin: 12px;
-text-decoration: none;
-z-index: 0;
-overflow: hidden;
-background: linear-gradient(to bottom, #cdb2ad, #fdf0d5, #bcaf87);
-font-family: Arial, Helvetica, sans-serif;
-box-shadow: 10px 10px 20px #c6bcc5;
-max-width: 320px;
+.card {
+  display: block;
+  position: relative;
+  width: 300px;
+  height: auto;
+  min-height: 416px;
+  background-color: rgba(234, 171, 214, 0.4);
+  border-radius: 10px;
+  padding: 2em 1.2em;
+  margin: 12px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #cdb2ad, #fdf0d5, #bcaf87);
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 10px 10px 20px #c6bcc5;
+  max-width: 320px;
+}
 ```
 
 ### Navigation
 
 ```css
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0.75rem 5%;
-margin-right: 6px;
-background: linear-gradient(135deg,
-    rgba(242, 237, 237, 0.3),
-    rgba(122, 0, 0, 0.8),
-    rgba(17, 16, 16, 0.3)
-);
-backdrop-filter: blur(8px);
-border: 1px solid rgba(255, 255, 255, 0.3);
-border-bottom: 1px solid rgba(179, 177, 177, 0.2);
-position: fixed;
-top: 0;
-height: 9%;
-width: 100%;
-z-index: 999;
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 5%;
+  margin-right: 6px;
+  background: linear-gradient(135deg,
+      rgba(242, 237, 237, 0.3),
+      rgba(122, 0, 0, 0.8),
+      rgba(17, 16, 16, 0.3)
+  );
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(179, 177, 177, 0.2);
+  position: fixed;
+  top: 0;
+  height: 9%;
+  width: 100%;
+  z-index: 999;
+}
 ```
 
 ---
@@ -565,6 +656,7 @@ Accessibility should be tested using the following methods and tools:
 
 #### Automated Testing
 - Use the WAVE Web Accessibility Evaluation Tool: https://wave.webaim.org/
+  > **Note:** Always verify the trustworthiness of external tools before use. Alternative tools include [Axe by Deque](https://www.deque.com/axe/), [Siteimprove Accessibility Checker](https://siteimprove.com/), or [Tenon](https://tenon.io/).
 - Run Lighthouse accessibility audits in Chrome DevTools
 - Use the axe DevTools browser extension
 
