@@ -226,6 +226,8 @@ a {
   border-radius: 1.5rem;
   text-align: center;
   padding: 0.5rem;
+  overflow-x: auto; 
+  white-space: nowrap;
 }
 .mail a {
   color: #780000;
@@ -242,7 +244,6 @@ a {
   object-fit: cover;
 }
 
-/* Social icons */
 .social-icons {
   margin-top: 10px;
 }
