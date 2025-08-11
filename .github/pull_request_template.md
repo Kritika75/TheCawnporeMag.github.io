@@ -5,7 +5,7 @@
 ---
 
 ## Related Issue
-Fixes: #[Issue Number]
+Fixes: #Issue Number
 
 ---
 
