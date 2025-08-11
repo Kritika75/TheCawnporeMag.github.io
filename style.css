@@ -745,7 +745,7 @@ button:active{
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  flex-direction: column;
+  flex-direction: row;
   transition: opacity 0.4s, transform 0.4s;
 }
 #loading-screen.fading .loader {
@@ -835,72 +835,6 @@ button:active{
         content: "";
     }
 }
-
-/* Utility classes for buttons */
-.btn {
-  position: relative;
-  overflow: hidden;
-  padding: var(--btn-padding);
-  border: 1px solid var(--color-border);
-  border-radius: var(--btn-radius);
-  color: var(--color-cream);
-  font-size: var(--btn-font-size);
-  font-weight: var(--btn-font-weight);
-  letter-spacing: var(--btn-letter-spacing);
-  text-decoration: none;
-  text-transform: uppercase;
-  background-color: var(--color-maroon-bg);
-  box-shadow: var(--btn-shadow);
-  cursor: pointer;
-  transition: 
-    transform 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), 
-    box-shadow 0.2s cubic-bezier(0.25, 0.1, 0.25, 1),
-    background-color 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.frosted {
-  backdrop-filter: var(--btn-blur);
-}
-
-/* Specific styles for #skip-loading if needed */
-#skip-loading {
-  /* Only add unique styles here, if any */
-}
-
-/* * The ::before pseudo-element creates the animated warm glow.
-* It uses a conic gradient with shades of red and maroon to match the theme.
-*/
-#skip-loading::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 200%; 
-  height: 400%;
-  background: conic-gradient(
-      from 180deg at 50% 50%,
-      #8B0000 0deg,   /* DarkRed */
-      #A52A2A 120deg, /* Brown */
-      #DC143C 240deg, /* Crimson */
-      #8B0000 360deg
-  );
-  transform: translate(-50%, -50%);
-  z-index: -1; /* Place it behind the button content */
-  animation: rotate-aurora 5s linear infinite; /* The animation */
-  filter: blur(50px); /* Creates the soft glow */
-  opacity: 0.7; /* Tone down the glow intensity */
-}
-
-/* Hover state: The button lifts and the background becomes slightly more solid */
-#skip-loading:hover {
-  transform: translateY(-4px);
-  background-color: rgb(75, 12, 7);
-  box-shadow: 0 10px 15px rgba(46, 16, 16, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-color: rgba(243, 234, 211, 0.4);
-}
-
-
 
 /* Spin Animation */
 @keyframes spin {

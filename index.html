@@ -129,9 +129,6 @@
          <div class="loader">
             <i class="fa-solid fa-spinner"></i>
             <span class="loader-tagline">Kanpur-born, read everywhere</span>
-            <!-- Added button to skip Loading screen for faster experience -->
-            <button id="skip-loading">Skip</button>
-        </div>
         </div>
     </div>
     <div class="progress-container">
@@ -370,23 +367,17 @@
 
     <!-- Visibility change  -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          const loadingScreen = document.getElementById("loading-screen");
-          const skipButton = document.getElementById("skip-loading");
-          // Set a timeout to hide the loading screen
-          let loadingTimeout = setTimeout(() => {
-            loadingScreen.classList.add("hidden");
-          }, 6000); // default 6 seconds
-
-
-          if (skipButton) {
-            skipButton.addEventListener("click", () => {
-              clearTimeout(loadingTimeout); // Cancel auto-hide
-              loadingScreen.classList.add("hidden"); // Hide immediately
-            });
-          }
-      });
-    
+     
+  
+        document.addEventListener("DOMContentLoaded", function () {
+            const loadingScreen = document.getElementById("loading-screen");
+        
+            // Set a timeout to hide the loading screen
+            setTimeout(() => {
+                loadingScreen.classList.add("hidden");
+            }, 6000); // 6000ms = 6 seconds (adjust as needed)
+        });
+        
         const musicToggle = document.getElementById("music-toggle");
         const bgMusic = document.getElementById("bg-music");
 
