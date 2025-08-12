@@ -235,32 +235,79 @@
         <div class="go-arrow">→</div>
       </div>
       </div>
-      <script>
+      <!-- Replace the existing speakBtn script with this -->
+<script>
+  // keep track of which button/utterance is currently active
+  let currentBtn = null;
+  let currentUtterance = null;
+
+  function chooseVoice() {
+    const voices = window.speechSynthesis.getVoices();
+    // prefer any English voice, fallback to first available
+    return voices.find(v => v.lang && v.lang.startsWith('en')) || voices[0];
+  }
+
+  // ensure voices are loaded (browsers may load asynchronously)
+  window.speechSynthesis.onvoiceschanged = () => {
+    // no-op, but ensures chooseVoice finds voices later
+    console.log('voiceschanged', window.speechSynthesis.getVoices().length);
+  };
+
   document.querySelectorAll('.speakBtn').forEach(btn => {
     btn.addEventListener('click', () => {
       const targetId = btn.getAttribute('data-target');
-      const paragraph = document.getElementById(targetId);
-      const text = paragraph.innerText;
+      const para = document.getElementById(targetId);
+      if (!para) return;
 
-      if ('speechSynthesis' in window) {
-        const utterance = new SpeechSynthesisUtterance(text);
-        // Optional: voice select
-        const voices = window.speechSynthesis.getVoices();
-        if (voices.length > 0) {
-          for (let voice of voices) {
-            if (voice.lang === 'en-US') {
-              utterance.voice = voice;
-              break;
-            }
-          }
-        }
-        window.speechSynthesis.speak(utterance);
-      } else {
-        alert('Aapke browser mein speech synthesis support nahi karta.');
+      const text = para.innerText.trim();
+      if (!text) return;
+
+      // If same button clicked while speaking -> stop
+      if (speechSynthesis.speaking && currentBtn === btn) {
+        speechSynthesis.cancel();
+        // icon reset will happen in onend, but do it now as well
+        btn.textContent = '🔊';
+        currentBtn = null;
+        currentUtterance = null;
+        return;
       }
+
+      // If speaking another paragraph, stop it and reset its button icon
+      if (speechSynthesis.speaking && currentBtn && currentBtn !== btn) {
+        speechSynthesis.cancel();
+        currentBtn.textContent = '🔊';
+        currentBtn = null;
+        currentUtterance = null;
+      }
+
+      // create and start a new utterance
+      const u = new SpeechSynthesisUtterance(text);
+
+      const voice = chooseVoice();
+      if (voice) u.voice = voice;
+
+      // optional: adjust rate/pitch if desired
+      // u.rate = 1;
+      // u.pitch = 1;
+
+      u.onstart = () => {
+        btn.textContent = '🔈'; // show "playing" state
+        currentBtn = btn;
+        currentUtterance = u;
+      };
+
+      u.onend = u.oncancel = u.onerror = () => {
+        if (btn) btn.textContent = '🔊'; // reset icon
+        if (currentBtn === btn) currentBtn = null;
+        currentUtterance = null;
+      };
+
+      // speak
+      speechSynthesis.speak(u);
     });
   });
 </script>
+
 
     </div>
       <a
@@ -438,6 +485,7 @@
     <script src="scripts/auth.js"></script>
   </body>
 </html>
+
 
 
 
