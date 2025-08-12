@@ -138,7 +138,9 @@ nav {
   margin-right: 16px;
   vertical-align: middle;
 }
-
+.nav-links{
+  padding-right: 80px;
+}
 .header1 {
   background-color: #780000;
   min-height: 37vh;
