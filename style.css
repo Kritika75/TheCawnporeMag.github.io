@@ -87,6 +87,65 @@ nav {
     width: 100%;
     z-index: 999;
 }
+.text-box {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.text1 {
+  letter-spacing: 8px;
+  position: relative;
+  margin-bottom: 10px;
+  animation: textEffect 6s ease-in-out 2s 1 both; 
+  will-change: transform, letter-spacing;
+  backface-visibility: hidden;
+  transform: translateZ(0); 
+}
+
+.text2 {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.9s ease forwards;
+  animation-delay: 8s;
+  will-change: transform, opacity;
+}
+
+/* Smooth letter-spacing + subtle lift using transform */
+@keyframes textEffect {
+  0% {
+    letter-spacing: 8px;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  30% {
+    letter-spacing: 25px;   
+    transform: translateY(0);
+  }
+  70% {
+    letter-spacing: 12px;   
+    transform: translateY(-6px); 
+  }
+  100% {
+    letter-spacing: 8px;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* Animation Keyframes */
 @keyframes gradientMove {
