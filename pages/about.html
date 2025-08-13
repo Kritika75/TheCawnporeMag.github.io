@@ -1,0 +1,899 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <link rel="stylesheet" href="../styles/navbar.css" />
+    <link rel="stylesheet" href="../styles/about.css" />
+    <link rel="stylesheet" href="../styles/back-button.css">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Circles -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <script>
+      // Coordinates for the cursor
+      const coords = { x: 0, y: 0 };
+      const circles = document.querySelectorAll(".circle");
+
+      // Colors for the circles
+      const colors = [
+        "#ffb56b",
+        "#fdaf69",
+        "#f89d63",
+        "#f59761",
+        "#ef865e",
+        "#ec805d",
+        "#e36e5c",
+        "#df685c",
+        "#d5585c",
+        "#d1525c",
+        "#c5415d",
+        "#c03b5d",
+        "#b22c5e",
+        "#ac265e",
+        "#9c155f",
+        "#950f5f",
+        "#830060",
+        "#7c0060",
+        "#680060",
+        "#60005f",
+        "#48005f",
+        "#3d005e",
+      ];
+
+      // Assign colors and initial position to each circle
+      circles.forEach(function (circle, index) {
+        circle.x = 0;
+        circle.y = 0;
+        circle.style.backgroundColor = colors[index % colors.length];
+      });
+
+      // Update the coordinates when the mouse moves
+      window.addEventListener("mousemove", function (e) {
+        coords.x = e.clientX;
+        coords.y = e.clientY;
+      });
+
+      // Animation function to move the circles
+      function animateCircles() {
+        let x = coords.x;
+        let y = coords.y;
+
+        circles.forEach(function (circle, index) {
+          // Update the position and scale of each circle
+          circle.style.left = x - 12 + "px";
+          circle.style.top = y - 12 + "px";
+          circle.style.scale = (circles.length - index) / circles.length;
+
+          circle.x = x;
+          circle.y = y;
+
+          // Get the next circle in the sequence
+          const nextCircle = circles[index + 1] || circles[0];
+          x += (nextCircle.x - x) * 0.15;
+          y += (nextCircle.y - y) * 0.15;
+        });
+
+        // Repeat the animation
+        requestAnimationFrame(animateCircles);
+      }
+
+      // Start the animation
+      animateCircles();
+    </script>
+
+<!-- Removed duplicate script block to fix variable redeclaration error -->
+
+    <!-- Navbar Component Container -->
+    <div id="navbar-container" data-component="navbar-simple"></div>
+    
+    <section class="header1">
+      <div class="text-box1">
+        <h1>About</h1>
+        <p>The Cawnpore</p>
+      </div>
+    </section>
+
+    <section class="Introductory">
+      <p id="intro1">
+        The city of <span class="bold-words">"Kanpur"</span>, formerly known as
+        <span class="bold-words">Cawnpore</span> , has a rich and complex
+        history that has shaped its identity. <br />
+        Originally established by a Hindu King named
+        <span class="bold-words">Chandel</span>, the city was named
+        <span class="bold-words">"Kahnapur"</span> in honor of his devotion to
+        <span class="bold-words">Lord Krishna</span>. <br />
+        However, during the
+        <span class="underline-words">British colonial era</span>, the name was
+        anglicized to <span class="bold-words">"Cawnpore"</span> due to
+        difficulties in pronunciation. This change was significant as Cawnpore,
+        known as the
+        <span class="bold-words">"Manchester of India"</span> ,emerged as the
+        commercial capital of
+        <span class="underline-words">Uttar Pradesh</span>. Kanpur's history is
+        deeply intertwined with the Indian struggle for independence. The city
+        played a pivotal role in the revolt of
+        <span class="bold-words">1857</span>, witnessing tragic events such as
+        the "wheeler's entrenchment episode," the "massacre at
+        <span class="bold-words">Sati Chaura Ghat</span>," and the
+        <span class="bold-words">"Bibighar massacre"</span> . <br />
+        These events left a lasting impact on the city and its people. Following
+        India's independence in <span class="bold-words"> 1947</span>, the city
+        was renamed <span class="bold-words">Kanpur</span>,
+        <span class="underline-words"
+          >symbolizing a new era and a fresh start</span
+        >. Despite its tumultuous past, Kanpur has emerged as a beacon of
+        happiness and positivity. <br />
+        In <span class="bold-words">2023</span>, it was recognized as the
+        <span class="underline-words">11th happiest city in the world</span>, a
+        testament to the resilience and friendliness of its people.<br />
+
+        This vibrant city continues to honor its history while embracing
+        progress and prosperity, making it a truly remarkable place with a
+        captivating story to tell.
+      </p>
+    </section>
+
+    <!-- Stylish Section Separator -->
+    <div class="section-separator">
+      <div class="separator-line"></div>
+      <div class="separator-label">?</div>
+      <div class="separator-line"></div>
+    </div>
+
+    <h2 id="CardsHeading">Cawnpore's Prominent Landmarks</h2>
+    <ul class="landmarks template-slider">
+      <!-- landmark cards -->
+      <!-- lal imli -->
+      <li class="landmarkCard">
+        <img src="../images/food/lal imli.jpg" alt="Lal Imli" />
+        <div class="landmarkInfo">
+          <p class="Tag-line" style="color: #fdf0d5">
+            A Forgotten woollen Empire of India's Colonial era.
+          </p>
+          <h2>Lal Imli</h2>
+          <a
+            href="https://heritagehackathon.weebly.com/lal-imli-mills.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="landmarkButton">Learn More</button>
+          </a>
+        </div>
+      </li>
+      <!-- kanpur memorial church -->
+      <li class="landmarkCard">
+        <img src="../images/Kanpur_Memorial_Church.jpg" alt="Kanpur Memorial Church" />
+        <div class="landmarkInfo">
+          <p class="Tag-line" style="color: #fdf0d5">
+            A Solemn echo of 1857 � where history and memory unite in silence.
+          </p>
+
+          <h2>Kanpur Memorial Church</h2>
+          <a
+            href="https://en.wikipedia.org/wiki/Kanpur_Memorial_Church"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="landmarkButton">Learn More</button>
+          </a>
+        </div>
+      </li>
+      <!-- Kanpur Central Station -->
+      <li class="landmarkCard">
+        <img src="../images/Kanpur_Central_Station.jpg" alt="Kanpur Central" />
+        <div class="landmarkInfo">
+          <p class="Tag-line" style="color: #fdf0d5">
+            From colonial rails to digital tracks � Kanpur's timeless junction.
+          </p>
+
+          <h2>Kanpur Central</h2>
+          <a
+            href="https://en.wikipedia.org/wiki/Kanpur_Central_railway_station"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="landmarkButton">Learn More</button>
+          </a>
+        </div>
+      </li>
+
+      <!-- JK Temple -->
+      <li class="landmarkCard">
+        <img
+          src="../images/1920px-JK_Temple(Juggilal_Kamlapati_temple)_is_a_temple_in_the_Indian_city_of_Kanpur.It_is_considered_to_be_a_unique_blend_of_ancient_and_modern_architecture.jpg"
+          alt="J.K. Temple"
+        />
+        <div class="landmarkInfo">
+          <p class="Tag-line" style="color: #fdf0d5">
+            A divine fusion of modernity and tradition in marble and serenity.
+          </p>
+
+          <h2>J.K. Temple</h2>
+          <a
+            href="https://en.wikipedia.org/wiki/JK_Temple"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="landmarkButton">Learn More</button>
+          </a>
+        </div>
+      </li>
+
+      <!-- Kanpur Zoological Park -->
+
+      <li class="landmarkCard">
+        <img src="../images/Kanpur.jpg" alt="Kanpur Zoological Park" />
+        <div class="landmarkInfo">
+          <p class="Tag-line" style="color: #fdf0d5">
+            Also known as Allen Zoo, established in 1974. It's one of the oldest
+            zoo in India.
+          </p>
+
+          <h2>Kanpur Zoological Park</h2>
+          <a
+            href="https://en.wikipedia.org/wiki/Kanpur_Zoological_Park"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="landmarkButton">Learn More</button>
+          </a>
+        </div>
+      </li>
+    </ul>
+    <div
+      style="
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        text-align: center;
+      "
+    >
+      <button
+        id="slider-left"
+        aria-label="Previous Slide"
+        style="
+          font-size: 1.5rem;
+          padding: 14px;
+          background: #fff;
+          border-radius: 50%;
+          border: none;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+          cursor: pointer;
+          margin-right: 20px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+          font-weight: bolder;
+        "
+      >
+        &#8592;
+      </button>
+      <button
+        id="slider-right"
+        aria-label="Next Slide"
+        style="
+          z-index: 10;
+          font-size: 1.5rem;
+          padding: 14px;
+          background: #fff;
+          border-radius: 50%;
+          border: none;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+          cursor: pointer;
+          font-weight: bolder;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        "
+      >
+        &#8594;
+      </button>
+    </div>
+    <script>
+      // template gallery slider
+      const template_slider = document.querySelector(".template-slider");
+      const template_slides = template_slider.querySelectorAll("li");
+      const slideCount = template_slides.length;
+      let activeSlide = 0;
+
+      // Ensure first slide is visible
+      template_slides[0].classList.add("active");
+
+      // Arrow buttons
+      const leftArrow = document.getElementById("slider-left");
+      const rightArrow = document.getElementById("slider-right");
+
+      function showSlide(index) {
+        template_slides[activeSlide].classList.remove("active");
+        activeSlide = (index + slideCount) % slideCount;
+        template_slides[activeSlide].classList.add("active");
+      }
+
+      // Auto slide
+      let sliderInterval = setInterval(() => {
+        showSlide(activeSlide + 1);
+      }, 5000);
+
+      // Arrow navigation
+      if (leftArrow && rightArrow) {
+        leftArrow.addEventListener("click", () => {
+          showSlide(activeSlide - 1);
+          clearInterval(sliderInterval);
+          sliderInterval = setInterval(() => showSlide(activeSlide + 1), 5000);
+        });
+        rightArrow.addEventListener("click", () => {
+          showSlide(activeSlide + 1);
+          clearInterval(sliderInterval);
+          sliderInterval = setInterval(() => showSlide(activeSlide + 1), 5000);
+        });
+      }
+    </script>
+
+    <!-- Stylish Section Separator -->
+    <div class="section-separator">
+      <div class="separator-line"></div>
+      <div class="separator-label">?</div>
+      <div class="separator-line"></div>
+    </div>
+
+    <!-- Food Section Starts from here -->
+    <h2 id="CardsHeading">Cawnpore's Famous Food</h2>
+    
+    <!-- Food Slider Container -->
+    <div class="food-slider-container">
+      <div class="food-slider-wrapper">
+        <div class="food-slider" id="foodSlider">
+          <!-- Clone of last 3 slides for seamless infinite scroll -->
+          <div class="food-slide clone">
+            <div class="landmarkCard">
+              <img src="../images/food/Luchi Sabji.jpeg" alt="Luchi Sabji" />
+              <div class="landmarkInfo">
+                <p class="Tag-line" style="color: #fdf0d5">
+                  It's a breakfast dish made by deep frying the bread and boiled potato.
+                </p>
+                <h2>Luchi Sabji</h2>
+              </div>
+            </div>
+          </div>
+          <div class="food-slide clone">
+            <div class="landmarkCard">
+              <img src="../images/food/Makhan Malai.jpeg" alt="Makhan-Malai" />
+              <div class="landmarkInfo">
+                <p class="Tag-line" style="color: #fdf0d5">
+                  This food is quite famous in Kanpur during winter seasons.
+                </p>
+                <h2>Makhan Malai</h2>
+              </div>
+            </div>
+          </div>
+          <div class="food-slide clone">
+            <div class="landmarkCard">
+              <img src="../images/food/lal imli.jpg" alt="Lal Imli" />
+              <div class="landmarkInfo">
+                <p class="Tag-line" style="color: #fdf0d5">
+                  A tangy and spicy tamarind-based snack, perfect for evening cravings.
+                </p>
+                <h2>Lal Imli</h2>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Original slides -->
+          <!-- Imarti -->
+          <div class="food-slide">
+            <div class="landmarkCard">
+              <img src="../images/food/Imarti.jpeg" alt="Imarti" />
+              <div class="landmarkInfo">
+                <p class="Tag-line" style="color: #fdf0d5">
+                  Famous golden dessert of Kanpur known for its crispiness and sweetness.
+                </p>
+                <h2>Imarti</h2>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Sultani Dal -->
+          <div class="food-slide">
+            <div class="landmarkCard">
+              <img src="../images/food/Sultani Dal.jpeg" alt="Sultani Dal" />
+              <div class="landmarkInfo">
+                <p class="Tag-line" style="color: #fdf0d5">
+                  A royal Dal made with tur dal cooked with milk, cream and yogurt with some tadka on top.
+                </p>
+                <h2>Sultani Dal</h2>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Luchi Sabji -->
+          <div class="food-slide">
+            <div class="landmarkCard">
+              <img src="../images/food/Luchi Sabji.jpeg" alt="Luchi Sabji" />
+              <div class="landmarkInfo">
+                <p class="Tag-line" style="color: #fdf0d5">
+                  It's a breakfast dish made by deep frying the bread and boiled potato.
+                </p>
+                <h2>Luchi Sabji</h2>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Makhan Malai -->
+          <div class="food-slide">
+            <div class="landmarkCard">
+              <img src="../images/food/Makhan Malai.jpeg" alt="Makhan-Malai" />
+              <div class="landmarkInfo">
+                <p class="Tag-line" style="color: #fdf0d5">
+                  This food is quite famous in Kanpur during winter seasons.
+                </p>
+                <h2>Makhan Malai</h2>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Lal Imli -->
+          <div class="food-slide">
+            <div class="landmarkCard">
+              <img src="../images/food/lal imli.jpg" alt="Lal Imli" />
+              <div class="landmarkInfo">
+                <p class="Tag-line" style="color: #fdf0d5">
+                  A tangy and spicy tamarind-based snack, perfect for evening cravings.
+                </p>
+                <h2>Lal Imli</h2>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Clone of first 3 slides for seamless infinite scroll -->
+          <div class="food-slide clone">
+            <div class="landmarkCard">
+              <img src="../images/food/Imarti.jpeg" alt="Imarti" />
+              <div class="landmarkInfo">
+                <p class="Tag-line" style="color: #fdf0d5">
+                  Famous golden dessert of Kanpur known for its crispiness and sweetness.
+                </p>
+                <h2>Imarti</h2>
+              </div>
+            </div>
+          </div>
+          <div class="food-slide clone">
+            <div class="landmarkCard">
+              <img src="../images/food/Sultani Dal.jpeg" alt="Sultani Dal" />
+              <div class="landmarkInfo">
+                <p class="Tag-line" style="color: #fdf0d5">
+                  A royal Dal made with tur dal cooked with milk, cream and yogurt with some tadka on top.
+                </p>
+                <h2>Sultani Dal</h2>
+              </div>
+            </div>
+          </div>
+          <div class="food-slide clone">
+            <div class="landmarkCard">
+              <img src="../images/food/Luchi Sabji.jpeg" alt="Luchi Sabji" />
+              <div class="landmarkInfo">
+                <p class="Tag-line" style="color: #fdf0d5">
+                  It's a breakfast dish made by deep frying the bread and boiled potato.
+                </p>
+                <h2>Luchi Sabji</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slider Navigation -->
+      <div class="slider-nav">
+        <button class="slider-btn prev-btn" id="prevBtn" onclick="moveSlider(-1)">
+          <i class="fa fa-chevron-left"></i>
+        </button>
+        <button class="slider-btn next-btn" id="nextBtn" onclick="moveSlider(1)">
+          <i class="fa fa-chevron-right"></i>
+        </button>
+      </div>
+      
+      <!-- Slider Dots -->
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="footer">
+      <a class="back-to-top" href="#">
+        <i class="fa-solid fa-chevron-up"></i>
+      </a>
+      <div class="footer-top">
+        <div class="footer-about">
+          <h3>The Cawnpore</h3>
+          <p>
+            An independent magazine celebrating literary voices and untold
+            stories.
+          </p>
+        </div>
+        <div class="footer-links" id="footerLinks">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="submission.html">Submit</a></li>
+            <li><a href="issue.html">Issue</a></li>
+            <li><a href="masthead.html">Masthead</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="open-source.html">Open Source</a></li>
+            <li><a href="journey.html">OUR JOURNEY</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact" id="footerContact">
+          <h3>Contact Us</h3>
+          <div class="social-icons">
+            <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D"
+              target="_blank"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/the-cawnpore-magazine/"
+              target="_blank"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/TheCawnporeMag?s=09" target="_blank">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a
+              href="https://www.tumblr.com/thecawnporemagazine?source=share"
+              target="_blank"
+            >
+              <i class="fa-brands fa-tumblr"></i>
+            </a>
+          </div>
+        </div>
+        <div class="subscription-box-about">
+          <h3>Subscribe to our Newsletter</h3>
+          <form action="/subscribe" method="post">
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Made with &#x2665; by Kritika Singh</p>
+        <p>&copy; <span id="year"></span> THE CAWNPORE � ALL RIGHTS RESERVED</p>
+      </div>
+    </footer>
+
+    <script src="../scripts/index.js"></script>
+    <script src="../scripts/component-loader.js"></script>
+    
+    <!-- Food Slider Styles -->
+    <style>
+    .food-slider-container {
+      position: relative;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 20px;
+    }
+    
+    .food-slider-wrapper {
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+    
+    .food-slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 366.667%; /* 11 slides total (3 clones + 5 original + 3 clones), showing 3: (11/3)*100% = 366.667% */
+      transform: translateX(-27.27%); /* Start position: skip first 3 clone slides (3/11 = 27.27%) */
+    }
+    
+    .food-slide {
+      width: 9.09%; /* Each slide is 9.09% of the total slider width (100%/11 slides = 9.09%) */
+      flex-shrink: 0;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    
+    .food-slide .landmarkCard {
+      margin: 0;
+      height: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .food-slide .landmarkCard:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(128, 0, 0, 0.3);
+    }
+    
+    .slider-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      z-index: 10;
+    }
+    
+    .slider-btn {
+      background: rgba(128, 0, 0, 0.9);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      pointer-events: auto;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .slider-btn:hover {
+      background: rgba(128, 0, 0, 1);
+      transform: scale(1.1);
+      box-shadow: 0 5px 20px rgba(128, 0, 0, 0.4);
+    }
+    
+    .slider-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: scale(1);
+    }
+    
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(128, 0, 0, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(128, 0, 0, 0.5);
+    }
+    
+    .slider-dot.active {
+      background: rgba(128, 0, 0, 1);
+      transform: scale(1.2);
+      box-shadow: 0 0 10px rgba(128, 0, 0, 0.5);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .food-slider {
+        /* Keep the same 11-slide structure for consistency */
+        width: 366.667%;
+      }
+      
+      .food-slide {
+        width: 9.09%; /* Each slide is 9.09% of the total slider width */
+      }
+      
+      .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+      }
+    }
+    
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .food-slider {
+        /* Keep the same 11-slide structure for consistency */
+        width: 366.667%;
+      }
+      
+      .food-slide {
+        width: 9.09%; /* Each slide is 9.09% of the total slider width */
+      }
+    }
+    </style>
+    
+    <!-- Food Slider JavaScript -->
+    <script>
+    let currentSlide = 0;
+    const totalSlides = 5; // Number of original slides
+    let slidesToShow = 3; // Default slides to show
+    const totalSlidesWithClones = 11; // 3 clones + 5 original + 3 clones
+    const slideWidth = 9.09; // Each slide width percentage (100/11)
+    const startOffset = 27.27; // Offset to skip first 3 clones (3 * 9.09)
+    let isTransitioning = false;
+    
+    function updateSlidesToShow() {
+      if (window.innerWidth <= 768) {
+        slidesToShow = 1;
+      } else if (window.innerWidth <= 1024) {
+        slidesToShow = 2;
+      } else {
+        slidesToShow = 3;
+      }
+    }
+    
+    function moveSlider(direction) {
+      if (isTransitioning) return; // Prevent rapid clicking
+      
+      const slider = document.getElementById('foodSlider');
+      isTransitioning = true;
+      
+      currentSlide += direction;
+      
+      // Calculate the transform position
+      const translateX = -(startOffset + (currentSlide * slideWidth));
+      slider.style.transform = `translateX(${translateX}%)`;
+      
+      // Handle infinite loop after transition
+      setTimeout(() => {
+        // If we've moved past the last real slide, jump to the first real slide
+        if (currentSlide >= totalSlides) {
+          slider.style.transition = 'none'; // Disable transition for instant jump
+          currentSlide = 0;
+          slider.style.transform = `translateX(-${startOffset}%)`;
+          // Re-enable transition after a small delay
+          setTimeout(() => {
+            slider.style.transition = 'transform 0.5s ease-in-out';
+            isTransitioning = false;
+          }, 10);
+        }
+        // If we've moved before the first real slide, jump to the last real slide
+        else if (currentSlide < 0) {
+          slider.style.transition = 'none'; // Disable transition for instant jump
+          currentSlide = totalSlides - 1;
+          const jumpTranslateX = -(startOffset + (currentSlide * slideWidth));
+          slider.style.transform = `translateX(${jumpTranslateX}%)`;
+          // Re-enable transition after a small delay
+          setTimeout(() => {
+            slider.style.transition = 'transform 0.5s ease-in-out';
+            isTransitioning = false;
+          }, 10);
+        } else {
+          isTransitioning = false;
+        }
+        
+        updateDots();
+      }, 500); // Match the CSS transition duration
+    }
+    
+    function goToSlide(slideIndex) {
+      if (isTransitioning) return;
+      
+      const slider = document.getElementById('foodSlider');
+      currentSlide = slideIndex;
+      
+      const translateX = -(startOffset + (currentSlide * slideWidth));
+      slider.style.transform = `translateX(${translateX}%)`;
+      updateDots();
+    }
+    
+    function updateSlider() {
+      const slider = document.getElementById('foodSlider');
+      const translateX = -(startOffset + (currentSlide * slideWidth));
+      slider.style.transform = `translateX(${translateX}%)`;
+      updateDots();
+    }
+    
+    function updateDots() {
+      const dotsContainer = document.getElementById('sliderDots');
+      
+      dotsContainer.innerHTML = '';
+      
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = `slider-dot ${i === currentSlide ? 'active' : ''}`;
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+    
+    // Auto-slide functionality
+    function autoSlide() {
+      moveSlider(1);
+    }
+    
+    // Initialize slider
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set initial position to show first real slide
+      const slider = document.getElementById('foodSlider');
+      slider.style.transform = `translateX(-${startOffset}%)`;
+      updateDots();
+      
+      // Auto-slide every 5 seconds
+      setInterval(autoSlide, 5000);
+      
+      // Update on window resize
+      window.addEventListener('resize', function() {
+        updateSlider();
+      });
+    });
+    </script>
+    
+    <script>
+        // Auto-load components
+        document.addEventListener('DOMContentLoaded', function() {
+            ComponentLoader.loadComponent('navbar-simple', '#navbar-container');
+            ComponentLoader.loadComponent('back-button');
+        });
+    </script>
+  </body>
+</html>

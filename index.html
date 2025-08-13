@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TheCawnpore</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -134,41 +135,8 @@
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
     </div>
-    <section class="header">
-      <nav role="navigation" aria-label="Main Menu">
-        <!-- Logo on the left -->
-        <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
-        
-        <div class="nav-links" id="navLinks">
-          <i class="fa fa-times" onclick="hideMenu()"></i>
-          <ul>
-
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="submission.html">SUBMIT</a></li>
-            <li><a href="issue.html">ISSUE</a></li>
-            <li><a href="masthead.html">MASTHEAD</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-
-            <li><a href="open-source.html">OPEN SOURCE</a></li>
-            <li><a href="journey.html">OUR JOURNEY</a></li>
-
-          </ul>
-        </div>
-
-        <i class="fa fa-bars" onclick="showMenu()"></i>
-      </nav>
-
-      <div class="text-box">
-        <h1>The Cawnpore</h1>
-        <p>EST. 2024</p>
-        <div id="quote-widget">
-          <p id="quote-text">Loading quote...</p>
-          <p id="quote-author"></p>
-        </div>
-      </div>
-    </section>
+    <!-- Navbar Component Container -->
+    <div id="navbar-container" data-component="navbar-hero"></div>
 
 
     <!--hero section-->
@@ -176,9 +144,9 @@
         <div class="hero-text">
             <h1>Welcome to The Cawnpore Magazine</h1>
             <p>Celebrating literature art, and diversity worldwide.</p>
-            <a href="about.html"><button class="hero-btn">ABOUT US</button></a>
-            <a href="issue.html"><button class="hero-btn">READ OUR ISSUES</button></a>
-            <a href="submission.html"><button class="hero-btn">SUBMIT YOUR WORK</button></a>
+            <a href="pages/about.html"><button class="hero-btn">ABOUT US</button></a>
+            <a href="pages/issue.html"><button class="hero-btn">READ OUR ISSUES</button></a>
+            <a href="pages/submission.html"><button class="hero-btn">SUBMIT YOUR WORK</button></a>
         </div>
     </section>
 
@@ -262,14 +230,14 @@
 
     </div>
       <a
-        href="issue.html"
+        href="pages/issue.html"
         aria-label="View the latest Issue of The Cawnpore"
         id="issue1-btn"
         >READ THE LATEST ISSUE</a
       >
     </br>
       <a
-        href="submission.html" 
+        href="pages/submission.html" 
         aria-label="Submit your work on The Cawnpore"
         id="cta1-btn"
         >SUBMIT YOUR WORK</a
@@ -281,13 +249,13 @@
       <div class="listing-images">
         <a href="https://duotrope.com/magazine/the-cawnpore-magazine-37420" target="_blank">
           <img
-            src="listed-on-duotrope.png"
+            src="images/listed-on-duotrope.png"
             alt="The Cawnpore Magazine is listed on Duotrope"
           />
         </a>
         <a href="https://www.chillsubs.com/magazine/the-cawnpore-magazine" target="_blank">
           <img
-            src="professional-1.png"
+            src="images/professional-1.png"
             alt="The Cawnpore Magazine is a professional member of Chill Subs"
           />
         </a>
@@ -308,13 +276,13 @@
           <h3>Quick Links</h3>
           <ul>
             <li><a href="index.html" >Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="submission.html">Submit</a></li>
-            <li><a href="issue.html">Issue</a></li>
-            <li><a href="masthead.html">Masthead</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="open-source.html">Open Source</a></li>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/submission.html">Submit</a></li>
+            <li><a href="pages/issue.html">Issue</a></li>
+            <li><a href="pages/masthead.html">Masthead</a></li>
+            <li><a href="pages/faq.html">FAQ</a></li>
+            <li><a href="pages/gallery.html">Gallery</a></li>
+            <li><a href="pages/open-source.html">Open Source</a></li>
           </ul>
         </div>
         <div class="footer-contact"  id="footerContact">
@@ -360,8 +328,17 @@
 
     </footer>
 
+    <!-- Component Loader Script -->
+    <script src="scripts/component-loader.js"></script>
+    <script src="scripts/index.js"></script>
 
-    <script src="index.js"></script>
+    <!-- Initialize navbar component -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navbar hero component for homepage
+            ComponentLoader.loadComponent('navbar-hero', '#navbar-container');
+        });
+    </script>
 
     <!-- Visibility change  -->
     <script>
@@ -435,6 +412,7 @@
     </script>
   </body>
 </html>
+
 
 
 

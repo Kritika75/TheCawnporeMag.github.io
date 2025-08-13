@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Page with Component Back Button</title>
+    
+    <!-- Include the back button CSS -->
+    <link rel="stylesheet" href="../styles/back-button.css">
+    
+    <!-- Your existing CSS -->
+    <link rel="stylesheet" href="../styles/about.css">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <!-- METHOD 1: Auto-loaded component (recommended) -->
+    <!-- Just include the script, and the back button will be automatically added -->
+    
+    <!-- Your page content here -->
+    <h1>Your Page Content</h1>
+    <p>This page will automatically have a back button component.</p>
+
+    <!-- Include component loader script at the end -->
+    <script src="../scripts/component-loader.js"></script>
+    <script>
+        // Auto-load back button
+        document.addEventListener('DOMContentLoaded', function() {
+            ComponentLoader.loadComponent('back-button');
+        });
+    </script>
+</body>
+</html>
