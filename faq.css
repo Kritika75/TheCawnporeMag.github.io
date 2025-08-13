@@ -3,12 +3,15 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 .body {
   background-color: #fdf0d5;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 .progress-container {
   width: 100%;
   height: 4px;
@@ -31,6 +34,7 @@ html {
   z-index: 99999999;
   transition: transform 0.1s ease-out;
 }
+
 @media (max-width: 600px) {
   .circle {
     display: none !important;
@@ -44,15 +48,25 @@ html {
   background-size: 200% 200%;
   animation: progressGradient 3s ease infinite;
 }
+
 @keyframes progressGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .faq-page .header {
   min-height: 20vh;
 }
+
 .header {
   min-height: 0vh;
   width: 100%;
@@ -61,19 +75,18 @@ html {
   position: relative;
   padding: 20px 0;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem 5%;
   margin-right: 6px;
-  background: linear-gradient(
-    135deg,
-    rgb(99, 0, 0),
-    rgba(218, 67, 67, 0.665),
-    rgb(71, 22, 22),
-    rgba(17, 16, 16, 0.3)
-  );
+  background: linear-gradient(135deg,
+      rgb(99, 0, 0),
+      rgba(218, 67, 67, 0.665),
+      rgb(71, 22, 22),
+      rgba(17, 16, 16, 0.3));
   background-size: 400% 400%;
   animation: gradientMove 5s linear infinite;
   backdrop-filter: blur(8px);
@@ -90,12 +103,14 @@ nav {
   flex: 1;
   text-align: right;
 }
+
 .nav-links ul li {
   list-style: none;
   display: inline-block;
   padding: 8px 12px;
   position: relative;
 }
+
 .nav-links ul li a {
   color: #fdf0d5;
   text-decoration: none;
@@ -104,9 +119,11 @@ nav {
   padding: 12px 16px;
   display: block;
 }
+
 .nav-links ul li a:hover {
   text-decoration: none;
 }
+
 .nav-links ul li::after {
   content: "";
   width: 0%;
@@ -116,16 +133,56 @@ nav {
   margin: auto;
   transition: 0.5s;
 }
+
 .nav-links ul li:hover::after {
   width: 100%;
 }
+
 nav .fa {
   display: none;
 }
+
 @media (max-width: 700px) {
+  .text-box h1 {
+    margin-top: 15px;
+    font-weight: 700;
+    font-style: italic;
+    font-size: clamp(32px, 6vw, 40px);
+  }
+
+  nav {
+    height: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .text-box p {
+    font-size: clamp(12px, 2vw, 14px);
+  }
+
+  .nav-links ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 40px 20px;
+  }
+
   .nav-links ul li {
     display: block;
+    opacity: 0;
+    transform: translateX(30px);
+    animation: slideIn 0.4s forwards;
   }
+
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   .nav-links {
     position: fixed;
     background: linear-gradient(135deg, #d24848, #7a0000, #cea8bc);
@@ -138,18 +195,30 @@ nav .fa {
     box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
     transition: right 0.4s ease-in-out;
   }
-  nav .fa-times,
-  nav .fa-bars {
+
+  nav .fa {
     display: block;
-    color: #663346;
+    color: #ffffff;
     margin: 10px;
     font-size: 22px;
     cursor: pointer;
+    background: transparent;
+    transition: opacity 0.3s ease;
+  }
+
+  #hamburgerIcon {
+    position: relative;
+    /* z-index: 3; */
+  }
+
+  #closeIcon {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    z-index: 3;
   }
 }
-.nav-links ul {
-  padding: 30px;
-}
+
 
 main {
   display: flex;
@@ -184,15 +253,18 @@ main {
   box-shadow: 0 4px 8px rgba(120, 0, 0, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .faq:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(120, 0, 0, 0.3);
 }
+
 .faq summary {
   cursor: pointer;
   font-size: 1.1rem;
   padding: 0.3rem 0;
 }
+
 .faq p {
   margin-top: 0.5rem;
   line-height: 1.5;
@@ -217,18 +289,21 @@ a {
   border-radius: 1rem;
   text-align: center;
 }
+
 .ask h3 {
   font-size: 1.5rem;
 }
+
 .mail {
   background-color: #fdf0d5;
   width: 80%;
   border-radius: 1.5rem;
   text-align: center;
   padding: 0.5rem;
-  overflow-x: auto; 
+  overflow-x: auto;
   white-space: nowrap;
 }
+
 .mail a {
   color: #780000;
   font-weight: bold;
@@ -237,9 +312,11 @@ a {
 .seperator {
   height: 2rem;
 }
+
 .ask p {
   justify-self: end;
 }
+
 .mail img {
   object-fit: cover;
 }
@@ -247,6 +324,7 @@ a {
 .social-icons {
   margin-top: 10px;
 }
+
 .social-icons a {
   font-size: 18px;
   margin-right: 10px;
@@ -254,6 +332,7 @@ a {
   display: inline-block;
   transition: transform 0.2s ease, color 0.3s ease;
 }
+
 .social-icons a:hover {
   color: #ffd9b3;
   transform: translateY(-3px) scale(1.15);
@@ -264,12 +343,14 @@ a {
     font-size: 1.2rem;
     padding: 0.5rem;
   }
+
   .faq {
     margin-left: 1rem;
     margin-right: 1rem;
   }
+
   .ask {
     border-radius: 0.5rem;
     width: 95%;
   }
-  }
+}
