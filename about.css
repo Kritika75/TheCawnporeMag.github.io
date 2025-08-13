@@ -845,8 +845,105 @@ button:active {
 
 .navbar-logo {
   height: 40px;
-  margin-right: 16px
+  margin-right: 16px;
   vertical-align: middle;
 }
 
+/* Section Styling */
+.food-section {
+  background: #fffaf0;
+  border-radius: 20px;
+  padding: 40px 30px;
+  margin: 40px auto;
+  max-width: 1200px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  font-family:"Crimson Text", serif;
+  
+}
 
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #8B0000;
+}
+
+/* Scroll Container */
+.food-scroll {
+  padding-top: 20px;
+  padding-left: 10px;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: auto;
+  padding-bottom: 10px;
+}
+
+.food-card {
+  background-color: #800000;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  flex: 0 0 calc(33.333% - 20px); /* 3 visible on desktop */
+  color: #FDF0D5;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+.food-card h2{
+ padding: 5px 20px;
+     font-size: 1.5rem;
+    color:whitesmoke;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-style:italic;
+    font-weight: bold;
+}
+.food-card p{
+ padding: 0px;
+    color:whitesmoke;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    font-style:italic;
+}
+
+.food-card img {
+  width: 100%;
+  border-radius: 8px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Hover Animation */
+.food-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+/* Scrollbar Styling */
+.food-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.food-scroll::-webkit-scrollbar-track {
+  background: #ffe4cc;
+  border-radius: 10px;
+}
+
+.food-scroll::-webkit-scrollbar-thumb {
+  background: #cd5c5c;
+  border-radius: 10px;
+}
+
+.food-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a94442;
+}
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
+  .food-card {
+    flex: 0 0 100%; /* 1 card visible */
+  }
+}
