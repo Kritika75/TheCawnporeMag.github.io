@@ -1,122 +1,125 @@
 // scripts/update-html-images.js
+// Rewrites <img src="x.jpg"> to:
+// <picture>
+//   <source type="image/webp" srcset="x.webp">
+//   <img src="x.jpg" ... loading="lazy">
+// </picture>
+// Skips "hero" or "above-the-fold" images based on a simple heuristic.
+
 const fs = require('fs');
 const path = require('path');
+const glob = require('glob');
+const cheerio = require('cheerio');
 
-const HTML_DIRS = [
-  path.join(__dirname, '../'),              // root
-  path.join(__dirname, '../assets'),        // assets folder
-  path.join(__dirname, '../gallery'),       // gallery folder
-  path.join(__dirname, '../screenshorts')   // screenshorts folder
-];
-const IMAGE_EXTS = ['.jpg', '.jpeg', '.png', '.webp'];
+// Configure which HTML files to process
+const HTML_GLOB = '**/*.html';
 
-function listFilesRecursive(dir, filterFn) {
-  const out = [];
-  if (!fs.existsSync(dir)) return out;
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) out.push(...listFilesRecursive(full, filterFn));
-    else if (filterFn(full)) out.push(full);
-  }
-  return out;
+// Heuristic: treat images with classes/ids hinting "hero", "logo" as non-lazy (do not add loading="lazy")
+const NON_LAZY_HINTS = ['hero', 'header', 'banner', 'logo', 'site-logo'];
+
+function hasNonLazyHint(el) {
+  const classAttr = (el.attr('class') || '').toLowerCase();
+  const idAttr = (el.attr('id') || '').toLowerCase();
+  return NON_LAZY_HINTS.some(h => classAttr.includes(h) || idAttr.includes(h));
 }
 
-function resolveImagePath(htmlFilePath, imgSrc) {
-  if (/^(https?:)?\/\//i.test(imgSrc) || imgSrc.startsWith('data:')) return null;
-  const htmlDir = path.dirname(htmlFilePath);
-  return path.resolve(htmlDir, imgSrc);
-}
-
-function toWebpPath(imgPath) {
-  const ext = path.extname(imgPath);
-  return imgPath.slice(0, -ext.length) + '.webp';
-}
-
-function transformImgTag(imgTag, htmlFilePath) {
-  const attr = (name) => {
-    const re = new RegExp(`${name}\\s*=\\s*("([^"]*)"|'([^']*)'|([^\\s>]+))`, 'i');
-    const m = imgTag.match(re);
-    if (!m) return null;
-    return m[2] || m[3] || m[4] || null;
-  };
-
-  const src = attr('src');
-  if (!src) return imgTag;
-
+function toWebpPath(src) {
+  if (!src) return null;
   const ext = path.extname(src).toLowerCase();
-  if (!IMAGE_EXTS.includes(ext) || ext === '.webp') return imgTag;
-
-  const absImg = resolveImagePath(htmlFilePath, src);
-  if (!absImg) return imgTag;
-
-  const absWebp = toWebpPath(absImg);
-  const hasWebp = fs.existsSync(absWebp);
-  if (!hasWebp) return imgTag;
-
-  const htmlDir = path.dirname(htmlFilePath);
-  const relWebp = path.relative(htmlDir, absWebp).split(path.sep).join('/');
-
-  const alt = attr('alt');
-  const width = attr('width');
-  const height = attr('height');
-  const loading = attr('loading');
-  const cls = attr('class');
-  const id = attr('id');
-  const isHero = attr('data-hero');
-
-  const fallbackSrc = src;
-  const loadingAttr = isHero ? '' : (loading ? '' : ' loading="lazy"');
-
-  const preserved = [
-    `src="${fallbackSrc}"`,
-    alt ? `alt="${alt}"` : '',
-    width ? `width="${width}"` : '',
-    height ? `height="${height}"` : '',
-    cls ? `class="${cls}"` : '',
-    id ? `id="${id}"` : '',
-    isHero ? `data-hero="${isHero}"` : ''
-  ].filter(Boolean).join(' ');
-
-  return `<picture>
-  <source srcset="${relWebp}" type="image/webp">
-  <img ${preserved}${loadingAttr}>
-</picture>`;
+  if (!['.jpg', '.jpeg', '.png'].includes(ext)) return null;
+  return src.slice(0, -ext.length) + '.webp';
 }
 
-function processHtmlFile(filePath) {
-  const html = fs.readFileSync(filePath, 'utf8');
-  if (!html.includes('<img')) return false;
-  const imgTagRe = /<img\b[^>]*>/gi;
-  let changed = false;
-  const updated = html.replace(imgTagRe, (m) => {
-    const out = transformImgTag(m, filePath);
-    if (out !== m) changed = true;
-    return out;
-  });
-  if (changed) fs.writeFileSync(filePath, updated, 'utf8');
-  return changed;
+function fileExistsRelative(htmlFile, imgPath) {
+  // Handle absolute and relative paths
+  try {
+    // If it's an absolute URL (http/https), skip file existence check
+    if (/^https?:\/\//i.test(imgPath)) return false;
+    const baseDir = path.dirname(htmlFile);
+    const full = path.resolve(baseDir, imgPath);
+    return fs.existsSync(full);
+  } catch {
+    return false;
+  }
 }
 
-function main() {
-  const htmlFiles = [];
-  for (const dir of HTML_DIRS) {
-    htmlFiles.push(...listFilesRecursive(dir, (f) => f.toLowerCase().endsWith('.html')));
-  }
-  if (htmlFiles.length === 0) {
-    console.log('No HTML files found to process.');
-    return;
-  }
-  let totalChanged = 0;
-  for (const file of htmlFiles) {
-    try {
-      const changed = processHtmlFile(file);
-      console.log((changed ? 'Updated: ' : 'No change: ') + path.relative(process.cwd(), file));
-      if (changed) totalChanged++;
-    } catch (e) {
-      console.error(`Error processing ${file}: ${e.message}`);
+function rewriteHtml(file) {
+  const original = fs.readFileSync(file, 'utf8');
+  const $ = cheerio.load(original, { decodeEntities: false });
+
+  let updatedCount = 0;
+
+  $('img').each((_, img) => {
+    const $img = $(img);
+    const src = $img.attr('src');
+
+    if (!src) return;
+
+    // Only process local JPG/PNG
+    const webpSrc = toWebpPath(src);
+    if (!webpSrc) return;
+
+    // Ensure the matching .webp exists next to the referenced file
+    if (!fileExistsRelative(file, webpSrc)) return;
+
+    // Build <picture>
+    // Keep alt, width, height, decoding, referrerpolicy, etc.
+    const attrs = $img.attr();
+    // Ensure lazy loading for non-hero images (best practice: don't lazy-load above-the-fold[6][12][17])
+    if (!hasNonLazyHint($img)) {
+      attrs.loading = attrs.loading || 'lazy';
+    } else {
+      // Ensure hero images do NOT have loading="lazy"
+      if (attrs.loading === 'lazy') delete attrs.loading;
     }
+
+    // Always keep the original src on <img> as the fallback
+    const fallbackImg = $('<img/>', attrs);
+
+    const $picture = $('<picture></picture>');
+    // First source: WebP
+    $picture.append(`<source type="image/webp" srcset="${webpSrc}">`);
+    // Optional: an explicit JPEG/PNG source before <img> is OK, but not required.
+    // The <img> itself is the universal fallback[3][2][14].
+
+    $picture.append(fallbackImg);
+
+    // Replace the original <img> with <picture>
+    $img.replaceWith($picture);
+    updatedCount++;
+  });
+
+  if (updatedCount > 0) {
+    fs.writeFileSync(file, $.html(), 'utf8');
+    console.log(`Updated: ${file} (${updatedCount} image${updatedCount > 1 ? 's' : ''})`);
+    return true;
+  } else {
+    console.log(`No changes: ${file}`);
+    return false;
   }
-  console.log(`Done. Files updated: ${totalChanged}/${htmlFiles.length}`);
 }
 
-main();
+function run() {
+  const files = glob.sync(HTML_GLOB, {
+    ignore: ['node_modules/**', '.git/**', 'dist/**', 'build/**']
+  });
+
+  if (files.length === 0) {
+    console.log('No HTML files found.');
+    process.exit(0);
+  }
+
+  let changed = 0;
+  files.forEach(f => {
+    const didChange = rewriteHtml(f);
+    if (didChange) changed++;
+  });
+
+  if (changed === 0) {
+    console.log('No HTML files required updates (either already converted, or no matching .webp found).');
+  } else {
+    console.log(`Done. Updated ${changed} HTML file(s).`);
+  }
+}
+
+run();
