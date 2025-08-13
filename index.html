@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TheCawnpore</title>
+    <meta name="description" content="The Cawnpore Magazine - A platform celebrating literature, art, and cultural diversity from Kanpur and beyond. Read our issues or submit your work.">
+    <meta property="og:title" content="The Cawnpore Magazine - Celebrating Kanpur's Literary Heritage">
+    <meta property="og:description" content="A platform celebrating literature, art, and cultural diversity from Kanpur and beyond.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thecawnporemag.github.io/">
     <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
@@ -135,8 +140,50 @@
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
     </div>
+<<<<<<< HEAD
     <!-- Navbar Component Container -->
     <div id="navbar-container" data-component="navbar-hero"></div>
+=======
+    <section class="header">
+      <nav role="navigation" aria-label="Main Menu">
+        <!-- Logo on the left -->
+        <a href="index.html">
+          <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+        </a>
+        
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="submission.html">SUBMIT</a></li>
+            <li><a href="issue.html">ISSUE</a></li>
+            <li><a href="masthead.html">MASTHEAD</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+
+            <li><a href="open-source.html">OPEN SOURCE</a></li>
+            <li><a href="journey.html">OUR JOURNEY</a></li>
+
+            <li><a href="login.html" class="btn">LOGIN</a></li>
+            <li><a href="signup.html" class="btn">REGISTER</a></li>
+          </ul>
+        </div>
+
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+
+      <div class="text-box">
+        <h1 class="text1">The Cawnpore</h1>
+        <p class="text2">EST. 2024</p>
+        <div id="quote-widget">
+          <p id="quote-text">Loading quote...</p>
+          <p id="quote-author"></p>
+        </div>
+      </div>
+    </section>
+>>>>>>> upstream/main
 
 
     <!--hero section-->
@@ -268,10 +315,14 @@
           <i class="fa-solid fa-chevron-up"></i>
       </a>
       <div class="footer-top" >
-        <div class="footer-about">
+      <div class="footer-about">
+        <a href="index.html">
+          <img src="assets/favicon.ico" alt="The Cawnpore Logo" style="height: 50px; margin-bottom: 10px;">
           <h3>The Cawnpore</h3>
-          <p>An independent magazine celebrating literary voices and untold stories.</p>
-        </div>
+        </a>
+        
+        <p>An independent magazine celebrating literary voices and untold stories.</p>
+      </div>
         <div class="footer-links"   id="footerLinks">
           <h3>Quick Links</h3>
           <ul>
@@ -410,6 +461,7 @@
 
         
     </script>
+    <script src="scripts/auth.js"></script>
   </body>
 </html>
 
