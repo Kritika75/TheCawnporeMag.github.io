@@ -100,7 +100,12 @@ nav,
 }
 
 nav .fa {
-  display: none;
+  display: none !important;
+}
+
+/* Ensure hamburger icon is hidden on all desktop screens */
+nav .fa-bars {
+  display: none !important;
 }
 
 /* Desktop Navigation - ensure proper styling above mobile breakpoint */
@@ -111,15 +116,66 @@ nav .fa {
     height: auto !important;
     width: auto !important;
     right: auto !important;
+    left: auto !important;
+    top: auto !important;
     visibility: visible !important;
     z-index: 10 !important;
+    box-shadow: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    flex: 1 !important;
+    text-align: right !important;
+  }
+  
+  .nav-links ul {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
+    grid-template-columns: none !important;
   }
   
   .nav-links ul li {
     display: inline-block !important;
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    margin: 0 !important;
+    padding: 8px 12px !important;
+    border-bottom: none !important;
+  }
+  
+  .nav-links ul li a {
+    color: white !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    padding: 10px 0 !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+  }
+  
+  .nav-links ul li a:hover {
+    color: #ffcc66 !important;
+    padding-left: 0 !important;
+  }
+  
+  .nav-links .close-btn {
+    display: none !important;
   }
   
   nav .fa {
+    display: none !important;
+  }
+  
+  nav .fa-bars {
+    display: none !important;
+  }
+  
+  /* Force hide hamburger on desktop */
+  .fa.fa-bars {
     display: none !important;
   }
 }
@@ -131,23 +187,26 @@ nav .fa {
   }
   
   .nav-links {
-    position: fixed;
-    background: linear-gradient(135deg, #d24848, #7a0000, #cea8bc);
-    height: 100vh;
-    width: 200px;
-    top: 0;
-    right: -100%;
-    text-align: left;
-    z-index: 2;
-    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
-    transition: right 0.4s ease-in-out;
-    visibility: hidden;
+    position: fixed !important;
+    background: linear-gradient(135deg, #d24848, #7a0000, #cea8bc) !important;
+    height: 100vh !important;
+    width: 200px !important;
+    top: 0 !important;
+    right: -200px !important;
+    text-align: left !important;
+    z-index: 10001 !important;
+    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5) !important;
+    transition: right 0.4s ease-in-out !important;
+    visibility: hidden !important;
+    opacity: 1 !important;
   }
   
   .nav-links.active,
   .nav-links.nav-active {
     right: 0 !important;
     visibility: visible !important;
+    opacity: 1 !important;
+  }
   }
   
   /* Add backdrop overlay when menu is active */
@@ -162,6 +221,8 @@ nav .fa {
     background: rgba(0, 0, 0, 0.5);
     z-index: -1;
   }
+  
+  /* Ensure hamburger button shows properly */
   
   nav .fa {
     display: block !important;
@@ -186,19 +247,19 @@ nav .fa {
   .nav-links ul {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 16px;
-    padding: 40px 20px;
+    gap: 8px;
+    padding: 60px 20px 20px 20px;
     margin: 0;
     list-style: none;
   }
   
   .nav-links ul li {
     display: block;
-    opacity: 0;
-    transform: translateX(30px);
-    animation: slideIn 0.4s forwards;
+    opacity: 1;
+    transform: translateX(0);
     margin: 0;
     border-bottom: none;
+    padding: 8px 0;
   }
 
   @keyframes slideIn {
@@ -212,11 +273,31 @@ nav .fa {
     border-bottom: none;
   }
   
+  /* Close button styling */
+  .nav-links .close-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    background: none;
+    border: none;
+    padding: 5px;
+    line-height: 1;
+  }
+  
+  .nav-links .close-btn:hover {
+    color: #ffcc66;
+  }
+  
   .nav-links ul li a {
     color: white !important;
-    font-size: 18px !important;
-    font-weight: 500 !important;
-    padding: 12px 0 !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    padding: 8px 0 !important;
     display: block !important;
     transition: all 0.3s ease !important;
     text-decoration: none !important;
@@ -224,7 +305,7 @@ nav .fa {
   
   .nav-links ul li a:hover {
     color: #ffcc66 !important;
-    padding-left: 15px !important;
+    padding-left: 10px !important;
   }
   
   /* Close button styling */
@@ -272,6 +353,83 @@ nav .fa {
   nav .fa:hover {
     background: rgba(255, 255, 255, 0.2) !important;
     transform: scale(1.1) !important;
+  }
+  
+  /* Override any conflicting styles from style.css */
+  .nav-links {
+    position: fixed !important;
+    background: linear-gradient(135deg, #d24848, #7a0000, #cea8bc) !important;
+    height: 100vh !important;
+    width: 200px !important;
+    top: 0 !important;
+    right: -200px !important;
+    text-align: left !important;
+    z-index: 10001 !important;
+    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5) !important;
+    transition: right 0.4s ease-in-out !important;
+    visibility: hidden !important;
+    opacity: 1 !important;
+  }
+  
+  .nav-links.active,
+  .nav-links.nav-active {
+    right: 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Add the same ul and li styling as 1146px breakpoint */
+  .nav-links ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 60px 20px 20px 20px;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .nav-links ul li {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+    margin: 0;
+    border-bottom: none;
+    padding: 8px 0;
+  }
+  
+  .nav-links ul li a {
+    color: white !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    padding: 8px 0 !important;
+    display: block !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+  }
+  
+  .nav-links ul li a:hover {
+    color: #ffcc66 !important;
+    padding-left: 10px !important;
+  }
+  
+  /* Close button styling */
+  .nav-links .close-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    background: none;
+    border: none;
+    padding: 5px;
+    line-height: 1;
+  }
+  
+  .nav-links .close-btn:hover {
+    color: #ffcc66;
   }
 }
 
