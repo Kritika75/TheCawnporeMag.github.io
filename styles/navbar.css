@@ -61,6 +61,8 @@ nav,
   text-align: right;
   position: relative;
   z-index: 10;
+  background: none;
+  opacity: 1;
 }
 
 .nav-links ul li {
@@ -101,52 +103,109 @@ nav .fa {
   display: none;
 }
 
+/* Desktop Navigation - ensure proper styling above mobile breakpoint */
+@media (min-width: 1147px) {
+  .nav-links {
+    position: relative !important;
+    background: none !important;
+    height: auto !important;
+    width: auto !important;
+    right: auto !important;
+    visibility: visible !important;
+    z-index: 10 !important;
+  }
+  
+  .nav-links ul li {
+    display: inline-block !important;
+  }
+  
+  nav .fa {
+    display: none !important;
+  }
+}
+
 /* Mobile Navigation */
-@media (max-width: 1132px) {
+@media (max-width: 1146px) {
   .nav-links ul li {
     display: block;
   }
   
   .nav-links {
     position: fixed;
-    background: linear-gradient(135deg, rgb(99, 0, 0), rgba(218, 67, 67, 0.665), rgb(71, 22, 22), rgba(17, 16, 16, 0.3));
-    background-size: 400% 400%;
-    animation: gradientMove 5s linear infinite;
-    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, #d24848, #7a0000, #cea8bc);
     height: 100vh;
-    width: 250px;
+    width: 200px;
     top: 0;
-    right: -250px;
+    right: -100%;
     text-align: left;
-    z-index: 9999;
-    transition: right 0.5s ease;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 2;
+    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s ease-in-out;
+    visibility: hidden;
   }
   
-  .nav-links.active {
-    right: 0;
+  .nav-links.active,
+  .nav-links.nav-active {
+    right: 0 !important;
+    visibility: visible !important;
+  }
+  
+  /* Add backdrop overlay when menu is active */
+  .nav-links.active::before,
+  .nav-links.nav-active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
   }
   
   nav .fa {
-    display: block;
-    color: white;
-    margin: 10px;
-    font-size: 22px;
-    cursor: pointer;
-    z-index: 10000;
+    display: block !important;
+    color: white !important;
+    margin: 10px !important;
+    font-size: 22px !important;
+    cursor: pointer !important;
+    z-index: 10002 !important;
+    position: relative !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    padding: 8px !important;
+    border-radius: 4px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  nav .fa:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: scale(1.1) !important;
   }
   
   .nav-links ul {
-    padding: 80px 30px 30px 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 40px 20px;
     margin: 0;
     list-style: none;
   }
   
   .nav-links ul li {
+    display: block;
+    opacity: 0;
+    transform: translateX(30px);
+    animation: slideIn 0.4s forwards;
     margin: 0;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: none;
+  }
+
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
   
   .nav-links ul li:last-child {
@@ -154,25 +213,65 @@ nav .fa {
   }
   
   .nav-links ul li a {
-    color: white;
-    font-size: 16px;
-    padding: 10px 0;
-    display: block;
-    transition: all 0.3s ease;
+    color: white !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    padding: 12px 0 !important;
+    display: block !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
   }
   
   .nav-links ul li a:hover {
-    color: #ffcc66;
-    padding-left: 10px;
+    color: #ffcc66 !important;
+    padding-left: 15px !important;
   }
   
-  .nav-links .fa-times {
-    color: white;
-    font-size: 24px;
+  /* Close button styling */
+  .nav-links .close-btn {
     position: absolute;
-    top: 25px;
-    right: 25px;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links .close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+}
+
+/* Fix hamburger button styling for screens below 700px */
+@media (max-width: 700px) {
+  nav .fa {
+    display: block !important;
+    color: white !important;
+    margin: 10px !important;
+    font-size: 22px !important;
+    cursor: pointer !important;
+    z-index: 10002 !important;
+    position: relative !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    padding: 8px !important;
+    border-radius: 4px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  nav .fa:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: scale(1.1) !important;
   }
 }
 
