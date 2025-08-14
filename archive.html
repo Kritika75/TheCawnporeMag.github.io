@@ -24,8 +24,66 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Mouse Trail Circles */
+    .circle {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    .nav-links ul li a.active {
+      color: #ff9800;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Mouse Trail Circles -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div> 
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
 
   <!-- Navigation -->
   <nav role="navigation" aria-label="Main Menu">
@@ -45,6 +103,7 @@
         <li><a href="gallery.html">GALLERY</a></li>
         <li><a href="open-source.html">OPEN SOURCE</a></li>
         <li><a href="journey.html">OUR JOURNEY</a></li>
+        <li><a href="archive.html" class="active">ARCHIVE</a></li>
       </ul>
     </div>
 
@@ -54,20 +113,7 @@
   <!-- Back Button -->
   <button
     onclick="history.back()"
-    style="
-      position: fixed;
-      top: 70px;
-      left: 20px;
-      z-index: 1000;
-      background-color: #800000;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    "
+    style="position: fixed; top: 70px; left: 20px; z-index: 1000; background-color: #800000; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; font-weight: bold; box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);"
   >
     ← Back
   </button>
@@ -87,7 +133,6 @@
         <a href="#">Read More</a>
       </div>
     </div>
-
     <div class="archive-card">
       <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80" alt="Issue 2">
       <div class="archive-card-content">
@@ -95,7 +140,6 @@
         <a href="#">Read More</a>
       </div>
     </div>
-
     <div class="archive-card">
       <img src="https://images.unsplash.com/photo-1473187983305-f615310e7daa?auto=format&fit=crop&w=800&q=80" alt="Issue 3">
       <div class="archive-card-content">
@@ -103,7 +147,6 @@
         <a href="#">Read More</a>
       </div>
     </div>
-
     <div class="archive-card">
       <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=800&q=80" alt="Issue 4">
       <div class="archive-card-content">
@@ -115,9 +158,7 @@
 
   <!-- Footer -->
   <footer class="site-footer" id="footer">
-    <a class="back-to-top" href="#">
-      <i class="fa-solid fa-chevron-up"></i>
-    </a>
+    <a class="back-to-top" href="#"><i class="fa-solid fa-chevron-up"></i></a>
     <div class="footer-top">
       <div class="footer-about">
         <a href="index.html">
@@ -126,7 +167,6 @@
         </a>
         <p>An independent magazine celebrating literary voices and untold stories.</p>
       </div>
-
       <div class="footer-links" id="footerLinks">
         <h3>Quick Links</h3>
         <ul>
@@ -141,28 +181,16 @@
           <li><a href="open-source.html">Open Source</a></li>
         </ul>
       </div>
-
       <div class="footer-contact" id="footerContact">
         <h3>Contact Us</h3>
         <div class="social-icons">
-          <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-          <a href="https://www.instagram.com/thecawnporemagazine/" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="https://x.com/TheCawnporeMag" target="_blank">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-          <a href="https://www.tumblr.com/thecawnporemagazine" target="_blank">
-            <i class="fa-brands fa-tumblr"></i>
-          </a>
+          <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+          <a href="https://www.instagram.com/thecawnporemagazine/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://x.com/TheCawnporeMag" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.tumblr.com/thecawnporemagazine" target="_blank"><i class="fa-brands fa-tumblr"></i></a>
         </div>
       </div>
-
       <div class="subscription-box-about">
         <h3>Subscribe to our Newsletter</h3>
         <form action="/subscribe" method="post">
@@ -171,20 +199,48 @@
         </form>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>Made with &#x2665; by Kritika Singh</p>
       <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
     </div>
-
     <audio id="bg-music" loop preload="auto">
       <source src="assets/music/lofi.mp3" type="audio/mpeg" />
-      Your browser does not support the audio element.
     </audio>
     <div id="music-toggle" aria-label="Toggle Background Music" role="button" tabindex="0">
       <i class="fa-solid fa-music"></i>
     </div>
   </footer>
 
+  <!-- Mouse Trail Script -->
+  <script>
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+    const colors = ["#ffb56b","#fdaf69","#f89d63","#f59761","#ef865e","#ec805d","#e36e5c","#df685c","#d5585c","#d1525c","#c5415d","#c03b5d","#b22c5e","#ac265e","#9c155f","#950f5f","#830060","#7c0060","#680060","#60005f","#48005f","#3d005e"];
+    circles.forEach((circle, index) => {
+      circle.x = 0;
+      circle.y = 0;
+      circle.style.backgroundColor = colors[index % colors.length];
+    });
+    window.addEventListener("mousemove", e => {
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+    });
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+      circles.forEach((circle, index) => {
+        circle.style.left = x - 12 + "px";
+        circle.style.top = y - 12 + "px";
+        circle.style.scale = (circles.length - index) / circles.length;
+        circle.x = x;
+        circle.y = y;
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.15;
+        y += (nextCircle.y - y) * 0.15;
+      });
+      requestAnimationFrame(animateCircles);
+    }
+    animateCircles();
+  </script>
 </body>
 </html>
