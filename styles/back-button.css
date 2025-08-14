@@ -5,7 +5,7 @@
 
 .back-button-unified {
   position: fixed;
-  top: 70px;
+  top: 90px; /* Position below navbar (80px + 10px margin) */
   left: 20px;
   z-index: 1000;
   background-color: #800000;
@@ -39,9 +39,18 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1132px) {
+  .back-button-unified {
+    top: 90px; /* Stay below navbar on mobile */
+    left: 15px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 768px) {
   .back-button-unified {
-    top: 15px;
+    top: 90px; /* Consistent positioning */
     left: 15px;
     padding: 8px 12px;
     font-size: 12px;
@@ -50,7 +59,7 @@
 
 @media (max-width: 480px) {
   .back-button-unified {
-    top: 10px;
+    top: 90px; /* Always below navbar */
     left: 10px;
     padding: 6px 10px;
     font-size: 11px;
