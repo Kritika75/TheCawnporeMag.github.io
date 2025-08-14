@@ -166,17 +166,6 @@
           </ul>
         </div>
 
-        <!-- Theme Toggle (Light/Dark) -->
-<button id="themeToggle"
-        class="theme-toggle"
-        type="button"
-        aria-label="Toggle dark mode"
-        title="Toggle dark mode">
-  <i class="fa-solid fa-moon" aria-hidden="true" style="color: #fdf0d5;"></i>
-  <i class="fa-solid fa-sun" aria-hidden="true" style="color: #fdf0d5;"></i>
-</button>
-
-
         <i class="fa fa-bars" onclick="showMenu()"></i>
       </nav>
 
@@ -457,39 +446,7 @@
 
         
     </script>
-
-
-    <script>
-(function() {
-  const STORAGE_KEY = "tcm-theme";
-  const root = document.documentElement;
-  const btn = document.getElementById("themeToggle");
-
-  const saved = localStorage.getItem(STORAGE_KEY);
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const initial = saved || (prefersDark ? "dark" : "light");
-
-  function applyTheme(theme) {
-    root.setAttribute("data-theme", theme);
-    localStorage.setItem(STORAGE_KEY, theme);
-  }
-
-  applyTheme(initial);
-
-  btn?.addEventListener("click", () => {
-    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    applyTheme(next);
-  });
-})();
-
-
-</script>
-
-
-
-
     <script src="scripts/auth.js"></script>
-
   </body>
 </html>
 
