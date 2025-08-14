@@ -21,7 +21,7 @@ class ComponentLoader {
             <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
             
             <div class="nav-links" id="navLinks">
-              <i class="fa fa-times" onclick="hideMenu()"></i>
+              <div class="close-btn" onclick="toggleMenu(false)">×</div>
               <ul>
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="pages/about.html">ABOUT</a></li>
@@ -34,7 +34,7 @@ class ComponentLoader {
                 <li><a href="pages/journey.html">OUR JOURNEY</a></li>
               </ul>
             </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i>
+            <i class="fa fa-bars" onclick="toggleMenu()"></i>
           </nav>
           
           <!-- Hero Content Section -->
@@ -65,7 +65,7 @@ class ComponentLoader {
             <img src="${pathPrefix}assets/favicon.ico" alt="Logo" class="navbar-logo" />
             
             <div class="nav-links" id="navLinks">
-              <i class="fa fa-times" onclick="hideMenu()"></i>
+              <div class="close-btn" onclick="toggleMenu(false)">×</div>
               <ul>
                 <li><a href="${pathPrefix}index.html">HOME</a></li>
                 <li><a href="${pathPrefix}pages/about.html">ABOUT</a></li>
@@ -78,7 +78,7 @@ class ComponentLoader {
                 <li><a href="${pathPrefix}pages/journey.html">OUR JOURNEY</a></li>
               </ul>
             </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i>
+            <i class="fa fa-bars" onclick="toggleMenu()"></i>
           </nav>
         </section>
       `;
@@ -414,11 +414,27 @@ class ComponentLoader {
     // Mobile menu functionality
     function toggleMenu(show) {
       var navLinks = document.getElementById("navLinks");
+      
       if (navLinks) {
-        navLinks.style.right = show ? "0" : "-200px";
-        document.body.style.overflow = show ? "hidden" : "auto";
+        // If no parameter provided, auto-toggle based on current state
+        if (show === undefined) {
+          show = !navLinks.classList.contains('active') && !navLinks.classList.contains('nav-active');
+        }
+        
+        if (show) {
+          navLinks.classList.add('active');
+          navLinks.classList.add('nav-active'); // Also add nav-active for style.css compatibility
+          document.body.style.overflow = "hidden";
+        } else {
+          navLinks.classList.remove('active');
+          navLinks.classList.remove('nav-active');
+          document.body.style.overflow = "auto";
+        }
       }
     }
+
+    // Make toggleMenu global immediately
+    window.toggleMenu = toggleMenu;
 
     window.showMenu = () => toggleMenu(true);
     window.hideMenu = () => toggleMenu(false);
