@@ -1,0 +1,94 @@
+/* General Page Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdf0d5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Page Heading */
+h1 {
+    text-align: center;
+    color: #780000;
+    margin-top: 30px;
+}
+
+/* Archive Section */
+.archive-section {
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Archive Grid */
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Archive Card */
+.archive-card {
+    background-color: white;
+    border: 2px solid #780000;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.archive-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.archive-card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.archive-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #780000;
+    margin-bottom: 10px;
+}
+
+.archive-card a {
+    text-decoration: none;
+    background-color: #780000;
+    color: #fdf0d5;
+    padding: 8px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.archive-card a:hover {
+    background-color: #a00000;
+}
+
+/* Hover Effects */
+.archive-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background-color: #780000;
+    color: #fdf0d5;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #fdf0d5;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

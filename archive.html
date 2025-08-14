@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Cawnpore Magazine - Archive</title>
+  <meta name="description" content="Explore all past issues of The Cawnpore Magazine in our archive, featuring articles, stories, and poetry from different editions.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thecawnporemag.github.io/archive.html">
+  <meta property="og:title" content="Archive - The Cawnpore Magazine">
+  <meta property="og:description" content="Explore all past issues of The Cawnpore Magazine in our archive, featuring articles, stories, and poetry from different editions.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://thecawnporemag.github.io/archive.html">
+  <meta property="twitter:title" content="Archive - The Cawnpore Magazine">
+  <meta property="twitter:description" content="Explore all past issues of The Cawnpore Magazine in our archive, featuring articles, stories, and poetry from different editions.">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80">
+
+  <link rel="stylesheet" href="archive.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav role="navigation" aria-label="Main Menu">
+    <a href="index.html">
+      <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <i class="fa fa-times" onclick="hideMenu()"></i>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="submission.html">SUBMIT</a></li>
+        <li><a href="issue.html">ISSUE</a></li>
+        <li><a href="masthead.html">MASTHEAD</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+        <li><a href="open-source.html">OPEN SOURCE</a></li>
+        <li><a href="journey.html">OUR JOURNEY</a></li>
+      </ul>
+    </div>
+
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+  </nav>
+
+  <!-- Back Button -->
+  <button
+    onclick="history.back()"
+    style="
+      position: fixed;
+      top: 70px;
+      left: 20px;
+      z-index: 1000;
+      background-color: #800000;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    "
+  >
+    ← Back
+  </button>
+
+  <!-- Page Title -->
+  <h1 style="text-align:center; margin-top:100px;">The Cawnpore Magazine Archive</h1>
+  <p style="text-align:center; max-width:700px; margin: 10px auto; font-size:1.1em;">
+    Browse through all our past issues and rediscover the literary treasures of The Cawnpore Magazine.
+  </p>
+
+  <!-- Archive Grid -->
+  <div class="archive-grid">
+    <div class="archive-card">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" alt="Issue 1">
+      <div class="archive-card-content">
+        <h3>Issue #1 - January 2025</h3>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+
+    <div class="archive-card">
+      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80" alt="Issue 2">
+      <div class="archive-card-content">
+        <h3>Issue #2 - April 2025</h3>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+
+    <div class="archive-card">
+      <img src="https://images.unsplash.com/photo-1473187983305-f615310e7daa?auto=format&fit=crop&w=800&q=80" alt="Issue 3">
+      <div class="archive-card-content">
+        <h3>Issue #3 - July 2025</h3>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+
+    <div class="archive-card">
+      <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=800&q=80" alt="Issue 4">
+      <div class="archive-card-content">
+        <h3>Issue #4 - October 2025</h3>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="footer">
+    <a class="back-to-top" href="#">
+      <i class="fa-solid fa-chevron-up"></i>
+    </a>
+    <div class="footer-top">
+      <div class="footer-about">
+        <a href="index.html">
+          <img src="assets/favicon.ico" alt="The Cawnpore Logo" style="height: 50px; margin-bottom: 10px;">
+          <h3>The Cawnpore</h3>
+        </a>
+        <p>An independent magazine celebrating literary voices and untold stories.</p>
+      </div>
+
+      <div class="footer-links" id="footerLinks">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="submission.html">Submit</a></li>
+          <li><a href="issue.html">Issue</a></li>
+          <li><a href="masthead.html">Masthead</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="open-source.html">Open Source</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact" id="footerContact">
+        <h3>Contact Us</h3>
+        <div class="social-icons">
+          <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://www.instagram.com/thecawnporemagazine/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://x.com/TheCawnporeMag" target="_blank">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://www.tumblr.com/thecawnporemagazine" target="_blank">
+            <i class="fa-brands fa-tumblr"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="subscription-box-about">
+        <h3>Subscribe to our Newsletter</h3>
+        <form action="/subscribe" method="post">
+          <input type="email" name="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Made with &#x2665; by Kritika Singh</p>
+      <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
+    </div>
+
+    <audio id="bg-music" loop preload="auto">
+      <source src="assets/music/lofi.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <div id="music-toggle" aria-label="Toggle Background Music" role="button" tabindex="0">
+      <i class="fa-solid fa-music"></i>
+    </div>
+  </footer>
+
+</body>
+</html>
