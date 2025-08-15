@@ -175,6 +175,8 @@ nav {
 .nav-links {
   flex: 1;
   text-align: right;
+  position: relative;
+  z-index: 10;
 }
 
 .nav-links ul li {
@@ -189,7 +191,7 @@ nav {
   text-decoration: none;
   font-family: serif;
   font-size: 13px;
-  padding: 12px 16px;
+  padding: 0px 16px;
   display: block;
 }
 .nav-links ul li a:hover {
@@ -229,7 +231,7 @@ nav .fa {
     height: 100vh;
     width: 200px;
     top: 0;
-    right: -200px;
+    right: -100%;
     text-align: left;
     z-index: 2;
     box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
