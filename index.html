@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TheCawnpore</title>
+    <meta name="description" content="The Cawnpore Magazine - A platform celebrating literature, art, and cultural diversity from Kanpur and beyond. Read our issues or submit your work.">
+    <meta property="og:title" content="The Cawnpore Magazine - Celebrating Kanpur's Literary Heritage">
+    <meta property="og:description" content="A platform celebrating literature, art, and cultural diversity from Kanpur and beyond.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thecawnporemag.github.io/">
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -137,7 +142,9 @@
     <section class="header">
       <nav role="navigation" aria-label="Main Menu">
         <!-- Logo on the left -->
-        <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+        <a href="index.html">
+          <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+        </a>
         
         <div class="nav-links" id="navLinks">
           <i class="fa fa-times" onclick="hideMenu()"></i>
@@ -163,8 +170,8 @@
       </nav>
 
       <div class="text-box">
-        <h1>The Cawnpore</h1>
-        <p>EST. 2024</p>
+        <h1 class="text1">The Cawnpore</h1>
+        <p class="text2">EST. 2024</p>
         <div id="quote-widget">
           <p id="quote-text">Loading quote...</p>
           <p id="quote-author"></p>
@@ -302,10 +309,14 @@
           <i class="fa-solid fa-chevron-up"></i>
       </a>
       <div class="footer-top" >
-        <div class="footer-about">
+      <div class="footer-about">
+        <a href="index.html">
+          <img src="assets/favicon.ico" alt="The Cawnpore Logo" style="height: 50px; margin-bottom: 10px;">
           <h3>The Cawnpore</h3>
-          <p>An independent magazine celebrating literary voices and untold stories.</p>
-        </div>
+        </a>
+        
+        <p>An independent magazine celebrating literary voices and untold stories.</p>
+      </div>
         <div class="footer-links"   id="footerLinks">
           <h3>Quick Links</h3>
           <ul>

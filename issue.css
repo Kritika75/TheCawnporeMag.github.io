@@ -175,6 +175,8 @@ nav {
 .nav-links {
   flex: 1;
   text-align: right;
+  position: relative;
+  z-index: 10;
 }
 
 .nav-links ul li {
@@ -189,7 +191,7 @@ nav {
   text-decoration: none;
   font-family: serif;
   font-size: 13px;
-  padding: 12px 16px;
+  padding: 0px 16px;
   display: block;
 }
 .nav-links ul li a:hover {
@@ -229,7 +231,7 @@ nav .fa {
     height: 100vh;
     width: 200px;
     top: 0;
-    right: -200px;
+    right: -100%;
     text-align: left;
     z-index: 2;
     box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
@@ -329,11 +331,11 @@ nav .fa {
   animation: shrinkPulse 4s ease-in-out infinite alternate,
     color 5s ease-in-out infinite;
   background-size: 400% 400%;
-  width: 48%; /* Shrink the cover width */
+  width: 65%; /* Shrink the cover width */
   margin: 0 auto 30px auto; /* Center and add bottom margin */
   position: relative;
   overflow: hidden;
-  padding: 25px 0 45px 0; /* Top and bottom padding for spacing */
+  padding: 20px 0 40px 0; /* Top and bottom padding for spacing */
   box-shadow: 0 0 20px #000000;
   display: flex;
   flex-direction: column;
