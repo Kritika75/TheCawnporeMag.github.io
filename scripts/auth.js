@@ -43,13 +43,13 @@ function initializePasswordToggle() {
       }
     });
 
-    // Add hover effect for better user experience
+    // Add hover effect for better user experience using CSS classes
     toggleButton.addEventListener('mouseenter', function () {
-      this.style.color = 'rgba(255, 255, 255, 1)';
+      this.classList.add('toggle-hover');
     });
 
     toggleButton.addEventListener('mouseleave', function () {
-      this.style.color = 'rgba(255, 255, 255, 0.7)';
+      this.classList.remove('toggle-hover');
     });
   }
 }

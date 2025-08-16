@@ -106,6 +106,10 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
   color: rgba(255, 255, 255, 1);
 }
 
+/* Toggle hover class for JavaScript interaction */
+#togglePassword.toggle-hover {
+  color: rgba(255, 255, 255, 1);
+}
 #togglePassword i {
   font-family: "Font Awesome 6 Free" !important;
   font-weight: 900 !important;
