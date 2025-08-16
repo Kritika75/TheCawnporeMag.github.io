@@ -145,6 +145,20 @@ document.addEventListener("DOMContentLoaded", () => {
         quoteAuthorEl.textContent = `– ${randomQuote.author}`;
     }
 });
+// Fade-in effect for about cards
+document.addEventListener("DOMContentLoaded", function() {
+  const cards = document.querySelectorAll('.about-card');
+  function revealCards() {
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 60) {
+        card.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealCards);
+  revealCards();
+});
 // === Social Share Buttons ===
 document.addEventListener("DOMContentLoaded", () => {
     const pageURL = encodeURIComponent(window.location.href);

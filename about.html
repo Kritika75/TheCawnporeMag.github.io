@@ -4,21 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-      <meta name="description" content="Learn about The Cawnpore Magazine's mission to document and preserve Kanpur's historical narratives and cultural heritage.">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thecawnporemag.github.io/about.html">
-    <meta property="og:title" content="About The Cawnpore Magazine - Our Mission and Vision">
-    <meta property="og:description" content="Learn about our mission to document and preserve Kanpur's historical narratives and cultural heritage.">
-    <meta property="og:image" content="https://thecawnporemag.github.io/assets/images/about-og-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://thecawnporemag.github.io/about.html">
-    <meta property="twitter:title" content="About The Cawnpore Magazine - Our Mission and Vision">
-    <meta property="twitter:description" content="Learn about our mission to document and preserve Kanpur's historical narratives and cultural heritage.">
-    <meta property="twitter:image" content="https://thecawnporemag.github.io/assets/images/about-og-image.jpg">
     <link rel = "stylesheet" href="about.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -154,9 +139,7 @@
     <section class="header">
         <nav role="navigation" aria-label="Main Menu">
           <!-- Logo on the left -->
-        <a href="index.html">
-          <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
-        </a>
+        <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
         
           <div class = "nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
@@ -378,48 +361,160 @@
     <div class="separator-label">◉</div>
     <div class="separator-line"></div>
   </div>
-<section id="famous-food" class="food-section">
-    <h2 class="section-title">Cawnpore's Famous Food</h2>
-    <div class="food-scroll">
-        <div class="food-card">
-            <img src="Imarti.jpeg" alt="Food 1">
-            <p>Famous golden dessert of Kanpur known for it's crispiness and sweetness.</p>
-            <h2>Imarti</h2>
-        </div>
-        <div class="food-card">
-            <img src="Sultani Dal.jpeg" alt="Food 2">
-            <p>A royal Dal made with tur dal cooked with milk,cream and yogurt with some tadka on top.</p>
-              <h2>Sultani Dal</h2>
-          </div>
-        <div class="food-card">
-            <img src="Luchi Sabji.jpeg" alt="Food 3">
-            <p>It's a breakfast dish made by deep frying the bread and bolied potato.</p>
-            <h2>Luchi Sabji</h2>
 
-        </div>
-        <div class="food-card">
-            <img src="Makhan Malai.jpeg" alt="Food 4">
-            <p>This food is quite famous in Kanpur during winter seasons.</p>
-            <h2>Makhan Malai</h2>
-        </div>
-      
-    </div>
+<section id="famous-food" class="food-section">
+ <h2 class="landmark-heading-outside">Cawnpore's Famous Food</h2>
+ <ul class="landmarks template-slider food-slider">
+  <li class="landmarkCard">
+   <img src="Imarti.jpeg" alt="Imarti" />
+   <div class="landmarkInfo">
+    <p class ="Tag-line" style="color: #FDF0D5;">
+     Famous golden dessert of Kanpur known for its crispiness and sweetness.
+    </p>
+    <h2>Imarti</h2>
+   </div>
+  </li>
+  <li class="landmarkCard">
+   <img src="Sultani Dal.jpeg" alt="Sultani Dal" />
+   <div class="landmarkInfo">
+    <p class ="Tag-line" style="color: #FDF0D5;">
+     A royal Dal made with tur dal cooked with milk, cream, and yogurt with some tadka on top.
+    </p>
+    <h2>Sultani Dal</h2>
+   </div>
+  </li>
+  <li class="landmarkCard">
+   <img src="Luchi Sabji.jpeg" alt="Luchi Sabji" />
+   <div class="landmarkInfo">
+    <p class ="Tag-line" style="color: #FDF0D5;">
+     It's a breakfast dish made by deep frying the bread and boiled potato.
+    </p>
+    <h2>Luchi Sabji</h2>
+   </div>
+  </li>
+  <li class="landmarkCard">
+   <img src="Makhan Malai.jpeg" alt="Makhan Malai" />
+   <div class="landmarkInfo">
+    <p class ="Tag-line" style="color: #FDF0D5;">
+     This food is quite famous in Kanpur during winter seasons.
+    </p>
+    <h2>Makhan Malai</h2>
+   </div>
+  </li>
+ </ul>
+ <div style="width: 100%; margin-top: 1rem; margin-bottom: 3rem; text-align: center">
+  <button
+   id="food-slider-left"
+   aria-label="Previous Food"
+   style="
+    font-size: 1.5rem;
+    padding: 14px;
+    background: #fff;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    margin-right: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    font-weight: bolder;
+   "
+  >
+   ←
+  </button>
+  <button
+   id="food-slider-right"
+   aria-label="Next Food"
+   style="
+    z-index: 10;
+    font-size: 1.5rem;
+    padding: 14px;
+    background: #fff;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    font-weight: bolder;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+   "
+  >
+   →
+  </button>
+ </div>
 </section>
 
+<div class="section-separator">
+ <div class="separator-line"></div>
+ <div class="separator-label">◉</div>
+ <div class="separator-line"></div>
+</div>
+ <!-- Tradition Section -->
+<h2 class="landmark-heading-outside">
+  <a href="https://en.wikipedia.org/wiki/Kanpur#Culture" target="_blank">
+    Cawnpore's Tradition
+  </a>
+</h2>
+<div class="landmarkCard red-card">
+  <img src="Cawnpore-Tradition.jpg" alt="Cawnpore Tradition" class="landmark-img">
+  <div class="landmarkInfo">
+    <p class="Tag-line"  style="color: #FDF0D5;">
+      Cawnpore’s traditions are a vibrant blend of history, art, and hospitality. The city is known for its literary circles, music, and a unique blend of old-world charm and modern vibrancy.
+    </p>
+  </div>
+</div>
+
+<div class="section-separator">
+  <div class="separator-line"></div>
+  <div class="separator-label">◉</div>
+  <div class="separator-line"></div>
+</div>
+
+<!--  Festivals and Culture Section -->
+<h2 class="landmark-heading-outside">
+  <a href="https://en.wikipedia.org/wiki/Kanpur#Culture" target="_blank">
+    Cawnpore's Festivals and Culture
+  </a>
+</h2>
+<div class="landmarkCard red-card">
+  <img src="Cawnpore- Festival and Culture.jpg" alt="Cawnpore  Festivals and Culture" class="landmark-img">
+  <div class="landmarkInfo">
+    <p class="Tag-line"  style="color: #FDF0D5;">
+      Festivals like Holi, Diwali, Eid, and Ganga Mela are celebrated with great enthusiasm. Traditional fairs and processions bring the community together in colorful harmony.
+    </p>
+  </div>
+</div>
+
+<div class="section-separator">
+  <div class="separator-line"></div>
+  <div class="separator-label">◉</div>
+  <div class="separator-line"></div>
+</div>
+
+<!-- Attire Section -->
+<h2 class="landmark-heading-outside">
+  <a href="https://en.wikipedia.org/wiki/Sari#Uttar_Pradesh" target="_blank">
+    Cawnpore's Attire
+  </a>
+</h2>
+<div class="landmarkCard red-card">
+  <img src="Cawnpore-attire.jpeg" alt="Cawnpore Attire" class="landmark-img">
+  <div class="landmarkInfo">
+    <p class="Tag-line"  style="color: #FDF0D5;">
+      Traditional attire includes elegant sarees, kurta-pajamas, and sherwanis, often adorned with local embroidery. Modern fashion blends seamlessly with these timeless styles.
+    </p>
+  </div>
+</div>
+<br>
+<br>
     <!-- Footer -->
    <footer class="site-footer" id="footer" >
       <a class="back-to-top" href="#">
           <i class="fa-solid fa-chevron-up"></i>
       </a>
       <div class="footer-top" >
-      <div class="footer-about">
-        <a href="index.html">
-          <img src="assets/favicon.ico" alt="The Cawnpore Logo" style="height: 50px; margin-bottom: 10px;">
+        <div class="footer-about">
           <h3>The Cawnpore</h3>
-        </a>
-        
-        <p>An independent magazine celebrating literary voices and untold stories.</p>
-      </div>
+          <p>An independent magazine celebrating literary voices and untold stories.</p>
+        </div>
         <div class="footer-links"   id="footerLinks">
           <h3>Quick Links</h3>
           <ul>
@@ -472,3 +567,4 @@
 
 </body>
 </html>
+

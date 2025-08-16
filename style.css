@@ -405,7 +405,6 @@ nav .fa {
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
     }
 }
-
 .Welcome {
     width: 80%;
     margin: auto;
@@ -1042,6 +1041,7 @@ button:active{
 .navbar-logo {
   height: 40px;
   margin-right: 16px;
+ vertical-align: middle;
   vertical-align: middle;
 }
 
@@ -1180,4 +1180,6 @@ button:active{
     display: none;
   }
 }
+
+
 
