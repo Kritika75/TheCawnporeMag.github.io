@@ -389,3 +389,120 @@ input:checked + .slider:before {
     display: none !important;
   }
 }
+
+.contributors-section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+  
+.contributors-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 3rem;
+  justify-items: center;
+}
+
+.contributor-card {
+  background: linear-gradient(to right, #f8d7d0, #fdf0d5, #f4e8fe);
+  border: 2px solid #780000;
+  border-radius: 1rem;
+  padding: 1.8rem 1.5rem;
+  max-width: 260px;
+  width: 100%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+.contributor-card:hover {
+  background: linear-gradient(to bottom, #f4e8fe, #fdf0d5, #f8d7d0);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(91, 17, 17, 0.25);
+}
+
+.contributor-img {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contributor-img:hover {
+  box-shadow: 0 0 18px rgba(255, 170, 200, 0.8);
+}
+
+.contributor-card:hover .contributor-img {
+  transform: rotateY(180deg);
+  border: 1.7px solid #78000080;
+}
+
+.contributor-name {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  color: #5b1111;
+  text-shadow: 0 0 6px rgba(255, 235, 235, 0.6);
+}
+
+.contributor-username {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #7b2a2a;
+  margin-bottom: 0.5rem;
+}
+
+.contributor-username:hover {
+  color: #d400ff;
+}
+
+.contributions-count {
+  font-size: 1.1rem;
+  font-weight: 530;
+  color: #400a0a;
+  margin-bottom: 1.2rem;
+}
+
+.view-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #650518, #751918, #7b2727);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 5px 14px rgba(255,105,180,.35);
+  transition: .35s ease;
+}
+
+.view-profile-btn:hover {
+  background: linear-gradient(135deg, #f09393, #df79e4, #ff2b2b);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 22px rgba(92, 1, 46, 0.55);
+}
+
+.view-profile-btn .github-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: transform .3s ease;
+}
+
+.view-profile-btn:hover .github-icon {
+  transform: rotate(360deg) scale(1.1);
+}
+
+.error-msg {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #b91c1c;
+  margin-top: 1.5rem;
+}
