@@ -62,6 +62,64 @@ body {
   transition: border-color 0.3s ease;
 }
 
+/* Disable the default password reveal icon in Edge and other browsers */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+input::-webkit-reveal {
+  display: none !important;
+}
+
+/* Additional protection against browser password toggles */
+input[type="password"]::-webkit-contacts-auto-fill-button,
+input[type="password"]::-webkit-credentials-auto-fill-button {
+  display: none !important;
+}
+
+/* Password toggle button styling */
+.password-field-container {
+  position: relative;
+}
+
+#togglePassword {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+#togglePassword:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+/* Toggle hover class for JavaScript interaction */
+#togglePassword.toggle-hover {
+  color: rgba(255, 255, 255, 1);
+}
+#togglePassword i {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  pointer-events: none;
+}
+
+/* Ensure password input has proper padding for toggle button */
+#password {
+  padding-right: 45px !important;
+}
 .container input::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
