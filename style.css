@@ -1094,3 +1094,46 @@ button:active{
     }
 
 }
+/* 🔹 Sidebar styles */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px; /* hidden by default */
+      width: 250px;
+      height: 100%;
+      background: #a00000;
+      color: #fff;
+      transition: left 0.3s ease;
+      z-index: 1000;
+      padding-top: 60px;
+    }
+    .sidebar.active {
+      left: 0;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar ul li {
+      padding: 15px;
+      border-bottom: 1px solid #b5b3b3;
+    }
+    .sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* 🔹 Hamburger button */
+    .hamburger {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      z-index: 1100;
+      font-size: 28px;
+      cursor: pointer;
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masthead</title>
-    <link rel="stylesheet" href="masthead.css">
+    <link rel="stylesheet" href="masthead.css"> 
+    <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
@@ -70,6 +71,41 @@
     </button>
 </head>
 <body>
+
+  <!-- 🔹 Hamburger button -->
+  <button class="hamburger" id="hamburger">☰</button>
+
+  <!-- 🔹 Sidebar menu -->
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="submission.html">Submit</a></li>
+      <li><a href="issue.html">Issue</a></li>
+      <li><a href="masthead.html">MastHead</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="open-source.html">Open-Source</a></li>
+      <li><a href="journey.html">Journey</a></li>
+      <li class="toggle-item">
+              <span>Pointer Effect</span>
+              <label class="switch">
+                <input type="checkbox" id="cursorToggle" checked />
+                <span class="slider round"></span>
+              </label>
+            </li>
+      <!-- You can add all other large contents here -->
+    </ul>
+  </nav>
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const sidebar = document.getElementById("sidebar");
+
+    hamburger.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+  </script>
+
                            <!-- Circles -->
       <div class="circle"></div>
       <div class="circle"></div>

@@ -124,6 +124,41 @@
   animateCircles();
 
 </script>
+
+<!-- 🔹 Hamburger button -->
+  <button class="hamburger" id="hamburger">☰</button>
+
+  <!-- 🔹 Sidebar menu -->
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="submission.html">Submit</a></li>
+      <li><a href="issue.html">Issue</a></li>
+      <li><a href="masthead.html">MastHead</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="open-source.html">Open-Source</a></li>
+      <li><a href="journey.html">Journey</a></li>
+      <li class="toggle-item">
+              <span>Pointer Effect</span>
+              <label class="switch">
+                <input type="checkbox" id="cursorToggle" checked />
+                <span class="slider round"></span>
+              </label>
+            </li>
+      <!-- You can add all other large contents here -->
+    </ul>
+  </nav>
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const sidebar = document.getElementById("sidebar");
+
+    hamburger.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+  </script>
+
     <!-- Loading Screen -->
      <div id="loading-screen"> 
          <div class="loader">
@@ -136,10 +171,14 @@
     </div>
     <section class="header">
       <nav role="navigation" aria-label="Main Menu">
-        <!-- Logo on the left -->
+         <!-- Logo on the left  -->
         <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
         
         <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <div class="nav-links" id="navLinks">
           <i class="fa fa-times" onclick="hideMenu()"></i>
           <ul>
 
@@ -155,6 +194,7 @@
             <li><a href="journey.html">OUR JOURNEY</a></li>
 
           </ul>
+          </div>
         </div>
 
         <i class="fa fa-bars" onclick="showMenu()"></i>
