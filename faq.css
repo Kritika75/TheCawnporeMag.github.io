@@ -88,12 +88,12 @@ nav {
 
 .nav-links {
   flex: 1;
-  text-align: right;
+  text-align: center;
+  align-items: center;
 }
 .nav-links ul li {
   list-style: none;
   display: inline-block;
-  padding: 8px 12px;
   position: relative;
 }
 .nav-links ul li a {
