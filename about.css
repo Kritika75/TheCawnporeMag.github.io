@@ -125,12 +125,12 @@ font-size: 20px
 .nav-links {
     flex: 1;
     text-align: right;
+    align-items: center;
 }
 
 .nav-links ul li {
     list-style: none;
     display: inline-block;
-    padding: 8px 12px;
     position: relative;
 }
 
