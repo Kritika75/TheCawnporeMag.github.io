@@ -202,12 +202,12 @@ nav {
     text-align: right;
     position: relative;
     z-index: 10;
+    align-items: center;
 }
 
 .nav-links ul li {
     list-style: none;
     display: inline-block;
-    padding: 8px 12px;
     position: relative;
 
 }
