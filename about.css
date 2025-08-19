@@ -141,6 +141,10 @@ font-size: 20px
     font-size: 13px;
     padding: 12px 16px;
     display: block;
+    border-radius: 6px;
+}
+.btn{
+  background-color: #9e7916;
 }
 .nav-links ul li a:hover {
     text-decoration: none; /* REMOVE underline */
