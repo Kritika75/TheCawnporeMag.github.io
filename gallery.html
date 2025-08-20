@@ -4,9 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cawnpore Gallery</title>
+     <meta name="description" content="Explore our visual archive of historical photographs, maps, and documents related to Kanpur's rich heritage.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thecawnporemag.github.io/gallery.html">
+    <meta property="og:title" content="Historical Gallery - The Cawnpore Magazine | Visual Archive of Kanpur">
+    <meta property="og:description" content="Explore our visual archive of historical photographs, maps, and documents related to Kanpur's rich heritage.">
+    <meta property="og:image" content="https://thecawnporemag.github.io/assets/images/gallery-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thecawnporemag.github.io/gallery.html">
+    <meta property="twitter:title" content="Historical Gallery - The Cawnpore Magazine | Visual Archive of Kanpur">
+    <meta property="twitter:description" content="Explore our visual archive of historical photographs, maps, and documents related to Kanpur's rich heritage.">
+    <meta property="twitter:image" content="https://thecawnporemag.github.io/assets/images/gallery-og.jpg">
     <link rel="stylesheet" href="gallery.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <nav role="navigation" aria-label="Main Menu">
+      <!-- Logo on the left -->
+      <a href="index.html">
+        <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="submission.html">SUBMIT</a></li>
+            <li><a href="issue.html">ISSUE</a></li>
+            <li><a href="masthead.html">MASTHEAD</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+
+            <li><a href="open-source.html">OPEN SOURCE</a></li>
+            <li><a href="journey.html">OUR JOURNEY</a></li>
+
+            <li><a href="login.html" class="btn">LOGIN</a></li>
+            <li><a href="signup.html" class="btn">REGISTER</a></li>
+          </ul>
+      </div>
+
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
 
     <button
       onclick="history.back()"
@@ -27,70 +73,132 @@
     >
       ← Back
     </button>
-  </head>
-  <body>
-    <nav role="navigation" aria-label="Main Menu">
-      
-      <!-- Logo on the left -->
-      <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
 
-      <div class="nav-links" id="navLinks">
-        <i class="fa fa-times" onclick="hideMenu()"></i>
-        <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="submission.html">SUBMIT</a></li>
-          <li><a href="issue.html">ISSUE</a></li>
-          <li><a href="masthead.html">MASTHEAD</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-
-          <li><a href="open-source.html">OPEN SOURCE</a></li>
-          <li><a href="journey.html">OUR JOURNEY</a></li>
-        </ul>
-      </div>
-
-      <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav>
     <h1>Cawnpore Traditional Gallery</h1>
 
     <div class="gallery">
-      <img src="gallary/CAWNPORE.jpeg" alt="Cawnpore" />
-      <img src="gallary/clock tower.webp" alt="Clock Tower" />
-      <img src="gallary/ganga river.webp" alt="Ganga River" />
-      <img src="gallary/iskcon kanpur.webp" alt="ISKCON Kanpur" />
-      <img src="gallary/jk temple.webp" alt="JK Temple" />
-      <img
-        src="gallary/Kanpur Memorial Church.jpeg"
-        alt="Kanpur Memorial Church"
-      />
-      <img src="Imarti.jpeg" alt="Lal Imli" />
-      <img src="Sultani Dal.jpeg" alt="Sultani Dal" />
-      <img src="Kanpur.jpg" alt="Kanpur Zoological Park" />
-      <img
-        src="1920px-JK_Temple(Juggilal_Kamlapati_temple)_is_a_temple_in_the_Indian_city_of_Kanpur.It_is_considered_to_be_a_unique_blend_of_ancient_and_modern_architecture.jpg"
-        alt="J.K. Temple"
-      />
-      <img src="gallary/kanpur museum.webp" alt="Kanpur Museum" />
-      <img
-        src="gallary/kanpur railway station.jpeg"
-        alt="Kanpur Railway Station"
-      />
-      <img src="gallary/Lal Imli Mill Kanpur.jpeg" alt="Lal Imli Mill" />
+      <div class="gallery-item">
+        <img src="gallary/CAWNPORE.jpeg" alt="Cawnpore" />
+        <div class="caption">
+          <p class="caption-title">Historic View of Cawnpore</p>
+          <p class="caption-desc">A rare glimpse of the city as it looked in the late 19th century, preserving its colonial charm.</p>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="gallary/clock tower.webp" alt="Clock Tower" />
+        <div class="caption">
+          <p class="caption-title">Iconic Clock Tower</p>
+          <p class="caption-desc">A landmark from the British era, the Clock Tower has witnessed Kanpur's transformation over the decades.</p>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="gallary/ganga river.webp" alt="Ganga River" />
+        <div class="caption">
+          <p class="caption-title">Sacred Ganga River</p>
+          <p class="caption-desc">Flowing through Kanpur, the Ganga has been the lifeline for culture, faith, and livelihood for centuries.</p>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="gallary/iskcon kanpur.webp" alt="ISKCON Kanpur" />
+        <div class="caption">
+          <p class="caption-title">ISKCON Temple</p>
+          <p class="caption-desc">A modern spiritual center devoted to Lord Krishna, known for its serene atmosphere and grand architecture.</p>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="gallary/jk temple.webp" alt="JK Temple" />
+        <div class="caption">
+           <p class="caption-title">J.K. Temple Architecture</p>
+          <p class="caption-desc">An iconic blend of ancient and modern styles, symbolizing Kanpur's architectural heritage.</p>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="gallary/Kanpur Memorial Church.jpeg" alt="Kanpur Memorial Church" />
+        <div class="caption">
+          <p class="caption-title">Memorial Church</p>
+          <p class="caption-desc">Built in memory of those who fell during the events of 1857, this Gothic-style church is a historic treasure.</p>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="Imarti.jpeg" alt="Imarti" />
+        <div class="caption">
+          <p class="caption-title">Imarti</p>
+          <p class="caption-desc">A Kanpur speciality, deep-fried into floral rings and drenched in saffron syrup, reflecting the city's rich sweet-making heritage.</p>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="Sultani Dal.jpeg" alt="Sultani Dal" />
+        <div class="caption">
+          <p class="caption-title">Traditional Sultani Dal</p>
+          <p class="caption-desc">A royal Awadhi delicacy, slow-cooked to perfection, representing the city’s rich culinary tradition.</p>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="Kanpur.jpg" alt="Kanpur Zoological Park" />
+        <div class="caption">
+          <p class="caption-title">Zoological Park</p>
+          <p class="caption-desc">Popularly known as Allen Forest Zoo, this lush green space is home to diverse wildlife and exotic species.</p>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="1920px-JK_Temple(Juggilal_Kamlapati_temple)_is_a_temple_in_the_Indian_city_of_Kanpur.It_is_considered_to_be_a_unique_blend_of_ancient_and_modern_architecture.jpg" alt="J.K. Temple" />
+        <div class="caption">
+           <p class="caption-title">J.K. Temple</p>
+          <p class="caption-desc">Dedicated to Radha and Krishna, the temple is admired for its pristine white structure and intricate carvings.</p>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="gallary/kanpur museum.webp" alt="Kanpur Museum" />
+        <div class="caption">
+          <p class="caption-title">City Museum</p>
+          <p class="caption-desc">Preserving artifacts, photographs, and documents that narrate Kanpur’s cultural and historical journey.</p>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="gallary/kanpur railway station.jpeg" alt="Kanpur Railway Station" />
+        <div class="caption">
+          <p class="caption-title">Historic Railway Station</p>
+          <p class="caption-desc">A bustling transit point since colonial times, showcasing vintage railway architecture.</p>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="gallary/Lal Imli Mill Kanpur.jpeg" alt="Lal Imli Mill" />
+        <div class="caption">
+          <p class="caption-title">Lal Imli Textile Mill</p>
+          <p class="caption-desc">One of the oldest textile mills in North India, pivotal to Kanpur’s reputation as the 'Manchester of the East'.</p>
+        </div>
+      </div>
     </div>
-    <footer class="site-footer" id="footer" >
+
+    <footer class="site-footer" id="footer">
       <a class="back-to-top" href="#">
           <i class="fa-solid fa-chevron-up"></i>
       </a>
-      <div class="footer-top" >
-        <div class="footer-about">
+      <div class="footer-top">
+      <div class="footer-about">
+        <a href="index.html">
+          <img src="assets/favicon.ico" alt="The Cawnpore Logo" style="height: 50px; margin-bottom: 10px;">
           <h3>The Cawnpore</h3>
-          <p>An independent magazine celebrating literary voices and untold stories.</p>
-        </div>
-        <div class="footer-links"   id="footerLinks">
+        </a>
+        
+        <p>An independent magazine celebrating literary voices and untold stories.</p>
+      </div>
+        <div class="footer-links" id="footerLinks">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html" >Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="submission.html">Submit</a></li>
             <li><a href="issue.html">Issue</a></li>
@@ -100,7 +208,7 @@
             <li><a href="open-source.html">Open Source</a></li>
           </ul>
         </div>
-        <div class="footer-contact"  id="footerContact">
+        <div class="footer-contact" id="footerContact">
           <h3>Contact Us</h3>
           <div class="social-icons">
             <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
@@ -139,8 +247,6 @@
       <div id="music-toggle" aria-label="Toggle Background Music" role="button" tabindex="0">
         <i class="fa-solid fa-music"></i>
       </div>
-
-
     </footer>
   </body>
 </html>

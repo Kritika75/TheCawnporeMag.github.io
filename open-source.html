@@ -5,6 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Open Source | The Cawnpore</title>
+   <meta name="description" content="Learn how to contribute to The Cawnpore Magazine's open source initiative to document Kanpur's history collaboratively.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thecawnporemag.github.io/open-source.html">
+    <meta property="og:title" content="Open Source Initiative - The Cawnpore Magazine | Contribute to History">
+    <meta property="og:description" content="Learn how to contribute to our open source initiative to document Kanpur's history collaboratively.">
+    <meta property="og:image" content="https://thecawnporemag.github.io/assets/images/open-source-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://thecawnporemag.github.io/open-source.html">
+    <meta property="twitter:title" content="Open Source Initiative - The Cawnpore Magazine | Contribute to History">
+    <meta property="twitter:description" content="Learn how to contribute to our open source initiative to document Kanpur's history collaboratively.">
+    <meta property="twitter:image" content="https://thecawnporemag.github.io/assets/images/open-source-og.jpg">
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="open-source.css">
@@ -92,28 +107,27 @@
   <!-- Navbar -->
   <section class="header">
     <nav role="navigation" aria-label="Main Menu">
-      <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+      <a href="index.html">
+        <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+      </a>
       <div class="nav-links" id="navLinks">
         <i class="fa fa-times" onclick="hideMenu()"></i>
-        <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li><a href="submission.html">SUBMIT</a></li>
-          <li><a href="issue.html">ISSUE</a></li>
-          <li><a href="masthead.html">MASTHEAD</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="open-source.html">OPEN SOURCE</a></li>
-          <li><a href="journey.html">OUR JOURNEY</a></li>
-          <li><a href="gallery.html">GALLERY</a></li>
+          <ul>
 
-          <li class="toggle-item">
-            <span>Pointer Effect</span>
-            <label class="switch">
-              <input type="checkbox" id="cursorToggle" checked>
-              <span class="slider"></span>
-            </label>
-          </li>
-        </ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="submission.html">SUBMIT</a></li>
+            <li><a href="issue.html">ISSUE</a></li>
+            <li><a href="masthead.html">MASTHEAD</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+
+            <li><a href="open-source.html">OPEN SOURCE</a></li>
+            <li><a href="journey.html">OUR JOURNEY</a></li>
+
+            <li><a href="login.html" >LOGIN</a></li>
+            <li><a href="signup.html" >REGISTER</a></li>
+          </ul>
       </div>
       <i class="fa fa-bars" onclick="showMenu()"></i>
     </nav>
@@ -139,6 +153,61 @@
       Know More about GSSoC
     </a>
   </section>
+
+  <section class="contributors-section">
+    <h2 id="namaste">Our Amazing Contributors</h2>
+    <div id="contributors-grid" class="contributors-grid"></div>
+    <p id="contributors-error" class="error-msg" style="display:none;"></p>
+  </section>
+
+  <div class="container">
+    <div class="form">
+      <div class="contact-info">
+        <h3 class="title">Let's get in touch</h3>
+        <p class="text">Connet with us in our wonderful journey. Feel free to share you thoughts , we will appreciate it &#127882; </p>
+        <div class="info">
+          <div class="information">
+            <p><i class="fa-solid fa-location-dot"></i><br>Kanpur </p>
+            <p><i class="fa-solid fa-envelope"></i><br>thecawnporemagofficial@gmail.com</p>
+          </div>
+
+          <div class="social-media">
+            <p>Connect with us</p>
+            <div class="social-icon">
+              <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+               <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://x.com/TheCawnporeMag?s=09" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form
+         action="https://formspree.io/f/mzzvyzzo"
+         method="POST">
+          <h3 class="title">Contact Us</h3>
+          <div class="input-container">
+            <input type="text" name="name" class="input" required/>
+            <label for="">Username</label>
+            <span>Username</span>
+          </div>
+          <div class="input-container">
+            <input type="email" name="email" class="input" required/>
+            <label for="">Email</label>
+            <span>Email</span>
+          </div>
+          <div class="input-container textarea">
+            <textarea name="message" class="input"></textarea>
+            <label for="">Message</label>
+            <span>Message</span>
+          </div>
+          <input type="submit" value="Send" class="btn"/>
+        </form>
+      </div>
+    </div>
+  </div>
 
 
   <div class="container">
@@ -212,7 +281,11 @@
     </a>
     <div class="footer-top">
       <div class="footer-about">
-        <h3>The Cawnpore</h3>
+        <a href="index.html">
+          <img src="assets/favicon.ico" alt="The Cawnpore Logo" style="height: 50px; margin-bottom: 10px;">
+          <h3>The Cawnpore</h3>
+        </a>
+        
         <p>An independent magazine celebrating literary voices and untold stories.</p>
       </div>
       <div class="footer-links">
@@ -374,6 +447,69 @@ inputs.forEach(input => {
   input.addEventListener("blur", blurFunc);
 });
 
+document.addEventListener("DOMContentLoaded", async () => {
+    const grid = document.getElementById("contributors-grid");
+    const err = document.getElementById("contributors-error");
+    const owner = "Kritika75";
+    const repo = "TheCawnporeMag.github.io";
+
+    async function fetchAll(page = 1, arr = []) {
+      const url =  `https://api.github.com/repos/${owner}/${repo}/contributors?per_page=100&page=${page}`;
+      const res = await fetch(url);
+      if (!res.ok) {
+        if (res.status === 403) {
+          err.textContent = "GitHub API rate limit reached. Try again later.";
+          err.style.display = "block";
+        }
+        throw new Error("GitHub API error");
+      }
+      const data = await res.json();
+      if (!data.length) return arr;
+      return fetchAll(page + 1, arr.concat(data));
+    }
+
+    try {
+      const contributors = await fetchAll();
+      if (!contributors.length) {
+        err.textContent = "No contributors found yet. Be the first to contribute!";
+        err.style.display = "block";
+        return;
+      }
+      contributors.forEach(c => {
+        const card = document.createElement("div");
+        card.className = "contributor-card";
+        card.innerHTML =` 
+          <img class="contributor-img" src="${c.avatar_url}" alt="${c.login}">
+          <h3 class="contributor-name">${c.login}</h3>
+          <a class="contributor-username" href="${c.html_url}" target="_blank" rel="noopener">@${c.login}</a>
+          <div class="contributions-count">Contributions: ${c.contributions}</div>
+          <a class="view-profile-btn" href="${c.html_url}" target="_blank" rel="noopener">
+            <svg class="github-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 
+              0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 
+              0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61
+              -.546-1.387-1.333-1.757-1.333-1.757-1.089-.744.084-.729.084-.729 
+              1.205.084 1.838 1.237 1.838 1.237 
+              1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605 
+              -2.665-.3-5.466-1.332-5.466-5.93 
+              0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 
+              0 0 1.005-.322 3.3 1.23a11.52 11.52 0 013.003-.404c1.02.005 
+              2.045.138 3.003.404 2.28-1.552 3.285-1.23 3.285-1.23 
+              .645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 
+              1.23 3.22 0 4.61-2.805 5.625-5.475 
+              5.92.435.375.81 1.102.81 2.222 
+              0 1.605-.015 2.895-.015 3.285 
+              0 .315.21.69.825.57C20.565 22.092 24 17.592 24 
+              12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+            View Profile
+          </a>`;
+        grid.appendChild(card);
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  });
   </script>
 </body>
 

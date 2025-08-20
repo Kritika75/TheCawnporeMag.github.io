@@ -143,13 +143,13 @@ nav {
 
 .nav-links {
   flex: 1;
-  text-align: right;
+  text-align: center;
+  align-items: center;
 }
 
 .nav-links ul li {
   list-style: none;
   display: inline-block;
-  padding: 8px 12px;
   position: relative;
 }
 
@@ -277,7 +277,9 @@ nav .fa {
   padding: 8px;
   flex-grow: 1;
   border-radius: 25px;
-  width: 30vw;
+  width: 63vw; 
+  height: 50px; 
+ 
   border: 3px solid transparent;
   background-image: linear-gradient(#ffffff, #f1e9e9),
     linear-gradient(135deg, gold, orange, crimson);

@@ -1,0 +1,22 @@
+name: Optimize images and update HTML
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'gallary/'
+      - 'assets/'
+      - 'screenshorts/'
+      - '**/*.jpg'
+      - '**/*.jpeg'
+      - '**/*.png'
+      - '**/*.webp'
+      - '**/*.html'
+      - 'scripts/**'
+  workflow_dispatch:
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
