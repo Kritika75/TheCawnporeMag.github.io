@@ -146,6 +146,17 @@ font-size: 20px
 .btn{
   background-color: #9e7916;
 }
+.btn{
+  background: linear-gradient(90deg, #f3b200, #dcceaea1);
+  font-weight: 600;
+  transition:  transform 0.2s ease, box-shadow 0.3s ease ;
+
+  }
+  .btn:hover{
+    transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(216, 165, 46, 0.922);
+  }
+  
 .nav-links ul li a:hover {
     text-decoration: none; /* REMOVE underline */
 }
@@ -208,6 +219,16 @@ nav .fa {
     .nav-links ul{
         padding: 30px;
     }
+     .btn{
+  background: linear-gradient(90deg, #f3b200, #dcceaea1);
+  font-weight: 600;
+  transition:  transform 0.2s ease, box-shadow 0.3s ease ;
+
+  }
+  .btn:hover{
+    transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(216, 165, 46, 0.922);
+  }
     }
      /* clickable cards */
     .landmarkCard{
