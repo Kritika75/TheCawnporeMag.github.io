@@ -211,12 +211,15 @@ nav .fa {
     background-color: #780000;
     border-radius: 10px;
     width: 300px;
-    transition: transform 0.2s ease;
+    transition: transform 0.5s ease-in-out;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 .landmarkCard:hover {
+  margin: 0.5rem;
   transform: scale(1.05);
+  transition: all 0.5s ease-in-out;
+
 }
 .landmarkCard img {
   width: 100%;
@@ -239,6 +242,7 @@ nav .fa {
     background: linear-gradient(135deg, #fddf9b, #fcbf49);
     color: #5a0000;
     transform: scale(1.08) translateY(-2px);
+    transition: all 0.2s ease-in-out;
     text-shadow: 0 0 3px #fff0d0, 0 0 6px #ffc300;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     cursor: pointer;
