@@ -249,19 +249,16 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
 
 
 .validation-message.error {
-  color: #780000;
-
+  color: #780000; /* Keep red for errors */
 }
 
 .validation-message.success {
-  color: #780000;
-
+  color: #28a745; /* Green for success */
 }
 
 
 .validation-message.warning {
-  color: #a00000;
-
+  color: #ffc107; /* Yellow for warnings */
 }
 
 .input-group input.validation-error {
@@ -271,15 +268,15 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
 }
 
 .input-group input.validation-success {
-  border-color: #780000;
-  background-color: rgba(120, 0, 0, 0.05);
-  box-shadow: 0 0 0 2px rgba(120, 0, 0, 0.1);
+  border-color: #28a745; /* Green border for success */
+  background-color: rgba(40, 167, 69, 0.05); /* Light green background */
+  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.1); /* Green box-shadow */
 }
 
 .input-group input.validation-warning {
-  border-color: #a00000;
-  background-color: rgba(160, 0, 0, 0.05);
-  box-shadow: 0 0 0 2px rgba(160, 0, 0, 0.1);
+  border-color: #ffc107; /* Yellow border for warnings */
+  background-color: rgba(255, 193, 7, 0.05); /* Light yellow background */
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.1); /* Yellow box-shadow */
 }
 
 

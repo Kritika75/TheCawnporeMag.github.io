@@ -193,14 +193,27 @@ function showValidationMessage(messageId, message, type, inputElement) {
   if (!messageElement || !inputElement) return;
 
   messageElement.className = `validation-message show ${type}`;
-  inputElement.className = inputElement.className.replace(/validation-\w+/g, '') + ` validation-${type}`;
+
+  // Remove all validation-* classes using classList methods
+  Array.from(inputElement.classList)
+    .filter(cls => /^validation-\w+$/.test(cls))
+    .forEach(cls => inputElement.classList.remove(cls));
+
+  // Add new validation class
+  inputElement.classList.add(`validation-${type}`);
   messageElement.textContent = message;
 }
 
 function hideValidationMessage(messageId, inputElement) {
   const messageElement = document.getElementById(messageId);
   if (messageElement) messageElement.className = 'validation-message';
-  if (inputElement) inputElement.className = inputElement.className.replace(/validation-\w+/g, '');
+
+  if (inputElement) {
+    // Remove all validation-* classes using classList methods
+    Array.from(inputElement.classList)
+      .filter(cls => /^validation-\w+$/.test(cls))
+      .forEach(cls => inputElement.classList.remove(cls));
+  }
 }
 
 /**
