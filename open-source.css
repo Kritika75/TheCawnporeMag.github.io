@@ -132,7 +132,7 @@ textarea.input{
 .btn{
   padding: 0.6rem 1.3rem;
   background-color: #fff;
-  border: 2px solid #fafafa;
+  /* border: 2px solid #fafafa; */
   font-size:0.95rem;
   font-weight: 600;
   color: #780000;
@@ -146,8 +146,21 @@ textarea.input{
  background-position: right center;
   background:none;
   color: #fff;
-  box-shadow: 0 0 12px #780000;
+  box-shadow: 0 0 12px #780000; 
 }
+.btns{
+  background-color: #9e7916;
+}
+.btns{
+  background: linear-gradient(90deg, #f3b200, #dcceaea1);
+  font-weight: 600;
+  transition:  transform 0.2s ease, box-shadow 0.3s ease ;
+
+  }
+  .btns:hover{
+    transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(216, 165, 46, 0.922);
+  }
 
 .input-container span {
   position: absolute;
@@ -286,6 +299,16 @@ margin-top: 0.5rem;
   .information {
     padding: 1rem;
     font-size: 0.9rem;
+  }
+   .btn{
+  background: linear-gradient(90deg, #f3b200, #dcceaea1);
+  font-weight: 600;
+  transition:  transform 0.2s ease, box-shadow 0.3s ease ;
+
+  }
+  .btn:hover{
+    transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(216, 165, 46, 0.922);
   }
 }
 
