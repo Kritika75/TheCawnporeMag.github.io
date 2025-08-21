@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Cawnpore Magazine Journey</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Mystery+Quest&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
@@ -141,6 +144,9 @@
     .subtitle {
       font-size: 1.2rem;
       color: #780000;
+      font-family: "Mystery Quest", system-ui;
+      font-weight: 400;
+      font-style: normal;
       margin-top: 5px;
       font-weight: 300;
       letter-spacing: 1px;
@@ -152,11 +158,12 @@
     .intro {
       margin-top: 30px;
       padding: 20px;
-      background-color: rgba(120, 0, 0, 0.03);
+      background:linear-gradient(rgba(148, 94, 117,0.2), rgba(255, 192, 203,0.2)); 
       border-radius: 10px;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       line-height: 1.8;
       color: #5a2e0e;
+      font-family: "Merriweather", serif;
       transform: translateY(20px);
       opacity: 0;
       animation: fadeUp 0.8s ease-out 0.5s forwards;
@@ -173,12 +180,12 @@
       content: '';
       position: absolute;
       width: 4px;
-      background: linear-gradient(to bottom, #780000, #b26d2e);
+      background: linear-gradient(to top, #cb7474, #b26d2e,#945e75);
       top: 0;
       bottom: 0;
       left: 50%;
       margin-left: -2px;
-      z-index: 1;
+      z-index: -1;
     }
 
     .container {
@@ -220,11 +227,10 @@
 
     .content {
       padding: 30px;
-      background-color: #fff;
+      background: linear-gradient(45deg,rgba(128, 128, 128,0.5),rgba(255, 255, 255,0.6), rgba(128, 128, 128,0.5));
       position: relative;
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      border: 1px solid #ffd7b8;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       transition: all 0.3s ease;
       overflow: hidden;
     }
@@ -258,12 +264,12 @@
       margin-bottom: 15px;
       display: inline-block;
       padding: 5px 15px;
-      background-color: rgba(120, 0, 0, 0.08);
+      background-color: rgba(255, 255, 255);
       border-radius: 20px;
     }
 
     .content h3 {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       margin-bottom: 15px;
       color: #5a2e0e;
       display: flex;
@@ -284,7 +290,6 @@
 
     .content .highlight {
       padding: 15px;
-      background-color: rgba(120, 0, 0, 0.03);
       border-left: 3px solid #780000;
       border-radius: 0 5px 5px 0;
       margin: 15px 0;
@@ -328,10 +333,11 @@
       text-align: center;
       padding: 40px 20px;
       color: #5a4635;
+      width: 100%;
       font-size: 0.9rem;
-      background-color: rgba(120, 0, 0, 0.03);
-      margin: 60px 20px 0 20px;
-      border-radius: 10px;
+      transform: translateY(100%);
+      background:linear-gradient(rgba(148, 94, 117,0.2), rgba(255, 192, 203,0.2)); 
+      margin-top: 60px;
     }
 
     .footer a {
