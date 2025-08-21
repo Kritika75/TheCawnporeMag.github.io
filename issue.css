@@ -191,8 +191,9 @@ nav {
   text-decoration: none;
   font-family: serif;
   font-size: 13px;
-  padding: 0px 16px;
+  padding: 12px 16px;
   display: block;
+  border-radius: 6px;
 }
 .nav-links ul li a:hover {
   text-decoration: none; /* REMOVE underline */
@@ -211,6 +212,19 @@ nav {
 .nav-links ul li:hover::after {
   width: 100%;
 }
+.btn{
+  background-color: #9e7916;
+}
+.btn{
+  background: linear-gradient(90deg, #f3b200, #dcceaea1);
+  font-weight: 600;
+  transition:  transform 0.2s ease, box-shadow 0.3s ease ;
+
+  }
+  .btn:hover{
+    transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(216, 165, 46, 0.922);
+  }
 
 nav .fa {
   display: none;
@@ -256,6 +270,16 @@ nav .fa {
   }
   .nav-links ul {
     padding: 30px;
+  }
+   .btn{
+  background: linear-gradient(90deg, #f3b200, #dcceaea1);
+  font-weight: 600;
+  transition:  transform 0.2s ease, box-shadow 0.3s ease ;
+
+  }
+  .btn:hover{
+    transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(216, 165, 46, 0.922);
   }
 }
 
