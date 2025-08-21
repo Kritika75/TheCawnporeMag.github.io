@@ -17,10 +17,12 @@
       <div class="input-group">
         <label for="username">Username</label>
         <input id="username" type="text" placeholder="Username" required>
+        <div class="validation-message" id="username-validation"></div>
       </div>
       <div class="input-group">
         <label for="email">Email</label>
         <input id="email" type="email" placeholder="Email" required>
+        <div class="validation-message" id="email-validation"></div>
       </div>
       <div class="input-group">
         <label for="password">Password</label>
@@ -32,6 +34,7 @@
             <i class="fas fa-eye" aria-hidden="true"></i>
           </button>
           </div>
+        <div class="validation-message" id="password-validation"></div>
       </div>
       <button type="submit">Sign up</button>
     </form>

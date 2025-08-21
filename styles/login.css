@@ -219,3 +219,127 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
   }
   
 }
+/* ===============================================
+   FORM VALIDATION STYLES - START
+   =============================================== */
+
+
+.validation-message {
+  font-size: 0.85rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+
+.validation-message.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  height: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+.validation-message.error {
+  color: #780000; /* Keep red for errors */
+}
+
+.validation-message.success {
+  color: #28a745; /* Green for success */
+}
+
+
+.validation-message.warning {
+  color: #ffc107; /* Yellow for warnings */
+}
+
+.input-group input.validation-error {
+  border-color: #780000;
+  background-color: rgba(120, 0, 0, 0.05);
+  box-shadow: 0 0 0 2px rgba(120, 0, 0, 0.1);
+}
+
+.input-group input.validation-success {
+  border-color: #28a745; /* Green border for success */
+  background-color: rgba(40, 167, 69, 0.05); /* Light green background */
+  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.1); /* Green box-shadow */
+}
+
+.input-group input.validation-warning {
+  border-color: #ffc107; /* Yellow border for warnings */
+  background-color: rgba(255, 193, 7, 0.05); /* Light yellow background */
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.1); /* Yellow box-shadow */
+}
+
+
+.password-strength-indicator {
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+
+.password-strength-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #e9ecef;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.password-strength-fill {
+  height: 100%;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.password-strength-fill.weak {
+  width: 25%;
+  background-color: #780000;
+}
+
+.password-strength-fill.fair {
+  width: 50%;
+  background-color: #a00000;
+}
+
+.password-strength-fill.good {
+  width: 75%;
+  background-color: #780000;
+}
+
+.password-strength-fill.strong {
+  width: 100%;
+  background-color: #780000;
+}
+
+.password-strength-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+  color: #780000;
+  /* Using theme color */
+}
+
+
+@media (max-width: 600px) {
+  .validation-message {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  .password-strength-text {
+    font-size: 0.75rem;
+  }
+}
+
+/* ===============================================
+   FORM VALIDATION STYLES - END
+   =============================================== */
