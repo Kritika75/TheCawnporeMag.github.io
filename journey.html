@@ -517,6 +517,43 @@
         font-size: 12px;
       }
     }
+    /* Back-to-top button */
+.back-to-top {
+    position: fixed;
+    height: 45px;
+    width: 45px;
+    bottom: 16px;
+    right: 30px;
+    font-size: 26px;
+    background-color: #780000;
+    color: #fdf0d5;
+    border-radius: 50%;;
+    text-decoration: none;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px #fdf0d5;
+    transition: all .4s;
+}
+
+.back-to-top.active {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.back-to-top:focus {
+    outline:none;
+}
+
+.back-to-top:hover {
+    background-color: #fdf0d5;
+    color: #780000;
+    box-shadow: 0px 0px 10px #780000;
+    font-size: 28px;
+}
   </style>
 </head>
 <body>
@@ -663,6 +700,9 @@
   </div>
   
   <div class="footer">
+      <a class="back-to-top" href="#">
+          <i class="fa-solid fa-chevron-up"></i>
+      </a>
     <p>This project is part of <a href="https://github.com/TheCawnporeMag/TheCawnporeMag.github.io" target="_blank">TheCawnporeMag.github.io</a> repository</p>
     <p>We invite developers, designers, and creatives to collaborate in making this space more accessible, interactive, and beautiful</p>
     <p>Licensed under MIT | Maintained with ❤️ by The Cawnpore Magazine Team</p>
@@ -769,7 +809,14 @@ document.getElementById("year").textContent = new Date().getFullYear();
       window.history.back();
     }
 
-
+const backToTop = document.querySelector('.back-to-top');
+window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 300) { 
+        backToTop.classList.add("active");
+    } else {
+        backToTop.classList.remove("active");
+    }
+})
   </script>
 </body>
 </html>
