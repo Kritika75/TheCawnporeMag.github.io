@@ -223,6 +223,10 @@ nav {
 
 }
 
+.nav-links ul li .btn{
+  margin: 3px;
+}
+
 .nav-links ul li a:hover {
     text-decoration: none; /* REMOVE underline */
 }
