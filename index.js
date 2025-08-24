@@ -167,3 +167,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Update the year in the footer
 document.getElementById("year").textContent = new Date().getFullYear();
+
+
+// Add this to your JS file
+const bar = document.querySelector('.fa-bars');
+const cross = document.querySelector('.fa-times');
+const nav = document.querySelector('nav');
+const navLinks = document.querySelector('.nav-links');
+
+bar.onclick = function() {
+  navLinks.classList.add('nav-active');
+  nav.classList.add('show-menu');
+};
+cross.onclick = function() {
+  navLinks.classList.remove('nav-active');
+  nav.classList.remove('show-menu');
+};

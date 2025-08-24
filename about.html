@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+      <meta name="description" content="Learn about The Cawnpore Magazine's mission to document and preserve Kanpur's historical narratives and cultural heritage.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thecawnporemag.github.io/about.html">
+    <meta property="og:title" content="About The Cawnpore Magazine - Our Mission and Vision">
+    <meta property="og:description" content="Learn about our mission to document and preserve Kanpur's historical narratives and cultural heritage.">
+    <meta property="og:image" content="https://thecawnporemag.github.io/assets/images/about-og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thecawnporemag.github.io/about.html">
+    <meta property="twitter:title" content="About The Cawnpore Magazine - Our Mission and Vision">
+    <meta property="twitter:description" content="Learn about our mission to document and preserve Kanpur's historical narratives and cultural heritage.">
+    <meta property="twitter:image" content="https://thecawnporemag.github.io/assets/images/about-og-image.jpg">
     <link rel = "stylesheet" href="about.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -139,19 +154,28 @@
     <section class="header">
         <nav role="navigation" aria-label="Main Menu">
           <!-- Logo on the left -->
-        <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+        <a href="index.html">
+          <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+        </a>
         
           <div class = "nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
-            <ul>
-               <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="submission.html">SUBMIT</a></li>
-                <li><a href="issue.html">ISSUE</a></li>
-                <li><a href="masthead.html">MASTHEAD</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="open-source.html">OPEN SOURCE</a></li>
-            </ul>
+          <ul>
+
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="submission.html">SUBMIT</a></li>
+            <li><a href="issue.html">ISSUE</a></li>
+            <li><a href="masthead.html">MASTHEAD</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+
+            <li><a href="open-source.html">OPEN SOURCE</a></li>
+            <li><a href="journey.html">OUR JOURNEY</a></li>
+
+            <li><a href="login.html" class="btn">LOGIN</a></li>
+            <li><a href="signup.html" class="btn">REGISTER</a></li>
+          </ul>
           </div>
           <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
@@ -388,10 +412,14 @@
           <i class="fa-solid fa-chevron-up"></i>
       </a>
       <div class="footer-top" >
-        <div class="footer-about">
+      <div class="footer-about">
+        <a href="index.html">
+          <img src="assets/favicon.ico" alt="The Cawnpore Logo" style="height: 50px; margin-bottom: 10px;">
           <h3>The Cawnpore</h3>
-          <p>An independent magazine celebrating literary voices and untold stories.</p>
-        </div>
+        </a>
+        
+        <p>An independent magazine celebrating literary voices and untold stories.</p>
+      </div>
         <div class="footer-links"   id="footerLinks">
           <h3>Quick Links</h3>
           <ul>
