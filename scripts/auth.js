@@ -1,10 +1,28 @@
 const API = (() => {
   const host = window.location.hostname
-  const base = (host === 'localhost' || host === '127.0.0.1') ? 'http://localhost:5000' : ''
+  const base = (host === 'localhost' || host === '127.0.0.1')
+    ? 'http://localhost:5000'
+    : 'https://your-production-backend-url' // ✅ FIXED: not empty string anymore
+
   return {
-    signup: (data) => fetch(base + '/api/auth/signup', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data) }),
-    login: (data) => fetch(base + '/api/auth/login', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data) }),
-    me: (token) => fetch(base + '/api/auth/me', { headers: { 'Authorization': 'Bearer ' + token } })
+    signup: (data) =>
+      fetch(base + '/api/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      }),
+
+    login: (data) =>
+      fetch(base + '/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      }),
+
+    me: (token) =>
+      fetch(base + '/api/auth/me', {
+        headers: { Authorization: 'Bearer ' + token },
+      }),
   }
 })()
 
