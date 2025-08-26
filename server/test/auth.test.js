@@ -4,7 +4,7 @@ const app = require('../server'); // Assuming you have an Express app exported f
 describe('Auth Routes', () => {
   it('should validate signup input', async () => {
     const response = await request(app)
-      .post('/signup')
+      .post('/api/auth/signup')
       .send({
         username: 'us', // Invalid username
         email: 'invalid-email', // Invalid email
@@ -16,7 +16,7 @@ describe('Auth Routes', () => {
 
   it('should validate login input', async () => {
     const response = await request(app)
-      .post('/login')
+      .post('/api/auth/login')
       .send({
         email: 'invalid-email', // Invalid email
         password: '' // Invalid password
@@ -27,7 +27,7 @@ describe('Auth Routes', () => {
 
   it('should validate forgot password input', async () => {
     const response = await request(app)
-      .post('/forgot-password')
+      .post('/api/auth/forgot-password')
       .send({
         email: 'invalid-email' // Invalid email
       });
@@ -37,7 +37,7 @@ describe('Auth Routes', () => {
 
   it('should validate reset password input', async () => {
     const response = await request(app)
-      .post('/reset-password')
+      .post('/api/auth/reset-password')
       .send({
         token: '', // Invalid token
         password: 'short' // Invalid password
