@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "nodemailer": "^7.0.5"
+    "nodemailer": "^7.0.5",
+    "zod": "^4.1.3"
   }
 }

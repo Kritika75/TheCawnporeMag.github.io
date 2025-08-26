@@ -2,9 +2,16 @@ const express = require('express')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const User = require('../models/User')
+const { 
+  signupSchema, 
+  loginSchema, 
+  forgotPasswordSchema, 
+  resetPasswordSchema, 
+  validate 
+} = require('../validators/authValidator')
 const router = express.Router()
 
-router.post('/signup', async (req, res) => {
+router.post('/signup', validate(signupSchema), async (req, res) => {
   try {
     const { username, email, password } = req.body
     const existing = await User.findOne({ email })
