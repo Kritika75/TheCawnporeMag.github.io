@@ -217,9 +217,14 @@ nav {
     text-decoration: none;
     font-family: serif;
     font-size: 13px;
-    padding: 0px 16px;
+    padding: 8px 16px;
     display: block;
+    border-radius: 6px;
 
+}
+
+.nav-links ul li .btn{
+  margin: 3px;
 }
 
 .nav-links ul li a:hover {
@@ -339,7 +344,7 @@ nav .fa {
 
 
 /* Responsive Design Enhancements */
-@media (max-width: 700px) {
+@media (max-width: 900px) {
     .text-box h1 {
         margin-top: 15px;
         font-weight: 700;
@@ -404,6 +409,28 @@ nav .fa {
         border-radius: 12px;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
     }
+    .btn{
+  background: linear-gradient(90deg, #f3b200, #dcceaea1);
+  font-weight: 600;
+  transition:  transform 0.2s ease, box-shadow 0.3s ease ;
+
+  }
+  .btn:hover{
+    transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(216, 165, 46, 0.922);
+  }
+  nav .fa-bars {
+    display: block;
+  }
+  nav .fa-times {
+    display: none;
+  }
+  nav.show-menu .fa-bars {
+    display: none;
+  }
+  nav.show-menu .fa-times {
+    display: block;
+  }
 }
 
 .Welcome {
@@ -1174,7 +1201,17 @@ button:active{
     align-items: center;
     right: -200px;
   }
+  .btn{
+  background: linear-gradient(90deg, #f3b200, #dcceaea1);
+  font-weight: 600;
+  transition:  transform 0.2s ease, box-shadow 0.3s ease ;
 
+  }
+  .btn:hover{
+    transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(216, 165, 46, 0.922);
+  }
+  
   .fa-bars,
   .fa-times {
     display: none;

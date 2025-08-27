@@ -296,3 +296,40 @@ button:hover {
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(76,11,11,0.3), transparent);
 }
+/* Back-to-top button */
+.back-to-top {
+    position: fixed;
+    height: 45px;
+    width: 45px;
+    bottom: 16px;
+    right: 30px;
+    font-size: 26px;
+    background-color: #780000;
+    color: #fdf0d5;
+    border-radius: 50%;;
+    text-decoration: none;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px #fdf0d5;
+    transition: all .4s;
+}
+
+.back-to-top.active {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.back-to-top:focus {
+    outline:none;
+}
+
+.back-to-top:hover {
+    background-color: #fdf0d5;
+    color: #780000;
+    box-shadow: 0px 0px 10px #780000;
+    font-size: 28px;
+}

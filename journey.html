@@ -25,7 +25,8 @@
       overflow-x: hidden;
       min-height: 100vh;
       position: relative;
-      padding-top: 100px; /* Add padding to account for fixed navbar */
+      padding-top: 100px; 
+      padding-bottom: 100px;/* Add padding to account for fixed navbar */
     }
 
     /* Navbar Styles */
@@ -70,6 +71,7 @@
       font-size: 13px;
       padding: 12px 16px;
       display: block;
+      border-radius: 6px;
     }
 
     .nav-links ul li a:hover {
@@ -316,28 +318,17 @@
         transform: translateY(0);
       }
     }
+    .btn{
+  background: linear-gradient(90deg, #f3b200, #dcceaea1);
+  font-weight: 600;
+  transition:  transform 0.2s ease, box-shadow 0.3s ease ;
 
-    /* Footer */
-    .footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #5a4635;
-      width: 100%;
-      font-size: 0.9rem;
-      transform: translateY(100%);
-      background:linear-gradient(rgba(148, 94, 117,0.2), rgba(255, 192, 203,0.2)); 
-      margin-top: 60px;
-    }
+  }
+  .btn:hover{
+    transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(216, 165, 46, 0.922);
+  }
 
-    .footer a {
-      color: #780000;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
 
     /* Responsive */
     @media screen and (max-width: 768px) {
@@ -467,7 +458,7 @@
 
     .back-button {
        position: fixed;
-        top: 70px;
+        top: 80px;
         left: 20px;
         z-index: 1000;
         background-color: #800000;
@@ -506,11 +497,352 @@
         font-size: 12px;
       }
     }
+.site-footer {
+  background: linear-gradient(135deg, #7a0000, #390303,#c12a2a);
+  color: #f9f9e6;
+  background-size: 600% 600%;  
+  font-family: 'Georgia', serif;
+  padding: 50px 20px 15px;
+  background-size: 400% 400%;  /* Enables movement */
+  animation: gradientShift 6s linear infinite;
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+    /* Back-to-top button */
+.back-to-top {
+    position: fixed;
+    height: 45px;
+    width: 45px;
+    bottom: 16px;
+    right: 30px;
+    font-size: 26px;
+    background-color: #780000;
+    color: #fdf0d5;
+    border-radius: 50%;;
+    text-decoration: none;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px #fdf0d5;
+    transition: all .4s;
+}
+
+.back-to-top.active {
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.back-to-top:focus {
+    outline:none;
+}
+
+.back-to-top:hover {
+    background-color: #fdf0d5;
+    color: #780000;
+    box-shadow: 0px 0px 10px #780000;
+    font-size: 28px;
+}
+/* Top section */
+.footer-top {
+  display: grid;
+  justify-content:center ;
+  grid-template-columns: 28% 10% 13% 30%;
+  gap: 40px;
+  margin-bottom: 100px;
+}
+
+.footer-top h3 {
+  /* font-weight: 900; */
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #ffe7e7;
+}
+
+/* Links with underline grow */
+.footer-top a {
+  font-size: 14px;
+  color: #f5f5dc;
+  line-height: 1.5;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-top a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background: #ec6f35;
+  transition: width 0.3s ease;
+}
+.footer-top a:hover::after {
+  width: 100%;
+}
+.footer-top a:hover {
+  color: #ffd9b3;
+}
+
+.footer-links ul {
+  font-size: 6px;
+  padding: 0px 2px;
+  list-style-type: none;
+}
+
+/* Social Icons with bounce */
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #f5f5dc;
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #ec6f35;
+  transform: translateY(-3px) scale(1.15);
+}
+
+/* Footer Newsletter Section */
+
+.subscription-box-about h2 {
+  font-size: 18px;
+  color: #fff8e7;
+  margin-bottom: 10px;
+  font-family: 'Georgia', serif;
+}
+
+
+.subscription-box-about form {
+  width: 100%;
+  
+}
+
+.subscription-box-about input {
+  
+  padding: 15px;
+  width: 65%;
+  border: 2px solid orangered;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+  
+.subscription-box-about button {
+  background: #ee834e;
+  color: #7a0000;
+  border: none;
+  padding: 14px 10px;
+  width: 100px;
+  border-radius: 60px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  transition: all 0.3s;
+  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* subtle default shadow */
+}
+.subscription-box-about button:hover {
+  background: #da715ee1;
+    box-shadow: 0 6px 18px rgba(218, 113, 94, 0.5); /* deeper colored glow on hover */
+
+}
+button:active {
+  scale: 0.95;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  text-align: center;
+  font-size: 12px;
+  border-top: 1px solid rgba(245, 245, 220, 0.3);
+  padding-top: 25px;
+  padding-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 500px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .footer-newsletter form {
+    flex-direction: column;
+  }
+  .ripple-btn {
+    width: 100%;
+  }
+}
+
+.fa-heart {
+    color: #fdd5d5;
+    font-size: 15px;
+}
+
+.icons {
+    color: #fdf0d5;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+    width: 35%;
+}
+
+.icons a {
+    color: #fdf0d5;
+    font-size: 25px;
+    padding : 10px;
+} 
+#insta:hover {
+    color: #ff04c0;
+    text-shadow: 0px 0px 3px#fdf0d5;
+    font-size: 25px;
+    padding : 10px;
+} 
+#linkedin:hover {
+    color: #215a8f;
+    text-shadow: 1px 1px 5px#fdf0d5;
+    font-size: 25px;
+    padding : 10px;
+} 
+#twitter:hover {
+    color: #141414;
+    text-shadow: 1px 1px 5px#fdf0d5;
+    font-size: 25px;
+    padding : 10px;
+} 
+#tumblr:hover {
+    color: #3c487c;
+    text-shadow: 1px 1px 5px#fdf0d5;
+    font-size: 25px;
+    padding : 10px;
+} 
+
+.footer-bottom {
+  text-align: center;
+  font-size: 12px;
+  border-top: 1px solid rgba(245, 245, 220, 0.3);
+  padding-top: 25px;
+  padding-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 500px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .footer-newsletter form {
+    flex-direction: column;
+  }
+  .ripple-btn {
+    width: 100%;
+  }
+}
+/* Footer Newsletter Section */
+
+.subscription-box h2 {
+  font-size: 18px;
+  color: #fff8e7;
+  margin-bottom: 10px;
+  font-family: 'Georgia', serif;
+}
+
+.subscription-box form {
+  width: 100%;
+}
+
+.subscription-box input {
+  padding: 15px;
+  width: 65%;
+  border: none;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+  
+.subscription-box button {
+  background: #ffcc66;
+  color: #7a0000;
+  border: none;
+  padding: 14px 10px;
+  width: 100px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+.subscription-box button:hover {
+  background: #e6b85c;
+}
+
+.navbar-logo {
+  height: 40px;
+  margin-right: 16px;
+  vertical-align: middle;
+}
+/* Add these styles to fix the footer positioning */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+.site-footer {
+    flex-shrink: 0;
+}
   </style>
 </head>
 <body>
 
-  
+  <div class="main-content">
   <!-- Navbar -->
   <nav role="navigation" aria-label="Main Menu">
     <!-- Logo on the left -->
@@ -650,20 +982,66 @@
     
     
   </div>
-  
-  <div class="footer">
-    <p>This project is part of <a href="https://github.com/TheCawnporeMag/TheCawnporeMag.github.io" target="_blank">TheCawnporeMag.github.io</a> repository</p>
-    <p>We invite developers, designers, and creatives to collaborate in making this space more accessible, interactive, and beautiful</p>
-    <p>Licensed under MIT | Maintained with ❤️ by The Cawnpore Magazine Team</p>
-
-
-    <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
-
   </div>
-
-
-
-  <script>
+<footer class="site-footer" id="footer" >
+      <a class="back-to-top" href="#">
+          <i class="fa-solid fa-chevron-up"></i>
+      </a>
+      <div class="footer-top" >
+      <div class="footer-about">
+        <a href="index.html">
+          <img src="assets/favicon.ico" alt="The Cawnpore Logo" style="height: 50px; margin-bottom: 10px;">
+          <h3>The Cawnpore</h3>
+        </a>
+        
+        <p>An independent magazine celebrating literary voices and untold stories.</p>
+      </div>
+        <div class="footer-links"   id="footerLinks">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="submission.html">Submit</a></li>
+            <li><a href="issue.html">Issue</a></li>
+            <li><a href="masthead.html">Masthead</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="open-source.html">Open Source</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact"  id="footerContact">
+          <h3>Contact Us</h3>
+          <div class="social-icons">
+            <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/TheCawnporeMag?s=09" target="_blank">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank">
+              <i class="fa-brands fa-tumblr"></i>
+            </a>
+          </div>
+        </div>
+        <div class="subscription-box-about">
+          <h3>Subscribe to our Newsletter</h3>
+          <form action="/subscribe" method="post">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Made with &#x2665; by Kritika Singh</p>
+        <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
+      </div>
+    </footer>
+<script>
     // Mobile menu functions
     function showMenu() {
       document.getElementById("navLinks").style.right = "0";
@@ -758,7 +1136,14 @@ document.getElementById("year").textContent = new Date().getFullYear();
       window.history.back();
     }
 
-
+const backToTop = document.querySelector('.back-to-top');
+window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 300) { 
+        backToTop.classList.add("active");
+    } else {
+        backToTop.classList.remove("active");
+    }
+})
   </script>
 </body>
 </html>
