@@ -333,3 +333,20 @@ button:hover {
     box-shadow: 0px 0px 10px #780000;
     font-size: 28px;
 }
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999;
+  transition: transform 0.1s ease-out;
+}
+@media (max-width: 600px) {
+  .circle {
+    display: none !important;
+  }
+}
