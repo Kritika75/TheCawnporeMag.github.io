@@ -971,9 +971,13 @@ button:active {
   background: #a94442;
 }
 
-/* Mobile View */
 @media screen and (max-width: 768px) {
   .food-card {
     flex: 0 0 100%; /* 1 card visible */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
+
