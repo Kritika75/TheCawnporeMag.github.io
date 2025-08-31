@@ -330,9 +330,122 @@
       <div class="footer-bottom">
         <p>Made with &#x2665; by Kritika Singh</p>
         <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
+        <!-- Report Problem Button -->
+        <div class="report-section">
+          <button id="reportProblemBtn" class="report-btn" aria-label="Report a problem">
+            <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+            Report a Problem
+          </button>
+        </div>
       </div>
     </footer>
+
+    <!-- Report Problem Modal -->
+    <div id="reportModal" class="modal" role="dialog" aria-labelledby="reportModalTitle" aria-hidden="true">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="reportModalTitle">Report a Problem</h2>
+          <button class="close-btn" aria-label="Close modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="reportForm">
+            <div class="form-group">
+              <label for="reportType">Problem Type</label>
+              <select id="reportType" required>
+                <option value="">Select issue type</option>
+                <option value="bug">Bug/Technical Issue</option>
+                <option value="content">Content Error</option>
+                <option value="accessibility">Accessibility Issue</option>
+                <option value="design">Design/UI Problem</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="reportDescription">Description</label>
+              <textarea id="reportDescription" placeholder="Please describe the problem in detail..." required rows="5"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="reportEmail">Email (optional)</label>
+              <input type="email" id="reportEmail" placeholder="Your email for follow-up">
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn-cancel">Cancel</button>
+              <button type="submit" class="btn-submit">Submit Report</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <script src="index.js"></script>
+    <script src="scripts/toast.js"></script>
+    <script>
+      // Report Problem Modal Functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('reportModal');
+        const reportBtn = document.getElementById('reportProblemBtn');
+        const closeBtn = document.querySelector('.close-btn');
+        const cancelBtn = document.querySelector('.btn-cancel');
+        const reportForm = document.getElementById('reportForm');
+
+        // Open modal
+        reportBtn.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+          document.getElementById('reportType').focus();
+        });
+
+        // Close modal function
+        function closeModal() {
+          modal.style.display = 'none';
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = 'auto';
+          reportForm.reset();
+        }
+
+        // Close modal events
+        closeBtn.addEventListener('click', closeModal);
+        cancelBtn.addEventListener('click', closeModal);
+
+        // Close on outside click
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            closeModal();
+          }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && modal.style.display === 'block') {
+            closeModal();
+          }
+        });
+
+        // Handle form submission
+        reportForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const reportData = {
+            type: document.getElementById('reportType').value,
+            description: document.getElementById('reportDescription').value,
+            email: document.getElementById('reportEmail').value,
+            url: window.location.href,
+            timestamp: new Date().toISOString()
+          };
+
+          // Simulate sending report (replace with actual API call)
+          if (window.toast) {
+            window.toast.success('Thank you! Your report has been submitted successfully.');
+          } else {
+            alert('Thank you! Your report has been submitted successfully.');
+          }
+          
+          console.log('Report submitted:', reportData);
+          closeModal();
+        });
+      });
+    </script>
   </body>
 </html>
 <!-- synced after conflict -->

@@ -54,6 +54,7 @@ h1::after {
     background: white;
     transform: translateY(0);
     will-change: transform;
+    cursor: pointer;
     
     /* Gradient border using pseudo-element */
     border: 1px solid transparent;
@@ -111,6 +112,7 @@ h1::after {
     display: block;
     transition: all 0.5s ease;
     filter: brightness(0.95);
+    cursor: pointer;
 }
 
 .gallery-item:hover img {
