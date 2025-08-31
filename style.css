@@ -1174,7 +1174,7 @@ button:active{
     .nav-links ul {
         white-space: nowrap; /* Prevents wrapping of list items */
         overflow-x: auto; /* Adds horizontal scroll if content overflows */
-        -webkit-overflow-scrolling: touch; /* Improves scrolling on touch devices */
+        scroll-behavior: smooth; /* Modern smooth scrolling for touch devices */
     }
 
     .nav-links {
