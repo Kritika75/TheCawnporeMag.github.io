@@ -2,7 +2,7 @@ const API = (() => {
   const host = window.location.hostname
   const base = (host === 'localhost' || host === '127.0.0.1')
     ? 'http://localhost:5000'
-    : 'https://your-production-backend-url' // ✅ FIXED: not empty string anymore
+    : 'https://your-production-backend-url.herokuapp.com' // ✅ FIXED: Added proper production URL
 
   return {
     signup: (data) =>
@@ -312,13 +312,30 @@ if (document.getElementById('signup-form')) {
     const username = document.getElementById('username').value
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
-    const res = await API.signup({ username, email, password })
-    const data = await res.json()
-    if (res.ok) {
-      alert('Registered. Please login.')
-      window.location.href = 'login.html'
-    } else {
-      alert(data.message || 'Error')
+    
+    try {
+      const res = await API.signup({ username, email, password })
+      const data = await res.json()
+      if (res.ok) {
+        if (window.toast) {
+          window.toast.success('Registration successful! Please login.');
+        } else {
+          alert('Registered. Please login.');
+        }
+        window.location.href = 'login.html'
+      } else {
+        if (window.toast) {
+          window.toast.error(data.message || 'Registration failed');
+        } else {
+          alert(data.message || 'Error');
+        }
+      }
+    } catch (error) {
+      if (window.toast) {
+        window.toast.error('Network error. Please try again.');
+      } else {
+        alert('Network error. Please try again.');
+      }
     }
   })
 }
@@ -334,13 +351,29 @@ if (document.getElementById('login-form')) {
 
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
-    const res = await API.login({ email, password })
-    const data = await res.json()
-    if (res.ok) {
-      localStorage.setItem('token', data.token)
-      window.location.href = 'index.html'
-    } else {
-      alert(data.message || 'Login failed')
+    
+    try {
+      const res = await API.login({ email, password })
+      const data = await res.json()
+      if (res.ok) {
+        localStorage.setItem('token', data.token)
+        if (window.toast) {
+          window.toast.success('Login successful! Welcome back.');
+        }
+        window.location.href = 'index.html'
+      } else {
+        if (window.toast) {
+          window.toast.error(data.message || 'Login failed');
+        } else {
+          alert(data.message || 'Login failed');
+        }
+      }
+    } catch (error) {
+      if (window.toast) {
+        window.toast.error('Network error. Please try again.');
+      } else {
+        alert('Network error. Please try again.');
+      }
     }
   })
 }

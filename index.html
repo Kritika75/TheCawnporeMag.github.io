@@ -17,10 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
+    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -28,12 +25,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
 
   </head>
   <body>
-                       <!-- Circles -->
+                       <!-- Optimized Circles for Performance -->
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div>
@@ -41,25 +36,6 @@
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div> 
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div>
       <div class="circle"></div>
@@ -305,8 +281,8 @@
 
       <!-- Footer -->
    <footer class="site-footer" id="footer" >
-      <a class="back-to-top" href="#">
-          <i class="fa-solid fa-chevron-up"></i>
+      <a class="back-to-top" href="#" aria-label="Back to top" title="Scroll to top of page">
+          <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
       </a>
       <div class="footer-top" >
       <div class="footer-about">
@@ -333,20 +309,20 @@
         <div class="footer-contact"  id="footerContact">
           <h3>Contact Us</h3>
           <div class="social-icons">
-            <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank">
-              <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank" aria-label="Email us" title="Send us an email">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
             </a>
-            <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank">
-              <i class="fa-brands fa-instagram"></i>
+            <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank" aria-label="Follow us on Instagram" title="Visit our Instagram page">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </a>
-            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank">
-              <i class="fa-brands fa-linkedin"></i>
+            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank" aria-label="Connect with us on LinkedIn" title="Visit our LinkedIn page">
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
             </a>
-            <a href="https://x.com/TheCawnporeMag?s=09" target="_blank">
-              <i class="fa-brands fa-x-twitter"></i>
+            <a href="https://x.com/TheCawnporeMag?s=09" target="_blank" aria-label="Follow us on X (Twitter)" title="Visit our X profile">
+              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
             </a>
-            <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank">
-              <i class="fa-brands fa-tumblr"></i>
+            <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank" aria-label="Follow us on Tumblr" title="Visit our Tumblr page">
+              <i class="fa-brands fa-tumblr" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -434,11 +410,25 @@
         fadeInMusic();
         localStorage.setItem("musicEnabled", "true");
         musicToggle.classList.add("active");
+        musicToggle.setAttribute("aria-label", "Pause Background Music");
+      }).catch(error => {
+        console.warn("Audio play failed:", error);
+        // Fallback for browsers that block autoplay
+        localStorage.setItem("musicEnabled", "false");
       });
     } else {
       fadeOutMusic();
       localStorage.setItem("musicEnabled", "false");
       musicToggle.classList.remove("active");
+      musicToggle.setAttribute("aria-label", "Play Background Music");
+    }
+  });
+
+  // Add keyboard support for the music toggle
+  musicToggle.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      musicToggle.click();
     }
   });
 
@@ -446,6 +436,7 @@
 
         
     </script>
+    <script src="scripts/toast.js"></script>
     <script src="scripts/auth.js"></script>
   </body>
 </html>
