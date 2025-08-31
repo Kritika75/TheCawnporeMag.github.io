@@ -20,9 +20,32 @@ We publish:
 With each issue, we aim to tell stories that live in the **in-betweenness** — of *place, identity, memory, and imagination*.  
 
 📌 **Quick Links:**  
-- 🌐 Website: [thecawnporemag.co.in](https://www.thecawnporemag.co.in/)  
+- 🌐 Website: [thecawnporemag.github.io](https://thecawnporemag.github.io/)  
 - 📸 Instagram: [@thecawnporemagazine](https://www.instagram.com/thecawnporemagazine)  
 - 📧 Contact: **thecawnporemagofficial@gmail.com**
+
+---
+
+## ✨ Recent Improvements
+
+### Accessibility Enhancements
+- ✅ Enhanced ARIA labels and semantic HTML structure
+- ✅ Improved keyboard navigation support
+- ✅ Better screen reader compatibility
+- ✅ Focus management and skip-to-content link
+- ✅ Reduced motion support for users with vestibular disorders
+
+### Performance Optimizations
+- ✅ Optimized scroll event handling with RAF throttling
+- ✅ Lazy loading implementation for images
+- ✅ Enhanced cursor animation performance
+- ✅ Improved loading screen UX
+
+### User Experience
+- ✅ Enhanced text-to-speech functionality with error handling
+- ✅ Better form validation with visual feedback
+- ✅ Structured data markup for SEO
+- ✅ Enhanced social media meta tags
 
 ---
 
@@ -31,6 +54,33 @@ With each issue, we aim to tell stories that live in the **in-betweenness** — 
 - **Theme Colors** → `#780000` (Primary), `#fdf0d5` (Background/Accent)  
 - **Built With** → HTML, CSS, JS (Static Site)  
 - **Goals** → Accessibility, responsiveness, aesthetics, and storytelling  
+- **Dependencies** → Nodemailer (^7.0.5), Zod (^4.1.3)
+
+---
+
+## 🚀 Getting Started
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/adityashirsatrao007/TheCawnporeMag.github.io.git
+   cd TheCawnporeMag.github.io
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start local development server:**
+
+   ```bash
+   npm start
+   ```
+
+4. **Open in browser:**
+   Navigate to `http://localhost:8000`
 
 ---
 

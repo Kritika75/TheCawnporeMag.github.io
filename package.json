@@ -1,7 +1,22 @@
 {
+  "name": "thecawnpore-magazine",
+  "version": "1.0.0",
+  "description": "The Cawnpore Magazine - A platform celebrating literature, art, and cultural diversity from Kanpur and beyond",
+  "main": "index.html",
   "dependencies": {
     "nodemailer": "^7.0.5",
-    "zod": "^4.1.3",
-    "nodemailer": "^7.0.5"
-  }
+    "zod": "^4.1.3"
+  },
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "optimize-images": "node scripts/optimize-images.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adityashirsatrao007/TheCawnporeMag.github.io.git"
+  },
+  "keywords": ["magazine", "literature", "kanpur", "cawnpore", "art", "culture"],
+  "author": "The Cawnpore Magazine Team",
+  "license": "MIT"
 }

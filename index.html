@@ -9,7 +9,35 @@
     <meta property="og:description" content="A platform celebrating literature, art, and cultural diversity from Kanpur and beyond.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thecawnporemag.github.io/">
+    <meta property="og:image" content="https://thecawnporemag.github.io/assets/favicon.ico">
+    
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The Cawnpore Magazine">
+    <meta name="twitter:description" content="A platform celebrating literature, art, and cultural diversity from Kanpur and beyond.">
+    
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "The Cawnpore Magazine",
+      "url": "https://thecawnporemag.github.io/",
+      "description": "A platform celebrating literature, art, and cultural diversity from Kanpur and beyond",
+      "foundingDate": "2024",
+      "logo": "https://thecawnporemag.github.io/assets/favicon.ico",
+      "sameAs": [
+        "https://github.com/adityashirsatrao007/TheCawnporeMag.github.io"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kanpur",
+        "addressCountry": "India"
+      }
+    }
+    </script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/accessibility.css" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,6 +56,9 @@
 
   </head>
   <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
                        <!-- Optimized Circles for Performance -->
       <div class="circle"></div>
       <div class="circle"></div>
@@ -118,31 +149,31 @@
     <section class="header">
       <nav role="navigation" aria-label="Main Menu">
         <!-- Logo on the left -->
-        <a href="index.html">
-          <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+        <a href="index.html" aria-label="Go to homepage">
+          <img src="assets/favicon.ico" alt="The Cawnpore Magazine Logo" class="navbar-logo" />
         </a>
         
         <div class="nav-links" id="navLinks">
-          <i class="fa fa-times" onclick="hideMenu()"></i>
-          <ul>
+          <i class="fa fa-times" onclick="hideMenu()" aria-label="Close navigation menu" role="button" tabindex="0"></i>
+          <ul role="menubar">
 
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="submission.html">SUBMIT</a></li>
-            <li><a href="issue.html">ISSUE</a></li>
-            <li><a href="masthead.html">MASTHEAD</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
+            <li role="menuitem"><a href="index.html">HOME</a></li>
+            <li role="menuitem"><a href="about.html">ABOUT</a></li>
+            <li role="menuitem"><a href="submission.html">SUBMIT</a></li>
+            <li role="menuitem"><a href="issue.html">ISSUE</a></li>
+            <li role="menuitem"><a href="masthead.html">MASTHEAD</a></li>
+            <li role="menuitem"><a href="faq.html">FAQ</a></li>
+            <li role="menuitem"><a href="gallery.html">Gallery</a></li>
 
-            <li><a href="open-source.html">OPEN SOURCE</a></li>
-            <li><a href="journey.html">OUR JOURNEY</a></li>
+            <li role="menuitem"><a href="open-source.html">OPEN SOURCE</a></li>
+            <li role="menuitem"><a href="journey.html">OUR JOURNEY</a></li>
 
-            <li><a href="login.html" class="btn ">LOGIN</a></li>
-            <li><a href="signup.html" class="btn ">REGISTER</a></li>
+            <li role="menuitem"><a href="login.html" class="btn ">LOGIN</a></li>
+            <li role="menuitem"><a href="signup.html" class="btn ">REGISTER</a></li>
           </ul>
         </div>
 
-        <i class="fa fa-bars" onclick="showMenu()"></i>
+        <i class="fa fa-bars" onclick="showMenu()" aria-label="Open navigation menu" role="button" tabindex="0"></i>
       </nav>
 
       <div class="text-box">
@@ -157,6 +188,7 @@
 
 
     <!--hero section-->
+    <main id="main-content">
     <section class="hero-section">
         <div class="hero-text">
             <h1>Welcome to The Cawnpore Magazine</h1>
@@ -190,7 +222,7 @@
       </div>
       </div>
       <div class="card">
-      <p class="card-title">What we do !!<button class="speakBtn" data-target="para2" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button>  
+      <p class="card-title">What we do !!<button class="speakBtn" data-target="para2" style="font-size: 24px; background: none; border: none; cursor: pointer;" aria-label="Listen to this section" title="Click to hear this text read aloud">🔊</button>  
         <p  id="para2" class="small-desc">
          We
         firmly believe that the exchange of ideas and experiences is the key to
@@ -206,7 +238,7 @@
       </div>
       </div>
       <div class="card">
-      <p class="card-title">Don't Wait, Subscribe<button class="speakBtn" data-target="para3" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button></p>
+      <p class="card-title">Don't Wait, Subscribe<button class="speakBtn" data-target="para3" style="font-size: 24px; background: none; border: none; cursor: pointer;" aria-label="Listen to this section" title="Click to hear this text read aloud">🔊</button></p>
       <p class="small-desc" id="para3">
         We understand that submitting your work can be a daunting task, but we
         assure you that we will treat each submission with the utmost respect
@@ -219,27 +251,83 @@
       </div>
       </div>
       <script>
+  // Enhanced speech synthesis with better error handling and accessibility
   document.querySelectorAll('.speakBtn').forEach(btn => {
     btn.addEventListener('click', () => {
       const targetId = btn.getAttribute('data-target');
       const paragraph = document.getElementById(targetId);
-      const text = paragraph.innerText;
+      
+      if (!paragraph) {
+        console.error('Target paragraph not found');
+        return;
+      }
+      
+      const text = paragraph.innerText.trim();
+      
+      if (!text) {
+        alert('No text found to read');
+        return;
+      }
 
       if ('speechSynthesis' in window) {
+        // Stop any ongoing speech
+        window.speechSynthesis.cancel();
+        
         const utterance = new SpeechSynthesisUtterance(text);
-        // Optional: voice select
-        const voices = window.speechSynthesis.getVoices();
-        if (voices.length > 0) {
-          for (let voice of voices) {
-            if (voice.lang === 'en-US') {
-              utterance.voice = voice;
-              break;
+        
+        // Configure speech parameters
+        utterance.rate = 0.8;
+        utterance.pitch = 1;
+        utterance.volume = 1;
+        
+        // Wait for voices to load
+        function setVoice() {
+          const voices = window.speechSynthesis.getVoices();
+          if (voices.length > 0) {
+            // Prefer English voices
+            const englishVoice = voices.find(voice => 
+              voice.lang.startsWith('en') && voice.localService
+            ) || voices.find(voice => voice.lang.startsWith('en'));
+            
+            if (englishVoice) {
+              utterance.voice = englishVoice;
             }
           }
         }
+        
+        if (window.speechSynthesis.getVoices().length === 0) {
+          window.speechSynthesis.addEventListener('voiceschanged', setVoice);
+        } else {
+          setVoice();
+        }
+        
+        // Visual feedback
+        btn.style.opacity = '0.5';
+        btn.setAttribute('aria-pressed', 'true');
+        
+        utterance.onend = () => {
+          btn.style.opacity = '1';
+          btn.setAttribute('aria-pressed', 'false');
+        };
+        
+        utterance.onerror = (event) => {
+          console.error('Speech synthesis error:', event.error);
+          btn.style.opacity = '1';
+          btn.setAttribute('aria-pressed', 'false');
+          alert('Sorry, there was an error reading the text. Please try again.');
+        };
+        
         window.speechSynthesis.speak(utterance);
       } else {
-        alert('Aapke browser mein speech synthesis support nahi karta.');
+        alert('Sorry, your browser does not support text-to-speech functionality.');
+      }
+    });
+    
+    // Keyboard accessibility
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        btn.click();
       }
     });
   });
@@ -278,6 +366,7 @@
         </a>
       </div>
     </section>
+    </main>
 
       <!-- Footer -->
    <footer class="site-footer" id="footer" >
@@ -351,6 +440,7 @@
 
 
     <script src="index.js"></script>
+    <script src="scripts/utils.js"></script>
 
     <!-- Visibility change  -->
     <script>

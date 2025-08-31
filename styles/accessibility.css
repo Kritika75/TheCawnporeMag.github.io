@@ -1,0 +1,125 @@
+/* Accessibility and Performance Improvements */
+
+/* Reduced motion support for users with vestibular disorders */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .circle {
+    display: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .nav-links a {
+    border: 2px solid;
+  }
+  
+  .btn {
+    border: 3px solid;
+  }
+}
+
+/* Focus management improvements */
+*:focus {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* Skip to main content link for screen readers */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 10000;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Improved form validation styles */
+.error {
+  border: 2px solid #d32f2f !important;
+  background-color: #ffebee !important;
+}
+
+.error:focus {
+  outline: 3px solid #d32f2f;
+}
+
+/* Loading screen improvements */
+#loading-screen {
+  transition: opacity 0.3s ease-out;
+}
+
+/* Speech button improvements */
+.speakBtn {
+  transition: opacity 0.2s ease;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.speakBtn:hover,
+.speakBtn:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.speakBtn[aria-pressed="true"] {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Lazy loading image styles */
+img.lazy {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+img:not(.lazy) {
+  opacity: 1;
+}
+
+/* Performance optimizations */
+.circle {
+  will-change: transform;
+  contain: layout style paint;
+}
+
+/* Navigation improvements */
+.nav-links.show {
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+}
+
+/* Print styles */
+@media print {
+  .circle,
+  #loading-screen,
+  .progress-container,
+  .speakBtn {
+    display: none !important;
+  }
+  
+  * {
+    background: white !important;
+    color: black !important;
+  }
+}
