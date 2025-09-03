@@ -49,6 +49,7 @@ html {
   width: 0%;
   background: #8b0000;
 }
+/* Navbar Styles */
 nav {
     display: flex;
     justify-content: space-between;
