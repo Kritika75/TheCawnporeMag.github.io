@@ -10,8 +10,7 @@
 - <a href="#about-magazine">  About the Magazine </a>
 - <a href="#quick-links">Quick links</a>
 - <a href="#tech-design"> Tech & Design </a>
-- <a href="#setup-instructions"> Setup Instructions </a>
-- <a href="#roadmap-enhancements">  Roadmap & Future Enhancements </a>
+- <a href="#contribution-steps"> Contribution Steps </a>
 - <a href="#acknowledgments">Acknowledgments</a>
 - <a href="#contact">Contact</a>
 - <a href="#how-to-contribute">How to Contribute</a>
@@ -211,12 +210,11 @@ git push origin feature/your-feature-name
 ### 💌 A Note from Us
 
 This site is a home for creativity.
-
 Our main goal is to make it look aesthetically pleasing, interactive, and accessible — while celebrating youth culture, girlhood, and imagination.
-
 Your suggestions and contributions help keep this project whimsical, meaningful, and alive.
-
 Thank you for being here 🌸✨
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## Contribution Guidelines 📑
 
@@ -226,6 +224,8 @@ Thank you for being here 🌸✨
 - Commit your changes
 - Create a Pull Request which will be reviewed and suggestions would be added to improve it.
 - Add Screenshots and updated website links to help us understand what changes is all about.
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## Contributing is fun🧡
 
