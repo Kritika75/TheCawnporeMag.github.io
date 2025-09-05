@@ -1,3 +1,13 @@
+// Handle Google OAuth redirect with JWT token
+if (window.location.hash && window.location.hash.startsWith('#token=')) {
+  const token = window.location.hash.substring(7) // Remove '#token='
+  localStorage.setItem('token', token)
+  // Clean up the URL
+  window.history.replaceState(null, null, window.location.pathname)
+  // Redirect to home or dashboard
+  window.location.href = 'index.html'
+}
+
 const API = (() => {
   const host = window.location.hostname
   const base = (host === 'localhost' || host === '127.0.0.1')
