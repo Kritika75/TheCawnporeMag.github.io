@@ -18,7 +18,7 @@ body{
 }
 
 /* Navbar Styles */
-nav {
+nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,7 +33,6 @@ nav {
     );
     background-size: 400% 400%; /* make the gradient larger to animate */
     animation: gradientMove 5s linear infinite;
-
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-bottom: 1px solid rgba(179, 177, 177, 0.2);
