@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Contributors - The Cawnpore Magazine</title>
+    <meta name="description" content="Meet the talented writers, editors, and artists who bring The Cawnpore Magazine to life. Discover their stories and connect with our creative community.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thecawnporemag.github.io/contributors.html">
+    <meta property="og:title" content="Our Contributors - The Cawnpore Magazine">
+    <meta property="og:description" content="Meet the talented writers, editors, and artists who bring The Cawnpore Magazine to life.">
+    <meta property="og:image" content="https://thecawnporemag.github.io/assets/images/contributors-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thecawnporemag.github.io/contributors.html">
+    <meta property="twitter:title" content="Our Contributors - The Cawnpore Magazine">
+    <meta property="twitter:description" content="Meet the talented writers, editors, and artists who bring The Cawnpore Magazine to life.">
+    <meta property="twitter:image" content="https://thecawnporemag.github.io/assets/images/contributors-og.jpg">
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/contributors.css">
+    <link rel="icon" href="gallary/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
+
+    <!-- Circles -->
+    <div class="circles-container" aria-hidden="true">
+        <!-- Circles will be generated via JavaScript -->
+    </div>
+
+    <header class="header parallax" role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <!-- Logo on the left -->
+            <a href="index.html">
+                <img src="gallary/favicon.ico" alt="The Cawnpore Logo" class="navbar-logo" />
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" aria-label="Close menu"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="submission.html">SUBMIT</a></li>
+                    <li><a href="issue.html">CURRENT ISSUE</a></li>
+                    <li><a href="archives.html">ARCHIVES</a></li>
+                    <li><a href="masthead.html">MASTHEAD</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contributors.html" class="active">CONTRIBUTORS</a></li>
+                    <li><a href="open-source.html">OPEN SOURCE</a></li>
+                    <li><a href="journey.html">OUR JOURNEY</a></li>
+                    <li><a href="login.html" class="btn">LOGIN</a></li>
+                    <li><a href="signup.html" class="btn">REGISTER</a></li>
+                </ul>
+            </div>
+
+            <i class="fa fa-bars" onclick="showMenu()" aria-label="Open menu" id="menuToggle" aria-expanded="false"></i>
+        </nav>
+
+        <div class="text-box">
+            <h1 class="text1">Our Contributors</h1>
+            <p class="text2">Meet the creative minds behind our stories</p>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <!-- Contributors Hero Section -->
+        <section class="contributors-hero scroll-reveal">
+            <div class="contributors-intro">
+                <h2>The Heart of Our Magazine</h2>
+                <p>Our contributors are passionate storytellers, talented artists, and dedicated writers from around the world. Each brings their unique voice and perspective to create the rich tapestry that is The Cawnpore Magazine.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Contributors</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label">Countries</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Published Works</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Categories -->
+        <section class="team-categories scroll-reveal">
+            <div class="categories-container">
+                <button class="category-btn active" data-category="all">All Contributors</button>
+                <button class="category-btn" data-category="editors">Editors</button>
+                <button class="category-btn" data-category="writers">Writers</button>
+                <button class="category-btn" data-category="artists">Artists</button>
+                <button class="category-btn" data-category="photographers">Photographers</button>
+            </div>
+        </section>
+
+        <!-- Contributors Grid -->
+        <section class="contributors-grid scroll-reveal">
+            <div class="contributors-container">
+
+                <!-- Editor in Chief -->
+                <article class="contributor-card featured" data-category="editors">
+                    <div class="contributor-image">
+                        <img src="gallary/professional-1.png" alt="Editor in Chief - Sarah Johnson" loading="lazy">
+                        <div class="contributor-overlay">
+                            <div class="contributor-role">Editor in Chief</div>
+                        </div>
+                    </div>
+                    <div class="contributor-info">
+                        <h3>Sarah Johnson</h3>
+                        <p class="contributor-title">Editor in Chief</p>
+                        <p class="contributor-bio">Sarah brings over 15 years of publishing experience to The Cawnpore Magazine. Her passion for diverse voices and commitment to literary excellence drives our editorial vision.</p>
+                        <div class="contributor-stats">
+                            <span class="stat">15+ years experience</span>
+                            <span class="stat">50+ published articles</span>
+                        </div>
+                        <div class="contributor-social">
+                            <a href="#" aria-label="Sarah Johnson's LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Sarah Johnson's Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Sarah Johnson's website"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Senior Editor -->
+                <article class="contributor-card" data-category="editors">
+                    <div class="contributor-image">
+                        <img src="gallary/professional-1.png" alt="Senior Editor - Michael Chen" loading="lazy">
+                        <div class="contributor-overlay">
+                            <div class="contributor-role">Senior Editor</div>
+                        </div>
+                    </div>
+                    <div class="contributor-info">
+                        <h3>Michael Chen</h3>
+                        <p class="contributor-title">Senior Editor</p>
+                        <p class="contributor-bio">Michael specializes in contemporary fiction and has a keen eye for emerging talent. His work has been featured in several international literary journals.</p>
+                        <div class="contributor-stats">
+                            <span class="stat">Fiction specialist</span>
+                            <span class="stat">Global network</span>
+                        </div>
+                        <div class="contributor-social">
+                            <a href="#" aria-label="Michael Chen's LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Michael Chen's Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Featured Writer -->
+                <article class="contributor-card" data-category="writers">
+                    <div class="contributor-image">
+                        <img src="gallary/professional-1.png" alt="Featured Writer - Priya Sharma" loading="lazy">
+                        <div class="contributor-overlay">
+                            <div class="contributor-role">Featured Writer</div>
+                        </div>
+                    </div>
+                    <div class="contributor-info">
+                        <h3>Priya Sharma</h3>
+                        <p class="contributor-title">Fiction Writer</p>
+                        <p class="contributor-bio">Priya's stories explore the intersection of tradition and modernity in contemporary India. Her work has won several literary awards and been translated into multiple languages.</p>
+                        <div class="contributor-stats">
+                            <span class="stat">Award-winning author</span>
+                            <span class="stat">5 published books</span>
+                        </div>
+                        <div class="contributor-social">
+                            <a href="#" aria-label="Priya Sharma's website"><i class="fas fa-globe"></i></a>
+                            <a href="#" aria-label="Priya Sharma's Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Priya Sharma's Goodreads"><i class="fab fa-goodreads"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Poet -->
+                <article class="contributor-card" data-category="writers">
+                    <div class="contributor-image">
+                        <img src="gallary/professional-1.png" alt="Poet - Ahmed Hassan" loading="lazy">
+                        <div class="contributor-overlay">
+                            <div class="contributor-role">Poet</div>
+                        </div>
+                    </div>
+                    <div class="contributor-info">
+                        <h3>Ahmed Hassan</h3>
+                        <p class="contributor-title">Poet & Essayist</p>
+                        <p class="contributor-bio">Ahmed's poetry bridges Eastern and Western literary traditions. His work has been published in numerous anthologies and translated into Arabic, Urdu, and English.</p>
+                        <div class="contributor-stats">
+                            <span class="stat">Cross-cultural poet</span>
+                            <span class="stat">3 poetry collections</span>
+                        </div>
+                        <div class="contributor-social">
+                            <a href="#" aria-label="Ahmed Hassan's website"><i class="fas fa-globe"></i></a>
+                            <a href="#" aria-label="Ahmed Hassan's Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Visual Artist -->
+                <article class="contributor-card" data-category="artists">
+                    <div class="contributor-image">
+                        <img src="gallary/professional-1.png" alt="Visual Artist - Maria Rodriguez" loading="lazy">
+                        <div class="contributor-overlay">
+                            <div class="contributor-role">Visual Artist</div>
+                        </div>
+                    </div>
+                    <div class="contributor-info">
+                        <h3>Maria Rodriguez</h3>
+                        <p class="contributor-title">Digital Artist</p>
+                        <p class="contributor-bio">Maria creates stunning digital illustrations that bring our stories to life. Her artwork has been featured in galleries across Europe and Asia.</p>
+                        <div class="contributor-stats">
+                            <span class="stat">Digital illustrations</span>
+                            <span class="stat">International exhibitions</span>
+                        </div>
+                        <div class="contributor-social">
+                            <a href="#" aria-label="Maria Rodriguez's portfolio"><i class="fas fa-palette"></i></a>
+                            <a href="#" aria-label="Maria Rodriguez's Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Maria Rodriguez's Behance"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Photographer -->
+                <article class="contributor-card" data-category="photographers">
+                    <div class="contributor-image">
+                        <img src="gallary/professional-1.png" alt="Photographer - David Kim" loading="lazy">
+                        <div class="contributor-overlay">
+                            <div class="contributor-role">Photographer</div>
+                        </div>
+                    </div>
+                    <div class="contributor-info">
+                        <h3>David Kim</h3>
+                        <p class="contributor-title">Documentary Photographer</p>
+                        <p class="contributor-bio">David captures the essence of human stories through his lens. His photographs have documented cultural festivals, urban life, and natural landscapes across continents.</p>
+                        <div class="contributor-stats">
+                            <span class="stat">Documentary focus</span>
+                            <span class="stat">50+ countries visited</span>
+                        </div>
+                        <div class="contributor-social">
+                            <a href="#" aria-label="David Kim's portfolio"><i class="fas fa-camera"></i></a>
+                            <a href="#" aria-label="David Kim's Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Copy Editor -->
+                <article class="contributor-card" data-category="editors">
+                    <div class="contributor-image">
+                        <img src="gallary/professional-1.png" alt="Copy Editor - Lisa Thompson" loading="lazy">
+                        <div class="contributor-overlay">
+                            <div class="contributor-role">Copy Editor</div>
+                        </div>
+                    </div>
+                    <div class="contributor-info">
+                        <h3>Lisa Thompson</h3>
+                        <p class="contributor-title">Copy Editor</p>
+                        <p class="contributor-bio">Lisa ensures every word shines with clarity and precision. Her attention to detail and love for language makes her an invaluable part of our editorial team.</p>
+                        <div class="contributor-stats">
+                            <span class="stat">Grammar expert</span>
+                            <span class="stat">Style guide master</span>
+                        </div>
+                        <div class="contributor-social">
+                            <a href="#" aria-label="Lisa Thompson's LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Emerging Writer -->
+                <article class="contributor-card" data-category="writers">
+                    <div class="contributor-image">
+                        <img src="gallary/professional-1.png" alt="Emerging Writer - James Wilson" loading="lazy">
+                        <div class="contributor-overlay">
+                            <div class="contributor-role">Emerging Writer</div>
+                        </div>
+                    </div>
+                    <div class="contributor-info">
+                        <h3>James Wilson</h3>
+                        <p class="contributor-title">Short Story Writer</p>
+                        <p class="contributor-bio">James brings fresh perspectives to contemporary issues through his compelling short stories. His work explores themes of identity, belonging, and human connection.</p>
+                        <div class="contributor-stats">
+                            <span class="stat">Short story specialist</span>
+                            <span class="stat">Debut author</span>
+                        </div>
+                        <div class="contributor-social">
+                            <a href="#" aria-label="James Wilson's website"><i class="fas fa-globe"></i></a>
+                            <a href="#" aria-label="James Wilson's Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="contributors-cta scroll-reveal">
+            <div class="cta-content">
+                <h2>Join Our Community</h2>
+                <p>Are you a writer, artist, or creative professional? We'd love to hear from you!</p>
+                <div class="cta-buttons">
+                    <a href="submission.html" class="cta-btn primary">Submit Your Work</a>
+                    <a href="contact.html" class="cta-btn secondary">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer scroll-reveal" id="footer" role="contentinfo">
+        <a class="back-to-top" href="#" aria-label="Back to top">
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+        <div class="footer-top">
+            <div class="footer-about scroll-reveal-left">
+                <a href="index.html">
+                    <img src="gallary/favicon.ico" alt="The Cawnpore Logo" style="height: 50px; margin-bottom: 10px;">
+                    <h3>The Cawnpore</h3>
+                </a>
+                <p>An independent magazine celebrating literary voices and untold stories.</p>
+            </div>
+
+            <div class="footer-links scroll-reveal" id="footerLinks">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="submission.html">Submit</a></li>
+                    <li><a href="issue.html">Current Issue</a></li>
+                    <li><a href="archives.html">Archives</a></li>
+                    <li><a href="contributors.html">Contributors</a></li>
+                    <li><a href="masthead.html">Masthead</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="open-source.html">Open Source</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact scroll-reveal-right" id="footerContact">
+                <h3>Contact Us</h3>
+                <div class="social-icons">
+                    <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank" aria-label="Email us">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://x.com/TheCawnporeMag?s=09" target="_blank" rel="noopener noreferrer" aria-label="Visit our Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank" rel="noopener noreferrer" aria-label="Visit our Tumblr">
+                        <i class="fa-brands fa-tumblr"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="subscription-box-about scroll-reveal">
+                <h3>Subscribe to our Newsletter</h3>
+                <form action="/subscribe" method="post" id="newsletter-form">
+                    <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address for newsletter">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Made with &#x2665; by Abdul Sammed</p>
+            <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
+        </div>
+
+        <audio id="bg-music" loop preload="metadata">
+            <source src="gallary/music/lofi.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+        </audio>
+
+        <div id="music-toggle" aria-label="Toggle Background Music" role="button" tabindex="0">
+            <i class="fa-solid fa-music"></i>
+            <span class="music-state">Off</span>
+        </div>
+
+        <div id="theme-toggle" aria-label="Toggle Dark Mode" role="button" tabindex="0">
+            <i class="fa-solid fa-moon"></i>
+            <span class="theme-state">Light</span>
+        </div>
+    </footer>
+
+    <!-- All JavaScript in one file -->
+    <script src="scripts/script.js"></script>
+    <script src="scripts/contributors.js"></script>
+</body>
+</html>

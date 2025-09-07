@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+
+# Allow all major search engines to crawl the site
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Disallow access to admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Disallow access to development files
+Disallow: /scripts/
+Disallow: /styles/
+Disallow: *.json
+
+# Allow access to main content
+Allow: /index.html
+Allow: /about.html
+Allow: /gallery.html
+Allow: /archives.html
+Allow: /contributors.html
+
+# Sitemap location
+Sitemap: https://thecawnporemag.github.io/sitemap.xml

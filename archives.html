@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Archives - The Cawnpore Magazine</title>
+    <meta name="description" content="Browse our complete archive of published issues featuring the best in literature, poetry, and visual art from around the world.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thecawnporemag.github.io/archives.html">
+    <meta property="og:title" content="Issue Archives - The Cawnpore Magazine">
+    <meta property="og:description" content="Browse our complete archive of published issues featuring the best in literature, poetry, and visual art from around the world.">
+    <meta property="og:image" content="https://thecawnporemag.github.io/assets/images/archives-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thecawnporemag.github.io/archives.html">
+    <meta property="twitter:title" content="Issue Archives - The Cawnpore Magazine">
+    <meta property="twitter:description" content="Browse our complete archive of published issues featuring the best in literature, poetry, and visual art from around the world.">
+    <meta property="twitter:image" content="https://thecawnporemag.github.io/assets/images/archives-og.jpg">
+
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/archives.css">
+    <link rel="icon" href="gallary/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
+
+    <!-- Circles -->
+    <div class="circles-container" aria-hidden="true">
+        <!-- Circles will be generated via JavaScript -->
+    </div>
+
+    <header class="header parallax" role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <!-- Logo on the left -->
+            <a href="index.html">
+                <img src="gallary/favicon.ico" alt="The Cawnpore Logo" class="navbar-logo" />
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()" aria-label="Close menu"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="submission.html">SUBMIT</a></li>
+                    <li><a href="issue.html">CURRENT ISSUE</a></li>
+                    <li><a href="archives.html" class="active">ARCHIVES</a></li>
+                    <li><a href="masthead.html">MASTHEAD</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="open-source.html">OPEN SOURCE</a></li>
+                    <li><a href="journey.html">OUR JOURNEY</a></li>
+                    <li><a href="login.html" class="btn">LOGIN</a></li>
+                    <li><a href="signup.html" class="btn">REGISTER</a></li>
+                </ul>
+            </div>
+
+            <i class="fa fa-bars" onclick="showMenu()" aria-label="Open menu" id="menuToggle" aria-expanded="false"></i>
+        </nav>
+
+        <div class="text-box">
+            <h1 class="text1">Issue Archives</h1>
+            <p class="text2">Explore our published works</p>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <!-- Archives Hero Section -->
+        <section class="archives-hero scroll-reveal">
+            <div class="archives-intro">
+                <h2>Discover Literary Treasures</h2>
+                <p>Browse through our carefully curated collection of published issues, featuring exceptional works from talented writers and artists from around the globe.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Issues Published</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">200+</span>
+                        <span class="stat-label">Contributors</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Countries</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search and Filter Section -->
+        <section class="archives-controls scroll-reveal">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search issues, authors, or themes..." aria-label="Search archives">
+                <button type="button" id="search-btn" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="filter-buttons" role="group" aria-label="Filter by category">
+                <button class="filter-btn active" data-filter="all">All Issues</button>
+                <button class="filter-btn" data-filter="poetry">Poetry</button>
+                <button class="filter-btn" data-filter="fiction">Fiction</button>
+                <button class="filter-btn" data-filter="nonfiction">Non-Fiction</button>
+                <button class="filter-btn" data-filter="artwork">Artwork</button>
+            </div>
+        </section>
+
+        <!-- Issues Grid -->
+        <section class="issues-grid scroll-reveal">
+            <div class="issues-container">
+
+                <!-- Issue 3 -->
+                <article class="issue-card" data-category="poetry fiction nonfiction">
+                    <div class="issue-cover">
+                        <img src="gallary/CawnporeMagazine Issue03 WithText v3.png" alt="Issue 3 Cover - Winter 2024" loading="lazy">
+                        <div class="issue-overlay">
+                            <button class="read-btn" aria-label="Read Issue 3">Read Now</button>
+                        </div>
+                    </div>
+                    <div class="issue-info">
+                        <h3>Issue 3: Echoes of Heritage</h3>
+                        <p class="issue-date">Winter 2024</p>
+                        <p class="issue-description">A collection exploring cultural roots, personal histories, and the stories that shape our identities.</p>
+                        <div class="issue-tags">
+                            <span class="tag">Poetry</span>
+                            <span class="tag">Fiction</span>
+                            <span class="tag">Memoir</span>
+                        </div>
+                        <div class="issue-actions">
+                            <a href="#" class="download-btn" aria-label="Download Issue 3 PDF">
+                                <i class="fas fa-download"></i> Download PDF
+                            </a>
+                            <button class="preview-btn" aria-label="Preview Issue 3">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Issue 2 -->
+                <article class="issue-card" data-category="poetry artwork">
+                    <div class="issue-cover">
+                        <img src="gallary/The Cawnpore cover page issue02.jpg" alt="Issue 2 Cover - Autumn 2024" loading="lazy">
+                        <div class="issue-overlay">
+                            <button class="read-btn" aria-label="Read Issue 2">Read Now</button>
+                        </div>
+                    </div>
+                    <div class="issue-info">
+                        <h3>Issue 2: Urban Dreams</h3>
+                        <p class="issue-date">Autumn 2024</p>
+                        <p class="issue-description">Contemporary voices from city dwellers, exploring themes of ambition, belonging, and urban transformation.</p>
+                        <div class="issue-tags">
+                            <span class="tag">Poetry</span>
+                            <span class="tag">Urban Life</span>
+                            <span class="tag">Artwork</span>
+                        </div>
+                        <div class="issue-actions">
+                            <a href="#" class="download-btn" aria-label="Download Issue 2 PDF">
+                                <i class="fas fa-download"></i> Download PDF
+                            </a>
+                            <button class="preview-btn" aria-label="Preview Issue 2">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Issue 1 -->
+                <article class="issue-card" data-category="fiction nonfiction">
+                    <div class="issue-cover">
+                        <img src="gallary/THE CAWNPORE MAGAZINE front c.png" alt="Issue 1 Cover - Summer 2024" loading="lazy">
+                        <div class="issue-overlay">
+                            <button class="read-btn" aria-label="Read Issue 1">Read Now</button>
+                        </div>
+                    </div>
+                    <div class="issue-info">
+                        <h3>Issue 1: New Beginnings</h3>
+                        <p class="issue-date">Summer 2024</p>
+                        <p class="issue-description">Our inaugural issue featuring fresh voices, innovative storytelling, and the launch of a new literary journey.</p>
+                        <div class="issue-tags">
+                            <span class="tag">Fiction</span>
+                            <span class="tag">Essays</span>
+                            <span class="tag">First Issue</span>
+                        </div>
+                        <div class="issue-actions">
+                            <a href="#" class="download-btn" aria-label="Download Issue 1 PDF">
+                                <i class="fas fa-download"></i> Download PDF
+                            </a>
+                            <button class="preview-btn" aria-label="Preview Issue 1">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Special Edition -->
+                <article class="issue-card featured" data-category="poetry fiction artwork">
+                    <div class="issue-cover">
+                        <img src="gallary/gssoc_logo.jpeg" alt="Special Edition Cover - GSSoC 2024" loading="lazy">
+                        <div class="issue-overlay">
+                            <button class="read-btn" aria-label="Read Special Edition">Read Now</button>
+                        </div>
+                        <div class="featured-badge">Featured</div>
+                    </div>
+                    <div class="issue-info">
+                        <h3>Special Edition: GirlScript Summer of Code</h3>
+                        <p class="issue-date">Summer 2024</p>
+                        <p class="issue-description">Celebrating the achievements and stories of women in technology, featuring contributions from the GSSoC community.</p>
+                        <div class="issue-tags">
+                            <span class="tag">Technology</span>
+                            <span class="tag">Inspiration</span>
+                            <span class="tag">Community</span>
+                        </div>
+                        <div class="issue-actions">
+                            <a href="#" class="download-btn" aria-label="Download Special Edition PDF">
+                                <i class="fas fa-download"></i> Download PDF
+                            </a>
+                            <button class="preview-btn" aria-label="Preview Special Edition">
+                                <i class="fas fa-eye"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="archives-newsletter scroll-reveal">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Get notified when new issues are published and never miss a story.</p>
+                <form class="newsletter-form" action="/subscribe" method="post">
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Enter your email address" required aria-label="Email address for newsletter">
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer scroll-reveal" id="footer" role="contentinfo">
+        <a class="back-to-top" href="#" aria-label="Back to top">
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+        <div class="footer-top">
+            <div class="footer-about scroll-reveal-left">
+                <a href="index.html">
+                    <img src="gallary/favicon.ico" alt="The Cawnpore Logo" style="height: 50px; margin-bottom: 10px;">
+                    <h3>The Cawnpore</h3>
+                </a>
+                <p>An independent magazine celebrating literary voices and untold stories.</p>
+            </div>
+
+            <div class="footer-links scroll-reveal" id="footerLinks">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="submission.html">Submit</a></li>
+                    <li><a href="issue.html">Current Issue</a></li>
+                    <li><a href="archives.html">Archives</a></li>
+                    <li><a href="masthead.html">Masthead</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="open-source.html">Open Source</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact scroll-reveal-right" id="footerContact">
+                <h3>Contact Us</h3>
+                <div class="social-icons">
+                    <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank" aria-label="Email us">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://x.com/TheCawnporeMag?s=09" target="_blank" rel="noopener noreferrer" aria-label="Visit our Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank" rel="noopener noreferrer" aria-label="Visit our Tumblr">
+                        <i class="fa-brands fa-tumblr"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="subscription-box-about scroll-reveal">
+                <h3>Subscribe to our Newsletter</h3>
+                <form action="/subscribe" method="post" id="newsletter-form">
+                    <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address for newsletter">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Made with &#x2665; by Abdul Sammed</p>
+            <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
+        </div>
+
+        <audio id="bg-music" loop preload="metadata">
+            <source src="gallary/music/lofi.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+        </audio>
+
+        <div id="music-toggle" aria-label="Toggle Background Music" role="button" tabindex="0">
+            <i class="fa-solid fa-music"></i>
+            <span class="music-state">Off</span>
+        </div>
+
+        <div id="theme-toggle" aria-label="Toggle Dark Mode" role="button" tabindex="0">
+            <i class="fa-solid fa-moon"></i>
+            <span class="theme-state">Light</span>
+        </div>
+    </footer>
+
+    <!-- All JavaScript in one file -->
+    <script src="scripts/script.js"></script>
+    <script src="scripts/archives.js"></script>
+</body>
+</html>

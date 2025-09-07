@@ -19,13 +19,13 @@
     <meta property="twitter:title" content="Historical Gallery - The Cawnpore Magazine | Visual Archive of Kanpur">
     <meta property="twitter:description" content="Explore our visual archive of historical photographs, maps, and documents related to Kanpur's rich heritage.">
     <meta property="twitter:image" content="https://thecawnporemag.github.io/assets/images/gallery-og.jpg">
-    <link rel="stylesheet" href="gallery.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/gallery.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="gallary/favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <nav role="navigation" aria-label="Main Menu">
@@ -79,6 +79,15 @@
 
     <h1>Cawnpore Traditional Gallery</h1>
 
+    <!-- Gallery Filters -->
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="landmarks">Landmarks</button>
+      <button class="filter-btn" data-filter="food">Food</button>
+      <button class="filter-btn" data-filter="history">History</button>
+      <button class="filter-btn" data-filter="culture">Culture</button>
+    </div>
+
     <div class="gallery">
       <div class="gallery-item">
         <img src="gallary/CAWNPORE.jpeg" alt="Cawnpore" />
@@ -129,7 +138,7 @@
       </div>
       
       <div class="gallery-item">
-        <img src="Imarti.jpeg" alt="Imarti" />
+        <img src="gallary/Imarti.jpeg" alt="Imarti" />
         <div class="caption">
           <p class="caption-title">Imarti</p>
           <p class="caption-desc">A Kanpur speciality, deep-fried into floral rings and drenched in saffron syrup, reflecting the city's rich sweet-making heritage.</p>
@@ -137,7 +146,7 @@
       </div>
       
       <div class="gallery-item">
-        <img src="Sultani Dal.jpeg" alt="Sultani Dal" />
+        <img src="gallary/Sultani Dal.jpeg" alt="Sultani Dal" />
         <div class="caption">
           <p class="caption-title">Traditional Sultani Dal</p>
           <p class="caption-desc">A royal Awadhi delicacy, slow-cooked to perfection, representing the city’s rich culinary tradition.</p>
@@ -145,7 +154,7 @@
       </div>
       
       <div class="gallery-item">
-        <img src="Kanpur.jpg" alt="Kanpur Zoological Park" />
+        <img src="gallary/Kanpur.jpg" alt="Kanpur Zoological Park" />
         <div class="caption">
           <p class="caption-title">Zoological Park</p>
           <p class="caption-desc">Popularly known as Allen Forest Zoo, this lush green space is home to diverse wildlife and exotic species.</p>
@@ -153,7 +162,7 @@
       </div>
       
       <div class="gallery-item">
-        <img src="1920px-JK_Temple(Juggilal_Kamlapati_temple)_is_a_temple_in_the_Indian_city_of_Kanpur.It_is_considered_to_be_a_unique_blend_of_ancient_and_modern_architecture.jpg" alt="J.K. Temple" />
+        <img src="gallary/1920px-JK_Temple(Juggilal_Kamlapati_temple)_is_a_temple_in_the_Indian_city_of_Kanpur.It_is_considered_to_be_a_unique_blend_of_ancient_and_modern_architecture.jpg" alt="J.K. Temple" />
         <div class="caption">
            <p class="caption-title">J.K. Temple</p>
           <p class="caption-desc">Dedicated to Radha and Krishna, the temple is admired for its pristine white structure and intricate carvings.</p>
@@ -180,9 +189,89 @@
         <img src="gallary/Lal Imli Mill Kanpur.jpeg" alt="Lal Imli Mill" />
         <div class="caption">
           <p class="caption-title">Lal Imli Textile Mill</p>
-          <p class="caption-desc">One of the oldest textile mills in North India, pivotal to Kanpur’s reputation as the 'Manchester of the East'.</p>
+          <p class="caption-desc">One of the oldest textile mills in North India, pivotal to Kanpur's reputation as the 'Manchester of the East'.</p>
         </div>
       </div>
+
+      <!-- Additional Gallery Items -->
+      <div class="gallery-item" data-category="food">
+        <img src="gallary/Luchi Sabji.jpeg" alt="Luchi Sabji - Traditional Kanpur Breakfast" />
+        <div class="caption">
+          <p class="caption-title">Luchi Sabji</p>
+          <p class="caption-desc">A beloved breakfast dish featuring deep-fried bread paired with spiced potato curry, a staple in Kanpur households.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="food">
+        <img src="gallary/Makhan Malai.jpeg" alt="Makhan Malai - Winter Specialty" />
+        <div class="caption">
+          <p class="caption-title">Makhan Malai</p>
+          <p class="caption-desc">A rich, creamy dessert made from thickened milk, especially popular during the winter months in Kanpur.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="landmarks">
+        <img src="gallary/ganga-barrage-kanpur.jpg" alt="Ganga Barrage - Modern Engineering Marvel" />
+        <div class="caption">
+          <p class="caption-title">Ganga Barrage</p>
+          <p class="caption-desc">A modern engineering feat that regulates water flow and prevents flooding, showcasing contemporary Kanpur.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="culture">
+        <img src="gallary/The Cawnpore cover page issue02.jpg" alt="Magazine Cover Art" />
+        <div class="caption">
+          <p class="caption-title">Magazine Cover Art</p>
+          <p class="caption-desc">Creative cover designs that capture the essence of Kanpur's literary and artistic heritage.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="history">
+        <img src="gallary/CawnporeMagazine Issue03 WithText v3.png" alt="Historical Magazine Issue" />
+        <div class="caption">
+          <p class="caption-title">Historical Magazine Issue</p>
+          <p class="caption-desc">Preserved issues documenting Kanpur's stories, culture, and literary contributions through the ages.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="landmarks">
+        <img src="gallary/Kanpur_Central_Station.jpg" alt="Kanpur Central Railway Station" />
+        <div class="caption">
+          <p class="caption-title">Kanpur Central Railway Station</p>
+          <p class="caption-desc">A bustling transportation hub connecting Kanpur to the rest of India, featuring colonial architecture.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="culture">
+        <img src="gallary/gssoc_logo.jpeg" alt="GSSoC Logo - Community Initiative" />
+        <div class="caption">
+          <p class="caption-title">GSSoC Community</p>
+          <p class="caption-desc">Representing the vibrant open-source community that supports and nurtures talent in Kanpur and beyond.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="culture">
+        <img src="gallary/listed-on-duotrope.png" alt="Duotrope Listing" />
+        <div class="caption">
+          <p class="caption-title">Professional Recognition</p>
+          <p class="caption-desc">Listed on Duotrope, a testament to our commitment to professional literary standards and global reach.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="landmarks">
+        <img src="gallary/hero_image.jpeg" alt="Kanpur Cityscape" />
+        <div class="caption">
+          <p class="caption-title">Modern Kanpur</p>
+          <p class="caption-desc">Contemporary views of Kanpur showcasing its growth as a modern city while preserving its rich heritage.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox for image viewing -->
+    <div id="lightbox" class="lightbox">
+      <span class="lightbox-close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img">
+      <div id="lightbox-caption"></div>
     </div>
 
     <footer class="site-footer" id="footer">
@@ -351,6 +440,70 @@
   }
 
   animateCircles();
+
+  // Gallery filtering functionality
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      // Add active class to clicked button
+      button.classList.add('active');
+
+      const filterValue = button.getAttribute('data-filter');
+
+      galleryItems.forEach(item => {
+        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+          item.style.display = 'block';
+          item.style.animation = 'fadeIn 0.5s ease forwards';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Lightbox functionality
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const img = this.querySelector('img');
+      const caption = this.querySelector('.caption-title').textContent;
+
+      lightboxImg.src = img.src;
+      lightboxCaption.textContent = caption;
+      lightbox.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Close lightbox
+  document.querySelector('.lightbox-close').addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+
+  // Close lightbox on outside click
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  // Keyboard navigation for lightbox
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.style.display === 'block') {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+
   </script>
   </body>
-</html>
+  </html>
