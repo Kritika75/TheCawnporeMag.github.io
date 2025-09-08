@@ -1,1391 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TheCawnpore - Literary Magazine</title>
-    <meta name="description" content="The Cawnpore Magazine - A platform celebrating literature, art, and cultural diversity from Kanpur and beyond. Read our issues or submit your work.">
-    <meta name="keywords" content="magazine, literature, art, culture, Kanpur, Cawnpore, poetry, fiction, non-fiction, submissions">
-    <meta property="og:title" content="The Cawnpore Magazine - Celebrating Kanpur's Literary Heritage">
-    <meta property="og:description" content="A platform celebrating literature, art, and cultural diversity from Kanpur and beyond.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thecawnporemag.github.io/">
-    <meta property="og:image" content="https://thecawnporemag.github.io/assets/og-image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Cawnpore Magazine">
-    <meta name="twitter:description" content="Celebrating literature, art, and cultural diversity from Kanpur and beyond.">
-    <meta name="twitter:image" content="https://thecawnporemag.github.io/assets/twitter-image.jpg">
-    
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Improved font stack -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <style>
-      /* Base styles with improved contrast */
-      :root {
-        --primary-color: #2c3e50;
-        --secondary-color: #c44536;
-        --accent-color: #3498db;
-        --text-color: #2c3e50;
-        --light-text: #ecf0f1;
-        --background-color: #f9f9f9;
-        --card-bg: #ffffff;
-        --footer-bg: #2c3e50;
-        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        --transition: all 0.3s ease;
-        --border-radius: 8px;
-      }
-
-      [data-theme="dark"] {
-        --primary-color: #ecf0f1;
-        --secondary-color: #e74c3c;
-        --accent-color: #3498db;
-        --text-color: #ecf0f1;
-        --light-text: #bdc3c7;
-        --background-color: #1a1a1a;
-        --card-bg: #2c3e50;
-        --footer-bg: #1a1a1a;
-        --shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: 'Inter', sans-serif;
-        line-height: 1.6;
-        color: var(--text-color);
-        background-color: var(--background-color);
-        transition: var(--transition);
-        overflow-x: hidden;
-      }
-
-      /* Improved skip link */
-      .skip-link {
-        position: absolute;
-        top: -40px;
-        left: 0;
-        background: var(--secondary-color);
-        color: white;
-        padding: 8px;
-        z-index: 1000;
-        text-decoration: none;
-        border-radius: 0 0 4px 0;
-        font-weight: 600;
-      }
-
-      .skip-link:focus {
-        top: 0;
-      }
-
-      /* Improved contrast for text */
-      h1, h2, h3, h4, h5, h6 {
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-        font-weight: 700;
-        font-family: 'Crimson Text', serif;
-      }
-
-      p {
-        margin-bottom: 1rem;
-        color: var(--text-color);
-      }
-
-      a {
-        color: var(--accent-color);
-        text-decoration: none;
-        transition: var(--transition);
-      }
-
-      a:hover, a:focus {
-        color: var(--secondary-color);
-        text-decoration: underline;
-        outline: 2px solid var(--accent-color);
-        outline-offset: 2px;
-      }
-
-      /* Header improvements */
-      .header {
-        height: 100vh;
-        width: 100%;
-        background: linear-gradient(rgba(4, 9, 30, 0.85), rgba(4, 9, 30, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%232c3e50" width="100" height="100"/><path fill="%233498db" opacity="0.2" d="M0 0h100v100H0z"/><path fill="%23ffffff" opacity="0.1" d="M20 20h60v60H20z"/></svg>');
-        background-position: center;
-        background-size: cover;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
-        perspective: 1000px;
-      }
-
-      /* Navigation improvements */
-      nav {
-        display: flex;
-        padding: 1.5% 6%;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        position: fixed;
-        top: 0;
-        z-index: 100;
-        background: rgba(44, 62, 80, 0.95);
-        backdrop-filter: blur(10px);
-        transition: var(--transition);
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .nav-links {
-        flex: 1;
-        text-align: right;
-      }
-
-      .nav-links ul li {
-        list-style: none;
-        display: inline-block;
-        padding: 8px 12px;
-        position: relative;
-      }
-
-      .nav-links ul li a {
-        color: var(--light-text);
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: 500;
-        padding: 8px 12px;
-        border-radius: 4px;
-        transition: var(--transition);
-      }
-
-      .nav-links ul li a:hover, 
-      .nav-links ul li a:focus {
-        background: rgba(231, 76, 60, 0.8);
-        color: white;
-        text-decoration: none;
-      }
-
-      /* Improved mobile menu */
-      .fa-times, .fa-bars {
-        display: none;
-        color: white;
-        font-size: 22px;
-        cursor: pointer;
-        padding: 10px;
-        border-radius: 50%;
-        background: rgba(0, 0, 0, 0.2);
-        transition: var(--transition);
-      }
-
-      .fa-times:hover, .fa-bars:hover {
-        background: rgba(0, 0, 0, 0.4);
-      }
-
-      /* Text box improvements */
-      .text-box {
-        width: 90%;
-        color: white;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-      }
-
-      .text-box h1 {
-        font-family: 'Crimson Text', serif;
-        font-size: 4.5rem;
-        color: white;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-        transform: translateZ(20px);
-      }
-
-      .text-box p {
-        margin: 10px 0 40px;
-        font-size: 1.25rem;
-        color: white;
-        font-weight: 300;
-      }
-
-      /* Hero section improvements */
-      .hero-section {
-        padding: 100px 20px;
-        text-align: center;
-        background: var(--card-bg);
-        margin: 40px 20px;
-        border-radius: var(--border-radius);
-        box-shadow: var(--shadow);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><rect fill="%233498db" opacity="0.05" width="20" height="20"/></svg>');
-        z-index: -1;
-      }
-
-      .hero-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 30px;
-        flex-wrap: wrap;
-      }
-
-      .hero-btn {
-        display: inline-block;
-        text-decoration: none;
-        color: white;
-        border: 1px solid var(--secondary-color);
-        padding: 14px 36px;
-        font-size: 16px;
-        background: var(--secondary-color);
-        position: relative;
-        cursor: pointer;
-        border-radius: var(--border-radius);
-        font-weight: 600;
-        transition: var(--transition);
-        transform: translateZ(0);
-      }
-
-      .hero-btn:hover, .hero-btn:focus {
-        border: 1px solid var(--accent-color);
-        background: var(--accent-color);
-        transform: translateY(-3px) translateZ(5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-      }
-
-      /* Welcome section improvements */
-      .Welcome {
-        width: 80%;
-        margin: auto;
-        text-align: center;
-        padding-top: 100px;
-      }
-
-      .Welcome h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 40px;
-        position: relative;
-        display: inline-block;
-      }
-
-      .Welcome h1::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background: var(--secondary-color);
-        border-radius: 2px;
-      }
-
-      .container {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-bottom: 40px;
-      }
-
-      .card {
-        display: block;
-        top: 0px;
-        position: relative;
-        max-width: 350px;
-        background-color: var(--card-bg);
-        border-radius: var(--border-radius);
-        padding: 32px 24px;
-        margin: 12px;
-        text-decoration: none;
-        z-index: 0;
-        overflow: hidden;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        flex: 1;
-        min-width: 280px;
-        transform-style: preserve-3d;
-        transform: translateZ(0);
-      }
-
-      .card:hover, .card:focus-within {
-        transform: translateY(-5px) rotateX(5deg);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-      }
-
-      .card-title {
-        font-weight: 700;
-        text-align: left;
-        color: var(--primary-color);
-        font-size: 1.4rem;
-        line-height: normal;
-        margin-bottom: 16px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .small-desc {
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.6;
-        color: var(--text-color);
-        text-align: left;
-      }
-
-      .go-corner {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        width: 32px;
-        height: 32px;
-        overflow: hidden;
-        top: 0;
-        right: 0;
-        background-color: var(--accent-color);
-        border-radius: 0 var(--border-radius) 0 32px;
-      }
-
-      .go-arrow {
-        margin-top: -4px;
-        margin-right: -4px;
-        color: white;
-        font-family: courier, sans;
-      }
-
-      .welcome-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 40px;
-        flex-wrap: wrap;
-      }
-
-      .welcome-buttons a {
-        display: inline-block;
-        padding: 15px 30px;
-        background-color: var(--secondary-color);
-        color: white;
-        text-decoration: none;
-        border-radius: var(--border-radius);
-        font-weight: 600;
-        transition: var(--transition);
-        transform: translateZ(0);
-      }
-
-      .welcome-buttons a:hover, .welcome-buttons a:focus {
-        background-color: var(--accent-color);
-        transform: translateY(-3px) translateZ(5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-
-      /* Listings section */
-      .listings {
-        padding: 60px 20px;
-        text-align: center;
-        background: var(--card-bg);
-        margin: 40px 20px;
-        border-radius: var(--border-radius);
-        box-shadow: var(--shadow);
-      }
-
-      .listings h3 {
-        margin-bottom: 30px;
-        font-size: 1.75rem;
-      }
-
-      .listing-images {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        flex-wrap: wrap;
-      }
-
-      .listing-images a {
-        display: inline-block;
-        transition: var(--transition);
-        transform: translateZ(0);
-      }
-
-      .listing-images a:hover, .listing-images a:focus {
-        transform: translateY(-5px) translateZ(5px);
-      }
-
-      .listing-images img {
-        max-width: 200px;
-        height: auto;
-        border-radius: var(--border-radius);
-        box-shadow: var(--shadow);
-      }
-
-      /* Footer improvements */
-      .site-footer {
-        background-color: var(--footer-bg);
-        color: var(--light-text);
-        padding: 60px 0 20px;
-        position: relative;
-      }
-
-      .footer-top {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        max-width: 1200px;
-        margin: 0 auto 40px;
-        gap: 30px;
-      }
-
-      .footer-about, .footer-links, .footer-contact, .subscription-box-about {
-        flex: 1;
-        min-width: 250px;
-        max-width: 300px;
-      }
-
-      .footer-about a {
-        display: block;
-        margin-bottom: 20px;
-      }
-
-      .footer-about h3 {
-        color: var(--light-text);
-        margin-bottom: 15px;
-      }
-
-      .footer-about p {
-        color: var(--light-text);
-        line-height: 1.6;
-      }
-
-      .footer-links h3, .footer-contact h3 {
-        color: var(--light-text);
-        margin-bottom: 20px;
-      }
-
-      .footer-links ul {
-        list-style: none;
-      }
-
-      .footer-links ul li {
-        margin-bottom: 10px;
-      }
-
-      .footer-links ul li a {
-        color: var(--light-text);
-        transition: var(--transition);
-      }
-
-      .footer-links ul li a:hover, .footer-links ul li a:focus {
-        color: var(--secondary-color);
-        padding-left: 5px;
-      }
-
-      .social-icons {
-        display: flex;
-        gap: 15px;
-        margin-top: 15px;
-      }
-
-      .social-icons a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        color: var(--light-text);
-        transition: var(--transition);
-        transform: translateZ(0);
-      }
-
-      .social-icons a:hover, .social-icons a:focus {
-        background: var(--secondary-color);
-        color: white;
-        transform: translateY(-3px) translateZ(5px);
-      }
-
-      .subscription-box-about h3 {
-        color: var(--light-text);
-        margin-bottom: 15px;
-      }
-
-      .subscription-box-about form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .subscription-box-about input {
-        padding: 12px;
-        border: none;
-        border-radius: var(--border-radius);
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        transition: var(--transition);
-      }
-
-      .subscription-box-about input:focus {
-        outline: 2px solid var(--accent-color);
-        background: rgba(255, 255, 255, 0.2);
-      }
-
-      .subscription-box-about input::placeholder {
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      .subscription-box-about button {
-        padding: 12px;
-        border: none;
-        border-radius: var(--border-radius);
-        background: var(--secondary-color);
-        color: white;
-        cursor: pointer;
-        transition: var(--transition);
-        font-weight: 600;
-      }
-
-      .subscription-box-about button:hover, .subscription-box-about button:focus {
-        background: var(--accent-color);
-      }
-
-      .footer-bottom {
-        text-align: center;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .footer-bottom p {
-        color: var(--light-text);
-        margin-bottom: 10px;
-      }
-
-      .back-to-top {
-        position: fixed;
-        bottom: 100px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background: var(--secondary-color);
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        z-index: 99;
-        transform: translateZ(0);
-      }
-
-      .back-to-top:hover, .back-to-top:focus {
-        background: var(--accent-color);
-        transform: translateY(-5px) translateZ(5px);
-      }
-
-      /* Music and theme toggle */
-      #music-toggle, #theme-toggle {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        background: var(--secondary-color);
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        z-index: 99;
-        font-size: 18px;
-        transform: translateZ(0);
-      }
-
-      #theme-toggle {
-        bottom: 90px;
-        background: var(--primary-color);
-      }
-
-      #music-toggle:hover, #music-toggle:focus,
-      #theme-toggle:hover, #theme-toggle:focus {
-        transform: translateY(-5px) translateZ(5px);
-        background: var(--accent-color);
-      }
-
-      .music-state, .theme-state {
-        font-size: 10px;
-        margin-top: 2px;
-      }
-
-      /* 3D Features */
-      .floating-3d-element {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        perspective: 800px;
-        pointer-events: none;
-        z-index: -1;
-      }
-
-      .floating-3d-element .cube {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        transform-style: preserve-3d;
-        animation: rotate 20s infinite linear;
-      }
-
-      .floating-3d-element .face {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        background: rgba(52, 152, 219, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        color: white;
-      }
-
-      .floating-3d-element .front { transform: translateZ(50px); }
-      .floating-3d-element .back { transform: rotateY(180deg) translateZ(50px); }
-      .floating-3d-element .right { transform: rotateY(90deg) translateZ(50px); }
-      .floating-3d-element .left { transform: rotateY(-90deg) translateZ(50px); }
-      .floating-3d-element .top { transform: rotateX(90deg) translateZ(50px); }
-      .floating-3d-element .bottom { transform: rotateX(-90deg) translateZ(50px); }
-
-      @keyframes rotate {
-        from { transform: rotateY(0) rotateX(0); }
-        to { transform: rotateY(360deg) rotateX(360deg); }
-      }
-
-      /* Improved loading screen */
-      #loading-screen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--primary-color);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        transition: opacity 0.5s ease-out;
-      }
-
-      .loader {
-        text-align: center;
-        color: white;
-      }
-
-      .loader i {
-        font-size: 48px;
-        margin-bottom: 20px;
-        animation: spin 1.5s linear infinite;
-      }
-
-      .loader-tagline {
-        font-size: 18px;
-        letter-spacing: 1px;
-      }
-
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-
-      /* Progress bar */
-      .progress-container {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 4px;
-        background: transparent;
-        z-index: 1000;
-      }
-
-      .progress-bar {
-        height: 4px;
-        background: var(--secondary-color);
-        width: 0%;
-        transition: width 0.3s ease;
-      }
-
-      /* Responsive design */
-      @media (max-width: 768px) {
-        .text-box h1 {
-          font-size: 2.5rem;
-        }
-        
-        .nav-links ul li {
-          display: block;
-        }
-        
-        .nav-links {
-          position: fixed;
-          background: var(--primary-color);
-          height: 100vh;
-          width: 200px;
-          top: 0;
-          right: -200px;
-          text-align: left;
-          z-index: 2;
-          transition: 0.5s;
-          padding-top: 50px;
-        }
-        
-        .nav-links.active {
-          right: 0;
-        }
-        
-        .fa-times, .fa-bars {
-          display: block;
-          margin: 10px;
-          font-size: 22px;
-          z-index: 3;
-        }
-        
-        .hero-buttons, .welcome-buttons {
-          flex-direction: column;
-          align-items: center;
-        }
-        
-        .container {
-          flex-direction: column;
-          align-items: center;
-        }
-        
-        .card {
-          max-width: 100%;
-        }
-        
-        .footer-top {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-        }
-        
-        .footer-links ul {
-          padding: 0;
-        }
-        
-        .social-icons {
-          justify-content: center;
-        }
-      }
-
-      /* High contrast mode support */
-      @media (prefers-contrast: high) {
-        :root {
-          --primary-color: #000000;
-          --secondary-color: #ff0000;
-          --accent-color: #0000ff;
-          --text-color: #000000;
-          --light-text: #ffffff;
-          --background-color: #ffffff;
-          --card-bg: #ffffff;
-          --footer-bg: #000000;
-        }
-        
-        .card {
-          border: 2px solid #000000;
-        }
-        
-        a, button {
-          border: 1px solid #000000;
-        }
-      }
-
-      /* Reduced motion support */
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-        }
-        
-        .floating-3d-element .cube {
-          animation: none;
-        }
-        
-        .loader i {
-          animation: none;
-        }
-        
-        .hero-btn:hover, .hero-btn:focus,
-        .welcome-buttons a:hover, .welcome-buttons a:focus,
-        .social-icons a:hover, .social-icons a:focus,
-        .back-to-top:hover, .back-to-top:focus,
-        #music-toggle:hover, #music-toggle:focus,
-        #theme-toggle:hover, #theme-toggle:focus {
-          transform: none;
-        }
-        
-        .card:hover, .card:focus-within {
-          transform: none;
-        }
-      }
-
-      /* Focus styles for accessibility */
-      button:focus, a:focus, input:focus {
-        outline: 3px solid var(--accent-color);
-        outline-offset: 2px;
-      }
-
-      /* Screen reader only text */
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Skip to main content link -->
-    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
-
-    <!-- Floating 3D Elements -->
-    <div class="floating-3d-element" style="top: 20%; left: 10%;" aria-hidden="true">
-      <div class="cube">
-        <div class="face front"><i class="fas fa-book"></i></div>
-        <div class="face back"><i class="fas fa-pen-fancy"></i></div>
-        <div class="face right"><i class="fas fa-paint-brush"></i></div>
-        <div class="face left"><i class="fas fa-quote-left"></i></div>
-        <div class="face top"><i class="fas fa-feather"></i></div>
-        <div class="face bottom"><i class="fas fa-globe"></i></div>
-      </div>
-    </div>
-
-    <div class="floating-3d-element" style="top: 60%; left: 80%;" aria-hidden="true">
-      <div class="cube">
-        <div class="face front"><i class="fas fa-font"></i></div>
-        <div class="face back"><i class="fas fa-image"></i></div>
-        <div class="face right"><i class="fas fa-newspaper"></i></div>
-        <div class="face left"><i class="fas fa-microphone"></i></div>
-        <div class="face top"><i class="fas fa-theater-masks"></i></div>
-        <div class="face bottom"><i class="fas fa-monument"></i></div>
-      </div>
-    </div>
-
-    <!-- Circles -->
-    <div class="circles-container" aria-hidden="true">
-      <!-- Circles will be generated via JavaScript -->
-    </div>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cawnpore - Literary Magazine Portal</title>
+    <meta name="description" content="The Cawnpore Magazine - A platform celebrating literature, art, and cultural diversity from Kanpur and beyond.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
     <!-- Loading Screen -->
     <div id="loading-screen"> 
-      <div class="loader">
-        <i class="fa-solid fa-spinner" aria-hidden="true"></i>
-        <span class="loader-tagline">Kanpur-born, read everywhere</span>
-      </div>
-    </div>
-    
-    <div class="progress-container">
-      <div class="progress-bar" id="progressBar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" role="progressbar" aria-label="Page reading progress"></div>
+        <div class="loader">
+            <i class="fa-solid fa-spinner" aria-hidden="true"></i>
+            <div class="progress-bar">
+                <div class="progress" id="loading-progress"></div>
+            </div>
+            <span class="loader-tagline">Kanpur-born, read everywhere</span>
+        </div>
     </div>
 
-    <header class="header parallax" role="banner">
-      <nav role="navigation" aria-label="Main navigation">
-        <!-- Logo on the left -->
-        <a href="index.html">
-          <span style="font-size: 28px; color: white;">📖</span>
-          <span style="color: white; font-weight: bold; margin-left: 8px;">The Cawnpore</span>
-        </a>
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <div class="lightbox-nav">
+            <button id="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+            <button id="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <p class="lightbox-caption" id="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- Header with 3D Effect -->
+    <header class="header" role="banner">
+        <div class="floating-elements">
+            <!-- Floating elements will be generated by JavaScript -->
+        </div>
         
-        <div class="nav-links" id="navLinks">
-          <i class="fa fa-times" onclick="hideMenu()" aria-label="Close menu" role="button" tabindex="0"></i>
-          <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="submission.html">SUBMIT</a></li>
-            <li><a href="issue.html">ISSUE</a></li>
-            <li><a href="archives.html">ARCHIVES</a></li>
-            <li><a href="masthead.html">MASTHEAD</a></li>
-            <li><a href="contributors.html">CONTRIBUTORS</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="gallery.html">GALLERY</a></li>
-            <li><a href="open-source.html">OPEN SOURCE</a></li>
-            <li><a href="journey.html">OUR JOURNEY</a></li>
-            <li><a href="login.html" class="btn">LOGIN</a></li>
-            <li><a href="signup.html" class="btn">REGISTER</a></li>
-          </ul>
-        </div>
+        <!-- Navigation -->
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <span>📖</span>
+                    The Cawnpore
+                </a>
+            </div>
+            
+            <div class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="submission.html">SUBMIT</a></li>
+                    <li><a href="issue.html">ISSUE</a></li>
+                    <li><a href="archives.html">ARCHIVES</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="login.html" class="btn">LOGIN</a></li>
+                </ul>
+            </div>
 
-        <i class="fa fa-bars" onclick="showMenu()" aria-label="Open menu" id="menuToggle" aria-expanded="false" role="button" tabindex="0"></i>
-      </nav>
+            <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation" role="button" tabindex="0">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
 
-      <div class="text-box">
-        <h1 class="text1">The Cawnpore</h1>
-        <p class="text2">EST. 2024</p>
-        <div id="quote-widget">
-          <p id="quote-text">"Literature is the art of discovering something extraordinary about ordinary people."</p>
-          <p id="quote-author">- Saul Bellow</p>
+        <div class="header-content">
+            <div class="text-box">
+                <h1 class="text1">The Cawnpore</h1>
+                <p class="text2">EST. 2024</p>
+                <div id="quote-widget">
+                    <p id="quote-text">"Literature is the art of discovering something extraordinary about ordinary people."</p>
+                    <p id="quote-author">- Saul Bellow</p>
+                </div>
+            </div>
         </div>
-      </div>
     </header>
 
+    <!-- Music Player -->
+    <div class="music-player">
+        <div class="player-controls">
+            <button id="play-pause" class="control-btn" aria-label="Play/Pause">
+                <i class="fas fa-play"></i>
+            </button>
+            <div class="track-info">
+                <div class="track-title">Literary Soundscapes</div>
+                <div class="artist">The Cawnpore</div>
+            </div>
+            <div class="volume-control">
+                <button id="mute" class="control-btn" aria-label="Mute/Unmute">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <input type="range" id="volume" min="0" max="100" value="70" aria-label="Volume control">
+            </div>
+        </div>
+        <audio id="background-music" loop>
+            <source src="https://cdn.pixabay.com/download/audio/2022/01/20/audio_d17179f928.mp3?filename=soft-serenity-ambient-background-123272.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
     <main id="main-content" role="main">
-      <!--hero section-->
-      <section class="hero-section scroll-reveal" aria-labelledby="hero-heading">
-      <div class="hero-text">
-        <h1 id="hero-heading" class="scroll-reveal-left">Welcome to The Cawnpore Magazine</h1>
-        <p class="scroll-reveal-right">Celebrating literature, art, and diversity worldwide.</p>
-        <div class="hero-buttons scroll-reveal" role="group" aria-label="Primary actions">
-          <a href="about.html" class="hero-btn" aria-describedby="about-desc">ABOUT US</a>
-          <a href="issue.html" class="hero-btn" aria-describedby="issues-desc">READ OUR ISSUES</a>
-          <a href="submission.html" class="hero-btn" aria-describedby="submit-desc">SUBMIT YOUR WORK</a>
-        </div>
-        <div id="about-desc" class="sr-only">Learn more about our mission and history</div>
-        <div id="issues-desc" class="sr-only">Browse and read our published literary works</div>
-        <div id="submit-desc" class="sr-only">Share your creative writing and artwork with us</div>
-      </div>
-    </section>
+        <!-- Featured Section -->
+        <section class="featured-section">
+            <div class="container">
+                <h2 class="section-title">Featured Content</h2>
+                
+                <div class="magazine-grid">
+                    <div class="magazine-cover hover-3d">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1498&q=80" alt="The Cawnpore Magazine Issue #1">
+                    </div>
+                    
+                    <div class="magazine-cover hover-3d">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="The Cawnpore Poetry Special">
+                    </div>
+                    
+                    <div class="magazine-cover hover-3d">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="The Cawnpore Interviews">
+                    </div>
+                    
+                    <div class="magazine-cover hover-3d">
+                        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="The Cawnpore Art Gallery">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!--Welcoming page-->
-    <section class="Welcome scroll-reveal" aria-labelledby="namaste">
-      <h1 id="namaste" class="scroll-reveal-left">Namaste!</h1>
-      <div class="container">
-        <div class="card">
-          <p class="card-title">Introduction<button class="speakBtn" data-target="para1" aria-label="Read introduction aloud" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button></p>
-          <p id="para1" class="small-desc">
-            The Cawnpore Magazine's motive is to delve into the profound influence
-            and impact of various cultures worldwide through the art of literature.
-            Our mission is to celebrate the richness of each culture, beautifully
-            showcased through the lenses of literature and art. By providing a safe
-            and inclusive platform, we aim to foster a community that encourages
-            readers to explore, learn, and appreciate diverse perspectives.
-          </p>
-          <div class="go-corner">
-            <div class="go-arrow">→</div>
-          </div>
-        </div>
-        
-        <div class="card">
-          <p class="card-title">What we do !!<button class="speakBtn" data-target="para2" aria-label="Read what we do aloud" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button></p>  
-          <p id="para2" class="small-desc">
-            We firmly believe that the exchange of ideas and experiences is the key to
-            a more tolerant and compassionate world, and we strive to achieve this
-            through The Cawnpore Magazine.
-            So, step right up and get ready for The Cawnpore Magazine your one stop
-            destination to explore the best in fiction, non-fiction, poetry,
-            artwork, interviews, breathtaking photos and so much more!
-          </p>
-          <div class="go-corner">
-            <div class="go-arrow">→</div>
-          </div>
-        </div>
-        
-        <div class="card">
-          <p class="card-title">Don't Wait, Subscribe<button class="speakBtn" data-target="para3" aria-label="Read subscription info aloud" style="font-size: 24px; background: none; border: none; cursor: pointer;">🔊</button></p>
-          <p class="small-desc" id="para3">
-            We understand that submitting your work can be a daunting task, but we
-            assure you that we will treat each submission with the utmost respect
-            and care. We are excited to read your submissions and grateful for your
-            contribution to The Cawnpore. Thank you for considering us as a platform
-            to showcase your talent.
-          </p>
-          <div class="go-corner">
-            <div class="go-arrow">→</div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="welcome-buttons">
-        <a href="issue.html" aria-label="View the latest Issue of The Cawnpore" id="issue1-btn">READ THE LATEST ISSUE</a>
-        <a href="submission.html" aria-label="Submit your work on The Cawnpore" id="cta1-btn">SUBMIT YOUR WORK</a>
-      </div>
-    </section>
+        <!-- Parallax Section -->
+        <section class="parallax-section" style="background-image: url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+            <div class="parallax-content">
+                <h2>Discover New Voices</h2>
+                <p>Explore emerging writers and artists from around the world</p>
+                <a href="submission.html" class="btn">Submit Your Work</a>
+            </div>
+        </section>
 
-    <section class="listings scroll-reveal">
-      <h3 class="scroll-reveal-left">Proudly Listed On... &#128640;</h3>
-      <div class="listing-images scroll-reveal">
-        <a href="https://duotrope.com/magazine/the-cawnpore-magazine-37420" target="_blank" rel="noopener noreferrer">
-          <div style="width: 200px; height: 100px; background: linear-gradient(135deg, #60005f, #8e44ad); color: white; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-weight: bold;">Duotrope</div>
-        </a>
-        <a href="https://www.chillsubs.com/magazine/the-cawnpore-magazine" target="_blank" rel="noopener noreferrer">
-          <div style="width: 200px; height: 100px; background: linear-gradient(135deg, #60005f, #8e44ad); color: white; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-weight: bold;">Chill Subs</div>
-        </a>
-      </div>
-    </section>
+        <!-- Flip Cards Section -->
+        <section class="featured-section">
+            <div class="container">
+                <h2 class="section-title">Explore Our Magazine</h2>
+                
+                <div style="display: flex; justify-content: center; flex-wrap: wrap;">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <i class="fas fa-book-open" style="font-size: 48px; margin-bottom: 15px; color: var(--secondary-color);"></i>
+                                <h3>Latest Issue</h3>
+                                <p>Read our current collection</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>Issue #5</h3>
+                                <p>Featuring 15 new writers</p>
+                                <a href="issue.html" class="btn" style="margin-top: 15px;">Read Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <i class="fas fa-pen-fancy" style="font-size: 48px; margin-bottom: 15px; color: var(--secondary-color);"></i>
+                                <h3>Submit Work</h3>
+                                <p>Share your creativity</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>We're Accepting</h3>
+                                <p>Poetry, fiction, and art</p>
+                                <a href="submission.html" class="btn" style="margin-top: 15px;">Submit Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <i class="fas fa-history" style="font-size: 48px; margin-bottom: 15px; color: var(--secondary-color);"></i>
+                                <h3>Archives</h3>
+                                <p>Explore past issues</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h3>5 Issues</h3>
+                                <p>Over 100 contributions</p>
+                                <a href="archives.html" class="btn" style="margin-top: 15px;">Browse</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Stats Section -->
+        <section class="featured-section" style="background-color: #f5f5f5;">
+            <div class="container">
+                <h2 class="section-title">By The Numbers</h2>
+                
+                <div class="stats-container">
+                    <div class="stat-box hover-3d">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-title">Submissions</div>
+                    </div>
+                    
+                    <div class="stat-box hover-3d">
+                        <div class="stat-number">75+</div>
+                        <div class="stat-title">Published Authors</div>
+                    </div>
+                    
+                    <div class="stat-box hover-3d">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-title">Countries</div>
+                    </div>
+                    
+                    <div class="stat-box hover-3d">
+                        <div class="stat-number">5</div>
+                        <div class="stat-title">Issues</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <div class="container">
+                <h2 class="section-title">Featured Gallery</h2>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1498&q=80" data-caption="The Cawnpore Magazine Issue #1">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1498&q=80" alt="The Cawnpore Magazine Issue #1">
+                        <div class="gallery-caption">The Cawnpore Magazine Issue #1</div>
+                    </div>
+                    
+                    <div class="gallery-item" data-src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" data-caption="Poetry Special Edition">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Poetry Special Edition">
+                        <div class="gallery-caption">Poetry Special Edition</div>
+                    </div>
+                    
+                    <div class="gallery-item" data-src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" data-caption="Author Interviews">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Author Interviews">
+                        <div class="gallery-caption">Author Interviews</div>
+                    </div>
+                    
+                    <div class="gallery-item" data-src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" data-caption="Art Gallery Feature">
+                        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Art Gallery Feature">
+                        <div class="gallery-caption">Art Gallery Feature</div>
+                    </div>
+                    
+                    <div class="gallery-item" data-src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" data-caption="Literary Event Coverage">
+                        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Literary Event Coverage">
+                        <div class="gallery-caption">Literary Event Coverage</div>
+                    </div>
+                    
+                    <div class="gallery-item" data-src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" data-caption="Writing Workshops">
+                        <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Writing Workshops">
+                        <div class="gallery-caption">Writing Workshops</div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="gallery.html" class="btn">View Full Gallery</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="featured-section">
+            <div class="container">
+                <h2 class="section-title">What Readers Say</h2>
+                
+                <div class="testimonial-slider">
+                    <div class="testimonial active">
+                        <p>"The Cawnpore Magazine has been an incredible platform for emerging writers like myself. I'm grateful for the opportunity to share my work with such a diverse audience."</p>
+                        <div class="author">- Priya Sharma, Published Poet</div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p>"As a literature enthusiast, I'm always looking for new voices. The Cawnpore never disappoints - each issue introduces me to talented writers I wouldn't have discovered otherwise."</p>
+                        <div class="author">- Rajiv Mehta, Regular Reader</div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p>"The editorial team provided thoughtful feedback that helped me refine my story. It's rare to find publications that care so much about their contributors' growth."</p>
+                        <div class="author">- Amit Patel, Fiction Writer</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscription CTA -->
+        <section class="parallax-section" style="background-image: url('https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');">
+            <div class="parallax-content">
+                <h2>Never Miss an Issue</h2>
+                <p>Subscribe to our newsletter for updates and exclusive content</p>
+                
+                <form id="newsletter-form" style="display: flex; max-width: 500px; margin: 20px auto;">
+                    <input type="email" placeholder="Your email address" required style="flex: 1; padding: 12px; border: none; border-radius: var(--border-radius) 0 0 var(--border-radius);">
+                    <button type="submit" style="background: var(--secondary-color); color: white; border: none; padding: 12px 20px; border-radius: 0 var(--border-radius) var(--border-radius) 0; cursor: pointer;">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Latest Articles Section -->
+        <section class="featured-section">
+            <div class="container">
+                <h2 class="section-title">Latest Articles</h2>
+                
+                <div class="magazine-grid">
+                    <div class="card hover-3d">
+                        <div style="width: 100%; height: 200px; background: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80') center/cover; margin-bottom: 20px; border-radius: var(--border-radius);"></div>
+                        <h3>The Art of Poetry in Modern Times</h3>
+                        <p>Exploring how contemporary poets are redefining the boundaries of poetic expression in the digital age.</p>
+                        <a href="#" class="btn" style="margin-top: 15px;">Read More</a>
+                    </div>
+                    
+                    <div class="card hover-3d">
+                        <div style="width: 100%; height: 200px; background: url('https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80') center/cover; margin-bottom: 20px; border-radius: var(--border-radius);"></div>
+                        <h3>Kanpur's Literary Heritage</h3>
+                        <p>A deep dive into the rich literary history of Kanpur and its influence on modern Indian literature.</p>
+                        <a href="#" class="btn" style="margin-top: 15px;">Read More</a>
+                    </div>
+                    
+                    <div class="card hover-3d">
+                        <div style="width: 100%; height: 200px; background: url('https://images.unsplash.com/photo-1545239351-ef35f43d514b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80') center/cover; margin-bottom: 20px; border-radius: var(--border-radius);"></div>
+                        <h3>Interview with Emerging Writer</h3>
+                        <p>An exclusive conversation with Priya Sharma about her journey as a poet and her upcoming collection.</p>
+                        <a href="#" class="btn" style="margin-top: 15px;">Read More</a>
+                    </div>
+                    
+                    <div class="card hover-3d">
+                        <div style="width: 100%; height: 200px; background: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80') center/cover; margin-bottom: 20px; border-radius: var(--border-radius);"></div>
+                        <h3>The Future of Literary Magazines</h3>
+                        <p>How digital platforms are transforming the way we consume and interact with literary content.</p>
+                        <a href="#" class="btn" style="margin-top: 15px;">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer scroll-reveal" id="footer" role="contentinfo">
-      <a class="back-to-top" href="#" aria-label="Back to top">
-        <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
-      </a>
-      <div class="footer-top">
-        <div class="footer-about scroll-reveal-left">
-          <a href="index.html">
-            <span style="font-size: 36px;">📖</span>
-            <h3>The Cawnpore</h3>
-          </a>
-          <p>An independent magazine celebrating literary voices and untold stories.</p>
-        </div>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-about">
+                    <a href="index.html">
+                        <span style="font-size: 36px;">📖</span>
+                        <h3>The Cawnpore</h3>
+                    </a>
+                    <p>An independent magazine celebrating literary voices and untold stories.</p>
+                </div>
 
-        <div class="footer-links scroll-reveal" id="footerLinks">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="submission.html">Submit</a></li>
-            <li><a href="issue.html">Issue</a></li>
-            <li><a href="archives.html">Archives</a></li>
-            <li><a href="masthead.html">Masthead</a></li>
-            <li><a href="contributors.html">Contributors</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="open-source.html">Open Source</a></li>
-          </ul>
-        </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="submission.html">Submit</a></li>
+                        <li><a href="issue.html">Issue</a></li>
+                        <li><a href="archives.html">Archives</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
 
-        <div class="footer-contact scroll-reveal-right" id="footerContact">
-          <h3>Contact Us</h3>
-          <div class="social-icons">
-            <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank" aria-label="Email us at thecawnporemagofficial@gmail.com">
-              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.instagram.com/thecawnporemagazine/?igsh=MWQzcXkxeGNkd29oeA%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram page">
-              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank" rel="noopener noreferrer" aria-label="Visit our LinkedIn page">
-              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-            </a>
-            <a href="https://x.com/TheCawnporeMag?s=09" target="_blank" rel="noopener noreferrer" aria-label="Visit our Twitter page">
-              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.tumblr.com/thecawnporemagazine?source=share" target="_blank" rel="noopener noreferrer" aria-label="Visit our Tumblr blog">
-              <i class="fa-brands fa-tumblr" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: thecawnporemagofficial@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="mailto:thecawnporemagofficial@gmail.com" target="_blank" aria-label="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://www.instagram.com/thecawnporemagazine/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/the-cawnpore-magazine/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://x.com/TheCawnporeMag" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
 
-        <div class="subscription-box-about scroll-reveal">
-          <h3>Subscribe to our Newsletter</h3>
-          <form action="/subscribe" method="post" id="newsletter-form">
-            <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address for newsletter subscription">
-            <button type="submit">Subscribe</button>
-          </form>
+                <div class="subscription-box">
+                    <h3>Subscribe to our Newsletter</h3>
+                    <form id="footer-newsletter-form">
+                        <input type="email" name="email" placeholder="Your email address" required aria-label="Email for newsletter subscription">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Made with &#x2665; by Abdul Sammed</p>
+                <p>&copy; 2024 THE CAWNPORE — ALL RIGHTS RESERVED</p>
+            </div>
         </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>Made with &#x2665; by Abdul Sammed</p>
-        <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
-      </div>
-      
-      <audio id="bg-music" loop preload="metadata" aria-label="Background music">
-        <source src="gallary/music/lofi.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
-      
-      <div id="music-toggle" aria-label="Toggle Background Music" role="button" tabindex="0" aria-pressed="false">
-        <i class="fa-solid fa-music" aria-hidden="true"></i>
-        <span class="music-state">Off</span>
-      </div>
-
-      <div id="theme-toggle" aria-label="Toggle Dark Mode" role="button" tabindex="0" aria-pressed="false">
-        <i class="fa-solid fa-moon" aria-hidden="true"></i>
-        <span class="theme-state">Light</span>
-      </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-      // DOM Content Loaded
-      document.addEventListener('DOMContentLoaded', function() {
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        // Initialize floating circles
-        createCircles();
-        
-        // Initialize text-to-speech functionality
-        initTextToSpeech();
-        
-        // Initialize scroll animations
-        initScrollAnimations();
-        
-        // Initialize progress bar
-        initProgressBar();
-        
-        // Initialize theme toggle
-        initThemeToggle();
-        
-        // Initialize music toggle
-        initMusicToggle();
-        
-        // Initialize mobile menu
-        initMobileMenu();
-        
-        // Remove loading screen
-        setTimeout(() => {
-          const loadingScreen = document.getElementById('loading-screen');
-          if (loadingScreen) {
-            loadingScreen.style.opacity = '0';
-            setTimeout(() => {
-              loadingScreen.style.display = 'none';
-            }, 500);
-          }
-        }, 1500);
-      });
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
 
-      // Create floating circles
-      function createCircles() {
-        const circlesContainer = document.querySelector('.circles-container');
-        if (!circlesContainer) return;
-        
-        for (let i = 0; i < 15; i++) {
-          const circle = document.createElement('div');
-          circle.classList.add('circle');
-          circle.style.cssText = `
-            position: absolute;
-            width: ${20 + Math.random() * 50}px;
-            height: ${20 + Math.random() * 50}px;
-            border-radius: 50%;
-            background: rgba(52, 152, 219, ${0.1 + Math.random() * 0.2});
-            top: ${Math.random() * 100}%;
-            left: ${Math.random() * 100}%;
-            animation: float ${10 + Math.random() * 20}s infinite ease-in-out;
-            animation-delay: ${Math.random() * 5}s;
-            z-index: -1;
-          `;
-          
-          circlesContainer.appendChild(circle);
-        }
-        
-        // Add keyframes for floating animation
-        const style = document.createElement('style');
-        style.textContent = `
-          @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
-          }
-        `;
-        document.head.appendChild(style);
-      }
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
 
-      // Text-to-speech functionality
-      function initTextToSpeech() {
-        const speakButtons = document.querySelectorAll('.speakBtn');
+    <script src="scripts/script.js">
         
-        speakButtons.forEach(button => {
-          button.addEventListener('click', function() {
-            const targetId = this.getAttribute('data-target');
-            const textElement = document.getElementById(targetId);
-            
-            if (!textElement) return;
-            
-            const text = textElement.textContent;
-            const utterance = new SpeechSynthesisUtterance(text);
-            
-            // Stop any ongoing speech
-            window.speechSynthesis.cancel();
-            
-            // Speak the text
-            window.speechSynthesis.speak(utterance);
-          });
-        });
-      }
-
-      // Scroll animations
-      function initScrollAnimations() {
-        const scrollElements = document.querySelectorAll('.scroll-reveal');
-        
-        const elementInView = (el, scrollOffset = 0) => {
-          const elementTop = el.getBoundingClientRect().top;
-          return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) * 0.9);
-        };
-        
-        const displayScrollElement = (element) => {
-          element.classList.add('scrolled');
-        };
-        
-        const hideScrollElement = (element) => {
-          element.classList.remove('scrolled');
-        };
-        
-        const handleScrollAnimation = () => {
-          scrollElements.forEach((el) => {
-            if (elementInView(el, 100)) {
-              displayScrollElement(el);
-            } else {
-              hideScrollElement(el);
-            }
-          });
-        };
-        
-        // Initial check
-        handleScrollAnimation();
-        
-        // Listen for scroll events
-        window.addEventListener('scroll', () => {
-          handleScrollAnimation();
-        });
-      }
-
-      // Progress bar
-      function initProgressBar() {
-        const progressBar = document.getElementById('progressBar');
-        if (!progressBar) return;
-        
-        window.addEventListener('scroll', () => {
-          const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-          const scrolled = (window.scrollY / windowHeight) * 100;
-          progressBar.style.width = scrolled + '%';
-          progressBar.setAttribute('aria-valuenow', Math.round(scrolled));
-        });
-      }
-
-      // Theme toggle
-      function initThemeToggle() {
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = themeToggle.querySelector('i');
-        const themeState = themeToggle.querySelector('.theme-state');
-        
-        // Check for saved theme preference or respect OS preference
-        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-        const currentTheme = localStorage.getItem('theme') || (prefersDarkScheme.matches ? 'dark' : 'light');
-        
-        if (currentTheme === 'dark') {
-          document.documentElement.setAttribute('data-theme', 'dark');
-          themeIcon.classList.remove('fa-moon');
-          themeIcon.classList.add('fa-sun');
-          themeState.textContent = 'Dark';
-          themeToggle.setAttribute('aria-pressed', 'true');
-        }
-        
-        themeToggle.addEventListener('click', () => {
-          let theme = 'light';
-          if (document.documentElement.getAttribute('data-theme') !== 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
-            themeState.textContent = 'Dark';
-            theme = 'dark';
-            themeToggle.setAttribute('aria-pressed', 'true');
-          } else {
-            document.documentElement.removeAttribute('data-theme');
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
-            themeState.textContent = 'Light';
-            themeToggle.setAttribute('aria-pressed', 'false');
-          }
-          
-          // Save theme preference
-          localStorage.setItem('theme', theme);
-        });
-      }
-
-      // Music toggle
-      function initMusicToggle() {
-        const musicToggle = document.getElementById('music-toggle');
-        const musicIcon = musicToggle.querySelector('i');
-        const musicState = musicToggle.querySelector('.music-state');
-        const audio = document.getElementById('bg-music');
-        
-        if (!audio) return;
-        
-        musicToggle.addEventListener('click', () => {
-          if (audio.paused) {
-            audio.play().catch(e => {
-              console.log('Audio play failed:', e);
-            });
-            musicState.textContent = 'On';
-            musicToggle.setAttribute('aria-pressed', 'true');
-          } else {
-            audio.pause();
-            musicState.textContent = 'Off';
-            musicToggle.setAttribute('aria-pressed', 'false');
-          }
-        });
-      }
-
-      // Mobile menu
-      function initMobileMenu() {
-        const navLinks = document.getElementById('navLinks');
-        const menuToggle = document.getElementById('menuToggle');
-        
-        function showMenu() {
-          navLinks.style.right = '0';
-          menuToggle.setAttribute('aria-expanded', 'true');
-        }
-        
-        function hideMenu() {
-          navLinks.style.right = '-200px';
-          menuToggle.setAttribute('aria-expanded', 'false');
-        }
-        
-        // Assign functions to global scope for onclick attributes
-        window.showMenu = showMenu;
-        window.hideMenu = hideMenu;
-        
-        // Also add event listeners for accessibility
-        menuToggle.addEventListener('click', showMenu);
-        
-        const closeBtn = navLinks.querySelector('.fa-times');
-        if (closeBtn) {
-          closeBtn.addEventListener('click', hideMenu);
-        }
-        
-        // Close menu when clicking on links
-        const navItems = navLinks.querySelectorAll('a');
-        navItems.forEach(item => {
-          item.addEventListener('click', hideMenu);
-        });
-      }
-
-      // Parallax effect for header
-      window.addEventListener('scroll', function() {
-        const header = document.querySelector('.header');
-        if (header) {
-          let scrollPosition = window.scrollY;
-          header.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
-        }
-      });
     </script>
-  </body>
+</body>
 </html>

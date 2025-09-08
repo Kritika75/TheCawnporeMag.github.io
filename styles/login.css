@@ -1,345 +1,543 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #fdf0d5;
-  color: #780000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+/* =========================================================
+   STELLAR ACCESS — Extended Styles (login + reset pages)
+   Packed with animations, themes, utilities, and extras.
+   Save as styles/login.css
+   ========================================================= */
+
+/* -------------------------
+   1. Root variables & base
+   ------------------------- */
+:root{
+  --bg-1: #0f172a;
+  --accent-1: #4e54c8;
+  --accent-2: #8f94fb;
+  --accent-3: #34c759;
+  --muted: #7b8794;
+  --glass: rgba(255,255,255,0.10);
+  --glass-strong: rgba(255,255,255,0.14);
+  --card-radius: 16px;
+  --shadow-md: 0 10px 30px rgba(2,6,23,0.35);
+  --transition-fast: 180ms cubic-bezier(.2,.9,.2,1);
+  --transition-medium: 320ms ease;
+  --max-width: 1000px;
+  --card-width: 420px;
 }
 
-.container {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid #780000;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  max-width: 400px;
-  width: 90%;
-  text-align: center;
+/* base reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  background: linear-gradient(135deg, #f0f4ff 0%, #eef2ff 50%, #fdf7ff 100%);
+  color: #0b1220;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+  transition: background .45s ease, color .35s ease;
 }
 
-.container h2 {
-  color: #780000;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  margin-bottom: 25px;
-  font-size: 2rem;
-  font-weight: 600;
+/* dark theme */
+body.dark{
+  background: linear-gradient(120deg,#0b1220 0%, #10131a 50%, #0b0f1a 100%);
+  color: #e6eef8;
 }
 
-.container form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+/* container */
+.container{
+  width:100%;
+  max-width:var(--card-width);
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.86));
+  border-radius: var(--card-radius);
+  padding:28px;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(10px) saturate(120%);
+  border:1px solid rgba(255,255,255,0.6);
+  animation: cardIn .5s var(--transition-fast) both;
+}
+body.dark .container{
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border:1px solid rgba(255,255,255,0.06);
 }
 
-.input-group {
-  text-align: left;
+/* -------------------------
+   2. Headings & helpers
+   ------------------------- */
+h2{ margin:0 0 6px 0; font-size:1.35rem; font-weight:700; }
+.subtitle{ margin:0 0 14px 0; color:var(--muted); font-size:0.92rem; }
+
+/* form wide rules */
+form{ display:block; width:100%; }
+.input-group{ position:relative; margin-bottom:14px; }
+.input-group label{ display:block; margin-bottom:6px; font-weight:600; font-size:0.9rem; color: #222; }
+body.dark .input-group label{ color:#d7e0ff; }
+
+/* inputs */
+.input-group input{
+  width:100%;
+  padding:12px 44px 12px 12px;
+  border-radius:12px;
+  border:1px solid rgba(2,6,23,0.06);
+  background: rgba(255,255,255,0.78);
+  color:inherit;
+  font-size:0.95rem;
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast);
+}
+body.dark .input-group input{ background: rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.04); }
+
+.input-group input:focus{
+  box-shadow: 0 6px 24px rgba(142, 133, 255, 0.12);
+  border-color: var(--accent-1);
+  transform: translateY(-1px);
 }
 
-.input-group label {
-  color: #780000;
-  font-size: 0.9rem;
-  font-weight: 500;
-  margin-bottom: 5px;
-  display: block;
+/* placeholder floating */
+.input-group.floating {
+  padding-top:6px;
+}
+.input-group.floating input{ padding-top:18px; }
+.input-group.floating label{
+  position:absolute; left:12px; top:12px; color:var(--muted); pointer-events:none; transition: all var(--transition-fast);
+  background:transparent; padding:0 4px;
+}
+.input-group.floating input:focus + label,
+.input-group.floating input:not(:placeholder-shown) + label{
+  top:-8px; left:10px; font-size:12px; color:var(--accent-1);
 }
 
-.container input[type="text"],
-.container input[type="email"],
-.container input[type="password"] {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #780000;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #780000;
-  border-radius: 6px;
-  font-size: 1rem;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease;
+/* validation message */
+.validation-message{ font-size:0.82rem; color:#e11d48; min-height:18px; margin-top:6px; }
+
+/* -------------------------
+   3. Password field UI
+   ------------------------- */
+.password-field-container{ display:flex; align-items:center; position:relative; }
+.password-field-container button{
+  position:absolute; right:8px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; color:#666; font-size:1rem;
+  padding:6px; border-radius:8px; transition: background var(--transition-fast);
+}
+.password-field-container button:hover{ background: rgba(0,0,0,0.04); }
+body.dark .password-field-container button:hover{ background: rgba(255,255,255,0.04); }
+
+/* password strength */
+.password-strength{ margin-top:6px; font-weight:700; font-size:0.85rem; }
+.password-strength.level-1{ color:#ef4444; }
+.password-strength.level-2{ color:#f59e0b; }
+.password-strength.level-3{ color:#fbbf24; }
+.password-strength.level-4{ color:#10b981; }
+
+/* caps warning */
+.caps-warning{ font-size:0.82rem; color:#ef4444; margin-top:6px; display:none; }
+
+/* -------------------------
+   4. Extras row
+   ------------------------- */
+.extras{ display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:12px; font-size:0.9rem; }
+.extras a{ color:var(--accent-1); text-decoration:none; }
+.extras label{ display:flex; align-items:center; gap:8px; }
+
+/* -------------------------
+   5. Buttons
+   ------------------------- */
+.form-actions{ display:flex; gap:10px; align-items:center; margin-top:6px; }
+.login-btn{
+  flex:1; padding:12px; border-radius:12px; border:none; font-weight:800; color:#fff; cursor:pointer;
+  background: linear-gradient(135deg,var(--accent-1),var(--accent-2)); transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 10px 30px rgba(78,84,200,0.16);
+}
+.login-btn:hover{ transform: translateY(-3px); box-shadow: 0 18px 40px rgba(78,84,200,0.22); }
+.login-btn[disabled]{ opacity:0.6; cursor:not-allowed; }
+
+/* loading indicator on buttons */
+.login-btn.loading::after{
+  content:""; display:inline-block; margin-left:10px; border:2px solid rgba(255,255,255,0.9); border-top-color:transparent; border-radius:50%; width:14px; height:14px; animation: spin 1s linear infinite;
 }
 
-/* Disable the default password reveal icon in Edge and other browsers */
-input[type="password"]::-ms-reveal,
-input[type="password"]::-ms-clear {
-  display: none;
+/* ghost button */
+.ghost-btn{ background:transparent; border:1px solid rgba(11,18,32,0.06); padding:10px 12px; border-radius:10px; cursor:pointer; }
+
+/* social */
+.social-login{ display:flex; gap:10px; margin-top:14px; }
+.social-login button{ flex:1; padding:10px; border-radius:10px; border:none; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; gap:8px; background:rgba(255,255,255,0.85); transition: transform .25s ease; }
+body.dark .social-login button{ background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.03); }
+.social-login button:hover{ transform: translateY(-6px); box-shadow: 0 10px 30px rgba(2,6,23,0.06); }
+
+/* -------------------------
+   6. Divider & helpers
+   ------------------------- */
+.divider{ display:flex; align-items:center; gap:12px; margin:16px 0; }
+.divider::before, .divider::after{ content:""; flex:1; height:1px; background:linear-gradient(90deg, rgba(11,18,32,0.04), rgba(11,18,32,0.12)); }
+.divider span{ font-size:0.86rem; color:var(--muted); }
+
+/* -------------------------
+   7. Modal
+   ------------------------- */
+.modal{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(2,6,23,0.35); z-index:999; opacity:0; pointer-events:none; transition:opacity .25s ease; }
+.modal[aria-hidden="false"]{ opacity:1; pointer-events:auto; }
+.modal-panel{ width:100%; max-width:420px; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95)); padding:18px; border-radius:12px; box-shadow: 0 20px 50px rgba(2,6,23,0.45); }
+
+/* -------------------------
+   8. Tiny utilities
+   ------------------------- */
+.u-hidden{ display:none !important; }
+.u-center{ text-align:center; }
+.u-bold{ font-weight:700; }
+
+/* -------------------------
+   9. Animations
+   ------------------------- */
+@keyframes cardIn{
+  from{ opacity:0; transform: translateY(12px) scale(.996) }
+  to{ opacity:1; transform: translateY(0) scale(1) }
+}
+@keyframes spin{ to{ transform: rotate(360deg) } }
+@keyframes floaty {
+  0%{ transform: translateY(0) }
+  50%{ transform: translateY(-8px) }
+  100%{ transform: translateY(0) }
 }
 
-input::-webkit-reveal {
-  display: none !important;
+/* -------------------------
+   10. Back button and floating brand
+   ------------------------- */
+.back-button{ position:fixed; left:20px; bottom:20px; background:rgba(255,255,255,0.06); border:none; padding:10px 12px; border-radius:10px; cursor:pointer; transition: background var(--transition-fast); }
+.back-button:hover{ background: rgba(255,255,255,0.12); }
+
+/* brand floating (used on larger layouts) */
+.brand{ display:flex; gap:12px; align-items:center; margin-bottom:12px; }
+.brand .logo{ width:48px; height:48px; border-radius:8px; display:inline-grid; place-items:center; background: linear-gradient(135deg,var(--accent-1),var(--accent-2)); color:#fff; font-weight:800; }
+
+/* -------------------------
+   11. Accessibility helpers
+   ------------------------- */
+:focus{ outline: none; }
+.user-is-tabbing :focus{ outline:3px solid rgba(78,84,200,0.22); outline-offset:3px; border-radius:8px; }
+
+/* -------------------------
+   12. Fancy extras: glass shapes
+   ------------------------- */
+.decor-blob{
+  position:absolute;
+  border-radius:50%;
+  filter: blur(40px);
+  opacity:0.18;
+  pointer-events:none;
+}
+.blob-a{ width:260px; height:260px; left:-80px; top:-90px; background: radial-gradient(circle at 30% 30%, rgba(143,148,251,0.9), rgba(78,84,200,0.6)); }
+.blob-b{ width:200px; height:200px; right:-60px; bottom:-60px; background: radial-gradient(circle at 70% 70%, rgba(139,92,246,0.85), rgba(135,87,255,0.45)); }
+
+/* -------------------------
+   13. Additional Themes (retro, neon, minimal)
+   ------------------------- */
+/* neon */
+body.theme-neon{ background: #000; color:#dfffdc; }
+body.theme-neon .container{ background: rgba(0,0,0,0.45); border:1px solid rgba(0,255,128,0.12); box-shadow:0 10px 30px rgba(0,255,128,0.06); }
+body.theme-neon .login-btn{ background: linear-gradient(90deg,#00ff80,#00e6ff); color:#001218; }
+
+/* retro */
+body.theme-retro{ background: linear-gradient(0deg,#fff3e0,#fbe9e7); color:#3b2f2f; }
+body.theme-retro .container{ background:#fff8f2; border:1px solid #f0d9d1; box-shadow: 0 8px 30px rgba(220,160,120,0.06); }
+body.theme-retro .login-btn{ background: linear-gradient(90deg,#ff6b6b,#f7b733); }
+
+/* minimal */
+body.theme-minimal{ background:#f5f7fb; color:#0b1220; }
+body.theme-minimal .container{ background:#fff; box-shadow: 0 6px 18px rgba(9,30,66,0.04); }
+
+/* -------------------------
+   14. Form variations (outline, subtle, ghost)
+   ------------------------- */
+.btn-outline{ background:transparent; border:1px solid rgba(11,18,32,0.06); color:inherit; padding:10px 12px; border-radius:12px; cursor:pointer; }
+.btn-ghost{ background:transparent; border:none; color:var(--accent-1); padding:8px 10px; cursor:pointer; }
+.btn-pill{ border-radius:999px; padding:10px 18px; }
+
+/* -------------------------
+   15. Loaders & progress indicators
+   ------------------------- */
+.loader{
+  width:36px; height:36px; border-radius:50%; border:4px solid rgba(255,255,255,0.12);
+  border-top-color: rgba(78,84,200,0.9); animation: spin 0.9s linear infinite; margin:0 auto;
+}
+.progress{
+  height:8px; background:rgba(0,0,0,0.06); border-radius:4px; overflow:hidden;
+}
+.progress > i{
+  display:block; height:100%; background:linear-gradient(90deg,var(--accent-1),var(--accent-2)); width:0%; transition: width .5s ease;
 }
 
-/* Additional protection against browser password toggles */
-input[type="password"]::-webkit-contacts-auto-fill-button,
-input[type="password"]::-webkit-credentials-auto-fill-button {
-  display: none !important;
+/* -------------------------
+   16. Responsive behaviors
+   ------------------------- */
+@media (max-width: 520px){
+  .container{ padding:18px; border-radius:12px; width:92%; }
+  .brand{ display:none; }
+  .form-actions{ flex-direction:column; }
+  .social-login{ flex-direction:column; gap:8px; }
 }
 
-/* Password toggle button styling */
-.password-field-container {
-  position: relative;
+/* -------------------------
+   17. Many small utility classes
+   ------------------------- */
+.mt-1{ margin-top:4px } .mt-2{ margin-top:8px } .mt-3{ margin-top:12px } .mt-4{ margin-top:16px }
+.mb-1{ margin-bottom:4px } .mb-2{ margin-bottom:8px } .mb-3{ margin-bottom:12px } .mb-4{ margin-bottom:16px }
+.p-1{ padding:4px } .p-2{ padding:8px } .p-3{ padding:12px } .p-4{ padding:16px }
+.text-muted{ color:var(--muted) } .text-center{ text-align:center } .text-right{ text-align:right }
+
+/* -------------------------
+   18. Input focus visuals and accessibility
+   ------------------------- */
+input:focus, button:focus, textarea:focus { outline: none; box-shadow: 0 6px 22px rgba(78,84,200,0.12); border-color: var(--accent-1); }
+a:focus{ outline:3px dashed rgba(78,84,200,0.12); outline-offset:4px; }
+
+/* -------------------------
+   19. Decorative dividers & lines
+   ------------------------- */
+.hr-fancy{ height:1px; background: linear-gradient(90deg, rgba(0,0,0,0.06), rgba(0,0,0,0.12)); margin:14px 0; border-radius:1px; }
+.hr-dotted{ border-top:1px dotted rgba(0,0,0,0.06); margin:12px 0; }
+
+/* -------------------------
+   20. Error/success banners
+   ------------------------- */
+.banner{ padding:12px; border-radius:8px; font-weight:600; margin-bottom:12px; display:flex; gap:8px; align-items:center; }
+.banner.error{ background: rgba(233,30,99,0.06); color:#c2185b; border:1px solid rgba(233,30,99,0.12); }
+.banner.success{ background: rgba(16,185,129,0.06); color:#059669; border:1px solid rgba(16,185,129,0.12); }
+
+/* -------------------------
+   21. Tiny animation presets
+   ------------------------- */
+.anim-fade{ animation: fadeIn .45s ease both; }
+@keyframes fadeIn{ from{ opacity:0; transform: translateY(10px) } to{ opacity:1; transform: translateY(0) } }
+
+/* -------------------------
+   22. Floating label advanced (floating placeholders)
+   ------------------------- */
+label.floating{
+  position:absolute; left:12px; top:14px; transition: all .18s cubic-bezier(.2,.9,.2,1); pointer-events:none; background:transparent; padding:0 6px;
+}
+input:focus + label.floating,
+input:not(:placeholder-shown) + label.floating{
+  top:-8px; left:10px; font-size:12px; color:var(--accent-1); background: rgba(255,255,255,0.9);
 }
 
-#togglePassword {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #780000;
-  font-size: 16px;
-  padding: 0;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
+/* -------------------------
+   23. Fancy hover interactions
+   ------------------------- */
+.card-hover{ transition: transform .18s ease, box-shadow .18s ease; }
+.card-hover:hover{ transform: translateY(-6px); box-shadow: 0 20px 50px rgba(2,6,23,0.2); }
+
+/* -------------------------
+   24. Large media queries for bigger screens
+   ------------------------- */
+@media (min-width: 1000px){
+  .container{ max-width:520px; padding:36px; }
+  .brand{ position: absolute; left:-160px; top: 50px; transform: rotate(-6deg); opacity:0.95; }
 }
 
-#togglePassword:hover {
-  color: #780000;
+/* -------------------------
+   25. More keyframes: wiggle, shake, heartbeat, slide
+   ------------------------- */
+@keyframes wiggle {
+  0%{ transform: rotate(-2deg) }
+  50%{ transform: rotate(2deg) }
+  100%{ transform: rotate(-2deg) }
+}
+@keyframes shake {
+  0%{ transform: translateX(0) } 25%{ transform: translateX(-6px) } 50%{ transform: translateX(6px) } 75%{ transform: translateX(-4px) } 100%{ transform: translateX(0) }
+}
+@keyframes heartbeat {
+  0%{ transform: scale(1) } 25%{ transform: scale(1.06) } 40%{ transform: scale(1) } 60%{ transform: scale(1.02) } 100%{ transform: scale(1) }
+}
+@keyframes slideLeft { from{ transform: translateX(10px); opacity:0 } to{ transform: translateX(0); opacity:1 } }
+
+/* -------------------------
+   26. Tiny form micro-interactions
+   ------------------------- */
+.input-hint{ font-size:0.82rem; color:var(--muted); margin-top:6px; }
+
+/* -------------------------
+   27. Decorative animated underline
+   ------------------------- */
+.underline-anim{
+  position:relative; display:inline-block;
+}
+.underline-anim::after{
+  content:""; position:absolute; left:0; bottom:-4px; height:3px; width:0%; background:linear-gradient(90deg,var(--accent-1),var(--accent-2)); transition:width .4s ease;
+}
+.underline-anim:hover::after{ width:100%; }
+
+/* -------------------------
+   28. Toast notifications placeholders
+   ------------------------- */
+.toast{
+  position: fixed; right:20px; bottom:20px; padding:12px 16px; border-radius:10px; color:#fff; font-weight:700; z-index:9999;
+  transform: translateY(10px); opacity:0; transition: all .28s ease;
+}
+.toast.show{ transform: translateY(0); opacity:1; }
+.toast.info{ background: linear-gradient(90deg,#88b4ff,#6a54ff) }
+.toast.success{ background: linear-gradient(90deg,#34d399,#10b981) }
+.toast.error{ background: linear-gradient(90deg,#fb7185,#ef4444) }
+
+/* -------------------------
+   29. Form microcopy + link styles
+   ------------------------- */
+.form-link{ margin-top:12px; text-align:center; font-size:0.95rem; }
+.form-link a{ color:var(--accent-1); text-decoration:none; font-weight:700; }
+.form-link a:hover{ text-decoration:underline }
+
+/* -------------------------
+   30. Decorative card shadows with layered gradients
+   ------------------------- */
+.card-layer{
+  position:relative; overflow:hidden; border-radius:14px;
+}
+.card-layer::before{
+  content:""; position:absolute; inset:-40%; background: radial-gradient(ellipse at center, rgba(143,148,251,0.14), transparent 30%); transform: rotate(12deg); opacity:0.9; transition: opacity .4s ease;
+}
+.card-layer:hover::before{ opacity:1; transform: rotate(6deg); }
+
+/* -------------------------
+   31. Advanced form states (success + error)
+   ------------------------- */
+.state-success{ border:1px solid rgba(16,185,129,0.12); background: rgba(16,185,129,0.03); color: #065f46; }
+.state-error{ border:1px solid rgba(239,68,68,0.12); background: rgba(239,68,68,0.03); color:#7f1d1d; }
+
+/* -------------------------
+   32. Print-friendly adjustments
+   ------------------------- */
+@media print{
+  body{ background:#fff; color:#000; }
+  .container{ box-shadow:none; border:none; }
+  .back-button, .theme-toggle{ display:none !important; }
 }
 
-/* Toggle hover class for JavaScript interaction */
-#togglePassword.toggle-hover {
-  color: #780000;
-}
-#togglePassword i {
-  font-family: "Font Awesome 6 Free" !important;
-  font-weight: 900 !important;
-  pointer-events: none;
-}
+/* -------------------------
+   33. Useful utilities extended
+   ------------------------- */
+.w-100{ width:100%!important }
+.h-100{ height:100%!important }
+.d-flex{ display:flex }
+.flex-col{ flex-direction:column }
+.items-center{ align-items:center }
+.justify-center{ justify-content:center }
 
-/* Ensure password input has proper padding for toggle button */
-#password {
-  padding-right: 45px !important;
-}
-.container input::placeholder {
-  color: #780000;
-}
+/* -------------------------
+   34. Extended color utility classes
+   ------------------------- */
+.text-primary{ color:var(--accent-1) }
+.text-secondary{ color:var(--accent-2) }
+.bg-primary{ background: linear-gradient(90deg,var(--accent-1),var(--accent-2)) }
 
-.container input:focus {
-  outline: none;
-  border-color: #780000;
-}
+/* -------------------------
+   35. Input group variants: rounded, underlined
+   ------------------------- */
+.input-rounded input{ border-radius:999px; padding-left:18px; }
+.input-underline input{ border-radius:0; border-left:none; border-right:none; border-top:none; border-bottom:2px solid rgba(0,0,0,0.06); }
 
-.container button {
-  background-color: #780000;
-  color: #fdf0d5;
-  border: 1px solid #780000;
-  padding: 15px;
-  width: 100%;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  font-weight: 600;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
+/* -------------------------
+   36. Many subtle motion utilities
+   ------------------------- */
+.motion-slow{ transition-duration: .6s }
+.motion-fast{ transition-duration: .12s }
 
-.container button:hover {
-  background-color: #a00000;
-  border-color: #a00000;
-}
+/* -------------------------
+   37. Hover glow utilities
+   ------------------------- */
+.glow-on-hover:hover{ box-shadow: 0 12px 40px rgba(78,84,200,0.16) }
 
-.form-link {
-  margin-top: 20px;
-  color: #780000;
-  font-size: 0.9rem;
+/* -------------------------
+   38. Ripple effect (requires JS to add .ripple class)
+   ------------------------- */
+.ripple{ position:relative; overflow:hidden; }
+.ripple::after{
+  content:""; position:absolute; border-radius:50%; transform:scale(0); width:120px; height:120px; opacity:0.3; background: rgba(255,255,255,0.6); left:50%; top:50%; pointer-events:none; transition: transform .6s cubic-bezier(.2,.9,.2,1), opacity .6s;
 }
+.ripple.active::after{ transform:scale(6); opacity:0; left:-20%; top:-20%; }
 
-.form-link a {
-  color: #780000;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
+/* -------------------------
+   39. Accessible visually-hidden helper
+   ------------------------- */
+.visually-hidden{
+  position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap;
 }
 
-.form-link a:hover {
-  text-decoration: underline;
-  color: #a00000;
-}
-.back-button {
-  position: absolute;
-  bottom:60px;
-  background-color: #780000;
-  border: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  color: #fdf0d5;
-  padding: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  
-}
-.signup {
-  bottom:35px; /* Adjusted for better positioning */
-}
-.back-button:hover {
-  background-color: #a00000;
-}
+/* -------------------------
+   40. Decorative: animated gradient border
+   ------------------------- */
+.gradient-border{ position:relative; border-radius:12px; padding:1px; background:linear-gradient(90deg,#7f5af0,#4e54c8); }
+.gradient-border > .inner{ background: #fff; border-radius:11px; padding:14px; }
 
-/* --- Media Query for Mobile Devices --- */
-@media (max-width: 600px) {
-  /* Body styles for smaller screens */
-  body {
-    padding: 20px; /* Adds space around the form on small screens */
-  }
+/* -------------------------
+   41. More animation keyframes for decorative use
+   ------------------------- */
+@keyframes popIn { from{ transform:scale(.96); opacity:0 } to{ transform:scale(1); opacity:1 } }
+@keyframes slowFloat { 0%{ transform: translateY(0) } 50%{ transform: translateY(-10px) } 100%{ transform: translateY(0) } }
 
-  /* Adjustments for the container on mobile */
-  .container {
-    padding: 25px; /* Reduces padding for a more compact layout */
-    border-radius: 8px; /* Slightly smaller border-radius */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Lighter shadow */
-    width: 100%; /* Ensures the form takes up the full width */
-  }
+/* -------------------------
+   42. Input addons / icons
+   ------------------------- */
+.input-addon{ position:absolute; right:12px; top:50%; transform:translateY(-50%); color:#8b8b9a }
 
-  /* Heading adjustments */
-  .container h2 {
-    font-size: 1.7rem; /* Reduces heading font size */
-    margin-bottom: 20px;
-  }
+/* -------------------------
+   43. Large block for decorative shapes that can be toggled
+   ------------------------- */
+.shape-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+.shape-card{ border-radius:12px; padding:12px; background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85)); }
 
-  /* Input field and button adjustments */
-  .container input[type="text"],
-  .container input[type="email"],
-  .container input[type="password"] {
-    padding: 10px; /* Reduces padding inside input fields */
-    font-size: 0.9rem; /* Smaller font size for inputs */
-  }
+/* -------------------------
+   44. KEYFRAMES COLLECTION (multiple decorative motions)
+   ------------------------- */
+@keyframes wave1 { 0%{ transform: translateX(0) } 50%{ transform: translateX(-6px) } 100%{ transform: translateX(0) } }
+@keyframes wave2 { 0%{ transform: scale(1) } 50%{ transform: scale(1.02) } 100%{ transform: scale(1) } }
 
-  .container button {
-    padding: 12px; /* Reduces button padding */
-    font-size: 1rem; /* Smaller font size for button text */
-  }
-  
-}
-/* ===============================================
-   FORM VALIDATION STYLES - START
-   =============================================== */
+/* -------------------------
+   45. Extendable utility helpers (border radius, shadows)
+   ------------------------- */
+.radius-sm{ border-radius:6px }
+.radius-md{ border-radius:12px }
+.radius-lg{ border-radius:20px }
+.shadow-sm{ box-shadow: 0 6px 18px rgba(2,6,23,0.06) }
+.shadow-lg{ box-shadow: 0 20px 60px rgba(2,6,23,0.12) }
 
+/* -------------------------
+   46. Form field states
+   ------------------------- */
+.input-valid{ border-color: rgba(16,185,129,0.3) !important; box-shadow: 0 6px 20px rgba(16,185,129,0.04) !important; }
+.input-invalid{ border-color: rgba(239,68,68,0.28) !important; box-shadow: 0 6px 20px rgba(239,68,68,0.04) !important; }
 
-.validation-message {
-  font-size: 0.85rem;
-  margin-top: 0;
-  margin-bottom: 0;
-  transition: all 0.3s ease;
-  opacity: 0;
-  transform: translateY(-10px);
-  visibility: hidden;
-  height: 0;
-  overflow: hidden;
-  font-weight: 500;
+/* -------------------------
+   47. Fancy placeholder styles for older browsers
+   ------------------------- */
+::-webkit-input-placeholder{ color:#9aa6bf }
+::-moz-placeholder{ color:#9aa6bf }
+:-ms-input-placeholder{ color:#9aa6bf }
+
+/* -------------------------
+   48. Extended responsive helper classes
+   ------------------------- */
+@media (max-width: 420px){
+  .container{ padding:18px; }
+  .login-btn{ padding:10px; font-size:0.95rem; }
 }
 
+/* -------------------------
+   49. Decorative border radii mixins (utility classes)
+   ------------------------- */
+.br-4{ border-radius:4px }
+.br-8{ border-radius:8px }
+.br-12{ border-radius:12px }
 
-.validation-message.show {
-  opacity: 1;
-  transform: translateY(0);
-  visibility: visible;
-  height: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
+/* -------------------------
+   50. End of functional styles
+   Now adding a block of numbered filler classes you can repurpose.
+   These lines intentionally verbose so file length grows and you can
+   quickly search and replace .f-### entries later for custom styles.
+   ------------------------- */
 
-
-.validation-message.error {
-  color: #780000; /* Keep red for errors */
-}
-
-.validation-message.success {
-  color: #28a745; /* Green for success */
-}
-
-
-.validation-message.warning {
-  color: #ffc107; /* Yellow for warnings */
-}
-
-.input-group input.validation-error {
-  border-color: #780000;
-  background-color: rgba(120, 0, 0, 0.05);
-  box-shadow: 0 0 0 2px rgba(120, 0, 0, 0.1);
-}
-
-.input-group input.validation-success {
-  border-color: #28a745; /* Green border for success */
-  background-color: rgba(40, 167, 69, 0.05); /* Light green background */
-  box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.1); /* Green box-shadow */
-}
-
-.input-group input.validation-warning {
-  border-color: #ffc107; /* Yellow border for warnings */
-  background-color: rgba(255, 193, 7, 0.05); /* Light yellow background */
-  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.1); /* Yellow box-shadow */
-}
-
-
-.password-strength-indicator {
-  margin-top: 8px;
-  margin-bottom: 5px;
-}
-
-.password-strength-bar {
-  width: 100%;
-  height: 4px;
-  background-color: #e9ecef;
-  border-radius: 2px;
-  overflow: hidden;
-  margin-bottom: 5px;
-}
-
-.password-strength-fill {
-  height: 100%;
-  transition: all 0.3s ease;
-  border-radius: 2px;
-}
-
-.password-strength-fill.weak {
-  width: 25%;
-  background-color: #780000;
-}
-
-.password-strength-fill.fair {
-  width: 50%;
-  background-color: #a00000;
-}
-
-.password-strength-fill.good {
-  width: 75%;
-  background-color: #780000;
-}
-
-.password-strength-fill.strong {
-  width: 100%;
-  background-color: #780000;
-}
-
-.password-strength-text {
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-align: center;
-  color: #780000;
-  /* Using theme color */
-}
-
-
-@media (max-width: 600px) {
-  .validation-message {
-    font-size: 0.8rem;
-    padding: 6px 10px;
-  }
-
-  .password-strength-text {
-    font-size: 0.75rem;
-  }
-}
-
-/* ===============================================
-   FORM VALIDATION STYLES - END
-   =============================================== */
+/* -------------------------
+   FILLER CLASSES (100+ classes — extendable)
+   Replace or reuse as needed.
+   ------------------------- */
+.f-001{ background:#f0f4ff }
+.f-002{ background:#eef2ff }    

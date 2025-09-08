@@ -1,42 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="styles/login.css">
-  <!-- Font Awesome for eye icon -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — Stellar Access</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/login.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Preconnects for performance -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <meta name="description" content="High-fidelity login page demo — glassmorphism, animations, OTP, magic link, password strength, accessibility." />
 </head>
 <body>
-  <div class="container">
-    <h2>Login</h2>
-    <form id="login-form">
-      <div class="input-group">
-        <label for="email">Email</label>
-        <input id="email" type="email" placeholder="Email" required>
-        <div class="validation-message" id="email-validation"></div>
-      </div>
-      <div class="input-group">
-        <label for="password">Password</label>
-        <!-- Password input container with toggle button on the right -->
-        <div class="password-field-container">
-          <input id="password" type="password" placeholder="Password" required>
-          <!-- Password visibility toggle button positioned on the right side -->
-          <button type="button" id="togglePassword" aria-label="Toggle password visibility">
-            <i class="fas fa-eye" aria-hidden="true"></i>
-          </button>
-          </div>
-        <div class="validation-message" id="password-validation"></div>
-      </div>
-      <button type="submit">Login</button>
-    </form>
-    <p class="form-link">Don't have an account? <a href="signup.html">Sign up</a></p>
-    <p class="form-link"><a href="forgot-password.html">Forgot Password?</a></p>
+  <!-- Animated background canvas (script creates / controls it) -->
+  <div id="animated-bg" aria-hidden="true"></div>
+
+  <!-- Theme toggle -->
+  <div class="theme-toggle" aria-hidden="false">
+    <button id="themeBtn" class="icon-btn" aria-label="Toggle dark and light theme" title="Toggle theme">
+      <i class="fas fa-moon"></i>
+    </button>
   </div>
-  <button class="back-button" onclick="window.location.href='index.html'"> ← Back To Home</button>
-  <script src="scripts/auth.js"></script>
+
+  <!-- Main container -->
+  <main class="container" role="main" aria-labelledby="login-heading">
+    <header class="brand">
+      <div class="logo" aria-hidden="true">
+        <!-- simple svg logo -->
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <defs><linearGradient id="g1" x1="0" x2="1"><stop stop-color="#8f94fb"/><stop offset="1" stop-color="#4e54c8"/></linearGradient></defs>
+          <rect width="24" height="24" rx="6" fill="url(#g1)"></rect>
+          <path d="M7 12h10M12 7v10" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1 id="login-heading">Stellar Access</h1>
+        <p class="tag">Secure sign in — beautiful animations</p>
+      </div>
+    </header>
+
+    <!-- Card -->
+    <section class="card" aria-labelledby="signin-title">
+      <h2 id="signin-title">Welcome back 👋</h2>
+      <p class="lead">Sign in to continue to your dashboard</p>
+
+      <form id="login-form" novalidate>
+        <!-- Email -->
+        <div class="input-group floating">
+          <input id="email" name="email" type="email" placeholder=" " required autocomplete="email" />
+          <label for="email">Email</label>
+          <div class="validation-message" id="email-validation" aria-live="polite"></div>
+        </div>
+
+        <!-- Password -->
+        <div class="input-group floating">
+          <div class="password-field-container">
+            <input id="password" name="password" type="password" placeholder=" " required autocomplete="current-password" aria-describedby="password-desc" />
+            <button type="button" id="togglePassword" class="icon-btn" aria-label="Toggle password visibility"><i class="fas fa-eye"></i></button>
+          </div>
+          <label for="password">Password</label>
+          <div id="password-desc" class="small muted">Minimum 8 characters</div>
+          <div class="password-strength" id="password-strength" aria-live="polite"></div>
+          <div class="caps-warning" id="caps-warning" role="status" aria-live="polite" hidden>Caps Lock is ON</div>
+          <div class="validation-message" id="password-validation" aria-live="polite"></div>
+        </div>
+
+        <!-- Extras -->
+        <div class="row extras">
+          <label class="remember">
+            <input id="rememberMe" type="checkbox" /> Remember me
+          </label>
+          <div class="links">
+            <a href="forgot-password.html" id="forgotLink">Forgot?</a>
+            <button id="otpBtn" type="button" class="link-btn">Login with OTP</button>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="form-actions">
+          <button id="loginBtn" class="login-btn" type="submit">Login</button>
+          <button id="magicLinkBtn" type="button" class="ghost-btn">Send Magic Link</button>
+        </div>
+
+        <!-- Inline status -->
+        <div id="status" role="status" aria-live="polite"></div>
+      </form>
+
+      <!-- OR divider -->
+      <div class="divider"><span>or continue with</span></div>
+
+      <!-- Social -->
+      <div class="social-login">
+        <button class="social google" aria-label="Sign in with Google"><i class="fab fa-google"></i> Google</button>
+        <button class="social github" aria-label="Sign in with GitHub"><i class="fab fa-github"></i> GitHub</button>
+        <button class="social apple" aria-label="Sign in with Apple"><i class="fab fa-apple"></i> Apple</button>
+      </div>
+
+      <footer class="card-footer">
+        <p>Don't have an account? <a href="signup.html">Create one</a></p>
+      </footer>
+    </section>
+  </main>
+
+  <button class="back-button" onclick="location.href='index.html'">← Back to Home</button>
+
+  <!-- OTP Modal (hidden by default) -->
+  <div id="otp-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="otpTitle">
+    <div class="modal-panel">
+      <button class="modal-close" aria-label="Close OTP dialog">&times;</button>
+      <h3 id="otpTitle">One-time passcode</h3>
+      <p class="muted">Enter the OTP sent to your email (demo: 123456)</p>
+      <div class="input-group">
+        <input id="otp-input" inputmode="numeric" pattern="[0-9]*" maxlength="6" placeholder="Enter OTP" />
+      </div>
+      <div class="modal-actions">
+        <button id="verify-otp" class="login-btn">Verify</button>
+        <button id="resend-otp" class="ghost-btn">Resend</button>
+      </div>
+      <div id="otp-status" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="scripts/animated-bg.js" defer></script>
+  <script src="scripts/auth.js" defer></script>
 </body>
 </html>
