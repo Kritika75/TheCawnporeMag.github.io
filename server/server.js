@@ -1,13 +1,30 @@
+require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
-require('dotenv').config()
+const passport = require('passport')
 const authRoutes = require('./routes/auth')
 const path = require('path')
+const session = require('express-session')
 
 const app = express()
 app.use(cors())
 app.use(express.json())
+
+// Session middleware for passport
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'secretkey',
+  resave: false,
+  saveUninitialized: false
+}))
+
+// Initialize passport and session
+app.use(passport.initialize())
+app.use(passport.session())
+
+// Passport config
+require('./config/passport')
+
 app.use('/api/auth', authRoutes)
 app.use(express.static(path.join(__dirname, '..')))
 
