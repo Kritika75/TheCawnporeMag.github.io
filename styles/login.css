@@ -164,6 +164,24 @@ input[type="password"]::-webkit-credentials-auto-fill-button {
   text-decoration: underline;
   color: #a00000;
 }
+
+/* Google Sign-In Button Styling */
+.g_id_signin {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.g_id_signin > div {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  transition: box-shadow 0.3s ease, transform 0.2s ease !important;
+}
+
+.g_id_signin > div:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
 .back-button {
   position: absolute;
   bottom:60px;

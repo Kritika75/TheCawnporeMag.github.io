@@ -10,6 +10,7 @@ const {
   validate 
 } = require('../validators/authValidator')
 const router = express.Router()
+const passport = require('passport')
 
 router.post('/signup', validate(signupSchema), async (req, res) => {
   try {
@@ -24,6 +25,25 @@ router.post('/signup', validate(signupSchema), async (req, res) => {
     res.status(500).json({ message: 'Server error' })
   }
 })
+
+// Google OAuth login route
+router.get('/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] })
+)
+
+// Google OAuth callback route
+router.get('/google/callback',
+  passport.authenticate('google', { session: false, failureRedirect: '/login.html' }),
+  (req, res) => {
+    // Successful authentication, generate JWT token and redirect or respond
+    const user = req.user
+    const token = jwt.sign({ id: user._id, email: user.email }, process.env.JWT_SECRET, { expiresIn: '8h' })
+
+    // Redirect to frontend with token as query param or set cookie
+    // For example, redirect to home with token in URL hash
+    res.redirect(`/index.html#token=${token}`)
+  }
+)
 
 router.post('/login', async (req, res) => {
   try {
