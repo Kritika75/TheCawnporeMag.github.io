@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ISSUES</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="issue.css" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -309,6 +310,17 @@
         <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
       </div>
     </footer>
+    <script>
+      function showMenu() {
+      document.getElementById("navLinks").style.right = "0";
+      document.body.style.overflow = "hidden";
+    }
+
+    function hideMenu() {
+      document.getElementById("navLinks").style.right = "-200px";
+      document.body.style.overflow = "auto";
+    }
+    </script>
     <script src="index.js"></script>
   </body>
 </html>

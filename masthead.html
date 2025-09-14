@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masthead</title>
+        <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="masthead.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -157,8 +157,14 @@
                 <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
             </a>
         
-          <div class = "nav-links" id="navLinks">
-            <i class="fa fa-times" onclick="hideMenu()"></i>
+        <nav role="navigation" aria-label="Main Menu">
+    <!-- Logo on the left -->
+    <a href="index.html">
+      <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+    </a>
+    
+    <div class="nav-links" id="navLinks">
+      <i class="fa fa-times" onclick="hideMenu()"></i>
           <ul>
 
             <li><a href="index.html">HOME</a></li>
@@ -175,9 +181,11 @@
             <li><a href="login.html" class="btn">LOGIN</a></li>
             <li><a href="signup.html" class="btn">REGISTER</a></li>
           </ul>
-          </div>
-          <i class="fa fa-bars" onclick="showMenu()"></i>
-        </nav>
+    </div>
+
+   <i class="fa fa-bars" id="menuIcon" onclick="showMenu()"></i>
+
+  </nav>
     
     </section>
     <section class="header1">
@@ -798,6 +806,15 @@ When she’s not lost in a new novel or jotting down story ideas in her journal,
       </div>
     </footer>
 <script>
+     function showMenu() {
+      document.getElementById("navLinks").style.right = "0";
+      document.body.style.overflow = "hidden";
+    }
+
+    function hideMenu() {
+      document.getElementById("navLinks").style.right = "-200px";
+      document.body.style.overflow = "auto";
+    }
 document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("searchBar"); // Change ID if needed
     const teamCards = document.querySelectorAll(".team-card");
@@ -817,6 +834,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
 </script>
 
 
