@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- Google Identity Services -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
   <div class="container">
@@ -38,6 +40,19 @@
       </div>
       <button type="submit">Sign up</button>
     </form>
+    <div id="g_id_onload"
+      data-client_id=164217635190-u5ajqhenmfp8j5erb0qr37r0kjj706pt.apps.googleusercontent.com
+      data-login_uri="http://localhost:5503/api/auth/google/callback"
+      data-auto_prompt="true">
+    </div>
+    <div class="g_id_signin"
+      data-type="standard"
+      data-shape="rectangular"
+      data-theme="outline"
+      data-text="sign_in_with"
+      data-size="large"
+      data-logo_alignment="left">
+    </div>
     <p class="form-link">Already have an account? <a href="login.html">Login</a></p>
   </div>
   <button class="back-button signup" onclick="window.location.href='index.html'"> ← Back To Home</button>
