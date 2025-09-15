@@ -55,44 +55,6 @@ html {
   padding: 20px 0;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 5%;
-    margin-right: 6px;
-    background: linear-gradient(135deg,
-        rgb(99, 0, 0),
-        rgba(218, 67, 67, 0.665),
-        rgb(71, 22, 22),
-        rgba(17, 16, 16, 0.3)
-
-    );
-    background-size: 400% 400%; /* make the gradient larger to animate */
-    animation: gradientMove 5s linear infinite;
-
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-bottom: 1px solid rgba(179, 177, 177, 0.2);
-    position: fixed;
-    top: 0;
-    height: 70px;
-    width: 100%;
-    z-index: 999;
-}
-
-/* Animation Keyframes */
-@keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
 
 
 .header1 {
@@ -142,7 +104,7 @@ nav {
   }
 }
 
-.nav-links {
+/* .nav-links {
   flex: 1;
   text-align: center;
   align-items: center;
@@ -179,67 +141,8 @@ nav {
 
 .nav-links ul li a:hover {
   text-decoration: none; /* REMOVE underline */
-}
 
-.nav-links ul li::after {
-  content: "";
-  width: 0%;
-  height: 2px;
-  background: #fdf0d5;
-  display: block;
-  margin: auto;
-  transition: 0.5s;
-}
 
-.nav-links ul li:hover::after {
-  width: 100%;
-}
-
-nav .fa {
-  display: none;
-}
-@media (max-width: 700px) {
-  .text-box h1 {
-    margin-top: 15px;
-    font-weight: 700;
-    font-style: italic;
-    font-size: 40px;
-  }
-  .nav-links ul li {
-    display: block;
-  }
-  .nav-links {
-    position: fixed;
-    background: linear-gradient(135deg, #d24848, #7a0000, #cea8bc);
-    height: 100vh;
-    width: 200px;
-    top: 0;
-    right: -200px;
-    text-align: left;
-    z-index: 2;
-    box-shadow: -8px 0 20px rgba(0, 0, 0, 0.5);
-    transition: right 0.4s ease-in-out;
-  }
-
-  nav .fa {
-    display: block;
-    color: #663346;
-    margin: 10px;
-    font-size: 22px;
-    cursor: pointer;
-    z-index: 10;
-    background: linear-gradient(
-      135deg,
-      #fdfbfb,
-      #ebedee
-    ); /* soft gradient backdrop */
-    padding: 10px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  }
-  .nav-links ul {
-    padding: 30px;
-  }
 
   .people {
     width: 100%;
@@ -283,7 +186,7 @@ nav .fa {
     transform: scale(1.05);
   box-shadow: 0 0 15px rgba(216, 165, 46, 0.922);
   }
-}
+
 
 .team-heading {
   color: #8b0000;
@@ -770,9 +673,42 @@ button:active {
 }
 
 
-.navbar-logo {
-  height: 40px;
-  margin-right: 16px;
-  vertical-align: middle;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 5%;
+  margin-right: 6px;
+  background: linear-gradient(
+    135deg,
+    rgb(99, 0, 0),
+    rgba(218, 67, 67, 0.665),
+    rgb(71, 22, 22),
+    rgba(17, 16, 16, 0.3)
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 5s linear infinite;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(179, 177, 177, 0.2);
+  position: fixed;
+  top: 0;
+  height: 70px;
+  width: 100%;
+  z-index: 999;
+}
+
+
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 

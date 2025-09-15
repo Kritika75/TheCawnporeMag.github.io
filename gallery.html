@@ -18,9 +18,9 @@
     <meta property="twitter:url" content="https://thecawnporemag.github.io/gallery.html">
     <meta property="twitter:title" content="Historical Gallery - The Cawnpore Magazine | Visual Archive of Kanpur">
     <meta property="twitter:description" content="Explore our visual archive of historical photographs, maps, and documents related to Kanpur's rich heritage.">
-    <meta property="twitter:image" content="https://thecawnporemag.github.io/assets/images/gallery-og.jpg">
+   <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="gallery.css" />
-    <link rel="stylesheet" href="style.css" />
+     <meta property="twitter:image" content="https://thecawnporemag.github.io/assets/images/gallery-og.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -28,14 +28,14 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
   </head>
   <body>
-    <nav role="navigation" aria-label="Main Menu">
-      <!-- Logo on the left -->
-      <a href="index.html">
-        <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
-      </a>
-
-      <div class="nav-links" id="navLinks">
-        <i class="fa fa-times" onclick="hideMenu()"></i>
+     <nav role="navigation" aria-label="Main Menu">
+          <!-- Logo on the left -->
+    <a href="index.html">
+      <img src="assets/favicon.ico" alt="Logo" class="navbar-logo" />
+    </a>
+    
+    <div class="nav-links" id="navLinks">
+      <i class="fa fa-times" onclick="hideMenu()"></i>
           <ul>
 
             <li><a href="index.html">HOME</a></li>
@@ -52,11 +52,11 @@
             <li><a href="login.html" class="btn">LOGIN</a></li>
             <li><a href="signup.html" class="btn">REGISTER</a></li>
           </ul>
-      </div>
+    </div>
 
-      <i class="fa fa-bars" onclick="showMenu()"></i>
-    </nav>
+   <i class="fa fa-bars" onclick="showMenu()"></i>
 
+  </nav>
     <button
       onclick="history.back()"
       style="
@@ -351,6 +351,15 @@
   }
 
   animateCircles();
+   function showMenu() {
+      document.getElementById("navLinks").style.right = "0";
+      document.body.style.overflow = "hidden";
+    }
+
+    function hideMenu() {
+      document.getElementById("navLinks").style.right = "-200px";
+      document.body.style.overflow = "auto";
+    }
   </script>
   </body>
 </html>

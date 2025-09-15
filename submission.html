@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Submissions</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="submission.css" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <!-- <link rel="stylesheet" href="style.css"> -->
@@ -155,7 +156,6 @@
     <div class="progress-container">
       <div class="progress-bar" id="progressBar"></div>
     </div>
-    <section class="header">
 
       
 
@@ -187,8 +187,6 @@
           <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
     
-
-    </section>
     <section class="header1">
       <div class="text-box1">
         <h1>Submissions</h1>
@@ -350,7 +348,15 @@
         <p>&copy; <span id="year"></span> THE CAWNPORE — ALL RIGHTS RESERVED</p>
       </div>
     </footer>
+<script>function showMenu() {
+      document.getElementById("navLinks").style.right = "0";
+      document.body.style.overflow = "hidden";
+    }
 
+    function hideMenu() {
+      document.getElementById("navLinks").style.right = "-200px";
+      document.body.style.overflow = "auto";
+    }</script>
     <script src="index.js"></script>
   </body>
 </html>
