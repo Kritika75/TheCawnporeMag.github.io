@@ -1,0 +1,21 @@
+name: 🧼 Refactor or Improve Workflow
+description: Propose ways to improve internal processes
+title: "[REFACTOR] <idea or process name>"
+labels: ["refactor", "team"]
+body:
+  - type: textarea
+    id: process
+    attributes:
+      label: What's the current process?
+      description: Describe the workflow or system you're suggesting a fix for.
+      placeholder: "We currently assign layout after..."
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: What can be improved?
+      description: Tell us how you'd like to improve or simplify it.
+  - type: textarea
+    id: benefit
+    attributes:
+      label: How will this help?
+      description: Share why it would make the team’s work easier/better/faster.

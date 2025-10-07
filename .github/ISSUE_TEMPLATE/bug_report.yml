@@ -1,0 +1,42 @@
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior
+title: "[BUG] <short description>"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please fill out the form below so we can help you faster.
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Where did this bug occur? (Browser, OS, device, etc.)
+      placeholder: "e.g. iOS 17, Chrome 125, MacBook M1"
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Describe the steps to reproduce the behavior.
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. See error
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+  - type: input
+    id: screenshot
+    attributes:
+      label: Screenshot (Optional)
+      description: Paste a link to your screenshot or upload it in the comments.
+      placeholder: "Paste image URL"
+    validations:
+      required: false

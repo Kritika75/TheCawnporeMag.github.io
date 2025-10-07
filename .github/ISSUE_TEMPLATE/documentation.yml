@@ -1,0 +1,16 @@
+name: 📚 Improve Docs or Guidelines
+description: Propose updates to our contributor or editorial docs
+title: "[DOCS] <short description>"
+labels: ["documentation"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What do you want to improve?
+      description: Mention which part of the docs or instructions need work.
+      placeholder: "e.g., Clarify how to submit art, update style guide..."
+  - type: textarea
+    id: how
+    attributes:
+      label: What's your suggestion?
+      description: Share what you'd change or add.

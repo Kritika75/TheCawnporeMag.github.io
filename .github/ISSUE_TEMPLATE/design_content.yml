@@ -1,0 +1,24 @@
+name: 🎨 Design or Content Idea
+description: Suggest improvements for visuals, layout, or tone
+title: "[DESIGN] <your idea>"
+labels: ["design", "content"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What’s your idea?
+      description: Suggest design tweaks, cover layout changes, or visual experiments.
+      placeholder: "We could try a collage-style contents page..."
+  - type: textarea
+    id: why
+    attributes:
+      label: Why do you think this works?
+      description: Explain why the idea fits our zine’s aesthetic or purpose.
+  - type: input
+    id: reference
+    attributes:
+      label: References (Optional)
+      description: Link any Pinterest boards, inspo zines, or media examples.
+      placeholder: "Paste links here"
+    validations:
+      required: false

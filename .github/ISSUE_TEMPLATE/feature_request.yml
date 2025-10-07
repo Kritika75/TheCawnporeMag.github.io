@@ -1,0 +1,26 @@
+name: ✨ Feature or Section Suggestion
+description: Suggest new ideas for future issues
+title: "[SUGGESTION] <your idea>"
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Got a fun idea? Suggest a new section, theme, game, or creative twist!
+  - type: textarea
+    id: idea
+    attributes:
+      label: What's your idea?
+      description: Describe your idea clearly and how it could fit in The Cawnpore Magazine.
+  - type: input
+    id: inspiration
+    attributes:
+      label: What inspired it? (Optional)
+      placeholder: "Another magazine, a book, a dream..."
+    validations:
+      required: false
+  - type: textarea
+    id: benefit
+    attributes:
+      label: Why would it be cool for readers?
+      description: Tell us how it might inspire, entertain, or engage our audience.
